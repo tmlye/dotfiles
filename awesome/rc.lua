@@ -1,5 +1,4 @@
 -- ~/.config/awesome/rc.lua
--- test
 -- Standard awesome library
 require("awful")
 require("awful.autofocus")
