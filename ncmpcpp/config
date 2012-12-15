@@ -1,0 +1,49 @@
+# ~/.ncmpcpp/config
+
+mpd_music_dir = "/home/sascha/Extern/Musik"
+mpd_crossfade_time = "5"
+
+# Playlist
+playlist_display_mode = "columns" (classic/columns)
+song_columns_list_format = "(40)[green]{t|f} (25)[red]{a} (25f)[blue]{b}"
+song_list_format = "$2%a$9 $5%b$9 $0%t$9 $R$7%n$9 $7%l$9 $7%y$9"
+now_playing_prefix = "$b"
+now_playing_suffix = "$/b"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+cyclic_scrolling = "no"
+playlist_disable_highlight_delay = "1"
+
+# Bars
+song_status_format = "{$3%t •$1}{$2 %a$1}"
+progressbar_look = "─╼ " # "─╼╌"
+titles_visibility = "no"
+header_visibility = "no"
+statusbar_visibility = "yes"
+
+# Browser
+browser_playlist_prefix = "$2»$9 "
+browser_display_mode = "classic" (classic/columns)
+
+# Colors
+colors_enabled = "yes"
+discard_colors_if_item_is_selected = "yes"
+volume_color = "cyan"
+header_window_color = "green"
+state_line_color = "cyan"
+state_flags_color = "green"
+main_window_color = "green"
+color1 = "green"
+color2 = "green"
+main_window_highlight_color = "red"
+progressbar_color = "green"
+statusbar_color = "cyan"
+active_column_color = "red"
+
+# Others
+song_window_title_format = "{%a - }{%t}"
+search_engine_display_mode = "columns" (classic/columns)
+follow_now_playing_lyrics = "yes"
+display_screens_numbers_on_start = "no"
+ask_before_clearing_main_playlist = "yes"
+mouse_support = "no"
