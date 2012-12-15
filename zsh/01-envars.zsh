@@ -3,7 +3,7 @@
 
 export HISTSIZE=100
 export SAVEHIST=100
-export HISTFILE=~/.zshhistory
+export HISTFILE=~/.dotfiles/zsh/history.log
 export DISPLAY=:0
 
 export SHELL='/bin/zsh'

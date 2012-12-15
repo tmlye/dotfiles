@@ -5,7 +5,7 @@ if [ ! -d ~/.config ]
   then mkdir ~/.config
 fi
 
-declare -a links=(.config/awesome .Xdefaults .zshrc)
+declare -a links=(.config/awesome .Xdefaults .zshrc .ncmpcpp)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -23,3 +23,6 @@ ln -s $HOME/.dotfiles/X/Xdefaults $HOME/.Xdefaults
 
 # zsh
 ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
+
+#ncmpcpp
+ln -s $HOME/.dotfiles/ncmpcpp/ $HOME/.ncmpcpp
