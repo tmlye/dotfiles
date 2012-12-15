@@ -5,7 +5,7 @@ mpd_crossfade_time = "5"
 
 # Playlist
 playlist_display_mode = "columns" (classic/columns)
-song_columns_list_format = "(40)[green]{t|f} (25)[red]{a} (25f)[blue]{b}"
+song_columns_list_format = "(40)[green]{t|f} (30)[red]{a} (30)[blue]{b}"
 song_list_format = "$2%a$9 $5%b$9 $0%t$9 $R$7%n$9 $7%l$9 $7%y$9"
 now_playing_prefix = "$b"
 now_playing_suffix = "$/b"
