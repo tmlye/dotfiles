@@ -5,21 +5,22 @@ require("awful.autofocus")
 require("awful.rules")
 -- Theme handling library
 require("beautiful")
--- Notification library
+-- Notifications
 require("naughty")
 -- Widgets
-require("vicious")
+vicious = require("vicious")
+require("awesompd/awesompd")
+
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/home/sascha/.config/awesome/themes/default/theme.lua")
 
--- This is used later as the default terminal and editor to run.
+-- This is used later as the default terminal to run.
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "gvim"
 editor_cmd = terminal .. " -e " .. editor
 filemngr = terminal .. " -e ranger"
-filemngr_g = "thunar"
 browser = "firefox"
 exec = awful.util.spawn
 
@@ -80,12 +81,50 @@ dash.text = "-"
 
 -- {{{ Wibox
 
--- MPD Widget
--- Initialize widget
-mpdwidget = widget({ type = "textbox" })
--- Register Widget
-vicious.register(mpdwidget, vicious.widgets.mpd, "<span color='#D4D7F2'> ♪</span> ${Title} <span color='#D97672'>${Artist}</span>", 13)
---vicious.register(mpdwidget, vicious.widgets.mpd, " ♪ ${Title}, ${Artist}", 13)
+-- MPD widget
+musicwidget = awesompd:create() -- Create awesompd widget
+musicwidget.font = "DejaVu Mono 8" -- Set widget font 
+musicwidget.scrolling = true -- If true, the text in the widget will be scrolled
+musicwidget.output_size = 70 -- Set the size of widget in symbols
+musicwidget.update_interval = 5 -- Set the update interval in seconds
+-- Set the folder where icons are located (change username to your login name)
+musicwidget.path_to_icons = "/home/sascha/.config/awesome/awesompd/icons" 
+-- Set the default music format for Jamendo streams. You can change
+-- this option on the fly in awesompd itself.
+-- possible formats: awesompd.FORMAT_MP3, awesompd.FORMAT_OGG
+musicwidget.jamendo_format = awesompd.FORMAT_MP3
+-- If true, song notifications for Jamendo tracks and local tracks will also contain
+-- album cover image.
+musicwidget.show_album_cover = true
+-- Specify how big in pixels should an album cover be. Maximum value
+-- is 100.
+musicwidget.album_cover_size = 50
+-- This option is necessary if you want the album covers to be shown
+-- for your local tracks.
+--musicwidget.mpd_config = "/home/sascha/.mpd/mpdconf"
+-- Specify the browser you use so awesompd can open links from
+-- Jamendo in it.
+musicwidget.browser = "firefox"
+-- Specify decorators on the left and the right side of the
+-- widget. Or just leave empty strings if you decorate the widget
+-- from outside.
+musicwidget.ldecorator = " "
+musicwidget.rdecorator = " "
+-- Set all the servers to work with (here can be any servers you use)
+musicwidget.servers = {
+    { server = "localhost",
+        port = 6600 } }
+-- Set the buttons of the widget
+musicwidget:register_buttons({  { "", awesompd.MOUSE_LEFT, musicwidget:command_toggle() },
+                                { "Control", awesompd.MOUSE_SCROLL_UP, musicwidget:command_prev_track() },
+                                { "Control", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_next_track() },
+                                { "", awesompd.MOUSE_SCROLL_UP, musicwidget:command_volume_up() },
+                                { "", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_volume_down() },
+                                { "", awesompd.MOUSE_RIGHT, musicwidget:command_show_menu() },
+                                { "", "XF86AudioLowerVolume", musicwidget:command_volume_down() },
+                                { "", "XF86AudioRaiseVolume", musicwidget:command_volume_up() },
+                                { modkey, "Pause", musicwidget:command_playpause() } })
+musicwidget:run() -- After all configuration is done, run the widget
 
 -- Weather Widget
 -- Initialize Widget
@@ -125,7 +164,7 @@ vicious.register(batwidget, vicious.widgets.bat, "$1$2", 32, "BAT1")
 mytextclock = awful.widget.textclock({ align = "right" })
 
 -- Create a systray
-mysystray = widget({ type = "systray" })
+--mysystray = widget({ type = "systray" })
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -201,13 +240,16 @@ for s = 1, screen.count() do
         {
             mytaglist[s],
             mypromptbox[s],
+            musicwidget.widget,
             layout = awful.widget.layout.horizontal.leftright
         },
         -- s == 1 and mysystray or nil,
         mytextclock, spacer, seperator, spacer,
         mylayoutbox[s],
-        spacer, seperator, spacer, batwidget, baticon, seperator, spacer, wifiwidget, spacer, seperator, volwidget, volicon, spacer, seperator, spacer, weatherwidget, spacer,
-        mytasklist[s],
+        spacer, seperator, spacer, batwidget, baticon, seperator, spacer, wifiwidget, spacer,
+        seperator, volwidget, volicon, spacer, seperator, 
+        spacer, weatherwidget,
+        --mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
 end
@@ -256,7 +298,6 @@ globalkeys = awful.util.table.join(
     -- Standard programs
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey,		      }, "e", function () awful.util.spawn(filemngr) end),
-    awful.key({ modkey,           }, "t", function() awful.util.spawn(filemngr_g) end),
     awful.key({ modkey,           }, "q", function() awful.util.spawn(browser) end),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
@@ -313,8 +354,8 @@ for s = 1, screen.count() do
 end
 
 -- Bind all key numbers to tags.
--- Be careful: we use keycodes to make it works on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
+-- Be careful: we use keycodes to make it work on any keyboard layout.
+-- This should map the top row of your keyboard, usually 1 to 9.
 for i = 1, keynumber do
     globalkeys = awful.util.table.join(globalkeys,
         awful.key({ modkey }, "#" .. i + 9,
@@ -350,6 +391,8 @@ clientbuttons = awful.util.table.join(
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
 
+-- Append Keys for awesomepd
+musicwidget:append_global_keys()
 -- Set keys
 root.keys(globalkeys)
 -- }}}
@@ -395,7 +438,7 @@ client.add_signal("manage", function (c, startup)
         -- i.e. put it at the end of others instead of setting it master.
         -- awful.client.setslave(c)
 
-        -- Put windows in a smart way, only if they does not set an initial position.
+        -- Put windows in a smart way, only if they do not set an initial position.
         if not c.size_hints.user_position and not c.size_hints.program_position then
             awful.placement.no_overlap(c)
             awful.placement.no_offscreen(c)
