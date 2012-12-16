@@ -6,7 +6,7 @@ mpd_crossfade_time = "5"
 # Playlist
 playlist_display_mode = "columns" (classic/columns)
 song_columns_list_format = "(40)[green]{t|f} (30)[red]{a} (30)[blue]{b}"
-song_list_format = "$2%a$9 $5%b$9 $0%t$9 $R$7%n$9 $7%l$9 $7%y$9"
+song_list_format = "$2%a$9 $5%b$9 $3%t$9 $R$7%n$9 $7%l$9 $7%y$9"
 now_playing_prefix = "$b"
 now_playing_suffix = "$/b"
 autocenter_mode = "yes"
@@ -19,7 +19,7 @@ song_status_format = "{$3%t •$1}{$2 %a$1}"
 progressbar_look = "─╼ " # "─╼╌"
 titles_visibility = "no"
 header_visibility = "no"
-statusbar_visibility = "yes"
+statusbar_visibility = "no"
 
 # Browser
 browser_playlist_prefix = "$2»$9 "
@@ -47,3 +47,4 @@ follow_now_playing_lyrics = "yes"
 display_screens_numbers_on_start = "no"
 ask_before_clearing_main_playlist = "yes"
 mouse_support = "no"
+playlist_editor_display_mode = "columns"
