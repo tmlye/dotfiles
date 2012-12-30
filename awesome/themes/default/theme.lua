@@ -1,11 +1,8 @@
----------------------------
--- Default awesome theme --
----------------------------
-
 theme = {}
+home = os.getenv("HOME")
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "feh --bg-fill /home/sascha/.wallpaper/current.jpg" }
+theme.wallpaper_cmd = { "feh --bg-fill " .. home .. "/.wallpaper/current.jpg" }
 
 theme.font          = "DejaVu Mono 8"
 

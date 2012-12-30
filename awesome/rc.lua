@@ -13,8 +13,6 @@ require("awesompd/awesompd")
 
 
 -- {{{ Variable definitions
--- Themes define colours, icons, and wallpapers
-beautiful.init("/home/sascha/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal to run.
 terminal = "urxvt"
@@ -23,6 +21,10 @@ editor_cmd = terminal .. " -e " .. editor
 filemngr = terminal .. " -e ranger"
 browser = "firefox"
 exec = awful.util.spawn
+home = os.getenv("HOME")
+
+-- Themes define colours, icons, and wallpapers
+beautiful.init(home .. "/.config/awesome/themes/default/theme.lua")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -54,7 +56,7 @@ end
 -- }}}
 
 -- {{{ Menu
--- Create a laucher widget and a main menu
+-- Create a launcher widget and a main menu
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
@@ -88,7 +90,7 @@ musicwidget.scrolling = true -- If true, the text in the widget will be scrolled
 musicwidget.output_size = 70 -- Set the size of widget in symbols
 musicwidget.update_interval = 5 -- Set the update interval in seconds
 -- Set the folder where icons are located (change username to your login name)
-musicwidget.path_to_icons = "/home/sascha/.config/awesome/awesompd/icons" 
+musicwidget.path_to_icons =  home .. "/.config/awesome/awesompd/icons" 
 -- Set the default music format for Jamendo streams. You can change
 -- this option on the fly in awesompd itself.
 -- possible formats: awesompd.FORMAT_MP3, awesompd.FORMAT_OGG
@@ -101,7 +103,7 @@ musicwidget.show_album_cover = true
 musicwidget.album_cover_size = 50
 -- This option is necessary if you want the album covers to be shown
 -- for your local tracks.
---musicwidget.mpd_config = "/home/sascha/.mpd/mpdconf"
+--musicwidget.mpd_config = home .. "/.mpd/mpdconf"
 -- Specify the browser you use so awesompd can open links from
 -- Jamendo in it.
 musicwidget.browser = "firefox"
@@ -135,7 +137,7 @@ vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 500, "WMK
 
 -- Volumewidget
 volicon = widget({type = "imagebox"})
-volicon.image = image ("/home/sascha/.config/awesome/icons/vol.png")
+volicon.image = image (home .. "/.config/awesome/icons/vol.png")
 volwidget = widget({ type = "textbox" })
 vicious.register(volwidget, vicious.widgets.volume, " $1% ", 2, "Master")
 -- Keybindings for widget
@@ -148,13 +150,11 @@ volwidget:buttons(awful.util.table.join(
 
 -- Wifiwidget
 wifiwidget = widget({ type = "textbox" })
--- Register Widget
 vicious.register(wifiwidget, vicious.widgets.wifi, "<span color='#D4D7F2'>~</span> ${link}%", 5, "wlan0")
---vicious.register(wifiwidget, vicious.widgets.wifi, "~ ${link}%", 5, "eth1")
 
 -- Create a battery widget
 baticon = widget({ type = "imagebox" })
-baticon.image = image("/home/sascha/.config/awesome/icons/bat.png")
+baticon.image = image(home .. "/.config/awesome/icons/bat.png")
 --Initialize widget
 batwidget = widget({ type = "textbox" })
 --Register widget
@@ -347,7 +347,7 @@ clientkeys = awful.util.table.join(
         end)
 )
 
--- Compute the maximum number of digit we need, limited to 9
+-- Compute the maximum number of digits we need, limited to 9
 keynumber = 0
 for s = 1, screen.count() do
    keynumber = math.min(9, math.max(#tags[s], keynumber));
