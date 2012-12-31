@@ -17,10 +17,11 @@ export PATH="/usr/local/bin:\
 /usr/sbin:\
 /sbin:\
 /opt/java/jre/bin:\
+$HOME/.gem/ruby/1.9.1/bin:\
 /usr/bin/site_perl:\
 /usr/bin/vendor_perl:\
 /usr/bin/core_perl:\
-/home/sascha/bin:"
+$HOME/.bin:"
 
 # Less
 export LESSOPEN='| /usr/bin/highlight -0 ansi %s'
