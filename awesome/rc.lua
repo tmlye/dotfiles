@@ -24,7 +24,7 @@ exec = awful.util.spawn
 home = os.getenv("HOME")
 
 -- Themes define colours, icons, and wallpapers
-beautiful.init(home .. "/.config/awesome/themes/default/theme.lua")
+beautiful.init(home .. "/.config/awesome/theme.lua")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -63,22 +63,6 @@ for s = 1, screen.count() do
 end
 -- }}}
 
--- {{{ Menu
--- Create a launcher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
-
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
--- }}}
-
-
 -- {{{ Wibox
 
 -- Seperators
@@ -90,6 +74,8 @@ seperator:set_markup("|")
 dash:set_markup("-")
 
 -- MPD icon
+-- Icon is updated according to the current MPD status
+-- see MPD textwidget below
 mpdicon = wibox.widget.imagebox()
 mpdicon:set_image(home .. "/.config/awesome/icons/note.png")
 
@@ -197,8 +183,6 @@ mytasklist.buttons = awful.util.table.join(
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
-    -- { layout = wibox.layout.align.horizontal() }
-    -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     mylayoutbox[s] = awful.widget.layoutbox(s)
     mylayoutbox[s]:buttons(awful.util.table.join(
@@ -278,7 +262,6 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show({keygrabber=true}) end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
