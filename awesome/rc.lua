@@ -204,6 +204,7 @@ for s = 1, screen.count() do
     left_layout:add(mytaglist[s])
     left_layout:add(mypromptbox[s])
     left_layout:add(mpdicon)
+    left_layout:add(spacer)
     left_layout:add(mpdwidget)
 
     -- Widgets that are aligned to the right, order matters
@@ -217,6 +218,7 @@ for s = 1, screen.count() do
     right_layout:add(volwidget)
     right_layout:add(spacer)
     right_layout:add(seperator)
+    right_layout:add(spacer)
     -- Wifi
     right_layout:add(wifiwidget)
     right_layout:add(spacer)
