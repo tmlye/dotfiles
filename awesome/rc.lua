@@ -1,15 +1,17 @@
 -- ~/.config/awesome/rc.lua
 -- Standard awesome library
-require("awful")
+local awful = require("awful")
+local gears = require("gears")
+awful.rules = require("awful.rules")
 require("awful.autofocus")
-require("awful.rules")
 -- Theme handling library
-require("beautiful")
+local beautiful = require("beautiful")
 -- Notifications
-require("naughty")
--- Widgets
-vicious = require("vicious")
-require("awesompd/awesompd")
+local naughty = require("naughty")
+-- Widgets and Layout
+local wibox = require("wibox")
+local vicious = require("vicious")
+--require("awesompd/awesompd")
 
 
 -- {{{ Variable definitions
@@ -43,6 +45,14 @@ layouts =
 }
 -- }}}
 
+-- {{{ Wallpaper
+if beautiful.wallpaper then
+    for s = 1, screen.count() do
+        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+    end
+end
+-- }}}
+
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
@@ -68,77 +78,74 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "open terminal", terminal }
                                   }
                         })
-
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-                                     menu = mymainmenu })
 -- }}}
 
 -- Seperators
-spacer = widget({ type = "textbox" })
-seperator = widget({ type = "textbox" })
-dash = widget({ type = "textbox" })
-spacer.text = " "
-seperator.text = "|"
-dash.text = "-"
+spacer = wibox.widget.textbox()
+seperator = wibox.widget.textbox()
+dash = wibox.widget.textbox()
+spacer:set_markup(" ")
+seperator:set_markup("|")
+dash:set_markup("-")
 
 -- {{{ Wibox
 
 -- MPD widget
-musicwidget = awesompd:create() -- Create awesompd widget
-musicwidget.font = "DejaVu Mono 8" -- Set widget font 
-musicwidget.scrolling = true -- If true, the text in the widget will be scrolled
-musicwidget.output_size = 70 -- Set the size of widget in symbols
-musicwidget.update_interval = 5 -- Set the update interval in seconds
--- Set the folder where icons are located (change username to your login name)
-musicwidget.path_to_icons =  home .. "/.config/awesome/awesompd/icons" 
--- Set the default music format for Jamendo streams. You can change
--- this option on the fly in awesompd itself.
--- possible formats: awesompd.FORMAT_MP3, awesompd.FORMAT_OGG
-musicwidget.jamendo_format = awesompd.FORMAT_MP3
--- If true, song notifications for Jamendo tracks and local tracks will also contain
--- album cover image.
-musicwidget.show_album_cover = true
--- Specify how big in pixels should an album cover be. Maximum value
--- is 100.
-musicwidget.album_cover_size = 50
--- This option is necessary if you want the album covers to be shown
--- for your local tracks.
---musicwidget.mpd_config = home .. "/.mpd/mpdconf"
--- Specify the browser you use so awesompd can open links from
--- Jamendo in it.
-musicwidget.browser = "firefox"
--- Specify decorators on the left and the right side of the
--- widget. Or just leave empty strings if you decorate the widget
--- from outside.
-musicwidget.ldecorator = " "
-musicwidget.rdecorator = " "
--- Set all the servers to work with (here can be any servers you use)
-musicwidget.servers = {
-    { server = "localhost",
-        port = 6600 } }
--- Set the buttons of the widget
-musicwidget:register_buttons({  { "", awesompd.MOUSE_LEFT, musicwidget:command_toggle() },
-                                { "Control", awesompd.MOUSE_SCROLL_UP, musicwidget:command_prev_track() },
-                                { "Control", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_next_track() },
-                                { "", awesompd.MOUSE_SCROLL_UP, musicwidget:command_volume_up() },
-                                { "", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_volume_down() },
-                                { "", awesompd.MOUSE_RIGHT, musicwidget:command_show_menu() },
-                                { "", "XF86AudioLowerVolume", musicwidget:command_volume_down() },
-                                { "", "XF86AudioRaiseVolume", musicwidget:command_volume_up() },
-                                { modkey, "Pause", musicwidget:command_playpause() } })
-musicwidget:run() -- After all configuration is done, run the widget
+--musicwidget = awesompd:create() -- Create awesompd widget
+--musicwidget.font = "DejaVu Mono 8" -- Set widget font 
+--musicwidget.scrolling = true -- If true, the text in the widget will be scrolled
+--musicwidget.output_size = 70 -- Set the size of widget in symbols
+--musicwidget.update_interval = 5 -- Set the update interval in seconds
+---- Set the folder where icons are located (change username to your login name)
+--musicwidget.path_to_icons =  home .. "/.config/awesome/awesompd/icons" 
+---- Set the default music format for Jamendo streams. You can change
+---- this option on the fly in awesompd itself.
+---- possible formats: awesompd.FORMAT_MP3, awesompd.FORMAT_OGG
+--musicwidget.jamendo_format = awesompd.FORMAT_MP3
+---- If true, song notifications for Jamendo tracks and local tracks will also contain
+---- album cover image.
+--musicwidget.show_album_cover = false
+---- Specify how big in pixels should an album cover be. Maximum value
+---- is 100.
+--musicwidget.album_cover_size = 50
+---- This option is necessary if you want the album covers to be shown
+---- for your local tracks.
+----musicwidget.mpd_config = home .. "/.mpd/mpdconf"
+---- Specify the browser you use so awesompd can open links from
+---- Jamendo in it.
+--musicwidget.browser = "firefox"
+---- Specify decorators on the left and the right side of the
+---- widget. Or just leave empty strings if you decorate the widget
+---- from outside.
+--musicwidget.ldecorator = " "
+--musicwidget.rdecorator = " "
+---- Set all the servers to work with (here can be any servers you use)
+--musicwidget.servers = {
+--    { server = "localhost",
+--        port = 6600 } }
+---- Set the buttons of the widget
+--musicwidget:register_buttons({  { "", awesompd.MOUSE_LEFT, musicwidget:command_toggle() },
+--                                { "Control", awesompd.MOUSE_SCROLL_UP, musicwidget:command_prev_track() },
+--                                { "Control", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_next_track() },
+--                                { "", awesompd.MOUSE_SCROLL_UP, musicwidget:command_volume_up() },
+--                                { "", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_volume_down() },
+--                                { "", awesompd.MOUSE_RIGHT, musicwidget:command_show_menu() },
+--                                { "", "XF86AudioLowerVolume", musicwidget:command_volume_down() },
+--                                { "", "XF86AudioRaiseVolume", musicwidget:command_volume_up() },
+--                                { modkey, "Pause", musicwidget:command_playpause() } })
+--musicwidget:run() -- After all configuration is done, run the widget
 
 -- Weather Widget
 -- Initialize Widget
-weatherwidget = widget({ type = "textbox" })
+weatherwidget = wibox.widget.textbox()
 -- Register Widget
 -- Nuernberg: EDDN, Kuala Lumpur: WMKK
 vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 500, "WMKK")
 
 -- Volumewidget
-volicon = widget({type = "imagebox"})
-volicon.image = image (home .. "/.config/awesome/icons/vol.png")
-volwidget = widget({ type = "textbox" })
+volicon = wibox.widget.imagebox()
+volicon:set_image(home .. "/.config/awesome/icons/vol.png")
+volwidget = wibox.widget.textbox()
 vicious.register(volwidget, vicious.widgets.volume, " $1% ", 2, "Master")
 -- Keybindings for widget
 volwidget:buttons(awful.util.table.join(
@@ -149,19 +156,19 @@ volwidget:buttons(awful.util.table.join(
  ))
 
 -- Wifiwidget
-wifiwidget = widget({ type = "textbox" })
+wifiwidget = wibox.widget.textbox()
 vicious.register(wifiwidget, vicious.widgets.wifi, "<span color='#D4D7F2'>~</span> ${link}%", 5, "wlan0")
 
 -- Create a battery widget
-baticon = widget({ type = "imagebox" })
-baticon.image = image(home .. "/.config/awesome/icons/bat.png")
+baticon = wibox.widget.imagebox()
+baticon:set_image(home .. "/.config/awesome/icons/bat.png")
 --Initialize widget
-batwidget = widget({ type = "textbox" })
+batwidget = wibox.widget.textbox()
 --Register widget
 vicious.register(batwidget, vicious.widgets.bat, "$1$2", 32, "BAT1")
 
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" })
+mytextclock = awful.widget.textclock()
 
 -- Create a systray
 --mysystray = widget({ type = "systray" })
@@ -213,7 +220,8 @@ mytasklist.buttons = awful.util.table.join(
 
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
-    mypromptbox[s] = awful.widget.prompt({ layout = awful.widget.layout.horizontal.leftright })
+    mypromptbox[s] = awful.widget.prompt()
+    -- { layout = wibox.layout.align.horizontal() }
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     mylayoutbox[s] = awful.widget.layoutbox(s)
@@ -223,44 +231,57 @@ for s = 1, screen.count() do
                            awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
                            awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
     -- Create a taglist widget
-    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all, mytaglist.buttons)
+    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
 
     -- Create a tasklist widget
-    mytasklist[s] = awful.widget.tasklist(function(c)
-                                              --return awful.widget.tasklist.label.currenttags(c, s)
-                                              --remove tasklist-icon without modifying the original tasklist.lua
-		                                        local tmptask = { awful.widget.tasklist.label.currenttags(c, s) }
-                                        		return tmptask[1], tmptask[2], tmptask[3], nil
-                                          end, mytasklist.buttons)
+    mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
-    -- Add widgets to the wibox - order matters
-    mywibox[s].widgets = {
-        {
-            mytaglist[s],
-            mypromptbox[s],
-            musicwidget.widget,
-            layout = awful.widget.layout.horizontal.leftright
-        },
-        -- s == 1 and mysystray or nil,
-        mytextclock, spacer, seperator, spacer,
-        mylayoutbox[s],
-        spacer, seperator, spacer, batwidget, baticon, seperator, spacer, wifiwidget, spacer,
-        seperator, volwidget, volicon, spacer, seperator, 
-        spacer, weatherwidget,
-        --mytasklist[s],
-        layout = awful.widget.layout.horizontal.rightleft
-    }
-end
--- }}}
 
--- {{{ Mouse bindings
-root.buttons(awful.util.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
-))
+    -- Widgets that are aligned to the left, order matters
+    local left_layout = wibox.layout.fixed.horizontal()
+    left_layout:add(mytaglist[s])
+    left_layout:add(mypromptbox[s])
+
+    -- Widgets that are aligned to the right, order matters
+    local right_layout = wibox.layout.fixed.horizontal()
+    -- Weather
+    right_layout:add(weatherwidget)
+    right_layout:add(spacer)
+    right_layout:add(seperator)
+    -- Volumne
+    right_layout:add(volicon)
+    right_layout:add(volwidget)
+    right_layout:add(spacer)
+    right_layout:add(seperator)
+    -- Wifi
+    right_layout:add(wifiwidget)
+    right_layout:add(spacer)
+    right_layout:add(seperator)
+    -- Battery
+    right_layout:add(baticon)
+    right_layout:add(batwidget)
+    right_layout:add(spacer)
+    right_layout:add(seperator)
+    right_layout:add(spacer)
+    -- Layout box
+    right_layout:add(mylayoutbox[s])
+    right_layout:add(spacer)
+    right_layout:add(seperator)
+    right_layout:add(spacer)
+    -- Clock
+    right_layout:add(mytextclock)
+    --if s == 1 then right_layout:add(wibox.widget.systray()) end
+
+    -- Now bring it all together
+    local layout = wibox.layout.align.horizontal()
+    layout:set_left(left_layout)
+    --layout:set_middle(mytasklist[s])
+    layout:set_right(right_layout)
+
+    mywibox[s]:set_widget(layout)
+end
 -- }}}
 
 -- {{{ Key bindings
@@ -392,7 +413,7 @@ clientbuttons = awful.util.table.join(
     awful.button({ modkey }, 3, awful.mouse.client.resize))
 
 -- Append Keys for awesomepd
-musicwidget:append_global_keys()
+--musicwidget:append_global_keys()
 -- Set keys
 root.keys(globalkeys)
 -- }}}
@@ -409,8 +430,8 @@ awful.rules.rules = {
                      size_hints_honor = false} },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
-    { rule = { class = "Gvim" },
-      properties = { size_hints_honor = false } },
+--    { rule = { class = "Gvim" },
+--      properties = { size_hints_honor = true }},
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tag number 1 of screen 1.
@@ -421,12 +442,9 @@ awful.rules.rules = {
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
-client.add_signal("manage", function (c, startup)
-    -- Add a titlebar
-    -- awful.titlebar.add(c, { modkey = modkey })
-
+client.connect_signal("manage", function (c, startup)
     -- Enable sloppy focus
-    c:add_signal("mouse::enter", function(c)
+    c:connect_signal("mouse::enter", function(c)
         if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
             and awful.client.focus.filter(c) then
             client.focus = c
@@ -438,14 +456,52 @@ client.add_signal("manage", function (c, startup)
         -- i.e. put it at the end of others instead of setting it master.
         -- awful.client.setslave(c)
 
-        -- Put windows in a smart way, only if they do not set an initial position.
+        -- Put windows in a smart way, only if they does not set an initial position.
         if not c.size_hints.user_position and not c.size_hints.program_position then
             awful.placement.no_overlap(c)
             awful.placement.no_offscreen(c)
         end
     end
+
+    local titlebars_enabled = false
+    if titlebars_enabled and (c.type == "normal" or c.type == "dialog") then
+        -- Widgets that are aligned to the left
+        local left_layout = wibox.layout.fixed.horizontal()
+        left_layout:add(awful.titlebar.widget.iconwidget(c))
+
+        -- Widgets that are aligned to the right
+        local right_layout = wibox.layout.fixed.horizontal()
+        right_layout:add(awful.titlebar.widget.floatingbutton(c))
+        right_layout:add(awful.titlebar.widget.maximizedbutton(c))
+        right_layout:add(awful.titlebar.widget.stickybutton(c))
+        right_layout:add(awful.titlebar.widget.ontopbutton(c))
+        right_layout:add(awful.titlebar.widget.closebutton(c))
+
+        -- The title goes in the middle
+        local title = awful.titlebar.widget.titlewidget(c)
+        title:buttons(awful.util.table.join(
+                awful.button({ }, 1, function()
+                    client.focus = c
+                    c:raise()
+                    awful.mouse.client.move(c)
+                end),
+                awful.button({ }, 3, function()
+                    client.focus = c
+                    c:raise()
+                    awful.mouse.client.resize(c)
+                end)
+                ))
+
+        -- Now bring it all together
+        local layout = wibox.layout.align.horizontal()
+        layout:set_left(left_layout)
+        layout:set_right(right_layout)
+        layout:set_middle(title)
+
+        awful.titlebar(c):set_widget(layout)
+    end
 end)
 
-client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}

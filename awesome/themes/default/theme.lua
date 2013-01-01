@@ -1,8 +1,8 @@
 theme = {}
-home = os.getenv("HOME")
+local home = os.getenv("HOME")
 
--- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "feh --bg-fill " .. home .. "/.wallpaper/current.jpg" }
+-- Set the path to your wallpaper here
+theme.wallpaper = home .. "/.wallpaper/current.jpg"
 
 theme.font          = "DejaVu Mono 8"
 

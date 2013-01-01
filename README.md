@@ -18,8 +18,8 @@ In order for awesomepd to work correctly, you need to have `mpc` installed!
 
 ### Wallpaper
 
-If you're using `feh` to set your wallpaper, simply place it in `~/.wallpaper/current.jpg` and everything should work fine.
-You can modify the command used to set the wallpaper in `~/.dotfiles/awesome/themes/default/theme.lua`.
+Simply place your wallpaper in `~/.wallpaper/current.jpg` and everything should work fine.
+You can modify the location for the wallpaper in `~/.dotfiles/awesome/themes/default/theme.lua`.
 
 ## Credit
 
