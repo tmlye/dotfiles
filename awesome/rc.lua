@@ -67,10 +67,10 @@ end
 
 -- Seperators
 spacer = wibox.widget.textbox()
-seperator = wibox.widget.textbox()
-dash = wibox.widget.textbox()
 spacer:set_markup(" ")
+seperator = wibox.widget.textbox()
 seperator:set_markup("|")
+dash = wibox.widget.textbox()
 dash:set_markup("-")
 
 -- MPD icon
@@ -86,7 +86,8 @@ mpdwidget = wibox.widget.textbox()
 vicious.register(mpdwidget, vicious.widgets.mpd,
     function (widget, args)
         if args["{state}"] == "Stop" then 
-            mpdicon:set_image(home .. "/.config/awesome/icons/stop.png")
+            --mpdicon:set_image(home .. "/.config/awesome/icons/stop.png")
+            mpdicon:set_image(nil)
             return " "
         elseif args["{state}"] == "Pause" then
             mpdicon:set_image(home .. "/.config/awesome/icons/pause.png")
@@ -105,7 +106,7 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
 weatherwidget = wibox.widget.textbox()
 -- Register Widget
 -- Nuernberg: EDDN, Kuala Lumpur: WMKK
-vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 500, "WMKK")
+vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 300, "WMKK")
 
 -- Volumewidget
 volicon = wibox.widget.imagebox()
