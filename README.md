@@ -14,12 +14,10 @@ cd ~/.dotfiles
 and then execute the script. This should symlink all the files in the `~/.dotfiles` directory to the correct
 locations in your home folder.
 
-In order for awesomepd to work correctly, you need to have `mpc` installed!
-
 ### Wallpaper
 
 Simply place your wallpaper in `~/.wallpaper/current.jpg` and everything should work fine.
-You can modify the location for the wallpaper in `~/.dotfiles/awesome/themes/default/theme.lua`.
+You can modify the location for the wallpaper in `~/.dotfiles/awesome/theme.lua`.
 
 ## Credit
 
