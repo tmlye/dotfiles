@@ -11,8 +11,6 @@ local naughty = require("naughty")
 -- Widgets and Layout
 local wibox = require("wibox")
 local vicious = require("vicious")
---require("awesompd/awesompd")
-
 
 -- {{{ Variable definitions
 
@@ -80,6 +78,9 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                         })
 -- }}}
 
+
+-- {{{ Wibox
+
 -- Seperators
 spacer = wibox.widget.textbox()
 seperator = wibox.widget.textbox()
@@ -88,52 +89,30 @@ spacer:set_markup(" ")
 seperator:set_markup("|")
 dash:set_markup("-")
 
--- {{{ Wibox
+-- MPD icon
+mpdicon = wibox.widget.imagebox()
+mpdicon:set_image(home .. "/.config/awesome/icons/note.png")
 
--- MPD widget
---musicwidget = awesompd:create() -- Create awesompd widget
---musicwidget.font = "DejaVu Mono 8" -- Set widget font 
---musicwidget.scrolling = true -- If true, the text in the widget will be scrolled
---musicwidget.output_size = 70 -- Set the size of widget in symbols
---musicwidget.update_interval = 5 -- Set the update interval in seconds
----- Set the folder where icons are located (change username to your login name)
---musicwidget.path_to_icons =  home .. "/.config/awesome/awesompd/icons" 
----- Set the default music format for Jamendo streams. You can change
----- this option on the fly in awesompd itself.
----- possible formats: awesompd.FORMAT_MP3, awesompd.FORMAT_OGG
---musicwidget.jamendo_format = awesompd.FORMAT_MP3
----- If true, song notifications for Jamendo tracks and local tracks will also contain
----- album cover image.
---musicwidget.show_album_cover = false
----- Specify how big in pixels should an album cover be. Maximum value
----- is 100.
---musicwidget.album_cover_size = 50
----- This option is necessary if you want the album covers to be shown
----- for your local tracks.
-----musicwidget.mpd_config = home .. "/.mpd/mpdconf"
----- Specify the browser you use so awesompd can open links from
----- Jamendo in it.
---musicwidget.browser = "firefox"
----- Specify decorators on the left and the right side of the
----- widget. Or just leave empty strings if you decorate the widget
----- from outside.
---musicwidget.ldecorator = " "
---musicwidget.rdecorator = " "
----- Set all the servers to work with (here can be any servers you use)
---musicwidget.servers = {
---    { server = "localhost",
---        port = 6600 } }
----- Set the buttons of the widget
---musicwidget:register_buttons({  { "", awesompd.MOUSE_LEFT, musicwidget:command_toggle() },
---                                { "Control", awesompd.MOUSE_SCROLL_UP, musicwidget:command_prev_track() },
---                                { "Control", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_next_track() },
---                                { "", awesompd.MOUSE_SCROLL_UP, musicwidget:command_volume_up() },
---                                { "", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_volume_down() },
---                                { "", awesompd.MOUSE_RIGHT, musicwidget:command_show_menu() },
---                                { "", "XF86AudioLowerVolume", musicwidget:command_volume_down() },
---                                { "", "XF86AudioRaiseVolume", musicwidget:command_volume_up() },
---                                { modkey, "Pause", musicwidget:command_playpause() } })
---musicwidget:run() -- After all configuration is done, run the widget
+-- MPD textwidget
+-- Initialize widget
+mpdwidget = wibox.widget.textbox()
+-- Register widget
+vicious.register(mpdwidget, vicious.widgets.mpd,
+    function (widget, args)
+        if args["{state}"] == "Stop" then 
+            mpdicon:set_image(home .. "/.config/awesome/icons/stop.png")
+            return " "
+        elseif args["{state}"] == "Pause" then
+            mpdicon:set_image(home .. "/.config/awesome/icons/pause.png")
+            return args["{Artist}"]..' - '.. args["{Title}"]
+        elseif args["{state}"] == "Play" then
+            mpdicon:set_image(home .. "/.config/awesome/icons/play.png")
+            return args["{Artist}"]..' - '.. args["{Title}"]
+        else
+            mpdicon:set_image(home .. "/.config/awesome/icons/note.png")
+            return "MPD status unknown"
+        end
+    end, 3)
 
 -- Weather Widget
 -- Initialize Widget
@@ -169,9 +148,6 @@ vicious.register(batwidget, vicious.widgets.bat, "$1$2", 32, "BAT1")
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
-
--- Create a systray
---mysystray = widget({ type = "systray" })
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -243,6 +219,8 @@ for s = 1, screen.count() do
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(mytaglist[s])
     left_layout:add(mypromptbox[s])
+    left_layout:add(mpdicon)
+    left_layout:add(mpdwidget)
 
     -- Widgets that are aligned to the right, order matters
     local right_layout = wibox.layout.fixed.horizontal()
@@ -412,8 +390,6 @@ clientbuttons = awful.util.table.join(
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
 
--- Append Keys for awesomepd
---musicwidget:append_global_keys()
 -- Set keys
 root.keys(globalkeys)
 -- }}}
