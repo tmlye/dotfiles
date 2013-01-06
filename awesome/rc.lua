@@ -115,7 +115,7 @@ volwidget = wibox.widget.textbox()
 vicious.register(volwidget, vicious.widgets.volume, " $1% ", 2, "Master")
 -- Keybindings for widget
 volwidget:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () exec("urxvt -e alsamixer") end),
+    awful.button({ }, 1, function () exec(terminal .. " -e alsamixer") end),
     awful.button({ }, 2, function () exec("amixer -q sset Master toggle")   end),
     awful.button({ }, 4, function () exec("amixer -q sset Master 2dB+", false) end),
     awful.button({ }, 5, function () exec("amixer -q sset Master 2dB-", false) end)
@@ -237,6 +237,7 @@ for s = 1, screen.count() do
     right_layout:add(spacer)
     -- Clock
     right_layout:add(mytextclock)
+    -- Systray
     --if s == 1 then right_layout:add(wibox.widget.systray()) end
 
     -- Now bring it all together
