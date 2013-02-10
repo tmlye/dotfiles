@@ -5,7 +5,7 @@ if [ ! -d ~/.config ]
   then mkdir ~/.config
 fi
 
-declare -a links=(.config/awesome .Xdefaults .zshrc .ncmpcpp)
+declare -a links=(.config/awesome .Xdefaults .zshrc .ncmpcpp .vim .vimrc)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -24,5 +24,9 @@ ln -s $HOME/.dotfiles/X/Xdefaults $HOME/.Xdefaults
 # zsh
 ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 
-#ncmpcpp
+# ncmpcpp
 ln -s $HOME/.dotfiles/ncmpcpp/ $HOME/.ncmpcpp
+
+# vim
+ln -s $HOME/.dotfiles/vim/vim/ $HOME/.vim
+ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc

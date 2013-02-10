@@ -1,0 +1,125 @@
+" ~/.vimrc
+
+set nocompatible            " Non-vi settings
+
+" Pathogen-vim
+" ============
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+
+" General
+" =======
+
+filetype plugin indent on   " Filetype detection, plugin and indent
+set number                  " Line numbers
+set encoding=UTF-8          " Encoding
+set laststatus=2            " Always show statusline
+set autoread                " Reload files changed outside vim
+set clipboard=unnamed       " Use system clipboard
+set showcmd                 " Display unfinished commands
+set ruler                   " Show cursor position in status bar
+set hidden                  " Buffers can exist in the background
+set showmatch               " Briefly jump to matching bracket
+set matchtime=2             " Time match is shown in 0.1s
+
+" Syntax
+" ======
+
+syntax on               " Syntax highlighting
+colorscheme getfresh    " Place schemes in .vim/colors
+
+" Search
+" ======
+
+set ignorecase          " Case insensitive search
+set incsearch           " Jump to result while typing
+set hls                 " Highlight results
+
+" History, Undo
+" ============
+
+set history=1000        " :help history
+set noswapfile          " Don't use swap files
+set undofile            " Keeps undo history after save/close
+                        " only works if compiled with +persistent_undo
+                        " run 'vim --version | grep undo' to check
+if isdirectory($HOME . '/.vim_undo') == 0
+        :silent !mkdir -p ~/.vim_undo > /dev/null 2>&1
+endif
+set undodir=~/.vim_undo
+
+" Indentation, Whitespace, Linewrapping
+" =====================================
+
+set expandtab           " Inserts spaces instead of tabs
+set autoindent          " Autoindent new lines
+set smartindent         " More syntax aware autoindent
+set tabstop=4           " One tab = 4 spaces, see :help tabstop
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+augroup trailing        " Don't show trailing spaces in insert mode
+  autocmd!
+  autocmd InsertEnter * :set listchars-=trail:·
+  autocmd InsertLeave * :set listchars+=trail:·
+augroup end
+
+set wrap                " Linewrapping
+let &showbreak='+++ '   " String to indicate wrapped line
+set cpoptions+=n        " Show above string between line numbers
+
+" Scrolling
+" =========
+
+set scrolloff=10        " Lines around cursor kept on screen
+set sidescrolloff=10    " Same for sidescrolling
+set sidescroll=5        " Columns to scroll when cursor off screen
+
+" Gvim specific settings
+" ======================
+
+if has('gui_running')
+    set guicursor+=a:blinkon0       " No Cursor blinking
+    set guioptions-=m               " No Menubar
+    set guioptions-=T               " No Toolbar
+    set guioptions-=l               " No Scrollbar left
+    set guioptions-=L               " No Scrollbar left when split
+    set guioptions-=r               " No Scrollbar right
+    set guioptions-=R               " No Scrollbar right when split
+
+    set gfn=DejaVu\ Sans\ Mono\ 10  " Set Font
+
+    set lines=40                    " Height
+    set columns=85                  " Width
+endif
+
+" Mappings
+" ========
+
+" Allow sudo filesaving
+cmap w!! %!sudo tee > /dev/null %
+
+" Reload vimrc when it's saved
+autocmd! BufWritePost .vimrc source ~/.vimrc
+
+" Nerdtree
+map <silent> <F3> :NERDTreeToggle<CR>
+let NERDTreeChDirMode = 2
+let NERDTreeShowBookmarks = 1
+	
+" Taglist
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+" Bufferlist
+noremap <m-b> :TSelectBuffer<cr>
+inoremap <m-b> <c-o>:TSelectBuffer<cr>
+
+" Toggle comment and go to next line
+nnoremap <c-c> :TComment<CR>j
+
+" Split window navigation
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
