@@ -313,3 +313,77 @@ version: "0.42"
   - tlib#input#List: temp_prompt (for help message)
   MD5 checksum: aa8b5a4602235cc1a5bc9ee45d801b81
 
+version: "0.42"
+  - g:tlib#cache#silent: don't display messages when purging the cache (fixes #9)
+  - Changed message when deleting directories in the cache.
+  - g:tlib#input#use_popup: Don't rely on has('menu') but also check for gtk & win gui (fixes #10)
+  - debug
+  - tlib#input#ListW(): Didn't return a list when type == "m"
+  - docs (solves #11)
+  MD5 checksum: aa8b5a4602235cc1a5bc9ee45d801b81
+
+version: "0.45"
+  - fuzzy mode: prototype.highlight defaults to g:tlib_inputlist_higroup
+  - tlib#scratch: Use noautocmd
+  - tlib#input#ListW(): Use world.RestoreOrigin() instead of tlib#win#SetLayout(world.winview)
+  - tlib#input#ListW(): Revert to tlib#win#SetLayout(world.winview)
+  - tlib#cmd#OutputAsList(): Also save output in g:tlib#cmd#last_output
+  - tlib#agent#Suspend(): Resume on BufEnter
+  - tlib#input#Resume(): Make sure we are in the right buffer
+  - tlib#agent#Suspend(): Use only BufEnter event to trigger a Resume
+  - tlib#input#ListW(): When redisplaying a list, make sure prefix > 0
+  - tlib#vcs: Access vcs (initially only git is supported)
+  - tlib#vcs: improved
+  - tlib#persistent: Persistent data file names
+  - tlib#file#With(): Trigger BufRead autocommands
+  - Duplicate help tags (fixes #13)
+  - Make sure scrolloff is 0 while viewing the list (fixes https://github.com/tomtom/vikitasks_vim/issues/2)
+  MD5 checksum: 0af19ebc0e424727a598a988fdc90f4e
+
+  - Support for tinykeymap (move paragraph)
+  - Moved para_move to autoload/tinykeymap/map
+  - tlib#vcs: some "diff" commands were defined as "ls"; updated hg def; %s is optional
+  MD5 checksum: f2f2fe0893e75bb9423c1ddcd01f38f6
+version: "0.46"
+
+  - tlib#input#List: optimizations
+  - Prepare for multi-mode maps
+  - tlib#input#List: cnfx is new default filter
+  - Filters: minor changes to how the pattern is displayed
+  - g:tlib#input#format_filename: alternative method for formatting filenames
+  - tlib#input#List: allow multiple keymaps / modes
+  - Handle rezise events
+  - Don't initialize the same window twice
+  - Minor optimizations to how help is displayed
+  - Handle VimResize event per buffer
+  - Improve display of filenames & highlighting
+  - Filename highlighter: set Highlight_filename()
+  - RunStateHandlers(): set world variable
+  - Optimize help display
+  MD5 checksum: e3652927722bdc51935eb1a04238546b
+version: "1.00"
+
+  - Set g:tlib_inputlist_and to  ' ' again
+  - g:tlib#input#filename_max_width: maximum display width of filenames
+  - tlib#input#List: <s-esc>, <f10>: run command by name
+  MD5 checksum: a42f90275cdbe9f7d92cac61b884a2d1
+version: "1.01"
+
+  - #UseInputListScratch(): Make sure the TLib autogroup was created (fixes #14)
+  MD5 checksum: 5a6da7fc99c7fc7584e8fc2f7bf86fe4
+version: "1.02"
+
+  - tlib#cache#Value(cfile, generator, ftime, ...): cache value & check timestamp
+  - Replaced g:tlib#cache#silent with g:tlib#cache#verbosity
+  - FormatFilenames: improved handling of utf8 characters
+  - tlib#persistent#Value()
+  - tlib#input#List: Allow filename indiactors defined by the caller
+  - Custom filename_indicators are displayed after (and clearly separted from) the standard indicators
+  - Check the return value of an unknown_key agent
+  - Format filename = "l": Allow ".." as start of a directory name
+  - Format filename = "l": If the filename is just a filename's tail, display it on both sides
+  - Set g:tlib_filename_sep to "\" on Windows (again)
+  - g:tlib#cache#max_filename: If the cache filename is longer than N characters, use |pathshorten()|.
+  MD5 checksum: b64ce6764f39f40bfc95f3916bbb0057
+version: "1.04"
+

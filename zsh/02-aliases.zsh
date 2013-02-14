@@ -1,5 +1,5 @@
 alias x='xrandr --output DVI-0 --left-of DVI-1'
-alias xmind='XMind -data /home/sascha/.xmind/'
+alias xmind='XMind -data $HOME/.xmind/'
 alias update='sudo yaourt -Syua --noconfirm'
 alias ls='ls --color=auto'
 alias v='gvim'
@@ -20,6 +20,7 @@ alias tcub='sudo umount /home/sascha/Extern2'
 alias tcdb='truecrypt -d /dev/sdc1'
 alias m='xrandr --output VGA-0 --mode 1680x1050 --left-of LVDS
 feh --bg-fill /home/sascha/.wallpaper/current.jpg'
+alias ps='ps -a -c -o pid,command -x'
 
 # new mount function because alias does not accept parameters
 newmount()
@@ -28,8 +29,8 @@ newmount()
 }
 
 alias sm='newmount'
-alias smc='newmount /dev/sdc1 /home/sascha/Extern2'
-alias smb='newmount /dev/sdb1 /home/sascha/Extern2'
+alias smc='newmount /dev/sdc1 $HOME/Extern2'
+alias smb='newmount /dev/sdb1 $HOME/Extern2'
 
 # new umount function
 newumount()

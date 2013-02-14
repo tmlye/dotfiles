@@ -27,7 +27,7 @@ set matchtime=2             " Time match is shown in 0.1s
 " ======
 
 syntax on               " Syntax highlighting
-colorscheme getfresh    " Place schemes in .vim/colors
+colorscheme getfresh    " Place your schemes in .vim/colors
 
 " Search
 " ======
@@ -97,26 +97,19 @@ endif
 " Mappings
 " ========
 
+let mapleader='\'
+
 " Allow sudo filesaving
 cmap w!! %!sudo tee > /dev/null %
 
 " Reload vimrc when it's saved
 autocmd! BufWritePost .vimrc source ~/.vimrc
 
-" Nerdtree
-map <silent> <F3> :NERDTreeToggle<CR>
-let NERDTreeChDirMode = 2
-let NERDTreeShowBookmarks = 1
-	
-" Taglist
-nnoremap <silent> <F8> :TlistToggle<CR>
-
-" Bufferlist
-noremap <m-b> :TSelectBuffer<cr>
-inoremap <m-b> <c-o>:TSelectBuffer<cr>
-
-" Toggle comment and go to next line
-nnoremap <c-c> :TComment<CR>j
+" Move across wrapped lines better
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
 
 " Split window navigation
 nnoremap <c-j> <c-w>j
