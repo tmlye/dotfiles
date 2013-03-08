@@ -39,6 +39,8 @@ URxvt.cursorColor2:       #404040
 URxvt.perl-ext-common:  default,matcher
 URxvt.url-launcher:      /usr/bin/firefox
 URxvt.matcher.button:   1
+URxvt.keysym.C-l:  perl:matcher:last
+URxvt.keysym.M-l:  perl:matcher:list
 
 URxvt*font:         xft:DejaVuSansMono:pixelsize=11
 URxvt*boldFont:     xft:DejaVuSansMono:pixelsize=11
