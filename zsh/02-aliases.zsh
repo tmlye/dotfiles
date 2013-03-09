@@ -1,3 +1,5 @@
+alias de='test -f ~/.XkeymapDE && xkbcomp ~/.XkeymapDE $DISPLAY'
+alias us='test -f ~/.XkeymapUS && xkbcomp ~/.XkeymapUS $DISPLAY'
 alias x='xrandr --output DVI-0 --left-of DVI-1'
 alias xmind='XMind -data $HOME/.xmind/'
 alias update='sudo yaourt -Syua --noconfirm'
