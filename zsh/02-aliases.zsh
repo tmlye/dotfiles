@@ -1,6 +1,7 @@
 alias de='test -f ~/.XkeymapDE && xkbcomp -w 0 ~/.XkeymapDE $DISPLAY'
 alias us='test -f ~/.XkeymapUS && xkbcomp -w 0 ~/.XkeymapUS $DISPLAY'
-alias x='xrandr --output DVI-0 --left-of DVI-1'
+alias vga='xrandr --output VGA-0 --auto --left-of LVDS'
+alias hdmi='xrandr --output HDMI-0 --auto --left-of LVDS'
 alias xmind='XMind -data $HOME/.xmind/'
 alias update='sudo yaourt -Syua --noconfirm'
 alias ls='ls --color=auto'
