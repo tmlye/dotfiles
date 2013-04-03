@@ -21,7 +21,7 @@ $HOME/.gem/ruby/1.9.1/bin:\
 /usr/bin/site_perl:\
 /usr/bin/vendor_perl:\
 /usr/bin/core_perl:\
-$HOME/.bin:"
+$HOME/.dotfiles/bin:"
 
 # Less
 export LESSOPEN='| /usr/bin/highlight -0 ansi %s'

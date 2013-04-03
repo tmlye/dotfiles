@@ -19,6 +19,7 @@ done
 ln -s $HOME/.dotfiles/awesome/ $HOME/.config/awesome
 
 # X
+ln -s $HOME/.dotfiles/X/xinitrc $HOME/.xinitrc
 ln -s $HOME/.dotfiles/X/Xresources $HOME/.Xresources
 ln -s $HOME/.dotfiles/X/XkeymapUS $HOME/.XkeymapUS
 ln -s $HOME/.dotfiles/X/XkeymapDE $HOME/.XkeymapDE
