@@ -2,13 +2,14 @@ rsync -a --delete $HOME/Dropbox/Studium $HOME/Extern/Backup/Dropbox
 rsync -a --delete $HOME/Dropbox/Cheat\ Sheets $HOME/Extern/Backup/Dropbox
 rsync -a --delete $HOME/Code $HOME/Extern/Backup
 rsync -a --delete $HOME/Cryptdrop $HOME/Extern/Backup/Dropbox
-rsync -a $HOME/.gtkrc-2.0 $HOME/Extern/Backup/OS\ \&\ Images/Configs/
-rsync -a --delete $HOME/.gtktheme $HOME/Extern/Backup/OS\ \&\ Images/Configs/
-rsync -a --delete $HOME/.dotfiles $HOME/Extern/Backup/OS\ \&\ Images/Configs/
-rsync -a --delete $HOME/.mpdscribble $HOME/Extern/Backup/OS\ \&\ Images/Configs/
-rsync -a --delete $HOME/.mpd $HOME/Extern/Backup/OS\ \&\ Images/Configs/
-rsync -a --delete $HOME/.irssi $HOME/Extern/Backup/OS\ \&\ Images/Configs/
-rsync -a --delete $HOME/.config $HOME/Extern/Backup/OS\ \&\ Images/Configs/
-rsync -a --delete $HOME/.mozilla $HOME/Extern/Backup/OS\ \&\ Images/Configs/
-rsync -a --delete $HOME/.lastpass $HOME/Extern/Backup/OS\ \&\ Images/Configs/
-rsync -a --delete $HOME/.wallpaper $HOME/Extern/Backup/OS\ \&\ Images/Configs/
+rsync -a $HOME/.gtkrc-2.0 $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.gtktheme $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.dotfiles $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.mpdscribble $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.mpd $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.irssi $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.config $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.mozilla $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.lastpass $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.wallpaper $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/.ssh $HOME/Extern/Backup/OS/
