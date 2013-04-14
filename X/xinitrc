@@ -27,4 +27,4 @@ fi
 # Turn off bell
 /usr/bin/xset b off
 
-exec ck-launch-session dbus-launch awesome
+exec awesome

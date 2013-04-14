@@ -123,7 +123,7 @@ volwidget:buttons(awful.util.table.join(
 
 -- Wifiwidget
 wifiwidget = wibox.widget.textbox()
-vicious.register(wifiwidget, vicious.widgets.wifi, "<span color='#D4D7F2'>~</span> ${link}%", 5, "wlan0")
+vicious.register(wifiwidget, vicious.widgets.wifi, "<span color='#D4D7F2'>~</span> ${link}%", 5, "wlp8s0")
 
 -- Create a battery widget
 baticon = wibox.widget.imagebox()

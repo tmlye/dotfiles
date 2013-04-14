@@ -4,4 +4,3 @@ let g:buffergator_autoexpand_on_split = 0
 let g:buffergator_split_size = 20
 
 noremap <silent> <Leader>b :BuffergatorToggle<cr>
-inoremap <silent> <Leader>b <c-o>:BuffergatorToggle<cr>

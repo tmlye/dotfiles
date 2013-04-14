@@ -6,8 +6,8 @@ alias xmind='XMind -data $HOME/.xmind/'
 alias update='sudo yaourt -Syua --noconfirm'
 alias ls='ls --color=auto'
 alias v='gvim'
-alias tcm='truecrypt --mount /dev/sdb1 /home/sascha/Extern'
-alias tcu='sudo umount /home/sascha/Extern'
+alias tcm='truecrypt --mount /dev/sdb1 $HOME/Extern'
+alias tcu='sudo umount $HOME/Extern'
 alias tcd='truecrypt -d /dev/sdb1'
 alias shu='sudo shutdown -h now'
 alias re='sudo reboot'
@@ -18,11 +18,11 @@ alias tcdd='truecrypt -d ~/Dropbox/fear'
 alias install='sudo yaourt -S'
 alias uninstall='sudo yaourt -Rns'
 alias search='sudo yaourt -Ss'
-alias tcmb='truecrypt --mount /dev/sdc1 /home/sascha/Extern2'
-alias tcub='sudo umount /home/sascha/Extern2'
+alias tcmb='truecrypt --mount /dev/sdc1 $HOME/Extern2'
+alias tcub='sudo umount $HOME/Extern2'
 alias tcdb='truecrypt -d /dev/sdc1'
 alias m='xrandr --output VGA-0 --mode 1680x1050 --left-of LVDS
-feh --bg-fill /home/sascha/.wallpaper/current.jpg'
+feh --bg-fill $HOME/.wallpaper/current.jpg'
 alias ps='ps -a -c -o pid,command -x'
 
 # new mount function because alias does not accept parameters
@@ -42,4 +42,4 @@ newumount()
 }
 
 alias um='newumount'
-alias um2='newumount /home/sascha/Extern2'
+alias um2='newumount $HOME/Extern2'
