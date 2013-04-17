@@ -1,2 +1,5 @@
 *.log
 tags
+__pycache__
+ranger/bookmarks
+ranger/tagged
