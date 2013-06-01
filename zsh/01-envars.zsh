@@ -1,8 +1,8 @@
 ## ZSH Environment Variables
 ## ~/.config/zsh
 
-export HISTSIZE=100
-export SAVEHIST=100
+export HISTSIZE=10000
+export SAVEHIST=10000
 export HISTFILE=~/.dotfiles/zsh/history.log
 export DISPLAY=:0
 
