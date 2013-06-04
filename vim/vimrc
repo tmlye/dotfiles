@@ -4,9 +4,9 @@ set nocompatible            " Non-vi settings
 
 " Pathogen-vim
 " ============
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-
 
 " General
 " =======
@@ -22,6 +22,12 @@ set ruler                   " Show cursor position in status bar
 set hidden                  " Buffers can exist in the background
 set showmatch               " Briefly jump to matching bracket
 set matchtime=2             " Time match is shown in 0.1s
+
+" Reload vimrc when it's saved
+autocmd! BufWritePost .vimrc source ~/.vimrc
+" Safe and reload folds
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
 
 " Syntax
 " ======
@@ -102,9 +108,6 @@ let mapleader='\'
 
 " Allow sudo filesaving
 cmap w!! %!sudo tee > /dev/null %
-
-" Reload vimrc when it's saved
-autocmd! BufWritePost .vimrc source ~/.vimrc
 
 " Move across wrapped lines better
 noremap j gj
