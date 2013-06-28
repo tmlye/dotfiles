@@ -25,9 +25,6 @@ set matchtime=2             " Time match is shown in 0.1s
 
 " Reload vimrc when it's saved
 autocmd! BufWritePost .vimrc source ~/.vimrc
-" Safe and reload folds
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
 
 " Syntax
 " ======
@@ -76,6 +73,13 @@ set wrap                " Linewrapping
 let &showbreak='+++ '   " String to indicate wrapped line
 set cpoptions+=n        " Show above string between line numbers
 
+" Folding
+" =======
+
+" Safe and reload folds
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+
 " Scrolling
 " =========
 
@@ -120,3 +124,8 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" Clear highlighting after jump
+noremap <silent> gd gd:noh<CR>
+" Manual highlight clearing
+nnoremap <silent> <c-g> :noh<CR>

@@ -48,7 +48,7 @@ endif
   let LineNrFG      = '#555555'
   let LineNrBG      = '#101010'
 
-  let FoldFG        = DarkCyan
+  let FoldFG        = '#808080'
   let FoldLineBG    = NormalBG
   let FoldColBG     = '#050505'
 
