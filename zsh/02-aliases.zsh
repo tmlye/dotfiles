@@ -1,7 +1,7 @@
 alias de='test -f ~/.XkeymapDE && xkbcomp -w 0 ~/.XkeymapDE $DISPLAY'
 alias us='test -f ~/.XkeymapUS && xkbcomp -w 0 ~/.XkeymapUS $DISPLAY'
-alias vga='xrandr --output VGA-0 --auto --same-as LVDS'
 alias hdmi='xrandr --output HDMI-0 --auto --left-of LVDS'
+alias pres='xrandr --fb 1366x768 --output VGA-0 --mode 1024x768 --panning 1366x0'
 alias m='xrandr --output VGA-0 --mode 1680x1050 --left-of LVDS
 feh --bg-fill $HOME/.wallpaper/current.jpg'
 alias xmind='XMind -data $HOME/.xmind/'
