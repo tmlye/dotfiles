@@ -15,7 +15,6 @@ fi
 
 test -f ~/.XkeymapUS && xkbcomp ~/.XkeymapUS $DISPLAY
 
-dropboxd &
 /usr/bin/xautolock -time 3 -locker slock &
 mpd &
 

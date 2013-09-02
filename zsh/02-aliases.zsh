@@ -24,6 +24,7 @@ alias tcmb='truecrypt --mount /dev/sdc1 $HOME/Extern2'
 alias tcub='sudo umount $HOME/Extern2'
 alias tcdb='truecrypt -d /dev/sdc1'
 alias ps='ps -a -c -o pid,command -x'
+alias picasa='wine $HOME/.wine/drive_c/Program\ Files/Google/Picasa3/Picasa3.exe'
 
 # new mount function because alias does not accept parameters
 newmount()

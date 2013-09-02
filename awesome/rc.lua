@@ -105,8 +105,8 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
 -- Initialize Widget
 weatherwidget = wibox.widget.textbox()
 -- Register Widget
--- Nuernberg: EDDN, Kuala Lumpur: WMKK
-vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 300, "EDDN")
+-- Nuernberg: EDDN, Kuala Lumpur: WMKK, Hong Kong: VHHH
+vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 300, "VHHH")
 
 -- Volumewidget
 volicon = wibox.widget.imagebox()
