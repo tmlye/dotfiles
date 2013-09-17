@@ -3,3 +3,5 @@ mkdir $HOME/Extern2/playlistcopy
 mkdir $HOME/Extern2/playlistcopy/"$1"
 cat "$1" | grep -v '#' | \
 while read i; do cp $HOME/Extern/Musik/"${i}" $HOME/Extern2/playlistcopy/"$1" ; done
+
+# vim:set filetype=sh:

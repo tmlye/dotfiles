@@ -5,3 +5,5 @@ do mv "$i" "$i.JPG"
 done
 
 exiftool -d %Y%m%d_%H%M%S%%-c.%%e "-filename<CreateDate" "$1"
+
+# vim:set filetype=sh:
