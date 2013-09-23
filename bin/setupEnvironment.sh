@@ -9,7 +9,7 @@ else
 fi
 
 install_DE(){
-  package_install "xorg-server xorg-apps xautolock slock awesome zsh rxvt-unicode slim ttf-defavu"
+  package_install "xorg-server xorg-apps xautolock slock awesome zsh rxvt-unicode slim ttf-dejavu"
   aur_package_install "allblack-icons"
 }
 
@@ -59,8 +59,8 @@ finish_install(){
   sudo -u $USER cp -r /home/$USER/Extern/Backup/Downloads /home/$USER/
   cp -f /home/$USER/Extern/Backup/OS/slim.conf /etc/
   mkdir -p /usr/share/slim/themes
-  cp -r /home/$USER/Extern/Backup/OS/slim/ /usr/share/slim/themes/
-  sudo -u $USER cp -r /home/$USER/Extern/Backup/OS/home/* /home/$USER/
+  cp -r /home/$USER/Extern/Backup/OS/slim/simple /usr/share/slim/themes/
+  sudo -u $USER cp -r /home/$USER/Extern/Backup/OS/home/.* /home/$USER/
   echo "Enabling slim"
   system_ctl enable slim
   pause_function
