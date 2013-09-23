@@ -4,21 +4,23 @@ rsync -a --delete $HOME/Dropbox/Studium $HOME/Extern/Backup/Dropbox
 rsync -a --delete $HOME/Dropbox/Cheat\ Sheets $HOME/Extern/Backup/Dropbox
 rsync -a --delete $HOME/Code $HOME/Extern/Backup
 rsync -a --delete $HOME/Cryptdrop $HOME/Extern/Backup/Dropbox
-rsync -a --delete $HOME/.config $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.gem $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.dotfiles $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.gtktheme $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.irssi $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.lastpass $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.mozilla $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.mpd $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.mpdscribble $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.ssh $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.wallpaper $HOME/Extern/Backup/OS/
-rsync -a --delete $HOME/.wine $HOME/Extern/Backup/OS/
+rsync -a --delete $HOME/Desktop $HOME/Extern/Backup
+rsync -a --delete $HOME/Downloads $HOME/Extern/Backup
+rsync -a --delete $HOME/.config $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.gem $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.dotfiles $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.gtktheme $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.irssi $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.lastpass $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.mozilla $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.mpd $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.mpdscribble $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.ssh $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.wallpaper $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.wine $HOME/Extern/Backup/OS/home/
 # Files
-rsync -a $HOME/.gtkrc-2.0 $HOME/Extern/Backup/OS/
-rsync -a $HOME/.gitconfig $HOME/Extern/Backup/OS/
-rsync -a $HOME/.pentadactylrc $HOME/Extern/Backup/OS/
+rsync -a $HOME/.gtkrc-2.0 $HOME/Extern/Backup/OS/home/
+rsync -a $HOME/.gitconfig $HOME/Extern/Backup/OS/home/
+rsync -a $HOME/.pentadactylrc $HOME/Extern/Backup/OS/home/
 
 # vim:set filetype=sh:
