@@ -9,7 +9,7 @@ else
 fi
 
 install_DE(){
-  package_install "xorg-server xorg-apps xautolock slock awesome zsh rxvt-unicode slim ttf-dejavu"
+  package_install "xorg-server xorg-apps xorg-xinit xautolock slock awesome zsh rxvt-unicode slim ttf-dejavu"
   aur_package_install "allblack-icons"
 }
 
