@@ -15,7 +15,11 @@ fi
 
 test -f ~/.XkeymapUS && xkbcomp ~/.XkeymapUS $DISPLAY
 
+# Lock screen after 3 mins
 /usr/bin/xautolock -time 3 -locker slock &
+# Turn off screen after 3 mins
+xset +dpms
+xset dpms 0 0 301
 mpd &
 
 pidof mpdscribble >& /dev/null
