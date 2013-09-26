@@ -85,7 +85,7 @@ mpdwidget = wibox.widget.textbox()
 -- Register widget
 vicious.register(mpdwidget, vicious.widgets.mpd,
     function (widget, args)
-        if args["{state}"] == "Stop" then 
+        if args["{state}"] == "Stop" then
             --mpdicon:set_image(home .. "/.config/awesome/icons/stop.png")
             mpdicon:set_image(nil)
             return " "
@@ -123,7 +123,18 @@ volwidget:buttons(awful.util.table.join(
 
 -- Wifiwidget
 wifiwidget = wibox.widget.textbox()
-vicious.register(wifiwidget, vicious.widgets.wifi, "<span color='#D4D7F2'>~</span> ${link}%", 5, "wlp3s0")
+vicious.register(wifiwidget, vicious.widgets.wifi,
+--vicious.register(batt, get_batterystatus, '$1', 10)
+    function (widget, args)
+        local f = assert(io.popen("iwconfig"))
+        local wifi = assert(f:read("*all"))
+        f:close()
+        if(string.match(wifi, "Tx%-Power=(%a+)") == "off") then
+            return "<span color='#D4D7F2'>~</span> off"
+        else
+            return "<span color='#D4D7F2'>~</span> " .. args["{link}"] .. "%"
+        end
+    end, 5, "wlp3s0")
 
 -- Create a battery widget
 baticon = wibox.widget.imagebox()
@@ -131,7 +142,12 @@ baticon:set_image(home .. "/.config/awesome/icons/bat.png")
 --Initialize widget
 batwidget = wibox.widget.textbox()
 --Register widget
-vicious.register(batwidget, vicious.widgets.bat, "$1$2", 32, "BAT1")
+vicious.register(batwidget, vicious.widgets.bat, "$1$2", 32, "BAT0")
+-- Second battery
+--Initialize widget
+batwidget2 = wibox.widget.textbox()
+--Register widget
+vicious.register(batwidget2, vicious.widgets.bat, "$1$2", 32, "BAT1")
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
@@ -226,6 +242,8 @@ for s = 1, screen.count() do
     right_layout:add(seperator)
     -- Battery
     right_layout:add(baticon)
+    right_layout:add(batwidget2)
+    right_layout:add(spacer)
     right_layout:add(batwidget)
     right_layout:add(spacer)
     right_layout:add(seperator)
