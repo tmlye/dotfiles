@@ -242,9 +242,15 @@ for s = 1, screen.count() do
     right_layout:add(seperator)
     -- Battery
     right_layout:add(baticon)
-    right_layout:add(batwidget2)
-    right_layout:add(spacer)
     right_layout:add(batwidget)
+    -- Add second battery if present
+    local f = assert(io.popen("ls /sys/class/power_supply | grep BAT -c"))
+    local batCount = assert(f:read())
+    f:close()
+    if(batCount == "2") then
+        right_layout:add(spacer)
+        right_layout:add(batwidget2)
+    end
     right_layout:add(spacer)
     right_layout:add(seperator)
     right_layout:add(spacer)
