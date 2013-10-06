@@ -8,6 +8,7 @@ rsync -a --delete $HOME/Desktop $HOME/Extern/Backup
 rsync -a --delete $HOME/Downloads $HOME/Extern/Backup
 rsync -a --delete $HOME/.config $HOME/Extern/Backup/OS/home/
 rsync -a --delete $HOME/.gem $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/.gnupg $HOME/Extern/Backup/OS/home/
 rsync -a --delete $HOME/.dotfiles $HOME/Extern/Backup/OS/home/
 rsync -a --delete $HOME/.gtktheme $HOME/Extern/Backup/OS/home/
 rsync -a --delete $HOME/.irssi $HOME/Extern/Backup/OS/home/
