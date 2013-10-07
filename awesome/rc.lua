@@ -108,9 +108,22 @@ weatherwidget = wibox.widget.textbox()
 -- Nuernberg: EDDN, Kuala Lumpur: WMKK, Hong Kong: VHHH
 vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 300, "VHHH")
 
+-- Helper for setting the volume icon
+function setVolIconBasedOnStatus ()
+    local f = assert(io.popen("amixer cget name='Speaker Playback Switch'"))
+    local speaker = assert(f:read("*all"))
+    f:close()
+    if(string.match(speaker, "values=(%a+)") == "off") then
+        -- Speaker is muted
+        volicon:set_image(home .. "/.config/awesome/icons/mute.png")
+    else
+        volicon:set_image(home .. "/.config/awesome/icons/vol.png")
+    end
+end
+
 -- Volumewidget
 volicon = wibox.widget.imagebox()
-volicon:set_image(home .. "/.config/awesome/icons/vol.png")
+setVolIconBasedOnStatus()
 volwidget = wibox.widget.textbox()
 vicious.register(volwidget, vicious.widgets.volume, " $1% ", 2, "Master")
 -- Keybindings for widget
@@ -119,15 +132,7 @@ volwidget:buttons(awful.util.table.join(
     awful.button({ }, 3,
         function ()
             exec("amixer -q sset Speaker toggle")
-            local f = assert(io.popen("amixer cget name='Speaker Playback Switch'"))
-            local speaker = assert(f:read("*all"))
-            f:close()
-            if(string.match(speaker, "values=(%a+)") == "off") then
-                -- Speaker is muted
-                volicon:set_image(home .. "/.config/awesome/icons/mute.png")
-            else
-                volicon:set_image(home .. "/.config/awesome/icons/vol.png")
-            end
+            setVolIconBasedOnStatus()
         end),
     awful.button({ }, 4, function () exec("amixer -q sset Master 2dB+", false) end),
     awful.button({ }, 5, function () exec("amixer -q sset Master 2dB-", false) end)
