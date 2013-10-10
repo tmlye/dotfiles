@@ -14,14 +14,18 @@ local vicious = require("vicious")
 
 -- {{{ Variable definitions
 
--- This is used later as the default terminal to run.
+-- You might want to change these values
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "gvim"
 editor_cmd = terminal .. " -e " .. editor
 filemngr = terminal .. " -e ranger"
 browser = "firefox"
-exec = awful.util.spawn
+wificard = "wlp3s0"
+airportcode = "VHHH"
+-- Nuernberg: EDDN, Kuala Lumpur: WMKK, Hong Kong: VHHH
+
 home = os.getenv("HOME")
+exec = awful.util.spawn
 
 -- Themes define colours, icons, and wallpapers
 beautiful.init(home .. "/.config/awesome/theme.lua")
@@ -105,8 +109,7 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
 -- Initialize Widget
 weatherwidget = wibox.widget.textbox()
 -- Register Widget
--- Nuernberg: EDDN, Kuala Lumpur: WMKK, Hong Kong: VHHH
-vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 300, "VHHH")
+vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 300, airportcode)
 
 -- Helper for setting the volume icon
 function setVolIconBasedOnStatus ()
@@ -151,7 +154,7 @@ vicious.register(wifiwidget, vicious.widgets.wifi,
         else
             return "<span color='#D4D7F2'>~</span> " .. args["{link}"] .. "%"
         end
-    end, 5, "wlp3s0")
+    end, 5, wificard)
 
 -- Create a battery widget
 baticon = wibox.widget.imagebox()
