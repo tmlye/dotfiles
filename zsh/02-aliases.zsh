@@ -8,9 +8,9 @@ alias xmind='XMind -data $HOME/.xmind/'
 alias update='sudo yaourt -Syua --noconfirm'
 alias ls='ls --color=auto'
 alias v='gvim'
-alias tcm='truecrypt --mount /dev/sdb1 $HOME/Extern'
+alias tcm='truecrypt --mount /dev/sdc1 $HOME/Extern'
 alias tcu='sudo umount $HOME/Extern'
-alias tcd='truecrypt -d /dev/sdb1'
+alias tcd='truecrypt -d /dev/sdc1'
 alias shu='systemctl poweroff'
 alias re='sudo reboot'
 alias wd='sudo ifconfig wlan0 down'
@@ -33,6 +33,7 @@ newmount()
 }
 
 alias sm='newmount'
+alias smd='newmount /dev/sdc1 $HOME/Extern2'
 alias smc='newmount /dev/sdc1 $HOME/Extern2'
 alias smb='newmount /dev/sdb1 $HOME/Extern2'
 
