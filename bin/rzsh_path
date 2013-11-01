@@ -3,7 +3,7 @@
 
 # print "%F{1}/"
 
-ENV["PWD"].gsub(/home\/[a-zA-Z0-9]*/, "~").split("/").each { |d|
+Dir.pwd.gsub(/home\/[a-zA-Z0-9]*/, "~").split("/").each { |d|
   print "%F{8} \u00BB " unless @i < 2
   print "%F{#{@i}}#{d}"
   @i += 1
