@@ -1,14 +1,14 @@
 Contrib
 -------
-Contrib widgets are extra widgets you can use. Some are for less
-common hardware, and other were contributed by Vicious users. The
-contrib directory also holds widget types that were obsoleted or
-rewritten. Contrib widgets will not be imported by init unless you
-explicitly enable it, or load them in your rc.lua.
+Contrib libraries, or widget types, are extra snippets of code you can
+use. Some are for less common hardware, and other were contributed by
+Vicious users. The contrib directory also holds widget types that were
+obsoleted or rewritten. Contrib widgets will not be imported by init
+unless you explicitly enable it, or load them in your rc.lua.
 
 
-Usage
------
+Usage within Awesome
+--------------------
 To use contrib widgets uncomment the line that loads them in
 init.lua. Or you can load them in your rc.lua after you require
 Vicious:
@@ -27,6 +27,14 @@ widgets like PulseAudio have emerged that are different. These widgets
 could also depend on Lua libraries that are not distributed with the
 core Lua distribution. Ease of installation and use does not
 necessarily have to apply to contributed widgets.
+
+vicious.contrib.ati
+  - provides various info about ATI GPU status
+  - takes card ID as an argument, i.e. "card0" (and where possible,
+    uses debugfs to gather data on radeon power management)
+  - returns a table with string keys: {method}, {dpm_state},
+    {dpm_perf_level}, {profile}, {engine_clock mhz}, {engine_clock khz},
+    {memory_clock mhz}, {memory_clock khz}, {voltage v}, {voltage mv}
 
 vicious.contrib.batacpi
   -
@@ -53,6 +61,12 @@ vicious.contrib.netcfg
 
 vicious.contrib.net
   -
+
+vicious.contrib.openweather
+  - provides weather information for a requested city
+  - takes OpenWeatherMap city ID as an argument, i.e. "1275339"
+  - returns a table with string keys: {city}, {wind deg}, {wind aim},
+    {wind kmh}, {wind mps}, {sky}, {weather}, {temp c}, {humid}, {press}
 
 vicious.contrib.ossvol
   -
@@ -85,13 +99,29 @@ vicious.contrib.rss
 vicious.contrib.sensors
   -
 
+vicious.contrib.buildbot
+  - provides last build status for configured buildbot builders (http://trac.buildbot.net/)
+  - returns build status in the format: [<builderName>.<currentBuildNumber>.<lastSuccessfulBuildNumber>]
+  - if <currentBuildNumber> is the same as <lastSuccessfulBuildNumber> only one number is displayed
+  - <buildNumber> colors: red - failed, green - successful, yellow - in progress
+  - it depends on lua json parser (e.g. liblua5.1-json on Ubuntu 12.04)
+
 
 Usage examples
---------------
+---------------------------------
 Pulse Audio widget
+  vol = wibox.widget.textbox()
   vicious.register(vol, vicious.contrib.pulse, " $1%", 2, "alsa_output.pci-0000_00_1b.0.analog-stereo")
   vol:buttons(awful.util.table.join(
     awful.button({ }, 1, function () awful.util.spawn("pavucontrol") end),
     awful.button({ }, 4, function () vicious.contrib.pulse.add(5,"alsa_output.pci-0000_00_1b.0.analog-stereo") end),
     awful.button({ }, 5, function () vicious.contrib.pulse.add(-5,"alsa_output.pci-0000_00_1b.0.analog-stereo") end)
   ))
+
+Buildbot widget
+  buildbotwidget = wibox.widget.textbox()
+  local buildbotwidget_warg = {
+    {builder="coverage", url="http://buildbot.buildbot.net"},
+    {builder="tarball-slave", url="http://buildbot.buildbot.net"}
+  }
+  vicious.register(buildbotwidget, vicious.contrib.buildbot, "$1,", 3600, buildbotwidget_warg)

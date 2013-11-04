@@ -21,6 +21,9 @@ editor_cmd = terminal .. " -e " .. editor
 filemngr = terminal .. " -e ranger"
 browser = "firefox"
 wificard = "wlp3s0"
+mpdHost = "0.0.0.0"
+mpdPassword = "\"\""
+mpdPort = "6600"
 airportcode = "VHHH"
 -- Nuernberg: EDDN, Kuala Lumpur: WMKK, Hong Kong: VHHH
 
@@ -87,6 +90,7 @@ mpdicon:set_image(home .. "/.config/awesome/icons/note.png")
 -- Initialize widget
 mpdwidget = wibox.widget.textbox()
 -- Register widget
+wargs = { mpdPassword, mpdHost, mpdPort }
 vicious.register(mpdwidget, vicious.widgets.mpd,
     function (widget, args)
         if args["{state}"] == "Stop" then
@@ -103,7 +107,7 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
             mpdicon:set_image(home .. "/.config/awesome/icons/note.png")
             return "MPD status unknown"
         end
-    end, 3)
+    end, 5, wargs)
 
 -- Weather Widget
 -- Initialize Widget
