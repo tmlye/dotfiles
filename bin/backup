@@ -23,6 +23,7 @@ rsync -a --delete $HOME/.wine $HOME/Extern/Backup/OS/home/
 # Files
 rsync -a $HOME/.gtkrc-2.0 $HOME/Extern/Backup/OS/home/
 rsync -a $HOME/.gitconfig $HOME/Extern/Backup/OS/home/
+rsync -a $HOME/.mpdconf $HOME/Extern/Backup/OS/home/
 rsync -a $HOME/.pentadactylrc $HOME/Extern/Backup/OS/home/
 
 # vim:set filetype=sh:
