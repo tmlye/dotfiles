@@ -113,7 +113,7 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
 -- Initialize Widget
 weatherwidget = wibox.widget.textbox()
 -- Register Widget
-vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 300, airportcode)
+vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 301, airportcode)
 
 -- Helper for setting the volume icon
 function setVolIconBasedOnStatus ()
@@ -158,7 +158,7 @@ vicious.register(wifiwidget, vicious.widgets.wifi,
         else
             return "<span color='#D4D7F2'>~</span> " .. args["{link}"] .. "%"
         end
-    end, 5, wificard)
+    end, 7, wificard)
 
 -- Create a battery widget
 baticon = wibox.widget.imagebox()
@@ -166,12 +166,12 @@ baticon:set_image(home .. "/.config/awesome/icons/bat.png")
 --Initialize widget
 batwidget = wibox.widget.textbox()
 --Register widget
-vicious.register(batwidget, vicious.widgets.bat, "$1$2", 32, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, "$1$2", 37, "BAT0")
 -- Second battery
 --Initialize widget
 batwidget2 = wibox.widget.textbox()
 --Register widget
-vicious.register(batwidget2, vicious.widgets.bat, "$1$2", 32, "BAT1")
+vicious.register(batwidget2, vicious.widgets.bat, "$1$2", 31, "BAT1")
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
