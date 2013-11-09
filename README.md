@@ -25,9 +25,10 @@ locations in your home folder. Backups will be saved as filename.backup.
   - mod4 + F12 : lock screen (requires xautolock and slock)
   - All other keys are default awesome bindings
 - *Battery*: In case you have two batteries in your laptop, the battery widget will show both, if not, it won't
-- *Volumne*: Right clicking on the volume text will mute the internal speaker (not master volumne) and change the icon accordingly.
+- *Volumne*: You can specify which soundcard to control with this widget at the top of rc.lua. Use ``aplay -l`` to get the number of your card. 
+  Right clicking on the volume text will mute the internal speaker (not master volumne) and change the icon accordingly.
   This means you can still use headphones. If your soundcard does not have speperate controls for speaker and headphones, you will need to fix this.
-  Left clicking the text will open alsamixer. Scolling while hovering over the text will change master volumne.
+  Left clicking the text will open alsamixer. Scrolling while hovering over the text will change master volumne.
 - *MPD*: The MPD icon changes according to the state MPD is in. If the state is 'stop' nothing will be shown. You can specify the IP, port and password at the top of rc.lua.
 - *Weather*: You will need to change the ICAO (airport code) to your city at the top of rc.lua
 
