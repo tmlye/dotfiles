@@ -1,0 +1,25 @@
+# Main configuration based on http://www.physics.drexel.edu/liki/index.php/Mutt
+
+set folder = ~/.mail
+source ~/.dotfiles/mail/mutt/muttmailboxes
+set spoolfile = +"ohm/inbox"
+
+source ~/.dotfiles/mail/mutt/common
+source ~/.dotfiles/mail/mutt/colors
+# Not using alias to store addresses now,
+# using lbdb
+#set alias_file=~/.dotfiles/mail/mutt/aliases
+#source $alias_file
+set query_command="lbdbq '%s'"
+#source ~/.dotfiles/mail/mutt/pgp
+
+# if we are in any directory starting with the following, pull
+# specific settings from somewhere else
+folder-hook +ohm/.* "source ~/.dotfiles/mail/mutt/ohm"
+folder-hook +gmail/.* "source ~/.dotfiles/mail/mutt/gmail"
+
+# Mutt will mark emails from these addresses as having been sent by you
+alternates eglausa45793@th-nuernberg.de sascha.eglau@gmail.com
+
+# All the macros we have defined
+source ~/.dotfiles/mail/mutt/macros

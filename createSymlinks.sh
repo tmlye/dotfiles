@@ -36,3 +36,5 @@ ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 
 # ranger
 ln -s $HOME/.dotfiles/ranger/ $HOME/.config/ranger
+
+echo "Done. If you want to setup mail, check the .dotfiles/mail directory."
