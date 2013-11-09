@@ -21,6 +21,7 @@ editor_cmd = terminal .. " -e " .. editor
 filemngr = terminal .. " -e ranger"
 browser = "firefox"
 wificard = "wlp3s0"
+soundCard = "1"
 mpdHost = "0.0.0.0"
 mpdPassword = "\"\""
 mpdPort = "6600"
@@ -117,7 +118,7 @@ vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 301, airp
 
 -- Helper for setting the volume icon
 function setVolIconBasedOnStatus ()
-    local f = assert(io.popen("amixer cget name='Speaker Playback Switch'"))
+    local f = assert(io.popen("amixer -c "..soundCard.." cget name='Speaker Playback Switch'"))
     local speaker = assert(f:read("*all"))
     f:close()
     if(string.match(speaker, "values=(%a+)") == "off") then
@@ -132,17 +133,17 @@ end
 volicon = wibox.widget.imagebox()
 setVolIconBasedOnStatus()
 volwidget = wibox.widget.textbox()
-vicious.register(volwidget, vicious.widgets.volume, " $1% ", 2, "Master")
+vicious.register(volwidget, vicious.widgets.volume, " $1% ", 3, "-c "..soundCard.." Master")
 -- Keybindings for widget
 volwidget:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () exec(terminal .. " -e alsamixer") end),
+    awful.button({ }, 1, function () exec(terminal .. " -e alsamixer -c "..soundCard) end),
     awful.button({ }, 3,
         function ()
-            exec("amixer -q sset Speaker toggle")
+            exec("amixer -c "..soundCard.." -q sset Speaker toggle")
             setVolIconBasedOnStatus()
         end),
-    awful.button({ }, 4, function () exec("amixer -q sset Master 2dB+", false) end),
-    awful.button({ }, 5, function () exec("amixer -q sset Master 2dB-", false) end)
+    awful.button({ }, 4, function () exec("amixer -c "..soundCard.." -q sset Master 2dB+", false) end),
+    awful.button({ }, 5, function () exec("amixer -c "..soundCard.." -q sset Master 2dB-", false) end)
  ))
 
 -- Wifiwidget
