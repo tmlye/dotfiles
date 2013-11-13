@@ -7,6 +7,7 @@ accounts = ohm, gmail
 maxsyncaccounts = 2
 socktimeout = 60
 ui = Basic
+fsync = false
 
 # This helper file lets you use gnome-keyring to store usernames / passwords
 pythonfile = ~/.dotfiles/mail/bin/offlineimap-helper.py
@@ -75,14 +76,13 @@ nametrans = lambda foldername: re.sub (' ', '_', foldername.lower())
 type = Maildir
 localfolders = ~/.mail/gmail
 # Note the nametrans below in remote-gmail: it undoes this one
-nametrans = lambda foldername: re.sub ('Inbox', 'INBOX',
-                               re.sub ('Drafts', '[Google Mail].Drafts',
-                               re.sub ('Trash', '[Google Mail].Trash',
-                               re.sub ('Sent', '[Google Mail].Sent Mail',
-                               re.sub ('Important', '[Google Mail].Important',
-                               re.sub ('Flagged', '[Google Mail].Starred',
-                               re.sub ('_', ' ', foldername.capitalize())))))))
-
+nametrans = lambda folder: {'inbox':   'INBOX',
+                            'drafts':  '[Google Mail]/Drafts',
+                            'sent':    '[Google Mail]/Sent Mail',
+                            'flagged': '[Google Mail]/Starred',
+                            'trash':   '[Google Mail]/Trash',
+                            'archive': '[Google Mail]/All Mail',
+                            }.get(folder, folder)
 
 [Repository remote-gmail]
 type = Gmail
@@ -95,10 +95,13 @@ ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 realdelete = yes
 # Note the nametrans above in local-gmail: it undoes this one
-nametrans = lambda foldername: re.sub ('^\[google_mail\]\/', '',
-                               re.sub ('sent_mail', 'sent',
-                               re.sub ('starred', 'flagged',
-                               re.sub (' ', '_', foldername.lower()))))
+nametrans = lambda folder: {'INBOX':                   'inbox',
+                            '[Google Mail]/Drafts':    'drafts',
+                            '[Google Mail]/Sent Mail': 'sent',
+                            '[Google Mail]/Starred':   'flagged',
+                            '[Google Mail]/Trash':     'trash',
+                            '[Google Mail]/All Mail':  'archive',
+                            }.get(folder, folder)
 
-# We don't want to sync all mail, it would pull everything again
-folderfilter = lambda foldername: foldername not in ['[Google Mail]/All Mail','[Google Mail]/Trash','[Google Mail]/Spam']
+# Don't sync spam
+folderfilter = lambda foldername: foldername not in ['[Google Mail]/Spam']

@@ -11,10 +11,10 @@ set sendmail="/usr/bin/msmtp -a gmail"
 set from="sascha.eglau@gmail.com"
 
 # Thread yourself
-#my_hdr bcc: username@gmail.com
+my_hdr bcc: sascha.eglau@gmail.com
 
 # pgp settings
-unmy_hdr X-PGP-Key
-set pgp_autosign = no
+#unmy_hdr X-PGP-Key
+#set pgp_autosign = no
 
 # vim: set ft=muttrc
