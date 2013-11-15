@@ -10,15 +10,24 @@ bind index R        group-reply
 macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
 
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
-macro generic   ,<Space>    ":source ~/.dotfiles/mail/mutt/muttrc\n" "Reload mutt's configuration file"
 macro index \cn     <next-unread-mailbox>
+
+# Generic keybindings
+# -------------------
+macro generic   ,<Space>    ":source ~/.dotfiles/mail/mutt/muttrc\n" "Reload mutt's configuration file"
+macro index,pager \043 "<save-message>=gmail/trash<enter><refresh>" "Trash Message"
+
+# Pager keybindings
+# -----------------
 macro pager j       <next-line>
 macro pager k       <previous-line>
 macro pager <PageUp>    <previous-undeleted>
 macro pager <PageDown>  <next-undeleted>
 macro pager \cb         <pipe-entry>'w3m'<enter> 'Follow links in w3m'
-macro index,pager \043 "<save-message>=gmail/trash<enter><refresh>" "Trash Message"
 
 
 # macros for mairix

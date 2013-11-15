@@ -37,4 +37,8 @@ ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 # ranger
 ln -s $HOME/.dotfiles/ranger/ $HOME/.config/ranger
 
-echo "Done. If you want to setup mail, check the .dotfiles/mail directory."
+# browser
+ln -s $HOME/.dotfiles/browser/pentadactylrc $HOME/.pentadactylrc
+
+echo "You'll have to symlink the userChrome.css file manually if you want to use it."
+echo "If you want to setup mail, check the .dotfiles/mail directory."

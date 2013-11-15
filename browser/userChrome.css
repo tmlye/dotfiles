@@ -1,0 +1,104 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/* Hides the menu button */
+#appmenu-toolbar-button { display: none !important; }
+
+/* Hides the ugly xmarks stars */
+#foxmarks-statusbarpanel { display:none!important; }
+#status-bar { margin-right:2px; }
+
+/* Toolbar Buttons */
+#TabsToolbar toolbarbutton {
+    background: transparent !important;
+    -moz-appearance: none !important;
+    margin: 0px 0px 8px 0px !important;
+}
+#TabsToolbar toolbarbutton > image {
+    margin: 0 !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+#TabsToolbar #personal-bookmarks {
+    max-width:65px!important;
+    min-width:60px!important;
+}
+
+#main-window #tabbrowser-tabs tab
+{
+    background:#1c1c1c!important;
+    border:0!important;
+    color:rgba(155,155,155,1)!important;
+    text-shadow:rgba(0,0,0,.8) 0 0 1px!important;
+
+    margin:0px 0px 0px!important;
+    min-height:18px!important;
+    max-height:18px!important;
+    padding:0 6px!important;
+    border-radius:0 0 0px 0px!important;
+    font: 11px consolas !important;
+    font-weight: normal !important;
+}
+#main-window #tabbrowser-tabs tab[selected]
+{
+    /*color:#ffffff!important;
+    background:#2c2c2c!important;
+    font-weight:bold!important;      
+    text-decoration:underline!important;*/
+    color:rgba(255,255,255,.8)!important;
+}
+#main-window #tabbrowser-tabs tab .tab-throbber,
+#main-window #tabbrowser-tabs tab .tab-icon-image
+{
+    max-height:10px!important;
+    max-width:10px!important;
+    margin-top:0px!important;
+    display:none!important;
+}
+#main-window #tabbrowser-tabs tab[fadein]
+{
+    -moz-transition:all .2s ease-in-out!important;
+}
+#main-window #tabbrowser-tabs tab:not([selected]):hover
+{
+    color:rgba(255,255,255,.8)!important;
+}
+#main-window #tabbrowser-tabs tab .tab-close-button
+{
+    opacity:0!important;
+    -moz-transition:all .1s ease-in-out!important;
+}
+#main-window #tabbrowser-tabs tab .tab-close-button .toolbarbutton-icon
+{
+    max-height:10px!important;
+    max-width:10px!important;
+}
+#main-window #tabbrowser-tabs tab[selected] .tab-close-button,
+#main-window #tabbrowser-tabs tab:hover .tab-close-button
+{
+    opacity:0!important;
+}
+#main-window #tabbrowser-tabs tab[fadein]:not([pinned])
+{
+    min-width:50px!important;
+    max-width:2000px!important;
+}
+#main-window #tabbrowser-tabs tab[pinned]
+{
+    max-width:24px!important;
+    min-width:24px!important;
+}
+#main-window #tabbrowser-tabs tab[pinned] .tab-close-button
+{
+    display:none!important;
+}
+.tabbrowser-tab
+{
+    text-align:center!important
+}
+#main-window #TabsToolbar
+{
+    margin: 0px 0px -10px!important;
+    padding:0px 0px 0px!important;
+    background:#1c1c1c!important;
+    -moz-appearance: none !important;
+}
