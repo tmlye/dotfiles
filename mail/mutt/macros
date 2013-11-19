@@ -6,6 +6,13 @@ bind index G        last-entry
 
 bind index R        group-reply
 
+# Sidebar
+bind index \cj sidebar-next
+bind index \ck sidebar-prev
+bind index \co sidebar-open
+
+bind index \cn     <next-unread-mailbox>
+
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
@@ -14,7 +21,6 @@ macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to s
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
-macro index \cn     <next-unread-mailbox>
 
 # Generic keybindings
 # -------------------
