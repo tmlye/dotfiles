@@ -103,5 +103,5 @@ nametrans = lambda folder: {'INBOX':                   'inbox',
                             '[Google Mail]/All Mail':  'archive',
                             }.get(folder, folder)
 
-# Don't sync spam
-folderfilter = lambda foldername: foldername not in ['[Google Mail]/Spam']
+# Don't sync spam and trash
+folderfilter = lambda foldername: foldername not in ['[Google Mail]/Spam','[Google Mail]/Trash']
