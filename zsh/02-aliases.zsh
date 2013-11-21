@@ -45,3 +45,10 @@ newumount()
 
 alias um='newumount'
 alias um2='newumount $HOME/Extern2'
+
+# grep
+grephistory()
+{
+    grep $1 $HOME/.dotfiles/zsh/history.log
+}
+alias his='grephistory'
