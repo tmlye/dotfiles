@@ -6,4 +6,4 @@
 source $HOME/.Xdbus
 
 # Perform the synchronization
-/usr/bin/offlineimap > /tmp/.offlineimap.last.log
+/usr/bin/offlineimap > $HOME/.dotfiles/mail/offlineimap.last.log

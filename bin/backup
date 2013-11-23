@@ -2,8 +2,8 @@
 # Folders
 rsync -a --delete $HOME/Dropbox/Studium $HOME/Extern/Backup/Dropbox
 rsync -a --delete $HOME/Dropbox/Cheat\ Sheets $HOME/Extern/Backup/Dropbox
+rsync -a --delete $HOME/Dropbox/Notes $HOME/Extern/Backup/Dropbox
 rsync -a --delete $HOME/Code $HOME/Extern/Backup
-rsync -a --delete $HOME/Cryptdrop $HOME/Extern/Backup/Dropbox
 rsync -a --delete $HOME/Desktop $HOME/Extern/Backup
 rsync -a --delete $HOME/Downloads $HOME/Extern/Backup
 rsync -a --delete $HOME/.config $HOME/Extern/Backup/OS/home/
