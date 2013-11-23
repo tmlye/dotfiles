@@ -54,7 +54,7 @@ nametrans = lambda foldername: re.sub ('archive', 'Archive',
 
 [Repository remote-ohm]
 type = IMAP
-maxconnections = 2
+maxconnections = 3
 remotehost = my.ohmportal.de
 remoteusereval = get_username("my.ohmportal.de")
 remotepasseval = get_password("my.ohmportal.de")
@@ -86,7 +86,7 @@ nametrans = lambda folder: {'inbox':   'INBOX',
 
 [Repository remote-gmail]
 type = Gmail
-maxconnections = 2
+maxconnections = 3
 remotehost = imap.gmail.com
 remoteusereval = get_username("imap.gmail.com")
 remotepasseval = get_password("imap.gmail.com")
