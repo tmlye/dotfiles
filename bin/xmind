@@ -1,3 +1,3 @@
-#!bin/bash
-cd $HOME/.xmind/
-exec XMind
+#!/bin/sh
+mkdir -p $HOME/.xmind;
+XMind -data $HOME/.xmind/ &

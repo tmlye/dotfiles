@@ -1,0 +1,2 @@
+#!/bin/sh
+wine $HOME/.wine/drive_c/Program\ Files/Google/Picasa3/Picasa3.exe
