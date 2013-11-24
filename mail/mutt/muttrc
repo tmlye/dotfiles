@@ -51,6 +51,11 @@ set sort_re                                # thread based on regex
 set reply_regexp = "^(re([\[0-9\]+])*|aw):[ \t]*"
 folder-hook . 'push \eV'                   #collapse threads on entering folder
 
+# Pager options
+set pager_stop                             # don't go to next message automatically
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+alternative_order text/plain text/enriched text/html
+
 source ~/.dotfiles/mail/mutt/muttmailboxes
 set spoolfile = +"ohm/inbox"
 
