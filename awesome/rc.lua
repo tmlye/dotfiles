@@ -13,18 +13,30 @@ local wibox = require("wibox")
 local vicious = require("vicious")
 
 -- {{{ Variable definitions
-
 -- You might want to change these values
+
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "gvim"
 editor_cmd = terminal .. " -e " .. editor
+
+-- Launched with MOD4+e
 filemngr = terminal .. " -e ranger"
+
+-- Launched with MOD4+q
 browser = "firefox"
+
+-- Name of wificard for wifi widget
 wificard = "wlp3s0"
+
+-- Which soundcard to use for volumne widget
 soundCard = "1"
+
+-- MPD Data
 mpdHost = "0.0.0.0"
 mpdPassword = "\"\""
 mpdPort = "6600"
+
+-- Airportcode for the weather widget
 airportcode = "VHHH"
 -- Nuernberg: EDDN, Kuala Lumpur: WMKK, Hong Kong: VHHH
 
@@ -442,8 +454,6 @@ awful.rules.rules = {
                      size_hints_honor = false} },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
---    { rule = { class = "Gvim" },
---      properties = { size_hints_honor = true }},
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tag number 1 of screen 1.
