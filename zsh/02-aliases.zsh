@@ -29,7 +29,7 @@ newmount()
 }
 
 alias sm='newmount'
-alias smd='newmount /dev/sdc1 $HOME/Extern2'
+alias smd='newmount /dev/sdd1 $HOME/Extern2'
 alias smc='newmount /dev/sdc1 $HOME/Extern2'
 alias smb='newmount /dev/sdb1 $HOME/Extern2'
 
