@@ -7,9 +7,9 @@ bind index G        last-entry
 bind index R        group-reply
 
 # Sidebar
-bind index ) sidebar-next
-bind index ( sidebar-prev
-bind index O sidebar-open
+bind index,pager ) sidebar-next
+bind index,pager ( sidebar-prev
+bind index,pager O sidebar-open
 
 bind index \cn next-unread-mailbox
 
