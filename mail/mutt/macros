@@ -6,25 +6,26 @@ bind index G        last-entry
 
 bind index R        group-reply
 
-# Sidebar
-bind index,pager ) sidebar-next
-bind index,pager ( sidebar-prev
-bind index,pager O sidebar-open
-
 bind index \cn next-unread-mailbox
 
 # Sync email
 macro index \co "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
-
-# Saner copy/move dialogs
-macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 
 # Generic keybindings
 # -------------------
 macro generic   ,<Space>    ":source ~/.dotfiles/mail/mutt/muttrc\n" "Reload mutt's configuration file"
 macro index,pager \043 "<save-message>=gmail/trash<enter><refresh>" "Trash Message"
+
+# Sidebar
+bind index,pager ) sidebar-next
+bind index,pager ( sidebar-prev
+bind index,pager O sidebar-open
+
+# Saner copy/move dialogs
+macro index,pager C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index,pager M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
 
 # Pager keybindings
 # -----------------
