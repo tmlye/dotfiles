@@ -63,6 +63,9 @@ chmod 600 $HOME/.dotfiles/mail/msmtprc
 rm $HOME/.dotfiles/bin/pullmail.sh
 ln -s $HOME/.dotfiles/mail/lib/pullmail.sh $HOME/.dotfiles/bin/pullmail.sh
 
+# Create required folders
+mkdir -p $HOME/.mutt/{temp,cache}
+
 # Print out the notes to end
 notes
 
