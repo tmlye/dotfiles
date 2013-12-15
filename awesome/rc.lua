@@ -459,6 +459,9 @@ awful.rules.rules = {
     -- Set Firefox to always map on tag number 1 of screen 1.
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][1] } },
+    -- Fix fullscreen for flash video
+    { rule = { class = "Plugin-container" },
+      properties = { floating = true } }
 }
 -- }}}
 
