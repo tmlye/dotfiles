@@ -37,7 +37,7 @@ mpdPassword = "\"\""
 mpdPort = "6600"
 
 -- Airportcode for the weather widget
-airportcode = "VHHH"
+airportcode = "EDDN"
 -- Nuernberg: EDDN, Kuala Lumpur: WMKK, Hong Kong: VHHH
 
 home = os.getenv("HOME")

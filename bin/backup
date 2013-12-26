@@ -25,6 +25,5 @@ rsync -a $HOME/.asoundrc $HOME/Extern/Backup/OS/home/
 rsync -a $HOME/.gtkrc-2.0 $HOME/Extern/Backup/OS/home/
 rsync -a $HOME/.gitconfig $HOME/Extern/Backup/OS/home/
 rsync -a $HOME/.mpdconf $HOME/Extern/Backup/OS/home/
-rsync -a $HOME/.pentadactylrc $HOME/Extern/Backup/OS/home/
 
 # vim:set filetype=sh:
