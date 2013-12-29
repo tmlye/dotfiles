@@ -55,6 +55,8 @@ folder-hook . 'push \eV'                   #collapse threads on entering folder
 set pager_stop                             # don't go to next message automatically
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 alternative_order text/plain text/enriched text/html
+set pager_context=3	# number of lines, to display twice on PgUp/Down
+set pager_index_lines=4	# add small message index at top of pager (4)
 
 source ~/.dotfiles/mail/mutt/muttmailboxes
 set spoolfile = +"ohm/inbox"
