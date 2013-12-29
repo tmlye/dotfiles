@@ -8,25 +8,45 @@
 "             Want To Public License, Version 2, as published by Sam Hocevar.
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "============================================================================
-if !exists("g:syntastic_javascript_jshint_conf")
-    let g:syntastic_javascript_jshint_conf = ""
+
+if exists('g:loaded_syntastic_javascript_jshint_checker')
+    finish
+endif
+let g:loaded_syntastic_javascript_jshint_checker=1
+
+if !exists('g:syntastic_jshint_exec')
+    let g:syntastic_jshint_exec = 'jshint'
 endif
 
-function! SyntaxCheckers_javascript_jshint_IsAvailable()
-    return executable('jshint')
+if !exists('g:syntastic_javascript_jshint_conf')
+    let g:syntastic_javascript_jshint_conf = ''
+endif
+
+function! SyntaxCheckers_javascript_jshint_IsAvailable() dict
+    return executable(expand(g:syntastic_jshint_exec))
 endfunction
 
-function! SyntaxCheckers_javascript_jshint_GetLocList()
-    let makeprg = syntastic#makeprg#build({
-                \ 'exe': 'jshint',
-                \ 'post_args': s:Args(),
-                \ 'subchecker': 'jshint' })
+function! SyntaxCheckers_javascript_jshint_GetLocList() dict
+    let jshint_new = s:JshintNew()
+    let makeprg = self.makeprgBuild({
+        \ 'exe': expand(g:syntastic_jshint_exec),
+        \ 'post_args': (jshint_new ? ' --verbose ' : '') . s:Args() })
 
-    let errorformat = '%ELine %l:%c,%Z\\s%#Reason: %m,%C%.%#,%f: line %l\, col %c\, %m,%-G%.%#'
-    return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat, 'defaults': {'bufnr': bufnr('')} })
+    let errorformat = jshint_new ?
+        \ '%A%f: line %l\, col %v\, %m \(%t%*\d\)' :
+        \ '%E%f: line %l\, col %v\, %m'
+
+    return SyntasticMake({
+        \ 'makeprg': makeprg,
+        \ 'errorformat': errorformat,
+        \ 'defaults': {'bufnr': bufnr('')} })
 endfunction
 
-function s:Args()
+function! s:JshintNew()
+    return syntastic#util#versionIsAtLeast(syntastic#util#getVersion(expand(g:syntastic_jshint_exec) . ' --version'), [1, 1])
+endfunction
+
+function! s:Args()
     " node-jshint uses .jshintrc as config unless --config arg is present
     return !empty(g:syntastic_javascript_jshint_conf) ? ' --config ' . g:syntastic_javascript_jshint_conf : ''
 endfunction

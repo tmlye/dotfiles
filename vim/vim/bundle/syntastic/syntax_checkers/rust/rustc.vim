@@ -10,21 +10,23 @@
 "
 "============================================================================
 
-function! SyntaxCheckers_rust_rustc_IsAvailable()
-    return executable("rustc")
-endfunction
+if exists("g:loaded_syntastic_rust_rustc_checker")
+    finish
+endif
+let g:loaded_syntastic_rust_rustc_checker=1
 
-function! SyntaxCheckers_rust_rustc_GetLocList()
-    let makeprg = syntastic#makeprg#build({
-                \ 'exe': 'rustc',
-                \ 'args': '--parse-only' })
+function! SyntaxCheckers_rust_rustc_GetLocList() dict
+    let makeprg = self.makeprgBuild({ 'args': '--parse-only' })
 
-    let errorformat  = '%E%f:%l:%c: \\d%#:\\d%# %.%\{-}error:%.%\{-} %m,'   .
-                     \ '%W%f:%l:%c: \\d%#:\\d%# %.%\{-}warning:%.%\{-} %m,' .
-                     \ '%C%f:%l %m,' .
-                     \ '%-Z%.%#'
+    let errorformat  =
+        \ '%E%f:%l:%c: \\d%#:\\d%# %.%\{-}error:%.%\{-} %m,'   .
+        \ '%W%f:%l:%c: \\d%#:\\d%# %.%\{-}warning:%.%\{-} %m,' .
+        \ '%C%f:%l %m,' .
+        \ '%-Z%.%#'
 
-    return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
+    return SyntasticMake({
+        \ 'makeprg': makeprg,
+        \ 'errorformat': errorformat })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({

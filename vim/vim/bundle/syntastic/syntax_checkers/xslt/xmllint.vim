@@ -10,29 +10,14 @@
 "
 "============================================================================
 
-function! SyntaxCheckers_xslt_xmllint_GetLocList()
-    return executable("xmllint")
-endfunction
+if exists("g:loaded_syntastic_xslt_xmllint_checker")
+    finish
+endif
+let g:loaded_syntastic_xslt_xmllint_checker=1
 
-function! SyntaxCheckers_xslt_xmllint_GetLocList()
-    let makeprg = syntastic#makeprg#build({
-                \ 'exe': 'xmllint',
-                \ 'args': '--xinclude --noout --postvalid' })
-    let errorformat='%E%f:%l:\ error\ :\ %m,
-        \%-G%f:%l:\ validity\ error\ :\ Validation\ failed:\ no\ DTD\ found\ %m,
-        \%W%f:%l:\ warning\ :\ %m,
-        \%W%f:%l:\ validity\ warning\ :\ %m,
-        \%E%f:%l:\ validity\ error\ :\ %m,
-        \%E%f:%l:\ parser\ error\ :\ %m,
-        \%E%f:%l:\ namespace\ error\ :\ %m,
-        \%E%f:%l:\ %m,
-        \%-Z%p^,
-        \%-G%.%#'
-    let loclist = SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
-
-    return loclist
-endfunction
+runtime! syntax_checkers/xml/*.vim
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'xslt',
-    \ 'name': 'xmllint'})
+    \ 'name': 'xmllint',
+    \ 'redirect': 'xml/xmllint'})

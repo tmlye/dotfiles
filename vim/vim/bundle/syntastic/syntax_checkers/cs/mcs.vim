@@ -10,18 +10,20 @@
 "
 "============================================================================
 
-function! SyntaxCheckers_cs_mcs_IsAvailable()
-    return executable('mcs')
-endfunction
+if exists("g:loaded_syntastic_cs_mcs_checker")
+    finish
+endif
+let g:loaded_syntastic_cs_mcs_checker=1
 
-function! SyntaxCheckers_cs_mcs_GetLocList()
-    let makeprg = syntastic#makeprg#build({
-                \ 'exe': 'mcs',
-                \ 'args': '--parse' })
+function! SyntaxCheckers_cs_mcs_GetLocList() dict
+    let makeprg = self.makeprgBuild({ 'args': '--parse' })
+
     let errorformat = '%f(%l\,%c): %trror %m'
-    return SyntasticMake({ 'makeprg': makeprg,
-                         \ 'errorformat': errorformat,
-                         \ 'defaults': {'bufnr': bufnr("")} })
+
+    return SyntasticMake({
+        \ 'makeprg': makeprg,
+        \ 'errorformat': errorformat,
+        \ 'defaults': {'bufnr': bufnr("")} })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({

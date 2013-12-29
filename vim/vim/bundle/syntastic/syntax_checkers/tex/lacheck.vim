@@ -10,14 +10,21 @@
 "
 "============================================================================
 
-function! SyntaxCheckers_tex_lacheck_IsAvailable()
-    return executable("lacheck")
-endfunction
+if exists('g:loaded_syntastic_tex_lacheck_checker')
+    finish
+endif
+let g:loaded_syntastic_tex_lacheck_checker=1
 
-function! SyntaxCheckers_tex_lacheck_GetLocList()
-    let makeprg = syntastic#makeprg#build({ 'exe': 'lacheck' })
-    let errorformat =  '%-G** %f:,%E"%f"\, line %l: %m'
-    return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
+function! SyntaxCheckers_tex_lacheck_GetLocList() dict
+    let makeprg = self.makeprgBuild({})
+
+    let errorformat =
+        \ '%-G** %f:,' .
+        \ '%E"%f"\, line %l: %m'
+
+    return SyntasticMake({
+        \ 'makeprg': makeprg,
+        \ 'errorformat': errorformat })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({

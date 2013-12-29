@@ -13,17 +13,56 @@
 " See here for details of phpmd
 "   - phpmd (see http://phpmd.org)
 
-function! SyntaxCheckers_php_phpmd_IsAvailable()
-    return executable('phpmd')
+if exists("g:loaded_syntastic_php_phpmd_checker")
+    finish
+endif
+let g:loaded_syntastic_php_phpmd_checker=1
+
+function! SyntaxCheckers_php_phpmd_GetHighlightRegex(item)
+    let term = matchstr(a:item['text'], '\m\C^The \S\+ \w\+\(()\)\= \(has\|is not\|utilizes\)')
+    if term != ''
+        return '\V'.substitute(term, '\m\C^The \S\+ \(\w\+\)\(()\)\= .*', '\1', '')
+    endif
+    let term = matchstr(a:item['text'], '\m\C^Avoid \(variables with short\|excessively long variable\) names like \S\+\.')
+    if term != ''
+        return '\V'.substitute(term, '\m\C^Avoid \(variables with short\|excessively long variable\) names like \(\S\+\)\..*', '\2', '')
+    endif
+    let term = matchstr(a:item['text'], '\m\C^Avoid using short method names like \S\+::\S\+()\.')
+    if term != ''
+        return '\V'.substitute(term, '\m\C^Avoid using short method names like \S\+::\(\S\+\)()\..*', '\1', '')
+    endif
+    let term = matchstr(a:item['text'], '\m\C^\S\+ accesses the super-global variable ')
+    if term != ''
+        return '\V'.substitute(term, '\m\C accesses the super-global variable .*$', '', '')
+    endif
+    let term = matchstr(a:item['text'], '\m\C^Constant \S\+ should be defined in uppercase')
+    if term != ''
+        return '\V'.substitute(term, '\m\C^Constant \(\S\+\) should be defined in uppercase', '\1', '')
+    endif
+    let term = matchstr(a:item['text'], "\\m\\C^The '\\S\\+()' method which returns ")
+    if term != ''
+        return '\V'.substitute(term, "\\m\\C^The '\\(\\S\\+\\()' method which returns.*", '\1', '')
+    endif
+    let term = matchstr(a:item['text'], '\m\C variable \S\+ should begin with ')
+    if term != ''
+        return '\V'.substitute(term, '\m\C.* variable \(\S\+\) should begin with .*', '\1', '')
+    endif
+    let term = matchstr(a:item['text'], "\\m\\C^Avoid unused \\(private fields\\|local variables\\|private methods\\|parameters\\) such as '\\S\\+'")
+    if term != ''
+        return '\V'.substitute(term, "\\m\\C^Avoid unused \\(private fields\\|local variables\\|private methods\\|parameters\\) such as '\\(\\S\\+\\)'.*", '\2', '')
+    endif
+    return ''
 endfunction
 
-function! SyntaxCheckers_php_phpmd_GetLocList()
-    let makeprg = syntastic#makeprg#build({
-                \ 'exe': 'phpmd',
-                \ 'post_args': 'text  codesize,design,unusedcode,naming',
-                \ 'subchecker': 'phpmd' })
-    let errorformat = '%E%f:%l%m'
-    return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat, 'subtype' : 'Style' })
+function! SyntaxCheckers_php_phpmd_GetLocList() dict
+    let makeprg = self.makeprgBuild({ 'post_args': 'text codesize,design,unusedcode,naming' })
+
+    let errorformat = '%E%f:%l%\s%#%m'
+
+    return SyntasticMake({
+        \ 'makeprg': makeprg,
+        \ 'errorformat': errorformat,
+        \ 'subtype' : 'Style' })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({

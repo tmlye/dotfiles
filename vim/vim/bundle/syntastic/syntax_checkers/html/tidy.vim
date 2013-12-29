@@ -9,6 +9,39 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
+"
+" Checker option:
+"
+" - g:syntastic_html_tidy_ignore_errors (list; default: [])
+"   list of errors to ignore
+" - g:syntastic_html_tidy_blocklevel_tags (list; default: [])
+"   list of additional blocklevel tags, to be added to "--new-blocklevel-tags"
+" - g:syntastic_html_tidy_inline_tags (list; default: [])
+"   list of additional inline tags, to be added to "--new-inline-tags"
+" - g:syntastic_html_tidy_empty_tags (list; default: [])
+"   list of additional empty tags, to be added to "--new-empty-tags"
+
+if exists("g:loaded_syntastic_html_tidy_checker")
+    finish
+endif
+let g:loaded_syntastic_html_tidy_checker = 1
+
+if !exists('g:syntastic_html_tidy_ignore_errors')
+    let g:syntastic_html_tidy_ignore_errors = []
+endif
+
+if !exists('g:syntastic_html_tidy_blocklevel_tags')
+    let g:syntastic_html_tidy_blocklevel_tags = []
+endif
+
+if !exists('g:syntastic_html_tidy_inline_tags')
+    let g:syntastic_html_tidy_inline_tags = []
+endif
+
+if !exists('g:syntastic_html_tidy_empty_tags')
+    let g:syntastic_html_tidy_empty_tags = []
+endif
+
 " TODO: join this with xhtml.vim for DRY's sake?
 function! s:TidyEncOptByFenc()
     let tidy_opts = {
@@ -28,10 +61,10 @@ function! s:TidyEncOptByFenc()
     return get(tidy_opts, &fileencoding, '-utf8')
 endfunction
 
-let s:ignore_html_errors = [
+let s:ignore_errors = [
                 \ "<table> lacks \"summary\" attribute",
                 \ "not approved by W3C",
-                \ "attribute \"placeholder\"",
+                \ "<input> proprietary attribute \"placeholder\"",
                 \ "<meta> proprietary attribute \"charset\"",
                 \ "<meta> lacks \"content\" attribute",
                 \ "inserting \"type\" attribute",
@@ -39,60 +72,126 @@ let s:ignore_html_errors = [
                 \ "missing <!DOCTYPE> declaration",
                 \ "inserting implicit <body>",
                 \ "inserting missing 'title' element",
-                \ "attribute \"[+",
                 \ "unescaped & or unknown entity",
-                \ "<input> attribute \"type\" has invalid value \"search\""
-                \]
+                \ "<input> attribute \"type\" has invalid value",
+                \ "proprietary attribute \"role\"",
+                \ "proprietary attribute \"aria-activedescendant\"",
+                \ "proprietary attribute \"aria-atomic\"",
+                \ "proprietary attribute \"aria-autocomplete\"",
+                \ "proprietary attribute \"aria-busy\"",
+                \ "proprietary attribute \"aria-checked\"",
+                \ "proprietary attribute \"aria-controls\"",
+                \ "proprietary attribute \"aria-describedby\"",
+                \ "proprietary attribute \"aria-disabled\"",
+                \ "proprietary attribute \"aria-dropeffect\"",
+                \ "proprietary attribute \"aria-expanded\"",
+                \ "proprietary attribute \"aria-flowto\"",
+                \ "proprietary attribute \"aria-grabbed\"",
+                \ "proprietary attribute \"aria-haspopup\"",
+                \ "proprietary attribute \"aria-hidden\"",
+                \ "proprietary attribute \"aria-invalid\"",
+                \ "proprietary attribute \"aria-label\"",
+                \ "proprietary attribute \"aria-labelledby\"",
+                \ "proprietary attribute \"aria-level\"",
+                \ "proprietary attribute \"aria-live\"",
+                \ "proprietary attribute \"aria-multiline\"",
+                \ "proprietary attribute \"aria-multiselectable\"",
+                \ "proprietary attribute \"aria-orientation\"",
+                \ "proprietary attribute \"aria-owns\"",
+                \ "proprietary attribute \"aria-posinset\"",
+                \ "proprietary attribute \"aria-pressed\"",
+                \ "proprietary attribute \"aria-readonly\"",
+                \ "proprietary attribute \"aria-relevant\"",
+                \ "proprietary attribute \"aria-relevant\"",
+                \ "proprietary attribute \"aria-required\"",
+                \ "proprietary attribute \"aria-selected\"",
+                \ "proprietary attribute \"aria-setsize\"",
+                \ "proprietary attribute \"aria-sort\"",
+                \ "proprietary attribute \"aria-valuemax\"",
+                \ "proprietary attribute \"aria-valuemin\"",
+                \ "proprietary attribute \"aria-valuenow\"",
+                \ "proprietary attribute \"aria-valuetext\""
+                \ ]
 
-function! s:ValidateError(text)
-    let valid = 0
-    for i in s:ignore_html_errors
+let s:blocklevel_tags = [
+                \ "main",
+                \ "section",
+                \ "article",
+                \ "aside",
+                \ "header",
+                \ "footer",
+                \ "nav",
+                \ "figure",
+                \ "figcaption"
+                \ ]
+
+let s:inline_tags = [
+                \ "video",
+                \ "audio",
+                \ "source",
+                \ "embed",
+                \ "mark",
+                \ "progress",
+                \ "meter",
+                \ "time",
+                \ "ruby",
+                \ "rt",
+                \ "rp",
+                \ "canvas",
+                \ "command",
+                \ "details",
+                \ "datalist"
+                \ ]
+
+let s:empty_tags = [
+                \ "wbr",
+                \ "keygen"
+                \ ]
+
+function! s:IgnoreError(text)
+    for i in s:ignore_errors + g:syntastic_html_tidy_ignore_errors
         if stridx(a:text, i) != -1
-            let valid = 1
-            break
+            return 1
         endif
     endfor
-    return valid
+    return 0
 endfunction
 
-function s:Args()
-    let args = s:TidyEncOptByFenc()
-    let args .= " --new-blocklevel-tags " . shellescape('section, article, aside, hgroup, header, footer, nav, figure, figcaption')
-    let args .= " --new-inline-tags " . shellescape('video, audio, source, embed, mark, progress, meter, time, ruby, rt, rp, canvas, command, details, datalist')
-    let args .= " --new-empty-tags " . shellescape('wbr, keygen')
-    let args .= " -e"
+function! s:NewTags(name)
+    return syntastic#util#shescape(join( s:{a:name} + g:syntastic_html_tidy_{a:name}, ',' ))
+endfunction
+
+function! s:Args()
+    let args = s:TidyEncOptByFenc() .
+        \ ' --new-blocklevel-tags ' . s:NewTags('blocklevel_tags') .
+        \ ' --new-inline-tags ' . s:NewTags('inline_tags') .
+        \ ' --new-empty-tags ' . s:NewTags('empty_tags') .
+        \ ' -e'
     return args
 endfunction
 
-function! SyntaxCheckers_html_tidy_IsAvailable()
-    return executable('tidy')
-endfunction
+function! SyntaxCheckers_html_tidy_GetLocList() dict
+    let makeprg = self.makeprgBuild({
+        \ 'args': s:Args(),
+        \ 'tail': '2>&1' })
 
-function! SyntaxCheckers_html_tidy_GetLocList()
-    let makeprg = syntastic#makeprg#build({
-                \ 'exe': 'tidy',
-                \ 'args': s:Args(),
-                \ 'tail': '2>&1',
-                \ 'subchecker': 'tidy' })
-    let errorformat='%Wline %l column %c - Warning: %m,%Eline %l column %c - Error: %m,%-G%.%#,%-G%.%#'
+    let errorformat =
+        \ '%Wline %l column %v - Warning: %m,' .
+        \ '%Eline %l column %v - Error: %m,' .
+        \ '%-G%.%#'
 
-    let loclist = SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
+    let loclist = SyntasticMake({
+        \ 'makeprg': makeprg,
+        \ 'errorformat': errorformat,
+        \ 'defaults': {'bufnr': bufnr("")},
+        \ 'returns': [0, 1, 2] })
 
-    " process loclist since we need to add some info and filter out valid HTML5
-    " from the errors
-    let n = len(loclist) - 1
-    let bufnum = bufnr("")
-    while n >= 0
-        let i = loclist[n]
-        " filter out valid HTML5
-        if s:ValidateError(i['text']) == 1
-            unlet loclist[n]
-        else
-            "the file name isnt in the output so stick in the buf num manually
-            let i['bufnr'] = bufnum
+    " filter out valid HTML5 from the errors
+    for e in loclist
+        if e['valid'] && s:IgnoreError(e['text']) == 1
+            let e['valid'] = 0
         endif
-        let n -= 1
-    endwhile
+    endfor
 
     return loclist
 endfunction

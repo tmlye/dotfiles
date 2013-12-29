@@ -10,19 +10,18 @@
 "
 "============================================================================
 
-if exists("loaded_ycm_objc_syntax_checker")
+if exists("g:loaded_syntastic_objc_ycm_checker")
     finish
 endif
-let loaded_ycm_objc_syntax_checker = 1
+let g:loaded_syntastic_objc_ycm_checker = 1
 
-function! SyntaxCheckers_objc_ycm_IsAvailable()
-    return exists('g:loaded_youcompleteme')
-endfunction
+runtime! syntax_checkers/c/*.vim
 
-function! SyntaxCheckers_objc_ycm_GetLocList()
-    return youcompleteme#CurrentFileDiagnostics()
-endfunction
+if !exists('g:loaded_youcompleteme')
+    finish
+endif
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'objc',
-    \ 'name': 'ycm'})
+    \ 'name': 'ycm',
+    \ 'redirect': 'c/ycm'})
