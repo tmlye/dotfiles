@@ -1,0 +1,17 @@
+#!/bin/bash
+# Converts all files in the current directory
+# or specified directory from flac to 320k mp3
+
+if [ $# -eq 0 ];then
+    DIR=$(pwd)
+else
+    DIR=$(readlink -fz "$1")
+fi
+
+echo $DIR
+
+for i in "$DIR"/*.flac;do
+    ffmpeg -i "$i" -ab 320k "$(echo "$i" | sed s/\.flac/\.mp3/)"
+done
+
+# vim:set filetype=sh:
