@@ -19,7 +19,7 @@ test -f ~/.XkeymapUS && xkbcomp ~/.XkeymapUS $DISPLAY
 /usr/bin/xautolock -time 3 -locker slock &
 # Turn off screen after 3 mins
 xset +dpms
-xset dpms 0 0 301
+xset dpms 0 0 175
 
 synclient RightButtonAreaTop=0
 synclient RightButtonAreaBottom=1500
