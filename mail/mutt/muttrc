@@ -8,7 +8,7 @@ set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
 set certificate_file = ~/.mutt/certificates  # where to store certs
 set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
 set tmpdir           = ~/.mutt/temp          # where to keep temp files
-set signature        = ~/.mutt/sig           # my signature file
+#set signature        = ~/.mutt/sig           # my signature file
 
 # Basic Options --------------------------------------
 set wait_key = no        # shut up, mutt
@@ -68,7 +68,7 @@ source ~/.dotfiles/mail/mutt/solarized
 # using lbdb
 #source $alias_file
 set query_command="lbdbq '%s'"
-#source ~/.dotfiles/mail/mutt/pgp
+source ~/.dotfiles/mail/mutt/pgp
 
 # if we are in any directory starting with the following, pull
 # specific settings from somewhere else
@@ -80,4 +80,3 @@ alternates eglausa45793@th-nuernberg.de sascha.eglau@gmail.com
 
 # All the macros we have defined
 source ~/.dotfiles/mail/mutt/macros
-

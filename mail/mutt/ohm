@@ -5,6 +5,7 @@
 # the '+' expands to $folders (like '~' to $HOME in the bash shell)
 set record = +ohm/sent_items
 set postponed = +ohm/drafts
+unset signature
 #set signature = ~/.dotfiles/mail/mutt/sig_school.sig
 
 # use msmtp to send outgoing mail to the mailserver
@@ -18,7 +19,7 @@ my_hdr bcc: eglausa45793@th-nuernberg.de
 
 # pgp settings
 #my_hdr X-PGP-Key: http://my.website.com/pubkey.asc
-# set pgp_sign_as=MY_PGP_KEY_ID
-# set pgp_autosign=yes
+#set pgp_sign_as=0x738a3fec65299204
+#set pgp_autosign=yes
 
 # vim: set ft=muttrc

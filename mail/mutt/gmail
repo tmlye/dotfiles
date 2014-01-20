@@ -15,6 +15,6 @@ my_hdr bcc: sascha.eglau@gmail.com
 
 # pgp settings
 #unmy_hdr X-PGP-Key
-#set pgp_autosign = no
+set pgp_autosign = no
 
 # vim: set ft=muttrc
