@@ -1,11 +1,9 @@
 #!/bin/bash
 
 # Create .config directory if needed
-if [ ! -d ~/.config ]
-  then mkdir ~/.config
-fi
+mkdir -p $HOME/.config
 
-declare -a links=(.config/awesome .Xresources .zshrc .ncmpcpp .vim .vimrc .XkeymapUS .XkeymapDE)
+declare -a links=(.config/awesome .Xresources .zshrc .ncmpcpp .vim .vimrc .XkeymapUS .XkeymapDE .config/zathura/zathurarc)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -39,6 +37,10 @@ ln -s $HOME/.dotfiles/ranger/ $HOME/.config/ranger
 
 # browser
 ln -s $HOME/.dotfiles/browser/pentadactylrc $HOME/.pentadactylrc
+
+# zathura
+mkdir -p $HOME/.config/zathura
+ln -s $HOME/.dotfiles/various/zathurarc $HOME/.config/zathura/zathurarc
 
 echo "You'll have to symlink the userChrome.css file manually if you want to use it."
 echo "If you want to setup mail, check the .dotfiles/mail directory."
