@@ -21,9 +21,12 @@ editor_cmd = terminal .. " -e " .. editor
 
 -- Launched with MOD4+e
 filemngr = terminal .. " -e ranger"
-
 -- Launched with MOD4+q
 browser = "firefox"
+-- Launched with MOD4+i
+ircclient = terminal .. " -e irssi"
+-- Lock screen with MOD4+F12
+lockcmd = "xautolock -locknow"
 
 -- Name of wificard for wifi widget
 wificard = "wlp3s0"
@@ -341,12 +344,6 @@ globalkeys = awful.util.table.join(
             end
         end),
 
-    -- Standard programs
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
-    awful.key({ modkey,		      }, "e", function () awful.util.spawn(filemngr) end),
-    awful.key({ modkey,           }, "q", function() awful.util.spawn(browser) end),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit),
-
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
@@ -357,12 +354,19 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
-    
+
+    -- Standard programs
+    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,		      }, "e",     function () awful.util.spawn(filemngr) end),
+    awful.key({ modkey,           }, "q",     function() awful.util.spawn(browser) end),
+    awful.key({ modkey,           }, "i",     function() awful.util.spawn(ircclient) end),
+    awful.key({ modkey, "Shift"   }, "q",     awesome.quit),
+
     -- Lock Screen
-    awful.key({modkey,		  }, "F12",   function () awful.util.spawn("xautolock -locknow") end),
+    awful.key({ modkey,		      }, "F12",   function () awful.util.spawn(lockcmd) end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey            }, "r",     function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()
