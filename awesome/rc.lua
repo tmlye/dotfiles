@@ -25,6 +25,8 @@ filemngr = terminal .. " -e ranger"
 browser = "firefox"
 -- Launched with MOD4+i
 ircclient = terminal .. " -e irssi"
+-- Launched with MOD4+w
+mailclient = terminal .. " -e mutt"
 -- Lock screen with MOD4+F12
 lockcmd = "xautolock -locknow"
 
@@ -360,6 +362,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,		      }, "e",     function () awful.util.spawn(filemngr) end),
     awful.key({ modkey,           }, "q",     function() awful.util.spawn(browser) end),
     awful.key({ modkey,           }, "i",     function() awful.util.spawn(ircclient) end),
+    awful.key({ modkey,           }, "w",     function() awful.util.spawn(mailclient) end),
+
     awful.key({ modkey, "Shift"   }, "q",     awesome.quit),
 
     -- Lock Screen
@@ -455,9 +459,12 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
                      size_hints_honor = false} },
+    -- Some programs should always float
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
+      properties = { floating = true } },
+    { rule = { class = "Ts3client_linux_amd64" },
       properties = { floating = true } },
     -- map firefox on tag number 1 of screen 1.
     { rule = { class = "Firefox" },
