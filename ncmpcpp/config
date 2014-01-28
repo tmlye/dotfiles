@@ -1,6 +1,6 @@
 # ~/.ncmpcpp/config
 
-mpd_music_dir = "/home/tml/Extern/Musik"
+mpd_music_dir = "/home/tml/mount/music"
 mpd_crossfade_time = "5"
 
 # Playlist

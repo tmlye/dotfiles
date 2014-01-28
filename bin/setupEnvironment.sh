@@ -36,8 +36,8 @@ finish_install(){
   sudo -u $USER git clone https://github.com/tmlye/dotfiles.git /home/$USER/.dotfiles
   is_package_installed "zsh" && sudo -u $USER chsh -s /bin/zsh
   sudo -u $USER ./.dotfiles/createSymlinks.sh
-  sudo -u $USER mkdir /home/$USER/Extern
-  sudo -u $USER mkdir /home/$USER/Extern2
+  sudo -u $USER mkdir /home/$USER/mount
+  sudo -u $USER mkdir /home/$USER/mount2
   print_warning "If your backup drive is not connected, please do it now."
   pause_function
   #tee /etc/modules-load.d/truecrypt.conf <<< "loop"
@@ -53,14 +53,14 @@ finish_install(){
      invalid_option
    fi
   done
-  truecrypt --text --mount $DEVICE /home/$USER/Extern/
-  sudo -u $USER cp -r /home/$USER/Extern/Backup/Code /home/$USER/
-  sudo -u $USER cp -r /home/$USER/Extern/Backup/Desktop /home/$USER/
-  sudo -u $USER cp -r /home/$USER/Extern/Backup/Downloads /home/$USER/
-  cp -f /home/$USER/Extern/Backup/OS/slim.conf /etc/
+  truecrypt --text --mount $DEVICE /home/$USER/mount/
+  sudo -u $USER cp -r /home/$USER/mount/Backup/Code /home/$USER/
+  sudo -u $USER cp -r /home/$USER/mount/Backup/Desktop /home/$USER/
+  sudo -u $USER cp -r /home/$USER/mount/Backup/Downloads /home/$USER/
+  cp -f /home/$USER/mount/Backup/OS/slim.conf /etc/
   mkdir -p /usr/share/slim/themes
-  cp -r /home/$USER/Extern/Backup/OS/slim/simple /usr/share/slim/themes/
-  sudo -u $USER cp -r /home/$USER/Extern/Backup/OS/home/.* /home/$USER/
+  cp -r /home/$USER/mount/Backup/OS/slim/simple /usr/share/slim/themes/
+  sudo -u $USER cp -r /home/$USER/mount/Backup/OS/home/.* /home/$USER/
   echo "Enabling slim"
   system_ctl enable slim
   pause_function

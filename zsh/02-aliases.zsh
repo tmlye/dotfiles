@@ -7,8 +7,8 @@ feh --bg-fill $HOME/.wallpaper/current.jpg'
 alias update='sudo yaourt -Syua --noconfirm'
 alias ls='ls --color=auto'
 alias v='gvim'
-alias tcm='truecrypt --mount /dev/sdc1 $HOME/Extern'
-alias tcu='sudo umount $HOME/Extern'
+alias tcm='truecrypt --mount /dev/sdc1 $HOME/mount'
+alias tcu='sudo umount $HOME/mount'
 alias tcd='truecrypt -d /dev/sdc1'
 alias shu='systemctl poweroff'
 alias re='sudo reboot'
@@ -17,8 +17,8 @@ alias wu='sudo ifconfig wlan0 up'
 alias install='sudo yaourt -S'
 alias uninstall='sudo yaourt -Rns'
 alias search='sudo yaourt -Ss'
-alias tcmb='truecrypt --mount /dev/sdc1 $HOME/Extern2'
-alias tcub='sudo umount $HOME/Extern2'
+alias tcmb='truecrypt --mount /dev/sdc1 $HOME/mount2'
+alias tcub='sudo umount $HOME/mount2'
 alias tcdb='truecrypt -d /dev/sdc1'
 alias ps='ps -a -c -o pid,command -x'
 
@@ -29,9 +29,9 @@ newmount()
 }
 
 alias sm='newmount'
-alias smd='newmount /dev/sdd1 $HOME/Extern2'
-alias smc='newmount /dev/sdc1 $HOME/Extern2'
-alias smb='newmount /dev/sdb1 $HOME/Extern2'
+alias smd='newmount /dev/sdd1 $HOME/mount2'
+alias smc='newmount /dev/sdc1 $HOME/mount2'
+alias smb='newmount /dev/sdb1 $HOME/mount2'
 
 # new umount function
 newumount()
@@ -40,7 +40,7 @@ newumount()
 }
 
 alias um='newumount'
-alias um2='newumount $HOME/Extern2'
+alias um2='newumount $HOME/mount2'
 
 # grep
 grephistory()

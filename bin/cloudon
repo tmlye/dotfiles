@@ -1,0 +1,7 @@
+#!/bin/bash
+
+owncloud & disown
+dropbox start
+sudo systemctl start btsync@tml
+
+# vim:set filetype=sh:

@@ -1,29 +1,27 @@
 #!/bin/bash
 # Folders
-rsync -a --delete $HOME/Dropbox/Studium $HOME/Extern/Backup/Dropbox
-rsync -a --delete $HOME/Dropbox/Cheat\ Sheets $HOME/Extern/Backup/Dropbox
-rsync -a --delete $HOME/Dropbox/Notes $HOME/Extern/Backup/Dropbox
-rsync -a --delete $HOME/Code $HOME/Extern/Backup
-rsync -a --delete $HOME/Desktop $HOME/Extern/Backup
-rsync -a --delete $HOME/Downloads $HOME/Extern/Backup
-rsync -a --delete $HOME/.config $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.dotfiles $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.gem $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.gnupg $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.gtktheme $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.IdeaIC12 $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.irssi $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.lastpass $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.mozilla $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.mpd $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.mpdscribble $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.ssh $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.wallpaper $HOME/Extern/Backup/OS/home/
-rsync -a --delete $HOME/.wine $HOME/Extern/Backup/OS/home/
+rsync -a --delete $HOME/code $HOME/mount/backup
+rsync -a --delete $HOME/desktop $HOME/mount/backup
+rsync -a --delete $HOME/downloads $HOME/mount/backup
+rsync -a --delete $HOME/.config $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.dotfiles $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.electrum $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.gem $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.gnupg $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.gtktheme $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.IdeaIC12 $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.irssi $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.lastpass $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.mozilla $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.mpd $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.mpdscribble $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.ssh $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.wallpaper $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.wine $HOME/mount/backup/OS/home/
 # Files
-rsync -a $HOME/.asoundrc $HOME/Extern/Backup/OS/home/
-rsync -a $HOME/.gtkrc-2.0 $HOME/Extern/Backup/OS/home/
-rsync -a $HOME/.gitconfig $HOME/Extern/Backup/OS/home/
-rsync -a $HOME/.mpdconf $HOME/Extern/Backup/OS/home/
+rsync -a $HOME/.asoundrc $HOME/mount/backup/OS/home/
+rsync -a $HOME/.gtkrc-2.0 $HOME/mount/backup/OS/home/
+rsync -a $HOME/.gitconfig $HOME/mount/backup/OS/home/
+rsync -a $HOME/.mpdconf $HOME/mount/backup/OS/home/
 
 # vim:set filetype=sh:
