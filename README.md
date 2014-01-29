@@ -45,6 +45,6 @@ You can modify the location for the wallpaper in `~/.dotfiles/awesome/theme.lua`
 
 ## Credit
 
-Credit for the colors and the zsh config goes to [crshd] (https://github.com/crshd), from whom I copied most of it.
+Credit for the colors and parts of the zsh theme goes to [crshd] (https://github.com/crshd).
 Some of the remaining dotfiles are based on other people's work as well, but modified beyond recognition.
 This repo is heavily inspired by [holman's dotfiles] (https://github.com/holman/dotfiles).
