@@ -27,6 +27,8 @@ browser = "firefox"
 ircclient = terminal .. " -e irssi"
 -- Launched with MOD4+w
 mailclient = terminal .. " -e mutt"
+-- Launched with MOD4+z
+mpdclient = terminal .. " -e ncmpcpp"
 -- Lock screen with MOD4+F12
 lockcmd = "xautolock -locknow"
 
@@ -363,6 +365,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "q",     function() awful.util.spawn(browser) end),
     awful.key({ modkey,           }, "i",     function() awful.util.spawn(ircclient) end),
     awful.key({ modkey,           }, "w",     function() awful.util.spawn(mailclient) end),
+    awful.key({ modkey,           }, "z",     function() awful.util.spawn(mpdclient) end),
 
     awful.key({ modkey, "Shift"   }, "q",     awesome.quit),
 
