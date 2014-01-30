@@ -1,0 +1,23 @@
+#!/bin/sh
+PHONEMOUNT=$HOME/mount2
+BACKUP=$HOME/mount/backup/cellphone
+
+OPTION=n
+read -p "Is your phone connected and the screen unlocked? [y/N] " OPTION
+
+if [[ $OPTION != y ]]; then
+    echo Please connect and unlock your phone.
+    exit 1
+fi
+
+go-mtpfs $PHONEMOUNT &
+sleep 2
+
+cp -ru $PHONEMOUNT/Phone/{chomp,Tasker,WhatsApp} $BACKUP/internal
+cp -ru $PHONEMOUNT/Card/* $BACKUP/card
+
+echo ""
+echo Unmounting phone:
+sudo umount $PHONEMOUNT
+
+# vim:set filetype=sh:
