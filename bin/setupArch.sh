@@ -117,6 +117,7 @@ install_basic_setup(){
   package_install "alsa-utils alsa-plugins lib32-alsa-plugins"
   print_info "Installing filesystems+tools"
   package_install "ntfs-3g dosfstools exfat-utils fuse fuse-exfat"
+  aur_package_install "go-mtpfs-git"
   is_package_installed "fuse" && add_module "fuse"
 }
 

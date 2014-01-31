@@ -15,6 +15,7 @@ install_DE(){
 
 install_communication(){
   package_install "irssi teamspeak3"
+  aur_package_install "mutt-sidebar"
 }
 
 install_music(){
@@ -28,7 +29,11 @@ install_internet(){
 
 install_tools(){
   package_install "truecrypt wine virtualbox calibre viewnior zathura"
-  aur_package_install "xmind dropbox dropbox-cli"
+  aur_package_install "xmind"
+}
+
+install_cloud(){
+    aur_package_install "dropbox dropbox-cli btsync owncloud-client"
 }
 
 finish_install(){
@@ -54,13 +59,13 @@ finish_install(){
    fi
   done
   truecrypt --text --mount $DEVICE /home/$USER/mount/
-  sudo -u $USER cp -r /home/$USER/mount/Backup/Code /home/$USER/
-  sudo -u $USER cp -r /home/$USER/mount/Backup/Desktop /home/$USER/
-  sudo -u $USER cp -r /home/$USER/mount/Backup/Downloads /home/$USER/
-  cp -f /home/$USER/mount/Backup/OS/slim.conf /etc/
+  sudo -u $USER cp -r /home/$USER/mount/backup/code /home/$USER/
+  sudo -u $USER cp -r /home/$USER/mount/backup/desktop /home/$USER/
+  sudo -u $USER cp -r /home/$USER/mount/backup/downloads /home/$USER/
+  cp -f /home/$USER/mount/backup/OS/slim.conf /etc/
   mkdir -p /usr/share/slim/themes
-  cp -r /home/$USER/mount/Backup/OS/slim/simple /usr/share/slim/themes/
-  sudo -u $USER cp -r /home/$USER/mount/Backup/OS/home/.* /home/$USER/
+  cp -r /home/$USER/mount/backup/OS/slim/simple /usr/share/slim/themes/
+  sudo -u $USER cp -r /home/$USER/mount/backup/OS/home/.* /home/$USER/
   echo "Enabling slim"
   system_ctl enable slim
   pause_function
