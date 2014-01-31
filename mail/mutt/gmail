@@ -17,4 +17,6 @@ my_hdr bcc: sascha.eglau@gmail.com
 #unmy_hdr X-PGP-Key
 set pgp_autosign = no
 
+subscribe devel@linuxdriverproject.org
+
 # vim: set ft=muttrc

@@ -15,7 +15,6 @@ mfolder=mairix-search
 
 # don't index spam folders
 omit=gmail/spam
-#omit=ohm/junk
 
 # don't index trash folders
 omit=ohm/trash
