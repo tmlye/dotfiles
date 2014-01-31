@@ -133,3 +133,6 @@ imap <c-l> <c-o><c-l>
 noremap <silent> gd gd:noh<CR>
 " Manual highlight clearing
 nnoremap <silent> <c-g> :noh<CR>
+
+" Google contact lookup for editing mail
+imap <leader>f <ESC>:r!~/.dotfiles/mail/bin/google-contacts-lookup.sh <cword><CR><ESC>

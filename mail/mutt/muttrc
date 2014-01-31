@@ -64,10 +64,7 @@ set spoolfile = +"ohm/inbox"
 source ~/.dotfiles/mail/mutt/common
 #source ~/.dotfiles/mail/mutt/colors
 source ~/.dotfiles/mail/mutt/solarized
-# Not using alias to store addresses now,
-# using lbdb
-#source $alias_file
-set query_command="lbdbq '%s'"
+set query_command="goobook query '%s'"
 source ~/.dotfiles/mail/mutt/pgp
 
 # if we are in any directory starting with the following, pull

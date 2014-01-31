@@ -45,4 +45,9 @@ macro pager \cb         <pipe-entry>'w3m'<enter> 'Follow links in w3m'
 macro index,pager ,f "<shell-escape>mairix -f ~/.dotfiles/mail/mairixrc " "run a Mairix search"
 macro index,pager ,s "<change-folder-readonly>=mairix-search\n" "switch to mairix results folder"
 
+
+# Goobook
+# -------
+macro index,pager ,a "<pipe-message>goobook add && goobook reload<return>" "add the sender address to Google contacts"
+
 # vim: set ft=muttrc
