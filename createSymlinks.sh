@@ -42,5 +42,9 @@ ln -s $HOME/.dotfiles/browser/pentadactylrc $HOME/.pentadactylrc
 mkdir -p $HOME/.config/zathura
 ln -s $HOME/.dotfiles/various/zathurarc $HOME/.config/zathura/zathurarc
 
+# htop
+mkdir -p $HOME/.config/htop
+ln -s $HOME/.dotfiles/various/htoprc $HOME/.config/htop/htoprc
+
 echo "You'll have to symlink the userChrome.css file manually if you want to use it."
 echo "If you want to setup mail, check the .dotfiles/mail directory."
