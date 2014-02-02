@@ -39,7 +39,7 @@ function! g:SyntasticHighlightingNotifier.refresh(loclist)
         call self.reset(a:loclist)
         call syntastic#log#debug(g:SyntasticDebugNotifications, 'highlighting: refresh')
         let buf = bufnr('')
-        let issues = filter(a:loclist.filteredRaw(), 'v:val["bufnr"] == buf')
+        let issues = filter(a:loclist.copyRaw(), 'v:val["bufnr"] == buf')
         for item in issues
             let group = item['type'] ==? 'E' ? 'SyntasticError' : 'SyntasticWarning'
 
@@ -62,6 +62,7 @@ function! g:SyntasticHighlightingNotifier.refresh(loclist)
 endfunction
 
 " Remove all error highlights from the window
+" @vimlint(EVL103, 1, a:loclist)
 function! g:SyntasticHighlightingNotifier.reset(loclist)
     if s:has_highlighting
         call syntastic#log#debug(g:SyntasticDebugNotifications, 'highlighting: reset')
@@ -72,6 +73,7 @@ function! g:SyntasticHighlightingNotifier.reset(loclist)
         endfor
     endif
 endfunction
+" @vimlint(EVL103, 0, a:loclist)
 
 " Private methods {{{1
 

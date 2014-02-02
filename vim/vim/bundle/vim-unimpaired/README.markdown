@@ -16,7 +16,8 @@ line with the one above or below it.
 There are mappings for toggling options. `[os`, `]os`, and `cos` perform
 `:set spell`, `:set nospell`, and `:set invspell`, respectively.  There's also
 `l` (`list`), `n` (`number`), `w` (`wrap`), `x` (`cursorline cursorcolumn`),
-and several others.  Consult the documentation.
+and several others, plus mappings to help alleviate the `set paste` dance.
+Consult the documentation.
 
 There are mappings for encoding and decoding. `[x` and `]x` encode and
 decode XML (and HTML). `[u` and `]u` encode and decode URLs. `[y` and
@@ -51,7 +52,7 @@ See the contribution guidelines for
 
 Like unimpaired.vim? Follow the repository on
 [GitHub](https://github.com/tpope/vim-unimpaired) and vote for it on
-[vim.org](http://www.vim.org/scripts/script.php?script_id=1697).  And if
+[vim.org](http://www.vim.org/scripts/script.php?script_id=1590).  And if
 you're feeling especially charitable, follow [tpope](http://tpo.pe/) on
 [Twitter](http://twitter.com/tpope) and
 [GitHub](https://github.com/tpope).

@@ -16,7 +16,7 @@ endif
 let g:loaded_AutoClose = 1
 
 let s:global_cpo = &cpo " store compatible-mode in local variable
-"set cpo&vim             " go into nocompatible-mode
+set cpo&vim             " go into nocompatible-mode
 
 if !exists('g:AutoClosePreserveDotReg')
     let g:AutoClosePreserveDotReg = 1

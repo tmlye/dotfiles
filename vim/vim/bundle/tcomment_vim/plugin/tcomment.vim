@@ -2,14 +2,14 @@
 " @Author:      Tom Link (micathom AT gmail com)
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     27-Dez-2004.
-" @Last Change: 2012-11-26.
-" @Revision:    765
+" @Last Change: 2013-11-11.
+" @Revision:    787
 " GetLatestVimScripts: 1173 1 tcomment.vim
 
 if &cp || exists('loaded_tcomment')
     finish
 endif
-let loaded_tcomment = 208
+let loaded_tcomment = 300
 
 if !exists('g:tcommentMaps')
     " If true, set maps.
@@ -36,6 +36,10 @@ endif
 if !exists("g:tcommentMapLeaderOp2")
     " See |tcomment-operator|.
     let g:tcommentMapLeaderOp2 = 'gC' "{{{2
+endif
+
+if !exists('g:tcommentTextObjectInlineComment')
+    let g:tcommentTextObjectInlineComment = 'ic'   "{{{2
 endif
 
 
@@ -154,13 +158,19 @@ if g:tcommentMaps
             exec 'nnoremap <silent> '. g:tcommentMapLeaderOp1 . s:i .'c :let w:tcommentPos = getpos(".") \| call tcomment#SetOption("count", '. s:i .') \| set opfunc=tcomment#Operator<cr>g@'
         endfor
         unlet s:i
-        exec 'nnoremap <silent> '. g:tcommentMapLeaderOp1 .'c :let w:tcommentPos = getpos(".") \| set opfunc=tcomment#OperatorLine<cr>g@$'
+        exec 'nnoremap <silent> '. g:tcommentMapLeaderOp1 .'c :<c-u>if v:count > 0 \| call tcomment#SetOption("count", v:count) \| endif \| let w:tcommentPos = getpos(".") \| set opfunc=tcomment#OperatorLine<cr>g@$'
+        exec 'nnoremap <silent> '. g:tcommentMapLeaderOp1 .'b :<c-u>if v:count > 0 \| call tcomment#SetOption("count", v:count) \| endif \| let w:tcommentPos = getpos(".") \| call tcomment#SetOption("mode_extra", "B") \| set opfunc=tcomment#OperatorLine<cr>g@'
         exec 'xnoremap <silent> '. g:tcommentMapLeaderOp1 .' :TCommentMaybeInline<cr>'
     endif
     if g:tcommentMapLeaderOp2 != ''
         exec 'nnoremap <silent> '. g:tcommentMapLeaderOp2 .' :let w:tcommentPos = getpos(".") \| set opfunc=tcomment#OperatorAnyway<cr>g@'
         exec 'nnoremap <silent> '. g:tcommentMapLeaderOp2 .'c :let w:tcommentPos = getpos(".") \| set opfunc=tcomment#OperatorLineAnyway<cr>g@$'
+        exec 'nnoremap <silent> '. g:tcommentMapLeaderOp2 .'b :let w:tcommentPos = getpos(".") \| call tcomment#SetOption("mode_extra", "B") \| set opfunc=tcomment#OperatorLine<cr>g@'
         exec 'xnoremap <silent> '. g:tcommentMapLeaderOp2 .' :TCommentMaybeInline!<cr>'
+    endif
+    if g:tcommentTextObjectInlineComment != ''
+        exec 'vnoremap' g:tcommentTextObjectInlineComment ':<c-U>silent call tcomment#TextObjectInlineComment()<cr>'
+        exec 'omap' g:tcommentTextObjectInlineComment ':normal v'. g:tcommentTextObjectInlineComment .'<cr>'
     endif
 endif
 

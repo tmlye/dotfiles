@@ -16,15 +16,15 @@ endif
 let g:loaded_syntastic_cpp_gcc_checker = 1
 
 if !exists('g:syntastic_cpp_compiler')
-    let g:syntastic_cpp_compiler = 'g++'
+    let g:syntastic_cpp_compiler = executable('g++') ? 'g++' : 'clang++'
 endif
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 function! SyntaxCheckers_cpp_gcc_IsAvailable() dict
     return executable(expand(g:syntastic_cpp_compiler))
 endfunction
-
-let s:save_cpo = &cpo
-set cpo&vim
 
 if !exists('g:syntastic_cpp_compiler_options')
     let g:syntastic_cpp_compiler_options = ''

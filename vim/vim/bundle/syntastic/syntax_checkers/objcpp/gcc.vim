@@ -16,15 +16,15 @@ endif
 let g:loaded_syntastic_objcpp_gcc_checker = 1
 
 if !exists('g:syntastic_objcpp_compiler')
-    let g:syntastic_objcpp_compiler = 'gcc'
+    let g:syntastic_objcpp_compiler = executable('gcc') ? 'gcc' : 'clang'
 endif
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 function! SyntaxCheckers_objcpp_gcc_IsAvailable() dict
     return executable(expand(g:syntastic_objcpp_compiler))
 endfunction
-
-let s:save_cpo = &cpo
-set cpo&vim
 
 if !exists('g:syntastic_objcpp_compiler_options')
     let g:syntastic_objcpp_compiler_options = '-std=gnu99'

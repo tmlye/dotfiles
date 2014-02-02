@@ -10,22 +10,21 @@
 "
 "============================================================================
 
-
 if exists('g:loaded_syntastic_c_gcc_checker')
     finish
 endif
 let g:loaded_syntastic_c_gcc_checker = 1
 
 if !exists('g:syntastic_c_compiler')
-    let g:syntastic_c_compiler = 'gcc'
+    let g:syntastic_c_compiler = executable('gcc') ? 'gcc' : 'clang'
 endif
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 function! SyntaxCheckers_c_gcc_IsAvailable() dict
     return executable(expand(g:syntastic_c_compiler))
 endfunction
-
-let s:save_cpo = &cpo
-set cpo&vim
 
 if !exists('g:syntastic_c_compiler_options')
     let g:syntastic_c_compiler_options = '-std=gnu99'

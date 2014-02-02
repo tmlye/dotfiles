@@ -16,7 +16,10 @@
 if exists("g:loaded_syntastic_ruby_rubocop_checker")
     finish
 endif
-let g:loaded_syntastic_ruby_rubocop_checker=1
+let g:loaded_syntastic_ruby_rubocop_checker = 1
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 function! SyntaxCheckers_ruby_rubocop_IsAvailable() dict
     let exe = self.getExec()
@@ -26,7 +29,7 @@ function! SyntaxCheckers_ruby_rubocop_IsAvailable() dict
 endfunction
 
 function! SyntaxCheckers_ruby_rubocop_GetLocList() dict
-    let makeprg = self.makeprgBuild({ 'args': '--format emacs --silent' })
+    let makeprg = self.makeprgBuild({ 'args_after': '--format emacs --silent' })
 
     let errorformat = '%f:%l:%c: %t: %m'
 
@@ -50,3 +53,8 @@ endfunction
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'ruby',
     \ 'name': 'rubocop'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:

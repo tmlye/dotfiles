@@ -44,6 +44,7 @@ alias um2='newumount $HOME/mount2'
 
 alias msd='sudo mount /dev/mmcblk0p1 $HOME/mount2'
 alias musb='sudo mount -U 442065E86FCD4ADE $HOME/mount2'
+alias msa='sudo mount -U 2ab49980-3dd0-4dc7-bd10-1c9a9ce0f082 .msata'
 
 # Truecrypt
 # =========

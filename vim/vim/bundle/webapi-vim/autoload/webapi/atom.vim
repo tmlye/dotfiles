@@ -44,6 +44,7 @@ let s:entry_template = {
 \ "title": "",
 \ "link": [],
 \ "category": [],
+\ "app:control": {},
 \ "author": [],
 \ "contirubutor": [],
 \ "copyright": "",
@@ -58,6 +59,7 @@ let s:entry_template = {
 for s:name in ['author', 'link', 'category', 'feed', 'entry']
   for s:key in keys(eval('s:'.s:name.'_template'))
     let key = substitute(s:key, '\.\(.\)', '\=toupper(submatch(1))', '')
+    let key = substitute(key, ':\(.\)', '\=toupper(submatch(1))', '')
     exe "function s:".s:name."_template.set".toupper(key[0]).key[1:]."(v) dict\n"
     \. "  let self['".s:key."'] = a:v\n"
     \. "endfunction\n"
@@ -68,7 +70,7 @@ for s:name in ['author', 'link', 'category', 'feed', 'entry']
 endfor
 function s:entry_template.setContentFromFile(file) dict
   let quote = &shellxquote == '"' ?  "'" : '"'
-  let bits = substitute(s:system("xxd -ps ".quote.file.quote), "[ \n\r]", '', 'g')
+  let bits = substitute(s:system("xxd -ps ".quote.a:file.quote), "[ \n\r]", '', 'g')
   let self['mode'] = "base64"
   let self['content'] = webapi#base64#b64encodebin(bits)
 endfunction
@@ -82,15 +84,37 @@ endfunction
 
 function! s:createXml(entry)
   let entry = webapi#xml#createElement("entry")
-  let entry.attr["xmlns"] = "http://purl.org/atom/ns#"
+  let entry.attr["xmlns"]     = "http://purl.org/atom/ns#"
+  let entry.attr["xmlns:app"] = "http://www.w3.org/2007/app"
 
   for key in keys(a:entry)
-    if type(a:entry[key]) == 1 && key !~ '\.'
+    let l:keytype = type(a:entry[key])
+    if l:keytype == 1 && key !~ '\.'
       let node = webapi#xml#createElement(key)
       call node.value(a:entry[key])
       if key == "content"
         let node.attr["type"] = a:entry['content.type']
         let node.attr["mode"] = a:entry['content.mode']
+      endif
+      call add(entry.child, node)
+    elseif l:keytype == 3
+      if key == "category"
+        for l:category in a:entry['category']
+          let node = webapi#xml#createElement(key)
+          let node.attr["term"] = l:category
+          call add(entry.child, node)
+        endfor
+      endif
+    elseif l:keytype == 4
+      let node = webapi#xml#createElement(key)
+      if key == "app:control"
+        let l:draft_node = webapi#xml#createElement("app:draft")
+        if exists("a:entry['app:control']['app:draft']")
+          call l:draft_node.value(a:entry['app:control']['app:draft'])
+        else
+          call l:draft_node.value('no')
+        endif
+        call add(node.child, l:draft_node)
       endif
       call add(entry.child, node)
     endif
@@ -178,8 +202,21 @@ function! s:parse_node(target, parent)
       let entry = deepcopy(s:entry_template)
       call s:parse_node(entry, node)
       call add(a:target.entry, entry)
+    elseif node.name == 'category'
+      let l:category           = deepcopy(s:category_template)
+      let l:category['term']   = has_key(node.attr, 'term')   ? node.attr['term']   : ''
+      let l:category['scheme'] = has_key(node.attr, 'scheme') ? node.attr['scheme'] : ''
+      let l:category['label']  = has_key(node.attr, 'label')  ? node.attr['label']  : ''
+      call add(a:target.category, l:category)
+    elseif node.name == 'app:control'
+      for l:item in node.child
+        if type(l:item) == 4 && l:item.name == 'app:draft'
+          let a:target['app:control'] = {'app:draft': l:item.child[0]}
+        endif
+        unlet l:item
+      endfor
     elseif type(a:target[node.name]) == 3
-      call add(a:target[node.name], parent.value())
+      call add(a:target[node.name], a:parent.value())
     else
       let a:target[node.name] = node.value()
     endif

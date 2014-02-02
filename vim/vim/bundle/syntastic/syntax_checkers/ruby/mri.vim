@@ -13,11 +13,14 @@
 if exists("g:loaded_syntastic_ruby_mri_checker")
     finish
 endif
-let g:loaded_syntastic_ruby_mri_checker=1
+let g:loaded_syntastic_ruby_mri_checker = 1
 
 if !exists("g:syntastic_ruby_exec")
     let g:syntastic_ruby_exec = "ruby"
 endif
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 function! SyntaxCheckers_ruby_mri_GetHighlightRegex(i)
     if stridx(a:i['text'], 'assigned but unused variable') >= 0
@@ -36,7 +39,7 @@ function! SyntaxCheckers_ruby_mri_GetLocList() dict
 
     let makeprg = self.makeprgBuild({
         \ 'exe': exe,
-        \ 'args': '-w -T1 -c' })
+        \ 'args_after': '-w -T1 -c' })
 
     "this is a hack to filter out a repeated useless warning in rspec files
     "containing lines like
@@ -70,3 +73,8 @@ call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'ruby',
     \ 'name': 'mri',
     \ 'exec': 'ruby'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:
