@@ -108,7 +108,7 @@ endif
 " Mappings
 " ========
 
-let mapleader='\'
+let mapleader=' '
 
 " Allow sudo filesaving
 cmap w!! %!sudo tee > /dev/null %
