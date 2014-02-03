@@ -33,7 +33,7 @@ install_tools(){
 }
 
 install_cloud(){
-    aur_package_install "dropbox dropbox-cli btsync owncloud-client"
+    aur_package_install "dropbox dropbox-cli btsync"
 }
 
 finish_install(){

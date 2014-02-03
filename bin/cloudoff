@@ -1,6 +1,5 @@
 #!/bin/bash
 
-pkill owncloud
 dropbox stop
 sudo systemctl stop btsync@tml
 
