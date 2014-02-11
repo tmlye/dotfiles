@@ -1,5 +1,7 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
+/* Use chrome://browser/content/browser.xul to get IDs etc */
+
 /* Hides the menu button */
 #appmenu-toolbar-button { display: none !important; }
 
@@ -21,6 +23,10 @@
 #TabsToolbar #personal-bookmarks {
     max-width:65px!important;
     min-width:60px!important;
+}
+/* Hide the downloads button */
+#TabsToolbar #downloads-button {
+    display:none!important;
 }
 
 #main-window #tabbrowser-tabs tab

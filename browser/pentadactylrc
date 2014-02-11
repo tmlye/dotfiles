@@ -25,6 +25,9 @@ nmap -b d :tabclose<CR>
 nmap -b ) :tn<CR>
 nmap -b ( :tp<CR>
 
+" Bindings for dialogs
+nmap <Leader>d :dialog downloads<CR>
+
 " Bindings for opening various websites
 nmap <Leader>t :tabopen https://trello.com/login<CR>
 nmap <Leader>g :tabopen https://github.com/login<CR>
