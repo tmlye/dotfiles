@@ -334,6 +334,10 @@ globalkeys = awful.util.table.join(
             if client.focus then client.focus:raise() end
         end),
 
+    -- Hotkeys
+    awful.key({  }, "XF86MonBrightnessDown", function () io.popen("xbacklight -dec 10") end),
+    awful.key({  }, "XF86MonBrightnessUp", function () io.popen("xbacklight -inc 10") end),
+
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
