@@ -105,6 +105,11 @@ if has('gui_running')
     set columns=85                  " Width
 endif
 
+" Filetype correction
+" ===================
+
+au BufRead,BufNewFile *.jade setfiletype jade
+
 " Mappings
 " ========
 
