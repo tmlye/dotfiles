@@ -22,6 +22,8 @@ set ruler                   " Show cursor position in status bar
 set hidden                  " Buffers can exist in the background
 set showmatch               " Briefly jump to matching bracket
 set matchtime=2             " Time match is shown in 0.1s
+" path, filetype, modified flag, readonly flag, buffer num, line pos, percentage
+set statusline=%<%F\ %y%r%m\ %3*%n%*%=%l,%-10.0c\ \%p%%
 
 " Reload vimrc when it's saved
 autocmd! BufWritePost .vimrc source ~/.vimrc
@@ -133,6 +135,18 @@ imap <c-j> <c-o><c-j>
 imap <c-k> <c-o><c-k>
 imap <c-h> <c-o><c-h>
 imap <c-l> <c-o><c-l>
+
+" Navigate buffers with alt+N
+" Is there a better way to do this mapping?
+map <silent> <M-1> :b 1<CR>
+map <silent> <M-2> :b 2<CR>
+map <silent> <M-3> :b 3<CR>
+map <silent> <M-4> :b 4<CR>
+map <silent> <M-5> :b 5<CR>
+map <silent> <M-6> :b 6<CR>
+map <silent> <M-7> :b 7<CR>
+map <silent> <M-8> :b 8<CR>
+map <silent> <M-9> :b 9<CR>
 
 " Clear highlighting after jump
 noremap <silent> gd gd:noh<CR>
