@@ -40,6 +40,9 @@ if [ $? -ne 0 ]; then
   mpdscribble &
 fi
 
+# Start clipboard manager
+xcmenu &
+
 # Turn off bell
 /usr/bin/xset b off
 
