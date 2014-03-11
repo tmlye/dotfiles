@@ -23,7 +23,7 @@ set hidden                  " Buffers can exist in the background
 set showmatch               " Briefly jump to matching bracket
 set matchtime=2             " Time match is shown in 0.1s
 " path, filetype, modified flag, readonly flag, buffer num, line pos, percentage
-set statusline=%<%F\ %y%r%m\ %3*%n%*%=%l,%-10.0c\ \%p%%
+set statusline=%<%F\ %y%r%m\ %3*%n%*%=%l,%-5.0c\ \%p%%
 
 " Reload vimrc when it's saved
 autocmd! BufWritePost .vimrc source ~/.vimrc
