@@ -1,0 +1,32 @@
+#!/bin/bash
+# Takes a list of files and creates thumbnails
+# for them in a thumbs folder using basewidth
+# as the width for the created thumbnail.
+# If the image is wider than it is high,
+# the thumb will be created using basewidth * 2
+
+BASEWIDTH=320
+
+if [ $# -eq 0 ];then
+    DIR=$(pwd)
+else
+    DIR=$(dirname $(readlink -fz "$1"))
+fi
+
+THUMBS_FOLDER=$DIR/thumbs
+mkdir -p $THUMBS_FOLDER
+
+for file in "$@"
+do
+    width="$(identify -format "%w\n" "$DIR/$file")"
+    height="$(identify -format "%h\n" "$DIR/$file")"
+
+    filename=$(basename "$file")
+    extension="${filename##*.}"
+    filename="${filename%.*}"
+    if [ $width -ge $height ]; then
+        convert -thumbnail $(($BASEWIDTH * 2)) "$file" "${THUMBS_FOLDER}/${filename}_thumb.${extension}"
+    else
+        convert -thumbnail $BASEWIDTH "$file" "${THUMBS_FOLDER}/${filename}_thumb.${extension}"
+    fi
+done
