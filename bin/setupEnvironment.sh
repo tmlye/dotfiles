@@ -28,7 +28,7 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "truecrypt wine virtualbox calibre viewnior zathura"
+  package_install "truecrypt wine virtualbox calibre viewnior zathura htop"
   aur_package_install "xmind"
 }
 
