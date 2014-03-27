@@ -32,6 +32,10 @@ install_tools(){
   aur_package_install "xmind"
 }
 
+install_dev(){
+  package_install "nodejs"
+}
+
 install_cloud(){
     aur_package_install "dropbox dropbox-cli btsync"
 }
@@ -82,4 +86,5 @@ install_communication
 install_music
 install_internet
 install_tools
+install_dev
 finish_install
