@@ -59,6 +59,11 @@ alias tcd='truecrypt -d `sudo fdisk -l | grep -A 3 "^Disk identifier: 0xbf40ec14
 alias shu='systemctl poweroff'
 alias re='sudo reboot'
 
+# Git
+# ===
+
+alias gs='git status'
+
 # Various
 # =======
 
