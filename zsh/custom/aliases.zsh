@@ -7,10 +7,9 @@ alias us='test -f ~/.XkeymapUS && xkbcomp -w 0 ~/.XkeymapUS $DISPLAY'
 # External Screens
 # ================
 
-alias hdmi='xrandr --output HDMI1 --auto --left-of LVDS'
+alias hdmi='xrandr --output HDMI1 --auto --left-of eDP1'
 alias pres='xrandr --fb 1366x768 --output DP2 --mode 1024x768 --panning 1366x0'
-alias mon='xrandr --output DP2 --mode 1680x1050 --left-of eDP1
-feh --bg-fill $HOME/.wallpaper/current.jpg'
+alias mon='xrandr --output DP2 --mode 1680x1050 --left-of eDP1'
 
 # Package Management
 # ==================
