@@ -1,6 +1,6 @@
 #!/bin/bash
 
 dropbox start
-sudo systemctl start btsync@tml
+seaf-cli start
 
 # vim:set filetype=sh:

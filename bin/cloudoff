@@ -1,6 +1,6 @@
 #!/bin/bash
 
 dropbox stop
-sudo systemctl stop btsync@tml
+seaf-cli stop
 
 # vim:set filetype=sh:
