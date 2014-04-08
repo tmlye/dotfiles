@@ -111,6 +111,7 @@ endif
 " ===================
 
 au BufRead,BufNewFile *.jade setfiletype jade
+let g:tex_flavor='latex'
 
 " Mappings
 " ========
@@ -137,7 +138,7 @@ imap <c-h> <c-o><c-h>
 imap <c-l> <c-o><c-l>
 
 " Navigate buffers with alt+N
-" Is there a better way to do this mapping?
+" Is there a better way to do this?
 map <silent> <M-1> :b 1<CR>
 map <silent> <M-2> :b 2<CR>
 map <silent> <M-3> :b 3<CR>
