@@ -63,6 +63,11 @@ alias re='sudo reboot'
 
 alias gs='git status'
 
+# SSH
+# ===
+
+alias pi='ssh pi -p 783'
+
 # Various
 # =======
 
