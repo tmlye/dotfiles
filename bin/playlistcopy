@@ -1,7 +1,0 @@
-#!/bin/bash
-mkdir $HOME/mount2/playlistcopy
-mkdir $HOME/mount2/playlistcopy/"$1"
-cat "$1" | grep -v '#' | \
-while read i; do cp $HOME/mount/Musik/"${i}" $HOME/mount2/playlistcopy/"$1" ; done
-
-# vim:set filetype=sh:

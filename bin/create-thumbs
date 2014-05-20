@@ -25,8 +25,8 @@ do
     extension="${filename##*.}"
     filename="${filename%.*}"
     if [ $width -ge $height ]; then
-        convert -thumbnail $(($BASEWIDTH * 2)) "$file" "${THUMBS_FOLDER}/${filename}_thumb.${extension}"
+        convert -thumbnail $(($BASEWIDTH * 2)) "$file" "${THUMBS_FOLDER}/${filename}.${extension}"
     else
-        convert -thumbnail $BASEWIDTH "$file" "${THUMBS_FOLDER}/${filename}_thumb.${extension}"
+        convert -thumbnail $BASEWIDTH "$file" "${THUMBS_FOLDER}/${filename}.${extension}"
     fi
 done
