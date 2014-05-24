@@ -24,5 +24,6 @@ rsync -a $HOME/.gtkrc-2.0 $HOME/mount/backup/OS/home/
 rsync -a $HOME/.gitconfig $HOME/mount/backup/OS/home/
 rsync -a $HOME/.mpdconf $HOME/mount/backup/OS/home/
 rsync -a /etc/default/grub $HOME/mount/backup/OS/
+rsync -a $HOME/.secrets $HOME/mount/backup/OS/home/
 
 # vim:set filetype=sh:
