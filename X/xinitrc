@@ -46,6 +46,4 @@ xcmenu &
 # Turn off bell
 /usr/bin/xset b off
 
-[[ -f ~/.secrets ]] && source ~/.secrets
-
 exec awesome
