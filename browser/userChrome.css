@@ -2,54 +2,59 @@
 
 /* Use chrome://browser/content/browser.xul to get IDs etc */
 
-/* Hides the menu button */
-#appmenu-toolbar-button { display: none !important; }
-
 /* Hides the ugly xmarks stars */
 #foxmarks-statusbarpanel { display:none!important; }
 #status-bar { margin-right:2px; }
 
 /* Toolbar Buttons */
-#TabsToolbar toolbarbutton {
+toolbarbutton {
     background: transparent !important;
     -moz-appearance: none !important;
-    margin: 0px 0px 8px 0px !important;
+    margin:0px 0px 8px 0px !important;
+    padding:1px!important;
 }
-#TabsToolbar toolbarbutton > image {
+toolbarbutton > image {
     margin: 0 !important;
     width: 10px !important;
     height: 10px !important;
 }
-#TabsToolbar #personal-bookmarks {
+#personal-bookmarks {
     max-width:65px!important;
     min-width:60px!important;
-}
-/* Hide the downloads button */
-#TabsToolbar #downloads-button {
-    display:none!important;
+    margin-right: -10px;
 }
 
 /* TABS */
 
-#main-window #tabbrowser-tabs .tabbrowser-tab
+#main-window .tabbrowser-tabs .tabbrowser-tab
 {
     background:#1c1c1c!important;
-    border:0!important;
     color:rgba(155,155,155,1)!important;
     text-shadow:rgba(0,0,0,.8) 0 0 1px!important;
 
-    margin:0px 0px 0px!important;
-    min-height:18px!important;
-    max-height:18px!important;
-    padding:0 6px!important;
-    border-radius:0 0 0px 0px!important;
+    margin:0!important;
     font: 11px consolas !important;
     font-weight: normal !important;
+    text-align:center!important;
 }
 
-/* Hide background on non-selected tabs (hover) */
-.tab-background {
-    background-image:none!important;
+/* Deal with Australis */
+.tabbrowser-tabs .tab-background {
+    margin:0!important;
+    background:#1c1c1c!important;
+}
+.tabbrowser-tabs .tab-background[selected=true] {
+    background:#1c1c1c!important;
+}
+.tabbrowser-tabs .tab-background-start,
+.tabbrowser-tabs .tab-background-end {
+    display:none!important;
+}
+/* Making this display: none; causes tabs to not respond to clicks */
+.tabbrowser-tabs .tab-background-middle {
+    margin:0!important;
+    border-style:none!important;
+    background:transparent!important;
 }
 
 /* Hide the tab seperators */
@@ -61,19 +66,12 @@
 
 #main-window #tabbrowser-tabs .tabbrowser-tab[selected="true"]
 {
-    /*color:#ffffff!important;
-    background:#2c2c2c!important;
-    font-weight:bold!important;
-    text-decoration:underline!important;*/
     color:rgba(255,255,255,.8)!important;
-    /* background-color:#2c2c2c!important; */
 }
+/* Hide the tab icons and throbber */
 #main-window #tabbrowser-tabs .tabbrowser-tab .tab-throbber,
 #main-window #tabbrowser-tabs .tabbrowser-tab .tab-icon-image
 {
-    max-height:10px!important;
-    max-width:10px!important;
-    margin-top:0px!important;
     display:none!important;
 }
 #main-window #tabbrowser-tabs .tabbrowser-tab[fadein]
@@ -84,46 +82,15 @@
 {
     color:rgba(255,255,255,.8)!important;
 }
-#main-window #tabbrowser-tabs .tabbrowser-tab .tab-close-button
-{
-    opacity:0!important;
-    -moz-transition:all .1s ease-in-out!important;
-}
-#main-window #tabbrowser-tabs .tabbrowser-tab .tab-close-button .toolbarbutton-icon
-{
-    max-height:10px!important;
-    max-width:10px!important;
-}
-#main-window #tabbrowser-tabs .tabbrowser-tab[selected="true"] .tab-close-button,
-#main-window #tabbrowser-tabs .tabbrowser-tab:hover .tab-close-button
-{
-    opacity:0!important;
-}
 #main-window #tabbrowser-tabs .tabbrowser-tab[fadein]:not([pinned])
 {
     min-width:50px!important;
     max-width:2000px!important;
 }
-#main-window #tabbrowser-tabs .tabbrowser-tab[pinned] .tab-close-button
-{
-    display:none!important;
-}
 #TabsToolbar
 {
-    padding:0px 0px 0px!important;
+    padding:0px!important;
+    margin:0px 0px -5px 0px!important;
     background:#1c1c1c!important;
     -moz-appearance: none !important;
-    border:none!important;
-    max-height:18px!important;
-}
-.tabbrowser-tab
-{
-    border: 0 !important;
-    background: 0 !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-}
-tab {
-    text-align:center!important;
 }
