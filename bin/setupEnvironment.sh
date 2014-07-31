@@ -14,7 +14,7 @@ install_DE(){
 }
 
 install_communication(){
-  package_install "irssi teamspeak3"
+  package_install "irssi"
   aur_package_install "mutt-sidebar"
 }
 
@@ -36,7 +36,12 @@ install_dev(){
 }
 
 install_cloud(){
-    aur_package_install "dropbox dropbox-cli btsync"
+    aur_package_install "dropbox dropbox-cli seafile-client seafile-client-cli"
+}
+
+install_power(){
+  aur_package_install "tpacpi-bat"
+  package_install "powertop acpi_call"
 }
 
 finish_install(){
@@ -86,4 +91,5 @@ install_music
 install_internet
 install_tools
 install_dev
+install_power
 finish_install

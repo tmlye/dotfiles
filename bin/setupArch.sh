@@ -121,14 +121,6 @@ install_basic_setup(){
   is_package_installed "fuse" && add_module "fuse"
 }
 
-install_tlp(){
-  print_title "Installing TLP"
-  aur_package_install "tlp tlp-rdw acpi_call-git"
-  package_install "tp_smapi"
-  system_ctl start tlp tlp-sleep.service
-  system_ctl enable tlp tlp-sleep.service
-  pause_function
-}
 
 finish_install(){
   print_title "Installation complete"
@@ -152,5 +144,4 @@ create_new_user
 install_yaourt
 enable_multilib
 install_basic_setup
-install_tlp
 finish_install
