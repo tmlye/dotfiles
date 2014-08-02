@@ -1,0 +1,12 @@
+[Unit]
+Description=Powertop tunings
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/bin/powertop --auto-tune
+# "powertop --auto-tune" still needs a terminal for some reason. Possibly a bug?
+Environment="TERM=xterm"
+
+[Install]
+WantedBy=multi-user.target

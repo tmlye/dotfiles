@@ -1,0 +1,12 @@
+[Unit]
+Description=Set battery charging thresholds
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/tpacpi-bat -s SP 1 80
+ExecStart=/usr/bin/tpacpi-bat -s SP 2 80
+ExecStart=/usr/bin/tpacpi-bat -s ST 1 60
+ExecStart=/usr/bin/tpacpi-bat -s ST 2 60
+
+[Install]
+WantedBy=multi-user.target
