@@ -167,9 +167,9 @@ install_network(){
 finish_install(){
   print_title "INSTALL COMPLETED"
   print_info "A setup script will be copied to /root on the new system."
-  cp `pwd`/setupArch.sh ${MOUNTPOINT}/root/
-  cp `pwd`/setupEnvironment.sh ${MOUNTPOINT}/root/
-  cp `pwd`/sharedfuncs ${MOUNTPOINT}/root/
+  cp $DIR/setupArch.sh ${MOUNTPOINT}/root/
+  cp $DIR/setupEnvironment.sh ${MOUNTPOINT}/root/
+  cp $DIR/sharedfuncs ${MOUNTPOINT}/root/
 
   read_input_text "Unmount partition?"
   if [[ $OPTION == y ]]; then
@@ -198,7 +198,9 @@ if [[ -z $1 || $1 = @(-h|--help) ]]; then
   exit $(( $# ? 0 : 1 ))
 fi
 
-if [[ -f `pwd`/sharedfuncs ]]; then
+# Get the directory this script is in
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [[ -f $DIR/sharedfuncs ]]; then
   source sharedfuncs
 else
   echo "missing file: sharedfuncs"
