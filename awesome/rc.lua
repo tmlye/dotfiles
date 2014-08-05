@@ -132,7 +132,8 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
 -- Initialize Widget
 weatherwidget = wibox.widget.textbox()
 -- Register Widget
-vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 301, airportcode)
+vicious.register(weatherwidget, vicious.widgets.weather, "${tempc}°", 307, airportcode)
+weatherwidget:buttons(awful.button({}, 1, function() vicious.force({weatherwidget}) end))
 
 -- Helper for setting the volume icon
 function setVolIconBasedOnStatus ()
