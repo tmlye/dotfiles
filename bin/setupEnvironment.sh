@@ -28,7 +28,7 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "truecrypt wine virtualbox calibre viewnior zathura htop"
+  package_install "calc truecrypt wine virtualbox calibre viewnior zathura htop"
 }
 
 install_dev(){
