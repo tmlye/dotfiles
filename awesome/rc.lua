@@ -178,7 +178,7 @@ vicious.register(wifiwidget, vicious.widgets.wifi,
         else
             return "<span color='#D4D7F2'>~</span> " .. args["{link}"] .. "%"
         end
-    end, 7, wificard)
+    end, 29, wificard)
 
 -- Create a battery widget
 baticon = wibox.widget.imagebox()
@@ -186,12 +186,12 @@ baticon:set_image(home .. "/.config/awesome/icons/bat.png")
 --Initialize widget
 batwidget = wibox.widget.textbox()
 --Register widget
-vicious.register(batwidget, vicious.widgets.bat, "$1$2", 37, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, "$1$2", 59, "BAT0")
 -- Second battery
 --Initialize widget
 batwidget2 = wibox.widget.textbox()
 --Register widget
-vicious.register(batwidget2, vicious.widgets.bat, "$1$2", 31, "BAT1")
+vicious.register(batwidget2, vicious.widgets.bat, "$1$2", 53, "BAT1")
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
