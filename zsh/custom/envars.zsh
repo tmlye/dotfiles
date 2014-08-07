@@ -1,7 +1,7 @@
 ## ZSH Environment Variables
 
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 export DISPLAY=:0
 
 export SHELL='/bin/zsh'
