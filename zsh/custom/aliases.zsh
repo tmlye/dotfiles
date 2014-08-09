@@ -71,6 +71,7 @@ alias pi='ssh pi -p 783'
 # Various
 # =======
 
+alias c='clear'
 alias ps='ps -a -c -o pid,command -x'
 alias v='gvim'
 alias ls='ls --color=auto'

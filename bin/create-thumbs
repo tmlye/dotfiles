@@ -10,18 +10,18 @@ BASEWIDTH=320
 if [ $# -eq 0 ];then
     DIR=$(pwd)
 else
-    DIR=$(dirname $(readlink -fz "$1"))
+    DIR="$(dirname "$(readlink -fz "$1")")"
 fi
 
-THUMBS_FOLDER=$DIR/thumbs
-mkdir -p $THUMBS_FOLDER
+THUMBS_FOLDER="$DIR/thumbs"
+mkdir -p "$THUMBS_FOLDER"
 
 for file in "$@"
 do
     width="$(identify -format "%w\n" "$DIR/$file")"
     height="$(identify -format "%h\n" "$DIR/$file")"
 
-    filename=$(basename "$file")
+    filename="$(basename "$file")"
     extension="${filename##*.}"
     filename="${filename%.*}"
     if [ $width -ge $height ]; then
