@@ -45,12 +45,11 @@ alias msd='sudo mount /dev/mmcblk0p1 $HOME/mount2'
 alias musb='sudo mount -U 442065E86FCD4ADE $HOME/mount2'
 alias msa='sudo mount -U 2ab49980-3dd0-4dc7-bd10-1c9a9ce0f082 .msata'
 
-# Truecrypt
-# =========
+# Cryptsetup
+# ==========
 
-alias tcm='truecrypt --mount `sudo fdisk -l | grep -A 3 "^Disk identifier: 0xbf40ec14" | grep -o "/dev/sd[a-z]1"` $HOME/mount'
-alias tcu='sudo umount $HOME/mount'
-alias tcd='truecrypt -d `sudo fdisk -l | grep -A 3 "^Disk identifier: 0xbf40ec14" | grep -o "/dev/sd[a-z]1"`'
+alias me='sudo cryptsetup --type luks open `sudo fdisk -l | grep -A 3 "^Disk identifier: 0xbf40ec14" | grep -o "/dev/sd[a-z]1"` extern && sudo mount -t ext4 /dev/mapper/extern $HOME/mount'
+alias dmnt='sudo umount $HOME/mount; sudo cryptsetup close extern'
 
 # Power
 # =====
