@@ -57,11 +57,6 @@ alias dmnt='sudo umount $HOME/mount; sudo cryptsetup close extern'
 alias shu='systemctl poweroff'
 alias re='sudo reboot'
 
-# Git
-# ===
-
-alias gs='git status'
-
 # SSH
 # ===
 
