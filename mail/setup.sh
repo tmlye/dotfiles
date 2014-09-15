@@ -23,7 +23,7 @@ function notes {
 	echo ""
 	echo "When these have been installed, use bin/msmtp-gnome-tool.py"
 	echo "and bin/offlineimap-gnome-tool.py to populate gnome-keyring"
-	echo "with your passwords"
+	echo "with your passwords, for gmail use the server imap.gmail.com."
 	echo ""
 	echo ""
 	echo "Insert something like the following into your crontab (crontab -e)"
