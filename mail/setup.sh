@@ -55,7 +55,6 @@ ln -s $HOME/.dotfiles/mail/mutt $HOME/.mutt
 ln -s $HOME/.dotfiles/mail/lbdb.rc $HOME/.lbdbrc
 ln -s $HOME/.dotfiles/mail/offlineimaprc $HOME/.offlineimaprc
 ln -s $HOME/.dotfiles/mail/mairixrc $HOME/.mairixrc
-ln -s $HOME/.dotfiles/mail/goobookrc $HOME/.goobookrc
 
 # msmtprc needs to be 600 permissions
 chmod 600 $HOME/.dotfiles/mail/msmtprc

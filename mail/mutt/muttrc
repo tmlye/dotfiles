@@ -64,7 +64,7 @@ set spoolfile = +"ohm/inbox"
 source ~/.dotfiles/mail/mutt/common
 #source ~/.dotfiles/mail/mutt/colors
 source ~/.dotfiles/mail/mutt/solarized
-set query_command="goobook query '%s'"
+set query_command = "muttvcardsearch '%s'"
 source ~/.dotfiles/mail/mutt/pgp
 
 # if we are in any directory starting with the following, pull
