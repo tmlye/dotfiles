@@ -15,7 +15,7 @@ install_DE(){
 
 install_communication(){
   package_install "irssi"
-  aur_package_install "mutt-sidebar"
+  aur_package_install "mutt-sidebar muttvcardsearch"
 }
 
 install_music(){
