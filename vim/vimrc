@@ -158,5 +158,5 @@ nnoremap <silent> <c-g> :noh<CR>
 " Remove trailing whitespace
 nnoremap <silent> <leader>w :%s/\s\+$//e<CR>:noh<CR>
 
-" Google contact lookup for editing mail
-imap <c-f> <ESC>:r!~/.dotfiles/mail/bin/google-contacts-lookup.sh <cword><CR><ESC>
+" Contact lookup for editing mail
+imap <c-f> <ESC>:r!muttvcardsearch <cword><CR><ESC>
