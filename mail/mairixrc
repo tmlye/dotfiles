@@ -5,7 +5,7 @@ base=~/.mail
 
 # Maildirs. '...' Means use all subfolders
 maildir=ohm...
-maildir=gmail...
+maildir=web...
 
 # In my case uses around 35 MB
 database=~/.mairix/database
@@ -14,8 +14,8 @@ database=~/.mairix/database
 mfolder=mairix-search
 
 # don't index spam folders
-omit=gmail/spam
+omit=web/Spam
 
 # don't index trash folders
 omit=ohm/trash
-omit=gmail/trash
+omit=web/Trash

@@ -35,7 +35,7 @@ function notes {
 
 # Make the required mail directories
 mkdir -p $HOME/.mail/ohm
-mkdir -p $HOME/.mail/gmail
+mkdir -p $HOME/.mail/web
 
 # We need to make $HOME/.mairix too
 mkdir -p $HOME/.mairix

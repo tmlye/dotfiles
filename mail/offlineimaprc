@@ -3,7 +3,7 @@
 # https://github.com/jgoerzen/offlineimap/blob/master/offlineimap.conf
 
 metadata = ~/.offlineimap
-accounts = ohm, gmail
+accounts = ohm, web
 maxsyncaccounts = 2
 socktimeout = 60
 ui = Basic
@@ -30,10 +30,25 @@ localrepository = local-ohm
 remoterepository = remote-ohm
 status_backend = sqlite
 
-[Account gmail]
-localrepository = local-gmail
-remoterepository = remote-gmail
+[Account web]
+localrepository = local-web
+remoterepository = remote-web
 status_backend = sqlite
+
+[Repository local-web]
+type = Maildir
+localfolders = ~/.mail/web
+
+[Repository remote-web]
+type = IMAP
+maxconnections = 3
+remotehost = mail.saschaeglau.com
+remoteusereval = get_username("mail.saschaeglau.com")
+remotepasseval = get_password("mail.saschaeglau.com")
+# If using ssl, you will need to specify certificates to use with them
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
 
 [Repository local-ohm]
 type = Maildir
@@ -70,38 +85,3 @@ folderfilter = lambda foldername: foldername not in ['Documents','Junk E-mail']
 # 2. Replaces spaces with underscores
 nametrans = lambda foldername: re.sub (' ', '_', foldername.lower())
 #re.sub ('inbox.Archive', 'archive',
-
-
-[Repository local-gmail]
-type = Maildir
-localfolders = ~/.mail/gmail
-# Note the nametrans below in remote-gmail: it undoes this one
-nametrans = lambda folder: {'inbox':   'INBOX',
-                            'drafts':  '[Google Mail]/Drafts',
-                            'sent':    '[Google Mail]/Sent Mail',
-                            'flagged': '[Google Mail]/Starred',
-                            'trash':   '[Google Mail]/Trash',
-                            'archive': '[Google Mail]/All Mail',
-                            }.get(folder, folder)
-
-[Repository remote-gmail]
-type = Gmail
-maxconnections = 3
-remotehost = imap.gmail.com
-remoteusereval = get_username("imap.gmail.com")
-remotepasseval = get_password("imap.gmail.com")
-# If using ssl, you will need to specify certificates to use with them
-ssl = yes
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-realdelete = yes
-# Note the nametrans above in local-gmail: it undoes this one
-nametrans = lambda folder: {'INBOX':                   'inbox',
-                            '[Google Mail]/Drafts':    'drafts',
-                            '[Google Mail]/Sent Mail': 'sent',
-                            '[Google Mail]/Starred':   'flagged',
-                            '[Google Mail]/Trash':     'trash',
-                            '[Google Mail]/All Mail':  'archive',
-                            }.get(folder, folder)
-
-# Don't sync spam and trash
-folderfilter = lambda foldername: foldername not in ['[Google Mail]/Spam','[Google Mail]/Trash']

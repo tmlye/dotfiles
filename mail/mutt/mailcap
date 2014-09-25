@@ -1,16 +1,9 @@
-# This file tells mutt how to open mail attachments.  Your distribution may come with one by default.
-#
+# This file tells mutt how to open mail attachments.
+
 text/html; w3m -v -F -T text/html %s; edit=vim; compose=vim; nametemplate=%s.html; copiousoutput; needsterminal
-#image/jpg; feh %s
-#image/jpeg; feh %s
-#image/png; feh %s
-#image/gif; feh %s
-#image/tiff; feh %s
 image/*; viewnior %s
-application/msword; antiword %s; copiousoutput
-application/vnd.ms-excel; xls2csv '%s'; copiousoutput; description="MS Excel sheet";
-application/vnd.ms-powerpoint; catppt '%s'; copiousoutput; description="MS PowerPoint presentation";
-application/pdf; evince %s
+application/pdf; zathura %s
+text/plain; gvim -R -- '%s'; description="Plain Text Document"; nametemplate=%s.txt; needsterminal
 
 # Open Office Stuff
 application/vnd.oasis.opendocument.database; soffice -no-oosplash -base '%s'; edit=soffice -no-oosplash -base '%s'; test=test -n "$DISPLAY"; description="OpenDocument Database"; nametemplate=%s.odb
@@ -78,5 +71,4 @@ application/vnd.openxmlformats-officedocument.wordprocessingml.template; soffice
 application/msword; soffice -no-oosplash --writer '%s'; edit=soffice -no-oosplash --writer '%s'; test=test -n "$DISPLAY"; description="Microsoft Word Document"; nametemplate=%s.doc
 application/vnd.ms-works; soffice -no-oosplash --writer '%s'; edit=soffice -no-oosplash --writer '%s'; test=test -n "$DISPLAY"; description="Microsoft Works Document"; nametemplate=%s.wps
 application/wordperfect; soffice -no-oosplash --writer '%s'; edit=soffice -no-oosplash --writer '%s'; test=test -n "$DISPLAY"; description="WordPerfect Document"; nametemplate=%s.wp
-text/plain; soffice -no-oosplash --writer '%s'; edit=soffice -no-oosplash --writer '%s'; test=test -n "$DISPLAY"; description="Plain Text Document"; nametemplate=%s.txt
 text/rtf; soffice -no-oosplash --writer '%s'; edit=soffice -no-oosplash --writer '%s'; test=test -n "$DISPLAY"; description="Rich Text Format"; nametemplate=%s.rtf

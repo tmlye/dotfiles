@@ -59,7 +59,7 @@ set pager_context=3	# number of lines, to display twice on PgUp/Down
 set pager_index_lines=4	# add small message index at top of pager (4)
 
 source ~/.dotfiles/mail/mutt/muttmailboxes
-set spoolfile = +"ohm/inbox"
+set spoolfile = +"web/INBOX"
 
 source ~/.dotfiles/mail/mutt/common
 #source ~/.dotfiles/mail/mutt/colors
@@ -70,10 +70,10 @@ source ~/.dotfiles/mail/mutt/pgp
 # if we are in any directory starting with the following, pull
 # specific settings from somewhere else
 folder-hook +ohm/.* "source ~/.dotfiles/mail/mutt/ohm"
-folder-hook +gmail/.* "source ~/.dotfiles/mail/mutt/gmail"
+folder-hook +web/.* "source ~/.dotfiles/mail/mutt/web"
 
 # Mutt will mark emails from these addresses as having been sent by you
-alternates eglausa45793@th-nuernberg.de sascha.eglau@gmail.com
+alternates eglausa45793@th-nuernberg.de se@saschaeglau.com
 
 # All the macros we have defined
 source ~/.dotfiles/mail/mutt/macros

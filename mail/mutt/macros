@@ -15,11 +15,14 @@ macro index \co "<shell-escape>offlineimap<enter>"           "run offlineimap to
 # Ctrl-R to mark all as read
 macro index \cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
+macro index 1 '<sync-mailbox><change-folder>+web/INBOX<enter>'
+macro index 2 '<sync-mailbox><change-folder>+ohm/inbox<enter>'
 
 # Generic keybindings
 # -------------------
 macro generic   ,<Space>    ":source ~/.dotfiles/mail/mutt/muttrc\n" "Reload mutt's configuration file"
-macro index,pager \043 "<save-message>=gmail/trash<enter><refresh>" "Trash Message"
+
+macro index,pager A "<clear-flag>N<save-message>+web/Archive<enter><sync-mailbox>"
 
 # Sidebar
 bind index,pager ) sidebar-next
@@ -42,12 +45,7 @@ macro pager \cb         <pipe-entry>'w3m'<enter> 'Follow links in w3m'
 
 # Mairix
 # ------
-macro index,pager ,f "<shell-escape>mairix -f ~/.dotfiles/mail/mairixrc " "run a Mairix search"
+macro index,pager ,f "<shell-escape>mairix " "run a Mairix search"
 macro index,pager ,s "<change-folder-readonly>=mairix-search\n" "switch to mairix results folder"
-
-
-# Goobook
-# -------
-macro index,pager ,a "<pipe-message>goobook add && goobook reload<return>" "add the sender address to Google contacts"
 
 # vim: set ft=muttrc
