@@ -13,8 +13,8 @@ fi
 go-mtpfs $PHONEMOUNT &
 sleep 2
 
-cp -ru $PHONEMOUNT/Phone/{chomp,Tasker,WhatsApp} $BACKUP/internal
-cp -ru $PHONEMOUNT/Card/* $BACKUP/card
+cp -ru $PHONEMOUNT/Internal\ storage/{Tasker,WhatsApp} $BACKUP/internal
+cp -ru $PHONEMOUNT/SD\ card/* $BACKUP/card
 
 echo ""
 echo Unmounting phone:
