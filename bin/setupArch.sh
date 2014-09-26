@@ -108,9 +108,9 @@ enable_multilib(){
 install_basic_setup(){
   print_title "Installing basic tools"
   package_install "rsync mlocate ranger gvim git openssh"
-  print_info "Installing NTPd"
-  package_install "ntp"
-  is_package_installed "ntp" && timedatectl set-ntp true
+  print_info "Installing chrony NTP client"
+  package_install "chrony"
+  is_package_installed "chrony" && system_ctl enable chrony
   print_info "Installing compression tools"
   package_install "zip unzip unrar"
   print_info "Installing ALSA"
