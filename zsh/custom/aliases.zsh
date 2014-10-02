@@ -61,6 +61,7 @@ alias re='sudo reboot'
 # ===
 
 alias pi='ssh pi -p 783'
+alias web='ssh web01 -p 799'
 
 # Various
 # =======
