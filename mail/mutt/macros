@@ -22,7 +22,7 @@ macro index 2 '<sync-mailbox><change-folder>+ohm/inbox<enter>'
 # -------------------
 macro generic   ,<Space>    ":source ~/.dotfiles/mail/mutt/muttrc\n" "Reload mutt's configuration file"
 
-macro index,pager A "<clear-flag>N<save-message>+web/Archive<enter><sync-mailbox>"
+macro index,pager A "<save-message>+web/Archive<enter><sync-mailbox>" "archive message"
 
 # Sidebar
 bind index,pager ) sidebar-next
