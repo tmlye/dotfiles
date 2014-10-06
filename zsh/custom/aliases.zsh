@@ -71,6 +71,11 @@ alias ps='ps -a -c -o pid,command -x'
 alias v='gvim'
 alias ls='ls --color=auto'
 
+function getip()
+{
+    wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+}
+
 function grephistory() # search history
 {
     history | grep $1 # history alias is built in oh-my-zsh
