@@ -37,7 +37,7 @@ set cpo&vim
 
 function! SyntaxCheckers_vala_valac_GetHighlightRegex(pos)
     let length = strlen(matchstr(a:pos['text'], '\m\^\+$'))
-    return '\%>' . (a:pos['col'] - 1) . 'c.*\%<' . (a:pos['col'] + length + 1) . 'c'
+    return '\%>' . (a:pos['col'] - 1) . 'c\%<' . (a:pos['col'] + length) . 'c'
 endfunction
 
 function! s:GetValaModules()
@@ -63,7 +63,7 @@ function! s:GetValaVapiDirs()
         elseif type(g:syntastic_vala_vapi_dirs) == type([])
             return copy(g:syntastic_vala_vapi_dirs)
         else
-            echoerr 'g:syntastic_vala_vapi_dirs must be either list or string: fallback to in file modules string'
+            echoerr 'g:syntastic_vala_vapi_dirs must be either a list, or a string: fallback to in-file modules string'
         endif
     endif
 

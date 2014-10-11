@@ -19,7 +19,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! SyntaxCheckers_go_gotype_GetLocList() dict
-    let makeprg = self.getExec() . ' .'
+    let makeprg = self.getExecEscaped() . ' .'
 
     let errorformat =
         \ '%f:%l:%c: %m,' .
@@ -29,13 +29,11 @@ function! SyntaxCheckers_go_gotype_GetLocList() dict
     " the package for the same reasons specified in go.vim ("figuring out
     " the import path is fickle").
 
-    let errors = SyntasticMake({
+    return SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
         \ 'cwd': expand('%:p:h'),
         \ 'defaults': {'type': 'e'} })
-
-    return errors
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({

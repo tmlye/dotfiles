@@ -21,19 +21,27 @@ set cpo&vim
 let s:compiler = expand('<sfile>:p:h') . syntastic#util#Slash() . 'compile.py'
 
 function! SyntaxCheckers_python_python_IsAvailable() dict
-    let exe = self.getExec()
-    return executable(exe) &&
-        \ syntastic#util#versionIsAtLeast(syntastic#util#getVersion(exe . ' --version'), [2,6])
+    if !executable(self.getExec())
+        return 0
+    endif
+
+    let ver = syntastic#util#getVersion(self.getExecEscaped() . ' --version')
+    call self.log(self.getExec() . ' version =', ver)
+
+    return syntastic#util#versionIsAtLeast(ver, [2, 6])
 endfunction
 
 function! SyntaxCheckers_python_python_GetLocList() dict
-    let makeprg = self.makeprgBuild({ 'exe': self.getExec() . ' ' . s:compiler })
+    let makeprg = self.makeprgBuild({ 'exe': [self.getExec(), s:compiler] })
 
     let errorformat = '%E%f:%l:%c: %m'
+
+    let env = syntastic#util#isRunningWindows() ? {} : { 'TERM': 'dumb' }
 
     return SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
+        \ 'env': env,
         \ 'returns': [0] })
 endfunction
 

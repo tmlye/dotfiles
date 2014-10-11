@@ -28,16 +28,26 @@ function! SyntaxCheckers_haxe_haxe_GetLocList() dict
     endif
     let hxml = fnamemodify(hxml, ':p')
 
+    call self.log('hxml =', hxml)
+
     if hxml != ''
         let makeprg = self.makeprgBuild({
-            \ 'fname': syntastic#util#shescape(fnameescape(fnamemodify(hxml, ':t'))) })
+            \ 'fname': syntastic#util#shescape(fnamemodify(hxml, ':t')) })
 
-        let errorformat = '%E%f:%l: characters %c-%*[0-9] : %m'
+        let errorformat = '%E%f:%l: characters %c-%n : %m'
 
-        return SyntasticMake({
+        let loclist = SyntasticMake({
             \ 'makeprg': makeprg,
             \ 'errorformat': errorformat,
             \ 'cwd': fnamemodify(hxml, ':h') })
+
+        for e in loclist
+            let e['hl'] = '\%>' . e['col'] . 'c\%<' . (e['nr'] + 1) . 'c'
+            let e['col'] += 1
+            let e['nr'] = 0
+        endfor
+
+        return loclist
     endif
 
     return []

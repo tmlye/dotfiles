@@ -9,19 +9,6 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
-"
-" For details about ChkTeX see:
-"
-" http://baruch.ev-en.org/proj/chktex/
-"
-" Checker options:
-"
-" - g:syntastic_tex_chktex_showmsgs (boolean; default: 1)
-"   whether to show informational messages (chktex option "-m");
-"   by default informational messages are shown as warnings
-"
-" - g:syntastic_tex_chktex_args (string; default: empty)
-"   command line options to pass to chktex
 
 if exists('g:loaded_syntastic_tex_chktex_checker')
     finish
@@ -45,11 +32,14 @@ function! SyntaxCheckers_tex_chktex_GetLocList() dict
         \ '%Z%p^,' .
         \ '%-G%.%#'
 
-    return SyntasticMake({
+    let loclist =  SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
-        \ 'subtype': 'Style',
-        \ 'postprocess': ['sort'] })
+        \ 'subtype': 'Style' })
+
+    call self.setWantSort(1)
+
+    return loclist
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
