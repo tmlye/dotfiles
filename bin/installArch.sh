@@ -72,10 +72,7 @@ install_base_system() {
       print_info "Installing arch install scripts"
       package_install "arch-install-scripts"
   fi
-  mkdir -p ${MOUNTPOINT}/var/lib/pacman
-  pacman -Sy -r ${MOUNTPOINT}
-  mkdir -p ${MOUNTPOINT}/var/cache/pacman/pkg
-  pacman -Su base --noconfirm --cachedir ${MOUNTPOINT}/var/cache/pacman/pkg -r ${MOUNTPOINT}
+  pacstrap -i ${MOUNTPOINT} base base-devel
 }
 
 configure_hostname(){
@@ -222,6 +219,7 @@ read_input_text "Do you want to continue?"
 if [[ $OPTION != y ]]; then exit 0; fi
 
 check_boot_system
+UEFI=1
 system_update
 configure_mirrorlist
 install_base_system
