@@ -107,7 +107,7 @@ enable_multilib(){
 
 install_basic_setup(){
   print_title "Installing basic tools"
-  package_install "rsync mlocate ranger gvim git openssh"
+  package_install "efivar gptfdisk rsync mlocate ranger gvim git openssh"
   print_info "Installing chrony NTP client"
   package_install "chrony"
   is_package_installed "chrony" && system_ctl enable chrony
