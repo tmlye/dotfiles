@@ -28,7 +28,7 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "calc wine virtualbox calibre viewnior zathura htop"
+  package_install "calc virtualbox calibre viewnior zathura zathura-pdf-poppler htop"
 }
 
 install_dev(){
@@ -92,4 +92,5 @@ install_internet
 install_tools
 install_dev
 install_power
+install_cloud
 finish_install
