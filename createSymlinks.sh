@@ -46,6 +46,10 @@ ln -s $HOME/.dotfiles/various/zathurarc $HOME/.config/zathura/zathurarc
 mkdir -p $HOME/.config/htop
 ln -s $HOME/.dotfiles/various/htoprc $HOME/.config/htop/htoprc
 
+# viewnior
+mkdir -p $HOME/.config/viewnior
+ln -s $HOME/.dotfiles/various/viewnior.conf $HOME/.config/viewnior/viewnior.conf
+
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
 
