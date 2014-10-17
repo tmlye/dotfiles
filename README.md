@@ -40,8 +40,8 @@ You can modify the location for the wallpaper in `~/.dotfiles/awesome/theme.lua`
 
 ## Screenshots
 
-![clean](http://saschaeglau.com/files/clean.png "Clean")
-![dirty](http://saschaeglau.com/files/dirty.png "Dirty")
+![clean](https://saschaeglau.com/files/clean.png "Clean")
+![dirty](https://saschaeglau.com/files/dirty.png "Dirty")
 
 ## Credit
 

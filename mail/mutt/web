@@ -8,8 +8,8 @@ set trash = +web/Trash
 unset signature
 #set signature = ~/.dotfiles/mail/mutt/sig_school.sig
 
-# use msmtp to send outgoing mail to the mailserver
-# see ~/.msmtp for configuration
+# use nullmail to send outgoing mail to the mailserver
+# msmtp does not work, I haven't figured out why
 set sendmail="/usr/bin/nullmailer-inject -f se@saschaeglau.com"
 
 set from="se@saschaeglau.com"

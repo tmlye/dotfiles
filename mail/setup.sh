@@ -61,7 +61,7 @@ chmod 600 $HOME/.dotfiles/mail/msmtprc
 
 # binary files
 rm $HOME/.dotfiles/bin/pullmail.sh
-ln -s $HOME/.dotfiles/mail/lib/pullmail.sh $HOME/.dotfiles/bin/pullmail.sh
+ln -s $HOME/.dotfiles/mail/bin/pullmail.sh $HOME/.dotfiles/bin/pullmail.sh
 
 # Create required folders
 mkdir -p $HOME/.mutt/{temp,cache}
