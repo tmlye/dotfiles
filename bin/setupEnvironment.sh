@@ -15,7 +15,7 @@ install_DE(){
 
 install_communication(){
   package_install "irssi"
-  aur_package_install "mutt-sidebar muttvcardsearch"
+  aur_package_install "mutt-sidebar muttvcardsearch archivemail"
 }
 
 install_music(){
@@ -28,7 +28,7 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "calc virtualbox calibre viewnior zathura zathura-pdf-poppler htop"
+  package_install "calc virtualbox calibre viewnior zathura zathura-pdf-poppler htop scrot whois dnsutils"
 }
 
 install_dev(){

@@ -19,8 +19,9 @@ test -f ~/.XkeymapUS && xkbcomp ~/.XkeymapUS $DISPLAY
 /usr/bin/xautolock -time 3 -locker slock &
 # Turn off screen after 3 mins
 xset +dpms
-xset dpms 0 0 175
+xset dpms 0 0 160
 
+# Touchpad fixes for TP x240
 synclient RightButtonAreaTop=0
 synclient RightButtonAreaBottom=1500
 synclient RightButtonAreaLeft=3900
