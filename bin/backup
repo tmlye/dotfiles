@@ -1,5 +1,6 @@
 #!/bin/bash
 # Folders
+rsync -a --delete $HOME/.aws $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/code $HOME/mount/backup
 rsync -a --delete $HOME/desktop $HOME/mount/backup
 rsync -a --delete $HOME/downloads $HOME/mount/backup
@@ -17,8 +18,6 @@ rsync -a --delete $HOME/.mpd $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.mpdscribble $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.ssh $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.wallpaper $HOME/mount/backup/OS/home/
-rsync -a --delete $HOME/.wine $HOME/mount/backup/OS/home/
-rsync -a --delete $HOME/.aws $HOME/mount/backup/OS/home/
 # Files
 rsync -a $HOME/.asoundrc $HOME/mount/backup/OS/home/
 rsync -a $HOME/.gtkrc-2.0 $HOME/mount/backup/OS/home/
