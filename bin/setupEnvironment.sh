@@ -14,7 +14,7 @@ install_DE(){
 }
 
 install_communication(){
-  package_install "irssi"
+  package_install "irssi mairix"
   aur_package_install "mutt-sidebar muttvcardsearch archivemail"
 }
 
