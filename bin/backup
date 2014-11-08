@@ -10,7 +10,6 @@ rsync -a --delete $HOME/.electrum $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.gem $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.gnupg $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.gtktheme $HOME/mount/backup/OS/home/
-rsync -a --delete $HOME/.IdeaIC12 $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.irssi $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.lastpass $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.mozilla $HOME/mount/backup/OS/home/

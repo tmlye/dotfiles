@@ -23,7 +23,7 @@ install_music(){
 }
 
 install_internet(){
-  package_install "firefox chromium flashplugin rtorrent pptpclient"
+  package_install "firefox chromium flashplugin rtorrent pptpclient unbound dnscrypt-proxy"
   aur_package_install "google-talkplugin"
 }
 
