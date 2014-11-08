@@ -60,6 +60,11 @@ beautiful.init(home .. "/.config/awesome/theme.lua")
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
+-- Set number of batteries
+local f = assert(io.popen("ls /sys/class/power_supply | grep BAT -c"))
+local batCount = assert(f:read())
+f:close()
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
@@ -186,7 +191,21 @@ baticon:set_image(home .. "/.config/awesome/icons/bat.png")
 --Initialize widget
 batwidget = wibox.widget.textbox()
 --Register widget
-vicious.register(batwidget, vicious.widgets.bat, "$1$2", 59, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat,
+    function (widget, args)
+        if args[2] < 5 then
+            -- Notify when battery is low
+            naughty.notify({
+                title = "Battery low!",
+                text = "\nThis is obviously not good.",
+                icon = home .. "/.config/awesome/icons/crit.png",
+                icon_size = 32,
+                timeout = 8
+            })
+            baticon:set_image(home .. "/.config/awesome/icons/crit.png")
+        end
+        return args[1] .. args[2]
+    end, 59, "BAT0")
 -- Second battery
 --Initialize widget
 batwidget2 = wibox.widget.textbox()
@@ -288,9 +307,6 @@ for s = 1, screen.count() do
     right_layout:add(baticon)
     right_layout:add(batwidget)
     -- Add second battery if present
-    local f = assert(io.popen("ls /sys/class/power_supply | grep BAT -c"))
-    local batCount = assert(f:read())
-    f:close()
     if(batCount == "2") then
         right_layout:add(spacer)
         right_layout:add(batwidget2)
