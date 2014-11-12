@@ -193,7 +193,7 @@ batwidget = wibox.widget.textbox()
 --Register widget
 vicious.register(batwidget, vicious.widgets.bat,
     function (widget, args)
-        if args[2] < 5 then
+        if args[2] < 4 then
             -- Notify when battery is low
             naughty.notify({
                 title = "Battery low!",
@@ -203,6 +203,8 @@ vicious.register(batwidget, vicious.widgets.bat,
                 timeout = 8
             })
             baticon:set_image(home .. "/.config/awesome/icons/crit.png")
+        else
+            baticon:set_image(home .. "/.config/awesome/icons/bat.png")
         end
         return args[1] .. args[2]
     end, 59, "BAT0")
