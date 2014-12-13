@@ -41,7 +41,7 @@ localfolders = ~/.mail/web
 
 [Repository remote-web]
 type = IMAP
-maxconnections = 3
+maxconnections = 2
 remotehost = mail.saschaeglau.com
 remoteusereval = get_username("mail.saschaeglau.com")
 remotepasseval = get_password("mail.saschaeglau.com")
@@ -69,7 +69,7 @@ nametrans = lambda foldername: re.sub ('archive', 'Archive',
 
 [Repository remote-ohm]
 type = IMAP
-maxconnections = 3
+maxconnections = 2
 remotehost = my.ohmportal.de
 remoteusereval = get_username("my.ohmportal.de")
 remotepasseval = get_password("my.ohmportal.de")
