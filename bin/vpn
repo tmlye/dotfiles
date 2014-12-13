@@ -1,2 +1,0 @@
-#!/bin/bash
-cd $HOME/.vpn && sudo openvpn Germany.ovpn
