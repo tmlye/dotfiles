@@ -1,6 +1,5 @@
 #!/bin/bash
 
-dropbox stop
 seaf-cli stop
 
 # vim:set filetype=sh:

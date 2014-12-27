@@ -1,6 +1,5 @@
 #!/bin/bash
 
-dropbox start
 seaf-cli start
 
 # vim:set filetype=sh:
