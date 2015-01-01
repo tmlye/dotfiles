@@ -156,8 +156,8 @@ configure_bootloader(){
 }
 
 install_network(){
-  print_title "Installing wicd for network management"
-  arch_chroot "pacman -S wicd ca-certificates"
+  print_title "Installing network management"
+  arch_chroot "pacman -S netctl ca-certificates wpa_supplicant dialog openvpn"
   pause_function
 }
 
@@ -219,7 +219,6 @@ read_input_text "Do you want to continue?"
 if [[ $OPTION != y ]]; then exit 0; fi
 
 check_boot_system
-UEFI=1
 system_update
 configure_mirrorlist
 install_base_system

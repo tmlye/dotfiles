@@ -27,11 +27,9 @@ fi
 
 setup_network(){
   print_title "Network setup"
-  system_ctl stop netctl netcfg dhcpcd networkmanager network
-  system_ctl disable netctl netcfg dhcpcd networkmanager network
-  system_ctl start wicd
-  system_ctl enable wicd
-  wicd-curses
+  print_warning "You need to have your network connection setup. Netctl should be setup by this point."
+  read_input_text "Is your network setup?"
+  if [[ $OPTION != y ]]; then exit 0; fi
 }
 
 root_password(){

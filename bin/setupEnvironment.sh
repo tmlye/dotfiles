@@ -36,7 +36,7 @@ install_dev(){
 }
 
 install_cloud(){
-    aur_package_install "dropbox dropbox-cli seafile-client seafile-client-cli"
+    aur_package_install "seafile-client seafile-client-cli"
 }
 
 install_power(){
