@@ -12,11 +12,8 @@
 
 function notes {
 	echo "If you haven't already, you will need to install mutt,"
-    echo "offlineimap,( imapfilter,) archivemail, mairix, lbdb, and msmtp,"
+    echo "offlineimap,( imapfilter,) archivemail, mairix, and msmtp,"
 	echo "as well as the python bindings for gnome-keyring"
-	echo ""
-	echo "On Debian based systems, this can be done through..."
-	echo "(sudo) apt-get install mutt offlineimap imapfilter archivemail mairix lbdb msmtp-mta msmtp-gnome python-gnomekeyring"
 	echo ""
 	echo "Also, to let offlineimap/imapfilter be run through cron,"
 	echo "add export_x_info.sh to your startup scripts."
@@ -52,7 +49,6 @@ done
 
 ln -s $HOME/.dotfiles/mail/msmtprc $HOME/.msmtprc
 ln -s $HOME/.dotfiles/mail/mutt $HOME/.mutt
-ln -s $HOME/.dotfiles/mail/lbdb.rc $HOME/.lbdbrc
 ln -s $HOME/.dotfiles/mail/offlineimaprc $HOME/.offlineimaprc
 ln -s $HOME/.dotfiles/mail/mairixrc $HOME/.mairixrc
 
