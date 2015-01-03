@@ -14,10 +14,10 @@ alias mon='xrandr --output DP2 --mode 1680x1050 --left-of eDP1'
 # Package Management
 # ==================
 
-alias update='sudo yaourt -Syua --noconfirm'
-alias install='sudo yaourt -S'
-alias uninstall='sudo yaourt -Rns'
-alias search='sudo yaourt -Ss'
+alias update='yaourt -Syua --noconfirm'
+alias install='yaourt -S'
+alias uninstall='yaourt -Rns'
+alias search='yaourt -Ss'
 
 # Mounting/Unmounting
 # ===================
