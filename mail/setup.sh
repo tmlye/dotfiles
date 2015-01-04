@@ -38,7 +38,7 @@ mkdir -p $HOME/.mail/web
 mkdir -p $HOME/.mairix
 
 # Symlinks
-declare -a links=(.msmtprc .mutt .lbdbrc .offlineimaprc .mairixrc)
+declare -a links=(.msmtprc .mutt .offlineimaprc .mairixrc)
 # If files already exist create backups
 for i in ${links[*]}
 do
