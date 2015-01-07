@@ -42,7 +42,7 @@ alias umm='newumount $HOME/mount'
 alias um2='newumount $HOME/mount2'
 
 alias msd='sudo mount /dev/mmcblk0p1 $HOME/mount2'
-alias musb='sudo mount -U 442065E86FCD4ADE $HOME/mount2'
+alias musb='sudo mount -U 340CFEF3116F2F5A $HOME/mount2'
 alias msa='sudo mount -U 66a9777d-0d9e-4f18-8a31-09cd2efa4790 .msata'
 
 # Cryptsetup
