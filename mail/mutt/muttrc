@@ -69,11 +69,10 @@ source ~/.dotfiles/mail/mutt/pgp
 
 # if we are in any directory starting with the following, pull
 # specific settings from somewhere else
-folder-hook +ohm/.* "source ~/.dotfiles/mail/mutt/ohm"
 folder-hook +web/.* "source ~/.dotfiles/mail/mutt/web"
 
 # Mutt will mark emails from these addresses as having been sent by you
-alternates eglausa45793@th-nuernberg.de se@saschaeglau.com
+alternates se@saschaeglau.com
 
 # All the macros we have defined
 source ~/.dotfiles/mail/mutt/macros

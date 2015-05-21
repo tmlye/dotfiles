@@ -3,7 +3,7 @@
 # https://github.com/jgoerzen/offlineimap/blob/master/offlineimap.conf
 
 metadata = ~/.offlineimap
-accounts = ohm, web
+accounts = web
 maxsyncaccounts = 2
 socktimeout = 60
 ui = Basic
@@ -25,11 +25,6 @@ peritem = "+%(accountname)s/%(foldername)s"
 sep = " "
 footer = "\n"
 
-[Account ohm]
-localrepository = local-ohm
-remoterepository = remote-ohm
-status_backend = sqlite
-
 [Account web]
 localrepository = local-web
 remoterepository = remote-web
@@ -48,40 +43,3 @@ remotepasseval = get_password("mail.saschaeglau.com")
 # If using ssl, you will need to specify certificates to use with them
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-
-
-[Repository local-ohm]
-type = Maildir
-localfolders = ~/.mail/ohm
-
-# Translate names from local names to remote names:
-# This one does:
-# 1. Capitalizes all the folder names
-# 2. Changes any underscores to spaces
-# 3. Corrects Sent Items
-# 4. Changes Inbox to INBOX
-# 5. And INBOX/archive to INBOX/Archive
-nametrans = lambda foldername: re.sub ('archive', 'Archive',
-                               re.sub ('Inbox', 'INBOX',
-                               re.sub ('Sent items', 'Sent Items',
-                               re.sub ('_', ' ', foldername.capitalize()))))
-#re.sub ('Archive', 'INBOX.Archive',
-
-[Repository remote-ohm]
-type = IMAP
-maxconnections = 2
-remotehost = my.ohmportal.de
-remoteusereval = get_username("my.ohmportal.de")
-remotepasseval = get_password("my.ohmportal.de")
-# If using ssl, you will need to specify certificates to use with them
-ssl = yes
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-realdelete = yes
-folderfilter = lambda foldername: foldername not in ['Documents','Junk E-mail']
-
-# Translate remote names to local names:
-# This one does:
-# 1. Transforms names to lowercase
-# 2. Replaces spaces with underscores
-nametrans = lambda foldername: re.sub (' ', '_', foldername.lower())
-#re.sub ('inbox.Archive', 'archive',
