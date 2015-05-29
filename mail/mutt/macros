@@ -19,7 +19,6 @@ macro index \co "<shell-escape>offlineimap<enter>"           "run offlineimap to
 macro index \cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
 macro index 1 "<sync-mailbox><change-folder>+web/INBOX<enter>"
-macro index 2 "<sync-mailbox><change-folder>+ohm/inbox<enter>"
 
 # Generic keybindings
 # -------------------
