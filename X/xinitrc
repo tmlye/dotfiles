@@ -35,6 +35,8 @@ export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 # Export the session for usage with cron
 test -f ~/.dotfiles/mail/bin/export-dbus-session.sh && exec ~/.dotfiles/mail/bin/export-dbus-session.sh &
 
+# Sound and music
+/usr/bin/start-pulseaudio-x11 &
 mpd &
 pidof mpdscribble >& /dev/null
 if [ $? -ne 0 ]; then

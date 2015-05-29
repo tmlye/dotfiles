@@ -111,11 +111,11 @@ install_basic_setup(){
   is_package_installed "chrony" && system_ctl enable chrony
   print_info "Installing compression tools"
   package_install "zip unzip unrar"
-  print_info "Installing ALSA"
-  package_install "alsa-utils alsa-plugins lib32-alsa-plugins"
+  print_info "Installing audio"
+  package_install "alsa-utils alsa-plugins lib32-alsa-plugins pulseaudio pulseaudio-alsa ponymix"
   print_info "Installing filesystems+tools"
   package_install "ntfs-3g dosfstools exfat-utils fuse fuse-exfat"
-  aur_package_install "go-mtpfs-git"
+  aur_package_install "jmtpfs"
   is_package_installed "fuse" && add_module "fuse"
 }
 

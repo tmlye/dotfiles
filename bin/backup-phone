@@ -10,7 +10,7 @@ if [[ $OPTION != y ]]; then
     exit 1
 fi
 
-go-mtpfs $PHONEMOUNT &
+jmtpfs $PHONEMOUNT &
 sleep 2
 
 cp -ru $PHONEMOUNT/Internal\ storage/{Tasker,WhatsApp} $BACKUP/internal

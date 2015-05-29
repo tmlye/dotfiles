@@ -142,10 +142,10 @@ weatherwidget:buttons(awful.button({}, 1, function() vicious.force({weatherwidge
 
 -- Helper for setting the volume icon
 function setVolIconBasedOnStatus ()
-    local f = assert(io.popen("amixer -c "..soundCard.." cget name='Speaker Playback Switch'"))
-    local speaker = assert(f:read("*all"))
+    local f = assert(io.popen("ponymix is-muted; echo $?"))
+    local returnValue = tonumber(assert(f:read("*all")))
     f:close()
-    if(string.match(speaker, "values=(%a+)") == "off") then
+    if(returnValue == 0) then
         -- Speaker is muted
         volicon:set_image(home .. "/.config/awesome/icons/mute.png")
     else
@@ -163,7 +163,7 @@ volwidget:buttons(awful.util.table.join(
     awful.button({ }, 1, function () exec(terminal .. " -e alsamixer -c "..soundCard) end),
     awful.button({ }, 3,
         function ()
-            exec("amixer -c "..soundCard.." -q sset Speaker toggle")
+            exec("ponymix -d "..soundCard.." toggle")
             setVolIconBasedOnStatus()
         end),
     awful.button({ }, 4, function () exec("amixer -c "..soundCard.." -q sset Master 2dB+", false) end),
