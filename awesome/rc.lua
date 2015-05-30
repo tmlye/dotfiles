@@ -35,9 +35,6 @@ lockcmd = "xautolock -locknow"
 -- Name of wificard for wifi widget
 wificard = "wlp3s0"
 
--- Which soundcard to use for volumne widget
-soundCard = "1"
-
 -- MPD Data
 mpdHost = "0.0.0.0"
 mpdPassword = "\"\""
@@ -142,10 +139,11 @@ weatherwidget:buttons(awful.button({}, 1, function() vicious.force({weatherwidge
 
 -- Helper for setting the volume icon
 function setVolIconBasedOnStatus ()
-    local f = assert(io.popen("ponymix is-muted; echo $?"))
-    local returnValue = tonumber(assert(f:read("*all")))
+    local f = assert(io.popen("amixer | grep 'Front Left: Playback' | cut -f8 -d ' '"))
+    local returnValue = assert(f:read("*all"))
     f:close()
-    if(returnValue == 0) then
+    returnValue = string.sub(returnValue, 2 , -3)
+    if(returnValue == 'off') then
         -- Speaker is muted
         volicon:set_image(home .. "/.config/awesome/icons/mute.png")
     else
@@ -157,17 +155,17 @@ end
 volicon = wibox.widget.imagebox()
 setVolIconBasedOnStatus()
 volwidget = wibox.widget.textbox()
-vicious.register(volwidget, vicious.widgets.volume, " $1% ", 3, "-c "..soundCard.." Master")
+vicious.register(volwidget, vicious.widgets.volume, " $1% ", 3, "Master")
 -- Keybindings for widget
 volwidget:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () exec(terminal .. " -e alsamixer -c "..soundCard) end),
+    awful.button({ }, 1, function () exec(terminal .. " -e alsamixer") end),
     awful.button({ }, 3,
         function ()
-            exec("ponymix -d "..soundCard.." toggle")
+            exec("amixer -q sset Master toggle")
             setVolIconBasedOnStatus()
         end),
-    awful.button({ }, 4, function () exec("amixer -c "..soundCard.." -q sset Master 2dB+", false) end),
-    awful.button({ }, 5, function () exec("amixer -c "..soundCard.." -q sset Master 2dB-", false) end)
+    awful.button({ }, 4, function () exec("amixer -q sset Master 2%+", false) end),
+    awful.button({ }, 5, function () exec("amixer -q sset Master 2%-", false) end)
  ))
 
 -- Wifiwidget

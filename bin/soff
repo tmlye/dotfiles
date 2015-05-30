@@ -1,0 +1,14 @@
+#!/bin/sh
+pacmd set-default-sink 1
+pacmd list-sink-inputs | grep index | sed 's/ *index: \([0-9]*\)/\1/' | while read ID
+do
+    echo "Moving $ID"
+    pacmd move-sink-input $ID 1
+done
+
+bluetoothctl << EOD
+power off
+exit
+EOD
+
+# vim:set filetype=sh:

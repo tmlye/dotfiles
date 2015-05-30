@@ -19,7 +19,6 @@ rsync -a --delete $HOME/.ssh $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.wallpaper $HOME/mount/backup/OS/home/
 rsync -a --delete /etc/openvpn $HOME/mount/backup/OS/
 # Files
-rsync -a $HOME/.asoundrc $HOME/mount/backup/OS/home/
 rsync -a $HOME/.gtkrc-2.0 $HOME/mount/backup/OS/home/
 rsync -a $HOME/.gitconfig $HOME/mount/backup/OS/home/
 rsync -a $HOME/.mpdconf $HOME/mount/backup/OS/home/

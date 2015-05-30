@@ -105,14 +105,14 @@ enable_multilib(){
 
 install_basic_setup(){
   print_title "Installing basic tools"
-  package_install "efivar gptfdisk rsync mlocate ranger w3m gvim git openssh wget traceroute"
+  package_install "efivar gptfdisk rsync mlocate ranger w3m gvim git openssh wget traceroute bluez bluez-libs bluez-utils"
   print_info "Installing chrony NTP client"
   package_install "chrony"
   is_package_installed "chrony" && system_ctl enable chrony
   print_info "Installing compression tools"
   package_install "zip unzip unrar"
   print_info "Installing audio"
-  package_install "alsa-utils alsa-plugins lib32-alsa-plugins pulseaudio pulseaudio-alsa ponymix"
+  package_install "alsa-utils alsa-plugins lib32-alsa-plugins pulseaudio pulseaudio-alsa pulseaudio-bluetooth"
   print_info "Installing filesystems+tools"
   package_install "ntfs-3g dosfstools exfat-utils fuse fuse-exfat"
   aur_package_install "jmtpfs"
