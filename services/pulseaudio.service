@@ -5,4 +5,4 @@ Description=Pulseaudio Sound Server
 ExecStart=/usr/bin/pulseaudio --log-target=syslog
 
 [Install]
-WantedBy=graphical.target
+WantedBy=default.target

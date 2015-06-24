@@ -1,11 +1,9 @@
 [Unit]
 Description=minidlna server
-After=network.target
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/minidlnad -P /run/minidlna/minidlna.pid
-PIDFile=/run/minidlna/minidlna.pid
+ExecStart=minidlnad -f /home/$USER/.config/minidlna/minidlna.conf -P /home/$USER/.config/minidlna/minidlna.pid
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

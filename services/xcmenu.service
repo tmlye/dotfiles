@@ -6,4 +6,4 @@ ExecStart=/usr/bin/xcmenu
 Environment=DISPLAY=:0
 
 [Install]
-WantedBy=graphical.target
+WantedBy=default.target
