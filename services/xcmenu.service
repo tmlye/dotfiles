@@ -1,0 +1,9 @@
+[Unit]
+Description=xcmenu clipboard manager
+
+[Service]
+ExecStart=/usr/bin/xcmenu
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=Pulseaudio Sound Server
+
+[Service]
+ExecStart=/usr/bin/pulseaudio --log-target=syslog
+
+[Install]
+WantedBy=graphical.target
