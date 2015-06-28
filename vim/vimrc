@@ -37,7 +37,7 @@ colorscheme getfresh    " Place your schemes in .vim/colors
 " Search
 " ======
 
-set ignorecase          " Case insensitive search
+set smartcase           " Case insensitive search, unless uppercase letter used
 set incsearch           " Jump to result while typing
 set hls                 " Highlight results
 
