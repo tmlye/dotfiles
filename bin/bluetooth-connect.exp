@@ -42,7 +42,7 @@ if {$force_conservative} {
 # -Don
 
 
-set timeout -1
+set timeout 8
 spawn bluetoothctl
 match_max 100000
 expect -exact "\[bluetooth\]# \r\[0;94m\[bluetooth\]\[0m# \r\[K\[\[0;92mNEW\[0m\] Controller 5C:51:4F:28:AB:99 nebuchadnezzar \[default\]\r
@@ -52,6 +52,7 @@ send -- "power on\r"
 expect -exact "power on\r
 \[0;94m\[bluetooth\]\[0m# \r\[KChanging power on succeeded\r
 \[0;94m\[bluetooth\]\[0m# "
+sleep 5
 send -- "connect CC:90:93:04:9E:96\r"
 expect -exact "CC:90:93:04:9E:96\r
 Attempting to connect to CC:90:93:04:9E:96\r

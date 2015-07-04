@@ -1,3 +1,3 @@
 #!/bin/sh
-rsync -rv -e 'ssh -p 799' $1 saschaeglau.com:/home/tml/upload/
+rsync -rv -e 'ssh -p 799' "$@" saschaeglau.com:/home/tml/upload/
 echo 'https://saschaeglau.com/upload/'$1 | xclip -f
