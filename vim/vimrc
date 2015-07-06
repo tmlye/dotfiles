@@ -22,8 +22,12 @@ set ruler                   " Show cursor position in status bar
 set hidden                  " Buffers can exist in the background
 set showmatch               " Briefly jump to matching bracket
 set matchtime=2             " Time match is shown in 0.1s
-" path, filetype, modified flag, readonly flag, buffer num, line pos, percentage
-set statusline=%<%F\ %y%r%m\ %3*%n%*%=%l,%-5.0c\ \%p%%
+" path, filetype, readonly flag, buffers, line pos, percentage
+autocmd VimEnter *
+  \ let &statusline='%<%F %Y%r %3*'
+    \ .bufferline#get_status_string()
+     \ .'%{bufferline#refresh_status()}%*%=%l,%-5.0c%p%%'
+let g:bufferline_echo = 0
 
 " Reload vimrc when it's saved
 autocmd! BufWritePost .vimrc source ~/.vimrc
