@@ -157,7 +157,10 @@ noremap <silent> gd gd:noh<CR>
 nnoremap <silent> <c-g> :noh<CR>
 
 " Remove trailing whitespace
-nnoremap <silent> <leader>w :%s/\s\+$//e<CR>:noh<CR>
+nnoremap <silent> <leader>t :%s/\s\+$//e<CR>:noh<CR>
+
+" quicker saving
+nnoremap <Leader>w :w<CR>
 
 " Contact lookup for editing mail
 imap <c-f> <ESC>:r!muttvcardsearch <cword><CR><ESC>
