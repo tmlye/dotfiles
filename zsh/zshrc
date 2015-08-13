@@ -59,7 +59,7 @@ export PATH="/usr/local/bin:\
 /usr/sbin:\
 /sbin:\
 /opt/java/jre/bin:\
-$HOME/.gem/ruby/2.1.0/bin:\
+$HOME/.gem/ruby/2.2.0/bin:\
 /usr/bin/site_perl:\
 /usr/bin/vendor_perl:\
 /usr/bin/core_perl:\
