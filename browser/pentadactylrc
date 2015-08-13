@@ -15,8 +15,8 @@ nmap -b j 2j
 nmap -b k 2k
 nmap -b l 2l
 
-" Set DDG as default search engine
-set defsearch=duckduckgo
+" Set customized DDG as default search engine
+set defsearch=duckduckgoc
 
 " this used to work without a mapping?
 nmap -b d :tabclose<CR>
@@ -30,11 +30,15 @@ nmap <Leader>d :dialog downloads<CR>
 
 " Search bindings
 nmap <Leader>w :open wikipedia-en 
+nmap <Leader>W :tabopen wikipedia-en 
 
 " Bindings for opening various websites
-nmap <Leader>t :tabopen https://trello.com/login<CR>
-nmap <Leader>g :tabopen https://github.com/login<CR>
-nmap <Leader>l :tabopen https://www.last.fm/login<CR>
+nmap <Leader>t :open https://trello.com/login<CR>
+nmap <Leader>T :tabopen https://trello.com/login<CR>
+nmap <Leader>g :open https://github.com/login<CR>
+nmap <Leader>G :tabopen https://github.com/login<CR>
+nmap <Leader>b :open https://www.goodreads.com/user/sign_in<CR>
+nmap <Leader>B :tabopen https://www.goodreads.com/user/sign_in<CR>
 
 " Style
 " -----
