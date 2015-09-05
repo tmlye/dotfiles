@@ -40,9 +40,9 @@ mpdHost = "0.0.0.0"
 mpdPassword = "\"\""
 mpdPort = "6600"
 
--- Airportcode for the weather widget
-airportcode = "EDDN"
--- Nuernberg: EDDN, Kuala Lumpur: WMKK, Hong Kong: VHHH
+-- Airportcode (ICAO) for the weather widget
+airportcode = "EDDF"
+
 
 home = os.getenv("HOME")
 exec = awful.util.spawn
