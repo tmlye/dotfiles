@@ -1,0 +1,4 @@
+#!/bin/sh
+xrandr --output HDMI1 --off
+xautolock -enable
+xset +dpms

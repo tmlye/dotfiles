@@ -11,7 +11,7 @@ if [[ $OPTION != y ]]; then
 fi
 
 jmtpfs $PHONEMOUNT &
-sleep 2
+sleep 5
 
 cp -ru $PHONEMOUNT/Internal\ storage/{Tasker,WhatsApp} $BACKUP/internal
 cp -ru $PHONEMOUNT/SD\ card/* $BACKUP/card
