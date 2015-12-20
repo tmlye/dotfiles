@@ -36,7 +36,7 @@ ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 ln -s $HOME/.dotfiles/ranger/ $HOME/.config/ranger
 
 # browser
-ln -s $HOME/.dotfiles/browser/pentadactylrc $HOME/.pentadactylrc
+ln -s $HOME/.dotfiles/browser/vimperatorrc $HOME/.vimperatorrc
 
 # zathura
 mkdir -p $HOME/.config/zathura
