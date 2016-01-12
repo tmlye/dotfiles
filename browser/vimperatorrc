@@ -36,6 +36,9 @@ nmap ( :tp<CR>
 " Bindings for dialogs
 nmap <Leader>d :dialog downloads<CR>
 
+" Bookmarks Sidebar
+nmap <Leader>o :sidebar Bookmarks<CR>
+
 " Search bindings
 nmap <Leader>w :open wikipedia-en 
 nmap <Leader>W :tabopen wikipedia-en 
