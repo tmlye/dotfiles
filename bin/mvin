@@ -1,0 +1,8 @@
+#!/bin/sh
+SINK=`pacmd list-sinks | grep -B 1 bluez_sink.CC_90_93_04_9E_96 | head -1 | sed 's/.* *index: \([0-9]*\)/\1/'`
+pacmd set-default-sink $SINK
+pacmd list-sink-inputs | grep index | sed 's/ *index: \([0-9]*\)/\1/' | while read ID
+do
+    echo "Moving input $ID to sink $SINK"
+    pacmd move-sink-input $ID $SINK
+done
