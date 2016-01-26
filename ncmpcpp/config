@@ -16,7 +16,7 @@ playlist_disable_highlight_delay = "1"
 
 # Bars
 song_status_format = "{$3%t •$1}{$2 %a$1}"
-progressbar_look = "─╼ " # "─╼╌"
+progressbar_look = "━━─"
 titles_visibility = "no"
 header_visibility = "no"
 statusbar_visibility = "no"
@@ -44,7 +44,5 @@ active_column_color = "red"
 song_window_title_format = "{%a - }{%t}"
 search_engine_display_mode = "columns" (classic/columns)
 follow_now_playing_lyrics = "yes"
-display_screens_numbers_on_start = "no"
-ask_before_clearing_main_playlist = "yes"
 mouse_support = "no"
 playlist_editor_display_mode = "columns"
