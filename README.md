@@ -13,6 +13,7 @@ cd ~/.dotfiles
 ```
 and then execute the script. This should symlink all the files in the `~/.dotfiles` directory to the correct
 locations in your home folder. Backups will be saved as filename.backup.
+If you want to use the browser or mail files, you'll have to symlink them manually.
 
 ### Awesome
 
@@ -39,6 +40,7 @@ You can modify the location for the wallpaper in `~/.dotfiles/awesome/theme.lua`
 
 ![clean](https://saschaeglau.com/files/clean.png "Clean")
 ![dirty](https://saschaeglau.com/files/dirty.png "Dirty")
+![browser](https://saschaeglau.com/files/browser.png "Browser")
 
 ## Credit
 
