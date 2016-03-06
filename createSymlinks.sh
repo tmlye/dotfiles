@@ -38,6 +38,9 @@ ln -s $HOME/.dotfiles/ranger/ $HOME/.config/ranger
 # browser
 ln -s $HOME/.dotfiles/browser/vimperatorrc $HOME/.vimperatorrc
 
+# tmux
+ln -s $HOME/.dotfiles/various/tmux.conf $HOME/.tmux.conf
+
 # zathura
 mkdir -p $HOME/.config/zathura
 ln -s $HOME/.dotfiles/various/zathurarc $HOME/.config/zathura/zathurarc
