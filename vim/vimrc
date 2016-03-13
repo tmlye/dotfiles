@@ -106,7 +106,14 @@ if has('gui_running')
     set guioptions-=r               " No Scrollbar right
     set guioptions-=R               " No Scrollbar right when split
 
-    set gfn=DejaVu\ Sans\ Mono\ 10  " Set Font
+    " Set Font
+    if has("gui_gtk2")
+      set guifont=DejaVu\ Sans\ Mono\ 10
+    elseif has("gui_macvim")
+      set guifont=Menlo\ Regular:h14
+    elseif has("gui_win32")
+      set guifont=Consolas:h11:cANSI
+    endif
 
     set lines=40                    " Height
     set columns=85                  " Width
