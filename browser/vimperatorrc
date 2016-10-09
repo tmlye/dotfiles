@@ -43,6 +43,9 @@ nmap <Leader>o :sidebar Bookmarks<CR>
 nmap <Leader>w :open wikipedia-en 
 nmap <Leader>W :tabopen wikipedia-en 
 
+" Suggest bookmarks in open dialog
+set complete=bsl
+
 " Bindings for opening various websites
 nmap <Leader>t :open https://trello.com/login<CR>
 nmap <Leader>T :tabopen https://trello.com/login<CR>
