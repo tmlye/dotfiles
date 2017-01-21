@@ -150,11 +150,14 @@ seperator:set_markup("|")
 dash = wibox.widget.textbox()
 dash:set_markup("-")
 
--- MPD icon
+-- MPD icons
 -- Icon is updated according to the current MPD status
 -- see MPD textwidget below
-mpdicon = wibox.widget.imagebox()
-mpdicon:set_image(home .. "/.config/awesome/icons/note.png")
+-- We define 3 icons and switch between them by setting their visibility,
+-- it's a bit dumb, but the only way I could get it working
+noteIcon = wibox.widget.imagebox(home .. "/.config/awesome/icons/note.png", true, nil)
+pauseIcon = wibox.widget.imagebox(home .. "/.config/awesome/icons/pause.png", true, nil)
+playIcon = wibox.widget.imagebox(home .. "/.config/awesome/icons/play.png", true, nil)
 
 -- MPD textwidget
 -- Initialize widget
@@ -164,17 +167,24 @@ wargs = { mpdPassword, mpdHost, mpdPort }
 vicious.register(mpdwidget, vicious.widgets.mpd,
     function (widget, args)
         if args["{state}"] == "Stop" then
-            --mpdicon:set_image(home .. "/.config/awesome/icons/stop.png")
-            mpdicon:set_image(nil)
-            return " "
+            noteIcon.visible = false
+            pauseIcon.visible = false
+            playIcon.visible = false
+            return ""
         elseif args["{state}"] == "Pause" then
-            mpdicon:set_image(home .. "/.config/awesome/icons/pause.png")
-            return args["{Artist}"]..' - '.. args["{Title}"]
+            noteIcon.visible = false
+            pauseIcon.visible = true
+            playIcon.visible = false
+            return args["{state}"]..args["{Artist}"]..' - '.. args["{Title}"]
         elseif args["{state}"] == "Play" then
-            mpdicon:set_image(home .. "/.config/awesome/icons/play.png")
-            return args["{Artist}"]..' - '.. args["{Title}"]
+            noteIcon.visible = false
+            pauseIcon.visible = false
+            playIcon.visible = true
+            return args["{state}"]..args["{Artist}"]..' - '.. args["{Title}"]
         else
-            mpdicon:set_image(home .. "/.config/awesome/icons/note.png")
+            noteIcon.visible = true
+            pauseIcon.visible = false
+            playIcon.visible = false
             return "MPD status unknown"
         end
     end, 5, wargs)
@@ -344,7 +354,9 @@ awful.screen.connect_for_each_screen(function(s)
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(s.mytaglist)
     left_layout:add(s.mypromptbox)
-    left_layout:add(mpdicon)
+    left_layout:add(noteIcon)
+    left_layout:add(pauseIcon)
+    left_layout:add(playIcon)
     left_layout:add(spacer)
     left_layout:add(mpdwidget)
 
