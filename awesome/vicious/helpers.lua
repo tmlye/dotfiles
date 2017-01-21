@@ -37,7 +37,6 @@ function helpers.wrequire(table, key)
     local module = rawget(table, key)
     return module or require(table._NAME .. "." .. key)
 end
--- }}}
 
 -- {{{ Expose path as a Lua table
 function helpers.pathtotable(dir)
@@ -94,6 +93,15 @@ function helpers.escape(text)
     }
 
     return text and text:gsub("[\"&'<>]", xml_entities)
+end
+-- }}}
+
+-- {{{ Escape a string for safe usage on the command line
+function helpers.shellquote(s)
+   if s == nil then return "" end
+   -- use single quotes, and put single quotes into double quotes
+   -- the string $'b is then quoted as '$'"'"'b'"'"'
+   return "'" .. s:gsub("'", "'\"'\"'") .. "'"
 end
 -- }}}
 

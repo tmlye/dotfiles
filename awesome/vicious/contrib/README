@@ -28,6 +28,14 @@ could also depend on Lua libraries that are not distributed with the
 core Lua distribution. Ease of installation and use does not
 necessarily have to apply to contributed widgets.
 
+vicious.contrib.ac
+  - provide status about the power supply (AC)
+  - takes the AC device as an argument, i.e "AC" or "ACAD"
+  - the device is linked under /sys/class/power_supply/ and should
+    have a file called "online"
+  - if AC is connected, $1 returns "On", if not it returns "Off",
+    if AC doesn't exist, $1 is "N/A"
+
 vicious.contrib.ati
   - provides various info about ATI GPU status
   - takes card ID as an argument, i.e. "card0" (and where possible,
@@ -68,6 +76,14 @@ vicious.contrib.openweather
   - returns a table with string keys: {city}, {wind deg}, {wind aim},
     {wind kmh}, {wind mps}, {sky}, {weather}, {temp c}, {humid}, {press}
 
+vicious.contrib.nvinf
+  - provides GPU utilization, core temperature, clock frequency information
+    about Nvidia GPU from nvidia-settings
+  - takes optional card ID as an argument, i.e. "1", or defaults to ID 0
+  - returns first 4 values as usage of GPU core, memory, video engine and
+    PCIe bandwidth, 5th as temperature of requested graphics device, 6th
+    as frequency of GPU core, 7th as memory transfer rate
+
 vicious.contrib.nvsmi
   - provides (very basic) information about Nvidia GPU status from SMI
   - takes optional card ID as an argument, i.e. "1", or defaults to ID 0
@@ -103,6 +119,12 @@ vicious.contrib.rss
 
 vicious.contrib.sensors
   -
+
+vicious.contrib.wpa
+  - provides information about the wifi status
+  - requires 'wpa_cli' from wpa_supplicant
+  - takes the interface as an argument, i.e "wlan0" or "wlan1"
+  - returns a table with string keys: {ssid}, {qual}, {ip}, {bssid}
 
 vicious.contrib.buildbot
   - provides last build status for configured buildbot builders (http://trac.buildbot.net/)
