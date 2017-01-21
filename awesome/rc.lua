@@ -85,6 +85,13 @@ awful.layout.layouts = {
 
 -- Tags
 local tags = { "1", "2", "3", "4" }
+-- Defaultlayout for each tag (in order)
+local default_layouts = {
+    awful.layout.suit.tile,
+    awful.layout.suit.tile,
+    awful.layout.suit.max,
+    awful.layout.suit.tile
+}
 
 -- Disable titlebars
 local titlebars_enabled = false
@@ -259,7 +266,6 @@ mytextclock = awful.widget.textclock()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
-mytasklist = {}
 taglist_buttons = awful.util.table.join(
     awful.button({ }, 1, awful.tag.viewonly),
     awful.button({ modkey }, 1, awful.client.movetotag),
@@ -299,12 +305,22 @@ tasklist_buttons = awful.util.table.join(
                              if client.focus then client.focus:raise() end
 end))
 
+local tag_count = table.maxn(tags)
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag(tags, s, awful.layout.layouts[1])
+    for i = 1, tag_count do
+        awful.tag.add(tags[i], {
+            icon               = nil,
+            layout             = default_layouts[i],
+            master_fill_policy = "master_width_factor",
+            gap_single_client  = false,
+            gap                = 0,
+            screen             = s,
+        })
+    end
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -489,7 +505,7 @@ clientkeys = awful.util.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, table.maxn(tags) do
+for i = 1, tag_count do
     globalkeys = awful.util.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
