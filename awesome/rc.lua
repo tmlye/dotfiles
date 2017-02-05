@@ -593,15 +593,15 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "Ts3client_linux_amd64" },
       properties = { floating = true } },
-    -- map firefox on tag number 1 of screen 1.
+    -- map firefox on tag number 1 of screen 1
     { rule = { class = "Firefox" },
-      properties = { tag = tags[1][1] } },
+      properties = { screen = 1, tag = "1" } },
     -- map zathura on tag number 3 of screen 1.
     { rule = { class = "Zathura" },
-      properties = { tag = tags[1][3], switchtotag = true } },
+      properties = { screen = 1, tag = "3", switchtotag = true } },
     -- map libreoffice writer on tag number 3 of screen 1.
     { rule = { class = "libreoffice-writer" },
-      properties = { tag = tags[1][3], switchtotag = true } },
+      properties = { screen = 1, tag = "3", switchtotag = true } },
     -- Fix fullscreen for flash video
     { rule = { class = "Plugin-container" },
       properties = { floating = true } }
