@@ -175,12 +175,12 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
             noteIcon.visible = false
             pauseIcon.visible = true
             playIcon.visible = false
-            return args["{state}"]..args["{Artist}"]..' - '.. args["{Title}"]
+            return args["{Artist}"]..' - '.. args["{Title}"]
         elseif args["{state}"] == "Play" then
             noteIcon.visible = false
             pauseIcon.visible = false
             playIcon.visible = true
-            return args["{state}"]..args["{Artist}"]..' - '.. args["{Title}"]
+            return args["{Artist}"]..' - '.. args["{Title}"]
         else
             noteIcon.visible = true
             pauseIcon.visible = false
