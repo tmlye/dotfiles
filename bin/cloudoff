@@ -1,5 +1,0 @@
-#!/bin/bash
-
-seaf-cli stop
-
-# vim:set filetype=sh:
