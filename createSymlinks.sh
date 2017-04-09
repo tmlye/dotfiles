@@ -57,5 +57,4 @@ ln -s $HOME/.dotfiles/various/viewnior.conf $HOME/.config/viewnior/viewnior.conf
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
 
 
-echo "You'll have to symlink the userChrome.css file manually to ~/.mozilla/firefox/<profile_dir>/chrome/userChrome.css if you want to use it."
 echo "If you want to setup mail, check the .dotfiles/mail directory."
