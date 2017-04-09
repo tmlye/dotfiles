@@ -56,5 +56,5 @@ ln -s $HOME/.dotfiles/various/viewnior.conf $HOME/.config/viewnior/viewnior.conf
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
 
-
+echo "If you want to use the custom DuckDuckGo search plugin for Firefox, copy the duckduckgoc.xml to ~/.mozilla/firefox/xxx.default/searchplugins and delete ~/.mozilla/firefox/xxx.default/search.json.mozlz4"
 echo "If you want to setup mail, check the .dotfiles/mail directory."
