@@ -28,7 +28,6 @@ footer = "\n"
 [Account web]
 localrepository = local-web
 remoterepository = remote-web
-status_backend = sqlite
 
 [Repository local-web]
 type = Maildir
