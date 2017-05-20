@@ -46,6 +46,10 @@ nmap <Leader>W :tabopen wikipedia-en
 " Suggest bookmarks in open dialog
 set complete=bsl
 
+" Toggle Gui
+nmap <Leader>L :set gui=all<CR>
+nmap <Leader>l :set gui=none<CR>
+
 " Bindings for opening various websites
 nmap <Leader>t :open https://trello.com/login<CR>
 nmap <Leader>T :tabopen https://trello.com/login<CR>
@@ -53,3 +57,4 @@ nmap <Leader>g :open https://github.com/login<CR>
 nmap <Leader>G :tabopen https://github.com/login<CR>
 nmap <Leader>b :open https://www.goodreads.com/user/sign_in<CR>
 nmap <Leader>B :tabopen https://www.goodreads.com/user/sign_in<CR>
+
