@@ -20,8 +20,9 @@ EOM
 " Leader = space
 map <Space> <Leader>
 
-" Hide everything
+" Hide everything, except tabs
 set gui=none
+set gui=tabs
 
 " Default search engine
 set defsearch=duckduckgoc
@@ -48,7 +49,7 @@ set complete=bsl
 
 " Toggle Gui
 nmap <Leader>L :set gui=all<CR>
-nmap <Leader>l :set gui=none<CR>
+nmap <Leader>l :set gui=tabs<CR>
 
 " Bindings for opening various websites
 nmap <Leader>t :open https://trello.com/login<CR>
