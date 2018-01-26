@@ -11,7 +11,6 @@ rsync -a --delete $HOME/.gem $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.gnupg $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.gtktheme $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.irssi $HOME/mount/backup/OS/home/
-rsync -a --delete $HOME/.lastpass $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.mozilla $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.mpd $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.mpdscribble $HOME/mount/backup/OS/home/

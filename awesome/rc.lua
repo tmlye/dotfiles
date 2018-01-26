@@ -26,7 +26,7 @@ browser = "firefox"
 -- Launched with MOD4+i
 ircclient = terminal .. " -e irssi"
 -- Launched with MOD4+w
-mailclient = terminal .. " -e mutt"
+mailclient = terminal .. " -e neomutt"
 -- Launched with MOD4+z
 mpdclient = terminal .. " -e ncmpcpp"
 -- Lock screen with MOD4+F12
