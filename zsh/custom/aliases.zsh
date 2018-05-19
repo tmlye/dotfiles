@@ -9,7 +9,8 @@ alias us='test -f ~/.XkeymapUS && xkbcomp -w 0 ~/.XkeymapUS $DISPLAY'
 
 alias hdmi='xrandr --output HDMI1 --auto --left-of eDP1'
 alias pres='xrandr --fb 1366x768 --output DP2 --mode 1024x768 --panning 1366x0'
-alias mon='xrandr --output DP2 --mode 1680x1050 --left-of eDP1'
+alias mon='xrandr --output DP1 --mode 2560x1080 --output eDP1 --mode 1366x768 --below DP1'
+alias moff='xrandr --output DP1 --off'
 
 # Package Management
 # ==================
@@ -70,6 +71,7 @@ alias c='clear'
 alias ps='ps -a -c -o pid,command -x'
 alias v='gvim'
 alias ls='ls --color=auto'
+alias tf='terraform'
 
 function getip()
 {
