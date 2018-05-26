@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/zsh
 
+# Put all your secrets in ~/.secrets
+[ -f ~/.secrets ] && source ~/.secrets
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
