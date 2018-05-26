@@ -1,0 +1,11 @@
+#!/bin/bash
+duplicity --exclude-filelist mount/backup/duplicity-exclude-list \
+          --allow-source-mismatch \
+          --verbosity 9 \
+          --tempdir . \
+          --num-retries 5 \
+          --asynchronous-upload \
+          --volsize 100 \
+          mount/ rsync://tml@lockedlol.myddns.me:783//home/tml/Extern/backup
+
+# vim:set filetype=sh:
