@@ -35,9 +35,6 @@ ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 # ranger
 ln -s $HOME/.dotfiles/ranger/ $HOME/.config/ranger
 
-# browser
-ln -s $HOME/.dotfiles/browser/vimperatorrc $HOME/.vimperatorrc
-
 # tmux
 ln -s $HOME/.dotfiles/various/tmux.conf $HOME/.tmux.conf
 
