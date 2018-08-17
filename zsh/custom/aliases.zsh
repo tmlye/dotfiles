@@ -55,7 +55,6 @@ alias web='ssh web01 -p 799'
 alias c='clear'
 alias ps='ps -a -c -o pid,command -x'
 alias v='gvim'
-alias ls='ls --color=auto'
 alias tf='terraform'
 
 function getip()

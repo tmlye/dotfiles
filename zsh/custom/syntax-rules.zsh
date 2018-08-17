@@ -33,7 +33,4 @@ ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 # Sudo
 ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=white,bold,bg=red')
 
-# Highlight filetypes
-eval $(dircolors -b $HOME/.dotfiles/zsh/custom/LS_COLORS)
-
 # vim: set ft=zsh :
