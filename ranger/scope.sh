@@ -61,7 +61,6 @@ handle_extension() {
         pdf)
             # Preview as text conversion
             pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - && exit 5
-            exiftool "${FILE_PATH}" && exit 5
             exit 1;;
 
         # BitTorrent
