@@ -6,6 +6,6 @@ duplicity --exclude-filelist mount/backup/duplicity-exclude-list \
           --num-retries 5 \
           --asynchronous-upload \
           --volsize 100 \
-          mount/ rsync://tml@lockedlol.myddns.me:783//home/tml/Extern/backup
+          mount/ rsync://tml@lockedlol.myddns.me:783//home/tml/mount/backup
 
 # vim:set filetype=sh:
