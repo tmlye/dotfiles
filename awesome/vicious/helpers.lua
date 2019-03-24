@@ -12,13 +12,20 @@ local pairs = pairs
 local rawget = rawget
 local require = require
 local tonumber = tonumber
-local io = { open = io.open }
+local tostring = tostring
+local io = { 
+    open = io.open, 
+    popen = io.popen 
+}
 local setmetatable = setmetatable
 local getmetatable = getmetatable
 local string = {
     upper = string.upper,
+    lower = string.lower,
     format = string.format
 }
+local pcall = pcall
+local assert = assert
 -- }}}
 
 
@@ -32,11 +39,59 @@ local scroller = {}
 -- }}}
 
 -- {{{ Helper functions
+-- {{{ Determine operating system
+local kernel_name
+function helpers.getos()
+    if kernel_name ~= nil then
+      return kernel_name
+    end
+
+    local f = io.popen("uname -s")
+    kernel_name = string.lower(f:read("*line"))
+    f:close()
+
+    return kernel_name
+end
+-- }}}
+
 -- {{{ Loader of vicious modules
 function helpers.wrequire(table, key)
-    local module = rawget(table, key)
-    return module or require(table._NAME .. "." .. key)
+    local ret = rawget(table, key)
+
+    if ret then
+        return ret
+    end
+
+    local ostable = {
+        linux = { "linux", "all" },
+        freebsd = { "freebsd", "bsd", "all" },
+        openbsd = { "openbsd", "bsd", "all" }
+    }
+
+    local os = ostable[helpers.getos()]
+    assert(os, "Vicious: platform not supported: " .. helpers.getos())
+
+    for i = 1, #os do
+        local name = table._NAME .. "." .. key .. "_" .. os[i]
+        local status, value = pcall(require, name)
+        if status then
+            ret = value
+            break
+        end
+        not_found_msg = "module '"..name.."' not found"
+
+        -- ugly but there is afaik no other way to check if a module exists
+        if value:sub(1, #not_found_msg) ~= not_found_msg then
+          -- module found, but different issue -> let's raise the real error
+          require(name)
+        end
+    end
+
+    assert(ret, "Vicious: widget " .. table._NAME .. "." .. key .. " not available for current platform or does not exist")
+
+    return ret
 end
+-- }}}
 
 -- {{{ Expose path as a Lua table
 function helpers.pathtotable(dir)
@@ -97,7 +152,8 @@ end
 -- }}}
 
 -- {{{ Escape a string for safe usage on the command line
-function helpers.shellquote(s)
+function helpers.shellquote(arg)
+   local s = tostring(arg)
    if s == nil then return "" end
    -- use single quotes, and put single quotes into double quotes
    -- the string $'b is then quoted as '$'"'"'b'"'"'
@@ -153,6 +209,44 @@ function helpers.scroll(text, maxlen, widget)
     end
 
     return text
+end
+-- }}}
+
+-- {{{ Return result from one sysctl variable as string
+function helpers.sysctl(path)
+    local fd = io.popen("sysctl -n " .. helpers.shellquote(path))
+
+    if not fd then
+        return
+    end
+
+    local ret = fd:read()
+
+    fd:close()
+
+    return ret
+end
+--  }}}
+
+-- {{{ Return result from multiple sysctl variables as table
+function helpers.sysctl_table(syspath)
+    return setmetatable({ _path = syspath },
+        { __index = function(table, index)
+            local path = "sysctl -n " .. helpers.shellquote(table._path .. "." .. index)
+            local f = io.popen(path)
+            if f then
+                local s = f:read("*all")
+                f:close()
+                if select(2, s:gsub("\n", "\n")) > 1 then
+                    local o = { _path = path}
+                    setmetatable(o, getmetatable(table))
+                    return o
+                else
+                    return s
+                end
+            end
+        end
+    })
 end
 -- }}}
 
