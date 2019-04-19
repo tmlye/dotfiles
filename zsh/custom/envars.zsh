@@ -8,6 +8,8 @@ export SHELL='/bin/zsh'
 
 export EDITOR='gvim'
 
+export GOPATH=$HOME/code/go
+
 # Less
 export LESSOPEN='| /usr/bin/highlight -0 ansi %s'
 export LESS='-A$-R$-g$-i$-m$-s'

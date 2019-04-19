@@ -11,7 +11,7 @@ fi
 echo $DIR
 
 for i in "$DIR"/*.flac;do
-    ffmpeg -i "$i" -ab 320k "$(echo "$i" | sed s/\.flac/\.mp3/)"
+    ffmpeg -i "$i" -vsync 0 -ab 320k "$(echo "$i" | sed s/\.flac/\.mp3/)"
 done
 
 # vim:set filetype=sh:
