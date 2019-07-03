@@ -83,3 +83,9 @@ function grephistory() # search history
     history | grep $1 # history alias is built in oh-my-zsh
 }
 alias his='grephistory'
+
+# GIT
+# ===
+
+alias gcb='git checkout -b'
+alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
