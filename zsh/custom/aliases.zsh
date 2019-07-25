@@ -89,3 +89,10 @@ alias his='grephistory'
 
 alias gcb='git checkout -b'
 alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+
+# Kubectl
+# =======
+
+alias k='kubectl'
+alias kd='kubectl describe'
+alias kg='kubectl get'
