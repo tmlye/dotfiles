@@ -1,0 +1,17 @@
+{
+    "editor.fontSize": 16,
+    "editor.cursorBlinking": "solid",
+    "editor.formatOnPaste": true,
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.autoSave": "afterDelay",
+    "files.insertFinalNewline": true,
+    "workbench.colorTheme": "Monokai",
+    "terminal.integrated.rendererType": "dom",
+    "terminal.external.osxExec": "iterm2.app",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.scrollback": 10000,
+    "explorer.confirmDelete": false
+}

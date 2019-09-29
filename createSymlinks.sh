@@ -50,6 +50,11 @@ ln -s $HOME/.dotfiles/various/htoprc $HOME/.config/htop/htoprc
 mkdir -p $HOME/.config/viewnior
 ln -s $HOME/.dotfiles/various/viewnior.conf $HOME/.config/viewnior/viewnior.conf
 
+# vscode
+mkdir -p $HOME/.config/Code\ -\ OSS/User
+ln -s $HOME/.dotfiles/vscode/settings.json $HOME/.config/Code\ -\ OSS/User/settings.json
+ln -s $HOME/.dotfiles/vscode/keybindings.json $HOME/.config/Code\ -\ OSS/User/keybindings.json
+
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
 
