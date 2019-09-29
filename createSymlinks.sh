@@ -64,9 +64,9 @@ mkdir -p $HOME/.config/htop
 ln -s $HOME/.dotfiles/various/htoprc $HOME/.config/htop/htoprc
 
 # vscode
-mkdir -p $HOME/.config/Code\ -\ OSS/User
-ln -s $HOME/.dotfiles/vscode/settings.json $HOME/.config/Code\ -\ OSS/User/settings.json
-ln -s $HOME/.dotfiles/vscode/keybindings.json $HOME/.config/Code\ -\ OSS/User/keybindings.json
+mkdir -p $HOME/.config/Code/User
+ln -s $HOME/.dotfiles/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+ln -s $HOME/.dotfiles/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
 # git
 ln -s $HOME/.dotfiles/various/gitconfig $HOME/.gitconfig
