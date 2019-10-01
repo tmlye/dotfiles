@@ -1,6 +1,9 @@
 #!/bin/bash
 # This script sets up the desktop environment and installs many programs I use.
 
+set -e
+set -u
+
 if [[ -f `pwd`/sharedfuncs ]]; then
   source sharedfuncs
 else
@@ -14,8 +17,8 @@ install_DE(){
 }
 
 install_communication(){
-  package_install "irssi mairix"
-  aur_package_install "mutt-sidebar muttvcardsearch archivemail"
+  package_install "neomutt mairix"
+  aur_package_install "muttvcardsearch archivemail"
 }
 
 install_music(){
@@ -23,20 +26,16 @@ install_music(){
 }
 
 install_internet(){
-  package_install "firefox chromium flashplugin rtorrent pptpclient unbound dnscrypt-proxy"
+  package_install "firefox chromium flashplugin rtorrent"
   aur_package_install "google-talkplugin"
 }
 
 install_tools(){
-  package_install "calc virtualbox calibre viewnior zathura zathura-pdf-poppler htop scrot whois dnsutils"
+  package_install "calc virtualbox calibre viewnior zathura zathura-pdf-poppler htop scrot whois dnsutils darktable"
 }
 
 install_dev(){
-  package_install "nodejs"
-}
-
-install_cloud(){
-    aur_package_install "seafile-client seafile-client-cli"
+  package_install "nodejs code"
 }
 
 install_power(){
@@ -66,7 +65,8 @@ finish_install(){
      invalid_option
    fi
   done
-  truecrypt --text --mount $DEVICE /home/$USER/mount/
+  sudo cryptsetup --type luks open $DEVICE extern
+  sudo mount -t ext4 /dev/mapper/extern /home/$USER/mount
   sudo -u $USER cp -r /home/$USER/mount/backup/code /home/$USER/
   sudo -u $USER cp -r /home/$USER/mount/backup/desktop /home/$USER/
   sudo -u $USER cp -r /home/$USER/mount/backup/downloads /home/$USER/
@@ -92,5 +92,4 @@ install_internet
 install_tools
 install_dev
 install_power
-install_cloud
 finish_install
