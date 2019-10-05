@@ -32,6 +32,9 @@ ln -s $HOME/.dotfiles/ncmpcpp/ $HOME/.ncmpcpp
 ln -s $HOME/.dotfiles/vim/vim/ $HOME/.vim
 ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 
+# gtk
+ln -s $HOME/.dotfiles/gtk $HOME/.config/gtk-3.0
+
 # ranger
 ln -s $HOME/.dotfiles/ranger/ $HOME/.config/ranger
 
