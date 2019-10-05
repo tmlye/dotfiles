@@ -42,8 +42,8 @@ URxvt.matcher.button:   1
 URxvt.keysym.C-l:  perl:matcher:last
 URxvt.keysym.M-l:  perl:matcher:list
 
-URxvt*font:         xft:DejaVuSansMono:pixelsize=11
-URxvt*boldFont:     xft:DejaVuSansMono:pixelsize=11
+URxvt*font:         xft:DejaVuSansMono:pixelsize=14
+URxvt*boldFont:     xft:DejaVuSansMono:pixelsize=14
 URxvt*buffered:     true
 URxvt*cursorBlink:  false
 URxvt*cursorUnderlline:     false
