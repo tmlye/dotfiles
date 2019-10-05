@@ -17,7 +17,6 @@ rsync -a --delete $HOME/.mpdscribble $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.ssh $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.wallpaper $HOME/mount/backup/OS/home/
 # Files
-rsync -a $HOME/.gtkrc-2.0 $HOME/mount/backup/OS/home/
 rsync -a $HOME/.gitconfig $HOME/mount/backup/OS/home/
 rsync -a $HOME/.mpdconf $HOME/mount/backup/OS/home/
 rsync -a /etc/default/grub $HOME/mount/backup/OS/
