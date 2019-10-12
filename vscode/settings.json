@@ -4,14 +4,16 @@
     "editor.formatOnPaste": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
+    "explorer.confirmDelete": false,
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.autoSave": "afterDelay",
     "files.insertFinalNewline": true,
-    "workbench.colorTheme": "Monokai",
+    "keyboard.dispatch": "keyCode",
     "terminal.integrated.rendererType": "dom",
     "terminal.external.osxExec": "iterm2.app",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.scrollback": 10000,
-    "explorer.confirmDelete": false
+    "workbench.colorTheme": "Monokai",
+    "workbench.startupEditor": "newUntitledFile"
 }
