@@ -4,11 +4,13 @@
 ---------------------------------------------------
 
 -- {{{ Grab environment
+local type = type
 local tonumber = tonumber
-local io = { popen = io.popen }
-local setmetatable = setmetatable
 local string = { match = string.match }
+local table  = { concat = table.concat }
+
 local helpers = require("vicious.helpers")
+local spawn = require("vicious.spawn")
 -- }}}
 
 
@@ -16,48 +18,29 @@ local helpers = require("vicious.helpers")
 -- vicious.widgets.volume
 local volume_linux = {}
 
-
 -- {{{ Volume widget type
-local function worker(format, warg)
-    if not warg then return end
+local STATE = { on = '🔉', off = '🔈' }
 
-    local mixer_state = {
-        ["on"]  = "♫", -- "",
-        ["off"] = "♩"  -- "M"
-    }
-
-    if type(warg) ~= "table" then
-      warg = { warg }
-    end
-
-    local cmd = "amixer -M get "
-    for _, arg in ipairs(warg) do
-      cmd = cmd .. " " .. helpers.shellquote(arg)
-    end
-
-    -- Get mixer control contents
-    local f = io.popen(cmd)
-    local mixer = f:read("*all")
-    f:close()
-
-    -- Capture mixer control state:          [5%] ... ... [on]
-    local volu, mute = string.match(mixer, "([%d]+)%%.*%[([%l]*)")
+local function parse(stdout, stderr, exitreason, exitcode)
+    -- Capture mixer control state, e.g.        [  42    % ]   [  on    ]
+    local volume, state = string.match(stdout, "%[([%d]+)%%%].*%[([%l]*)%]")
     -- Handle mixers without data
-    if volu == nil then
-       return {0, mixer_state["off"]}
-    end
+    if volume == nil then return {} end
 
-    -- Handle mixers without mute
-    if mute == "" and volu == "0"
-    -- Handle mixers that are muted
-    or mute == "off" then
-       mute = mixer_state["off"]
+    if state == "" and volume == "0"    -- handle mixers without mute
+       or state == "off" then           -- handle muted mixers
+        return { tonumber(volume), STATE.off }
     else
-       mute = mixer_state["on"]
+        return { tonumber(volume), STATE.on }
     end
+end
 
-    return {tonumber(volu), mute}
+function volume_linux.async(format, warg, callback)
+    if not warg then return callback{} end
+    if type(warg) ~= "table" then warg = { warg } end
+    spawn.easy_async("amixer -M get " .. table.concat(warg, " "),
+                     function (...) callback(parse(...)) end)
 end
 -- }}}
 
-return setmetatable(volume_linux, { __call = function(_, ...) return worker(...) end })
+return helpers.setasyncall(volume_linux)

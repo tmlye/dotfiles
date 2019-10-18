@@ -5,15 +5,12 @@
 
 -- {{{ Grab environment
 local tonumber = tonumber
-local io = { popen = io.popen }
-local setmetatable = setmetatable
 local math = { ceil = math.ceil }
+local os = { date = os.date, difftime = os.difftime, time = os.time }
 local string = { match = string.match }
 
--- Awesome library for spawning programs
-local spawn = require"awful.spawn"
-
-local helpers = require("vicious.helpers")
+local spawn = require"vicious.spawn"
+local helpers = require"vicious.helpers"
 -- }}}
 
 
@@ -21,12 +18,22 @@ local helpers = require("vicious.helpers")
 -- vicious.widgets.weather
 local weather_all = {}
 
+-- copied from http://lua-users.org/wiki/TimeZone
+local function get_timezone_offset()
+    local ts = os.time()
+    local utcdate   = os.date("!*t", ts)
+    local localdate = os.date("*t", ts)
+    localdate.isdst = false -- this is the trick
+    return os.difftime(os.time(localdate), os.time(utcdate))
+end
+
 
 -- {{{ Weather widget type
-local function parse(ws)
+local function parse(stdout, stderr, exitreason, exitcode)
     -- Initialize function tables
     local _weather = {
         ["{city}"]    = "N/A",
+        ["{when}"]    = "N/A",
         ["{wind}"]    = "N/A",
         ["{windmph}"] = "N/A",
         ["{windkmh}"] = "N/A",
@@ -41,26 +48,39 @@ local function parse(ws)
     }
 
     -- Check if there was a timeout or a problem with the station
-    if ws == '' then return _weather end
+    if stdout == '' then return _weather end
 
     _weather["{city}"]    = -- City and/or area
-       string.match(ws, "^(.+)%,.*%([%u]+%)") or _weather["{city}"]
+       string.match(stdout, "^(.+)%,.*%([%u]+%)") or _weather["{city}"]
     _weather["{wind}"]    = -- Wind direction and degrees if available
-       string.match(ws, "Wind:[%s][%a]+[%s][%a]+[%s](.+)[%s]at.+$") or _weather["{wind}"]
+       string.match(stdout, "Wind:[%s][%a]+[%s][%a]+[%s](.+)[%s]at.+$") or _weather["{wind}"]
     _weather["{windmph}"] = -- Wind speed in MPH if available
-       string.match(ws, "Wind:[%s].+[%s]at[%s]([%d]+)[%s]MPH") or _weather["{windmph}"]
+       string.match(stdout, "Wind:[%s].+[%s]at[%s]([%d]+)[%s]MPH") or _weather["{windmph}"]
     _weather["{sky}"]     = -- Sky conditions if available
-       string.match(ws, "Sky[%s]conditions:[%s](.-)[%c]") or _weather["{sky}"]
+       string.match(stdout, "Sky[%s]conditions:[%s](.-)[%c]") or _weather["{sky}"]
     _weather["{weather}"] = -- Weather conditions if available
-       string.match(ws, "Weather:[%s](.-)[%c]") or _weather["{weather}"]
+       string.match(stdout, "Weather:[%s](.-)[%c]") or _weather["{weather}"]
     _weather["{tempf}"]   = -- Temperature in fahrenheit
-       string.match(ws, "Temperature:[%s]([%-]?[%d%.]+).*[%c]") or _weather["{tempf}"]
+       string.match(stdout, "Temperature:[%s]([%-]?[%d%.]+).*[%c]") or _weather["{tempf}"]
     _weather["{dewf}"]    = -- Dew Point in fahrenheit
-       string.match(ws, "Dew[%s]Point:[%s]([%-]?[%d%.]+).*[%c]") or _weather["{dewf}"]
+       string.match(stdout, "Dew[%s]Point:[%s]([%-]?[%d%.]+).*[%c]") or _weather["{dewf}"]
     _weather["{humid}"]   = -- Relative humidity in percent
-       string.match(ws, "Relative[%s]Humidity:[%s]([%d]+)%%") or _weather["{humid}"]
+       string.match(stdout, "Relative[%s]Humidity:[%s]([%d]+)%%") or _weather["{humid}"]
     _weather["{press}"]   = -- Pressure in hPa
-       string.match(ws, "Pressure[%s].+%((.+)[%s]hPa%)") or _weather["{press}"]
+       string.match(stdout, "Pressure[%s].+%((.+)[%s]hPa%)") or _weather["{press}"]
+
+    local year, month, day, hour, min =
+        string.match(stdout, "(%d%d%d%d).(%d%d).(%d%d) (%d%d)(%d%d) UTC")
+    if year ~= nil then
+       local utctable = {
+           year = year,
+           month = month,
+           day = day,
+           hour = hour,
+           min = min,
+       }
+       _weather["{when}"] = os.time(utctable) + get_timezone_offset()
+    end
 
     -- Wind speed in km/h if MPH was available
     if _weather["{windmph}"] ~= "N/A" then
@@ -86,21 +106,14 @@ local function parse(ws)
 end
 
 function weather_all.async(format, warg, callback)
-    if not warg then return end
+    if not warg then return callback{} end
 
     -- Get weather forceast by the station ICAO code, from:
     -- * US National Oceanic and Atmospheric Administration
     local url = ("https://tgftp.nws.noaa.gov/data/observations/metar/decoded/%s.TXT"):format(warg)
-    local cmd = "curl -fs " .. helpers.shellquote(url)
-    spawn.easy_async(cmd, function (stdout) callback(parse(stdout)) end)
-end
-
-local function worker(format, warg)
-    local ret
-    weather_all.async(format, warg, function (weather) ret = weather end)
-    while ret == nil do end
-    return ret
+    spawn.easy_async("curl -fs " .. url,
+                     function (...) callback(parse(...)) end)
 end
 -- }}}
 
-return setmetatable(weather_all, { __call = function(_, ...) return worker(...) end })
+return helpers.setasyncall(weather_all)

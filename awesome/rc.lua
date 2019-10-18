@@ -201,7 +201,7 @@ function setVolIconBasedOnStatus ()
     local f = assert(io.popen("amixer | grep 'Front Left: Playback' | cut -f8 -d ' '"))
     local returnValue = assert(f:read("*all"))
     f:close()
-    returnValue = string.sub(returnValue, 2 , -3)
+    returnValue = string.sub(returnValue, 2 , -2)
     if(returnValue == 'off') then
         -- Speaker is muted
         volicon:set_image(home .. "/.config/awesome/icons/mute.png")

@@ -4,10 +4,9 @@
 ---------------------------------------------------
 
 -- {{{ Grab environment
-local setmetatable = setmetatable
 local pcall = pcall
 local helpers = require("vicious.helpers")
-local spawn = require("awful.spawn")
+local spawn = require("vicious.spawn")
 
 local success, json = pcall(require, "cjson")
 if not success then
@@ -53,4 +52,4 @@ function btc_all.async(format, warg, callback)
 end
 -- }}}
 
-return btc_all
+return helpers.setasyncall(btc_all)
