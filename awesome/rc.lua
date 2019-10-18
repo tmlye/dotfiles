@@ -41,7 +41,7 @@ mpdPassword = "\"\""
 mpdPort = "6600"
 
 -- Airportcode (ICAO) for the weather widget
-airportcode = "EDDF"
+airportcode = "VHHH"
 
 
 home = os.getenv("HOME")
