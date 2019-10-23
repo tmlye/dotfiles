@@ -1,4 +1,5 @@
 #!/bin/bash
+export AWS_PROFILE=personal-terraform
 duplicity --exclude-filelist mount/backup/duplicity-exclude-list \
           --allow-source-mismatch \
           --verbosity 9 \
@@ -6,6 +7,8 @@ duplicity --exclude-filelist mount/backup/duplicity-exclude-list \
           --num-retries 5 \
           --asynchronous-upload \
           --volsize 100 \
-          mount/ rsync://tml@lockedlol.myddns.me:783//home/tml/mount/backup
-
+          --s3-use-new-style \
+          --s3-use-ia \
+          mount/ s3://s3.eu-north-1.amazonaws.com/duplicity-backup-j7v3a
+unset AWS_PROFILE
 # vim:set filetype=sh:
