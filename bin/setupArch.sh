@@ -72,20 +72,20 @@ create_new_user(){
   passwd ${USER_NAME}
 }
 
-install_yaourt(){
-  print_title "Installing Yaourt"
-  if ! is_package_installed "yaourt" ; then
-    package_install "base-devel yajl namcap"
-    pacman -D --asdeps yajl namcap
-    aui_download_packages "package-query yaourt"
-    pacman -D --asdeps package-query
-    if ! is_package_installed "yaourt" ; then
-      echo "Yaourt not installed. EXIT now"
+install_pikaur(){
+  print_title "Installing pikaur"
+  if ! is_package_installed "pikaur" ; then
+    package_install "base-devel git"
+    git clone https://aur.archlinux.org/pikaur.git
+    cd pikaur
+    makepkg -fsri
+    if ! is_package_installed "pikaur" ; then
+      echo "Pikaur not installed. EXIT now"
       pause_function
       exit 0
     fi
   fi
-  AUR_PKG_MANAGER="yaourt"
+  AUR_PKG_MANAGER="pikaur"
   pause_function
 }
 
@@ -139,7 +139,7 @@ system_upgrade
 root_password
 configure_sudo
 create_new_user
-install_yaourt
+install_pikaur
 enable_multilib
 install_basic_setup
 finish_install
