@@ -15,10 +15,10 @@ alias moff='xrandr --output DP1 --off'
 # Package Management
 # ==================
 
-alias update='yaourt -Syua --noconfirm'
-alias install='yaourt -S'
-alias uninstall='yaourt -Rns'
-alias search='yaourt -Ss'
+alias update='pikaur -Syua --noconfirm'
+alias install='pikaur -S'
+alias uninstall='pikaur -Rns'
+alias search='pikaur -Ss'
 
 # Mounting/Unmounting
 # ===================
