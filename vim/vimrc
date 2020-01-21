@@ -168,7 +168,7 @@ noremap <silent> gd gd:noh<CR>
 nnoremap <silent> <c-g> :noh<CR>
 
 " Remove trailing whitespace
-nnoremap <silent> <leader>t :%s/\s\+$//e<CR>:noh<CR>
+nnoremap <silent> <leader>s :%s/\s\+$//e<CR>:noh<CR>
 
 " quicker saving
 nnoremap <Leader>w :w<CR>
