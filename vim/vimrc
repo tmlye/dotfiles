@@ -175,3 +175,6 @@ nnoremap <Leader>w :w<CR>
 
 " Contact lookup for editing mail
 imap <c-f> <ESC>:r!muttvcardsearch <cword><CR><ESC>
+
+" Open a terminal in the current buffer's file's directory
+map <silent> <Leader>t :lcd %:h<CR>:terminal ++curwin<CR>
