@@ -177,4 +177,4 @@ nnoremap <Leader>w :w<CR>
 imap <c-f> <ESC>:r!muttvcardsearch <cword><CR><ESC>
 
 " Open a terminal in the current buffer's file's directory
-map <silent> <Leader>t :lcd %:h<CR>:terminal ++curwin<CR>
+map <silent> <Leader>t :lcd %:h<CR>:vertical terminal <CR>
