@@ -6,14 +6,12 @@ rsync -a --delete $HOME/desktop $HOME/mount/backup
 rsync -a --delete $HOME/downloads $HOME/mount/backup
 rsync -a --delete $HOME/.config $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.dotfiles $HOME/mount/backup/OS/home/
-rsync -a --delete $HOME/.electrum $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.gem $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.gnupg $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.gtktheme $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.irssi $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.mozilla $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.mpd $HOME/mount/backup/OS/home/
-rsync -a --delete $HOME/.mpdscribble $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.ssh $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.wallpaper $HOME/mount/backup/OS/home/
 # Files

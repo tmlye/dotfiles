@@ -2,7 +2,7 @@
 export AWS_PROFILE=personal-terraform
 duplicity --exclude-filelist mount/backup/duplicity-exclude-list \
           --allow-source-mismatch \
-          --verbosity 9 \
+          --verbosity 8 \
           --tempdir . \
           --num-retries 5 \
           --asynchronous-upload \
