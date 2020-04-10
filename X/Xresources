@@ -46,6 +46,7 @@ URxvt*font:         xft:DejaVuSansMono:pixelsize=14
 URxvt*boldFont:     xft:DejaVuSansMono:pixelsize=14
 URxvt*buffered:     true
 URxvt*cursorBlink:  false
+URxvt*saveLines:    200000
 URxvt*cursorUnderlline:     false
 URxvt*geometry:             80x25
 URxvt*depth:                24
