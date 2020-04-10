@@ -102,7 +102,7 @@ if has('gui_running')
 
     " Set Font
     if has("gui_gtk3")
-      set guifont=DejaVu\ Sans\ Mono\ 12
+      set guifont=DejaVu\ Sans\ Mono\ 11
     elseif has("gui_macvim")
       set guifont=Menlo\ Regular:h14
     elseif has("gui_win32")
