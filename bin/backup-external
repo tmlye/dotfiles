@@ -1,14 +1,13 @@
 #!/bin/bash
-export AWS_PROFILE=personal-terraform
-duplicity --exclude-filelist mount/backup/duplicity-exclude-list \
+export AWS_PROFILE=personal-backup
+duplicity --exclude-filelist $HOME/mount/backup/duplicity-exclude-list \
           --allow-source-mismatch \
           --verbosity 8 \
           --tempdir . \
           --num-retries 5 \
           --asynchronous-upload \
           --volsize 100 \
-          --s3-use-new-style \
           --s3-use-ia \
-          mount/ s3://s3.eu-north-1.amazonaws.com/duplicity-backup-j7v3a
+          $HOME/mount/ boto3+s3://duplicity-backup-j7v3a
 unset AWS_PROFILE
 # vim:set filetype=sh:
