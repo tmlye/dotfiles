@@ -2,12 +2,6 @@
 
 set nocompatible            " Non-vi settings
 
-" Pathogen-vim
-" ============
-
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
 " General
 " =======
 
@@ -107,8 +101,8 @@ if has('gui_running')
     set guioptions-=R               " No Scrollbar right when split
 
     " Set Font
-    if has("gui_gtk2")
-      set guifont=DejaVu\ Sans\ Mono\ 10
+    if has("gui_gtk3")
+      set guifont=DejaVu\ Sans\ Mono\ 12
     elseif has("gui_macvim")
       set guifont=Menlo\ Regular:h14
     elseif has("gui_win32")
