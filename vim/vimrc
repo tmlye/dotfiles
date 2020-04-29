@@ -10,6 +10,7 @@ set number                  " Line numbers
 set encoding=UTF-8          " Encoding
 set laststatus=2            " Always show statusline
 set autoread                " Reload files changed outside vim
+set clipboard=unnamed       " Use OSX clipboard
 set showcmd                 " Display unfinished commands
 set ruler                   " Show cursor position in status bar
 set hidden                  " Buffers can exist in the background
