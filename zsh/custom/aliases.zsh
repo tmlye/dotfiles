@@ -91,6 +91,7 @@ alias gcb='git checkout -b'
 alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gfm='git fetch origin master:master'
 alias grm='git rebase master'
+alias gpl='git pull'
 
 # Kubectl
 # =======
