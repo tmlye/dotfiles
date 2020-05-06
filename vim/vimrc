@@ -17,14 +17,17 @@ set hidden                  " Buffers can exist in the background
 set showmatch               " Briefly jump to matching bracket
 set matchtime=2             " Time match is shown in 0.1s
 " path, filetype, readonly flag, buffers, line pos, percentage
-autocmd VimEnter *
+au VimEnter *
   \ let &statusline='%<%F %Y%r %3*'
     \ .bufferline#get_status_string()
      \ .'%{bufferline#refresh_status()}%*%=%l,%-5.0c%p%%'
 let g:bufferline_echo = 0
 
 " Reload vimrc when it's saved
-autocmd! BufWritePost .vimrc source ~/.vimrc
+au! BufWritePost .vimrc source ~/.vimrc
+
+" Check if files were changed outside of vim on buffer switches
+au FocusGained,BufEnter * :checktime
 
 " Syntax
 " ======
