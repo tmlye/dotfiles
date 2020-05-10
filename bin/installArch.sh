@@ -66,10 +66,10 @@ configure_mirrorlist(){
 }
 
 mount_boot_partition(){
-  print_title "Mount /boot partition"
+  print_title "Mount EFI system partition"
   partitions=(`cat /proc/partitions | awk 'length($3)>1' | awk '{print "/dev/" $4}' | awk 'length($0)>8' | grep 'sd\|hd'`)
 
-  echo "Select the boot partition:"
+  echo "Select the EFI system partition:"
   select DEVICE in "${partitions[@]}"; do
    DEVICE_NUMBER=$(( $REPLY - 1 ))
    if contains_element "$DEVICE" "${partitions[@]}"; then
@@ -80,17 +80,16 @@ mount_boot_partition(){
    fi
   done
 
-  mkdir -p ${MOUNTPOINT}/boot
-  mount -t vfat $DEVICE ${MOUNTPOINT}/boot
-  mkdir -p ${MOUNTPOINT}/boot/efi
+  mkdir -p ${MOUNTPOINT}/efi
+  mount -t vfat $DEVICE ${MOUNTPOINT}/efi
 }
 
 install_base_system() {
   print_title "Install base sytem"
   print_info "Using the pacstrap script we install the base system. The base-devel package group will be installed also."
   if ! is_package_installed "arch-install-scripts" ; then
-      print_info "Installing arch install scripts"
-      package_install "arch-install-scripts"
+    print_info "Installing arch install scripts"
+    package_install "arch-install-scripts"
   fi
   pacstrap -c -i ${MOUNTPOINT} base base-devel
 }
@@ -131,16 +130,12 @@ configure_locale(){
 install_linux(){
   print_title "Installing Linux, vim"
 
-  pacstrap -c -i ${MOUNTPOINT} linux vim
+  pacstrap -c -i ${MOUNTPOINT} linux linux-firmware man-db man-pages vim
 }
 
 install_bootloader(){
   print_title "Installing GRUB"
-  if [[ $UEFI -eq 1 ]]; then
-    pacstrap -c -i ${MOUNTPOINT} grub dosfstools efibootmgr
-  else
-    pacstrap ${MOUNTPOINT} grub
-  fi
+  pacstrap -c -i ${MOUNTPOINT} grub dosfstools efibootmgr
 }
 
 configure_mkinitcpio(){
@@ -164,7 +159,7 @@ configure_bootloader(){
   select DEVICE in "${partitions[@]}"; do
    DEVICE_NUMBER=$(( $REPLY - 1 ))
    if contains_element "$DEVICE" "${partitions[@]}"; then
-      break
+     break
    else
      invalid_option
    fi
@@ -172,17 +167,14 @@ configure_bootloader(){
 
   ROOT_UUID=$(blkid -s UUID -o value $DEVICE)
 
-  sed -i "s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$ROOT_UUID\:cryptroot root=\/dev\/mapper\/cryptroot\"/" ${MOUNTPOINT}/etc/default/grub
+  sed -i "s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$ROOT_UUID\:cryptroot\"/" ${MOUNTPOINT}/etc/default/grub
+  sed -i "s/#GRUB_ENABLE_CRYPTODISK=y/GRUB_ENABLE_CRYPTODISK=y/" ${MOUNTPOINT}/etc/default/grub
   sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=\"quiet\"/" ${MOUNTPOINT}/etc/default/grub
 
   curl https://gist.githubusercontent.com/tmlye/a682d07e40ad9b5d7237bd46f4f72e60/raw > ${MOUNTPOINT}/etc/grub.d/31_hold_shift
-  if [[ $UEFI -eq 1 ]]; then
-    echo "Configuring for UEFI"
-    arch_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub --recheck"
-  else
-    arch_chroot "grub-install --recheck ${BOOT_DEVICE}"
-  fi
-  arch_chroot "grub-mkconfig -o /boot/grub/grub.cfg"
+  chmod +x ${MOUNTPOINT}/etc/grub.d/31_hold_shift
+  arch_chroot "grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=arch_grub --boot-directory=/efi --removable --recheck --modules=\"part_gpt part_msdos\""
+  arch_chroot "grub-mkconfig -o /efi/grub/grub.cfg"
   pause_function
 }
 
@@ -244,7 +236,7 @@ check_root
 check_archlinux
 
 print_title "This script makes the following assumptions:"
-print_info "- Network is functional\n- There is a valid mirror in /etc/pacman.d/mirrorlist\n- You have formatted a partition and mounted it in ${MOUNTPOINT}\n- You have a separate /boot partition that is NOT mounted"
+print_info "- Network is functional\n- There is a valid mirror in /etc/pacman.d/mirrorlist\n- You have formatted a partition and mounted it in ${MOUNTPOINT}\n- You have a separate EFI system partition that is NOT mounted"
 read_input_text "Do you want to continue?"
 
 if [[ $OPTION != y ]]; then exit 0; fi
@@ -265,13 +257,3 @@ install_bootloader
 configure_bootloader
 install_network
 finish_install
-
-
-# TODO: Clean up below
-
-#chroot ${new_arch} /bin/bash pacman-key --init
-#chroot ${new_arch} /bin/bash pacman-key --populate archlinux
-#chroot ${new_arch} /bin/bash pacman-key --refresh-keys
-
-# TODO change SigLevel to Never before??
-#pacman --root ${mountpoint} -S base-devel vim grub wicd
