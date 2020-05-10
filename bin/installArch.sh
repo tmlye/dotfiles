@@ -71,7 +71,6 @@ mount_boot_partition(){
 
   echo "Select the boot partition:"
   select DEVICE in "${partitions[@]}"; do
-   #get the selected number - 1
    DEVICE_NUMBER=$(( $REPLY - 1 ))
    if contains_element "$DEVICE" "${partitions[@]}"; then
       BOOT_DEVICE=`echo $DEVICE | sed 's/[0-9]//'`
@@ -81,7 +80,8 @@ mount_boot_partition(){
    fi
   done
 
-  mount $DEVICE /boot
+  mkdir -p ${MOUNTPOINT}/boot
+  mount -t vfat $DEVICE ${MOUNTPOINT}/boot
   mkdir -p ${MOUNTPOINT}/boot/efi
 }
 
@@ -92,7 +92,7 @@ install_base_system() {
       print_info "Installing arch install scripts"
       package_install "arch-install-scripts"
   fi
-  pacstrap -i ${MOUNTPOINT} base base-devel
+  pacstrap -c -i ${MOUNTPOINT} base base-devel
 }
 
 configure_hostname(){
@@ -128,10 +128,16 @@ configure_locale(){
   arch_chroot "locale-gen"
 }
 
+install_linux(){
+  print_title "Installing Linux, vim"
+
+  pacstrap -c -i ${MOUNTPOINT} linux vim
+}
+
 install_bootloader(){
   print_title "Installing GRUB"
   if [[ $UEFI -eq 1 ]]; then
-    pacstrap ${MOUNTPOINT} grub dosfstools efibootmgr
+    pacstrap -c -i ${MOUNTPOINT} grub dosfstools efibootmgr
   else
     pacstrap ${MOUNTPOINT} grub
   fi
@@ -147,14 +153,29 @@ configure_mkinitcpio(){
   # Add encrypt for LUKS support
   sed -i "s/filesystems/encrypt filesystems/" ${MOUNTPOINT}/etc/mkinitcpio.conf
   arch_chroot "mkinitcpio -p linux"
+  pause_function
 }
 
 configure_bootloader(){
   print_title "Configuring GRUB"
 
+  partitions=(`cat /proc/partitions | awk 'length($3)>1' | awk '{print "/dev/" $4}' | awk 'length($0)>8' | grep 'sd\|hd'`)
+  echo "Select the encrypted root partition:"
+  select DEVICE in "${partitions[@]}"; do
+   DEVICE_NUMBER=$(( $REPLY - 1 ))
+   if contains_element "$DEVICE" "${partitions[@]}"; then
+      break
+   else
+     invalid_option
+   fi
+  done
+
+  ROOT_UUID=$(blkid -s UUID -o value $DEVICE)
+
+  sed -i "s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$ROOT_UUID\:cryptroot root=\/dev\/mapper\/cryptroot\"/" ${MOUNTPOINT}/etc/default/grub
   sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=\"quiet\"/" ${MOUNTPOINT}/etc/default/grub
 
-  arch_chroot "modprobe dm-mod"
+  curl https://gist.githubusercontent.com/tmlye/a682d07e40ad9b5d7237bd46f4f72e60/raw > ${MOUNTPOINT}/etc/grub.d/31_hold_shift
   if [[ $UEFI -eq 1 ]]; then
     echo "Configuring for UEFI"
     arch_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub --recheck"
@@ -162,6 +183,7 @@ configure_bootloader(){
     arch_chroot "grub-install --recheck ${BOOT_DEVICE}"
   fi
   arch_chroot "grub-mkconfig -o /boot/grub/grub.cfg"
+  pause_function
 }
 
 install_network(){
@@ -237,6 +259,7 @@ echo 'tmpfs		/tmp	tmpfs	nodev,nosuid	0	0' >> ${MOUNTPOINT}/etc/fstab
 configure_hostname
 configure_timezone
 configure_locale
+install_linux
 configure_mkinitcpio
 install_bootloader
 configure_bootloader
