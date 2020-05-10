@@ -20,8 +20,8 @@
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 configure_mirrorlist(){
-  local countries_code=("AU" "BY" "BE" "BR" "BG" "CA" "CL" "CN" "CO" "CZ" "DK" "EE" "FI" "FR" "DE" "GR" "HU" "IN" "IE" "IL" "IT" "JP" "KZ" "KR" "LV" "LU" "MK" "NL" "NC" "NZ" "NO" "PL" "PT" "RO" "RU" "RS" "SG" "SK" "ZA" "ES" "LK" "SE" "CH" "TW" "TR" "UA" "GB" "US" "UZ" "VN")
-  local countries_name=("Australia" "Belarus" "Belgium" "Brazil" "Bulgaria" "Canada" "Chile" "China" "Colombia" "Czech Republic" "Denmark" "Estonia" "Finland" "France" "Germany" "Greece" "Hungary" "India" "Ireland" "Israel" "Italy" "Japan" "Kazakhstan" "Korea" "Latvia" "Luxembourg" "Macedonia" "Netherlands" "New Caledonia" "New Zealand" "Norway" "Poland" "Portugal" "Romania" "Russian" "Serbia" "Singapore" "Slovakia" "South Africa" "Spain" "Sri Lanka" "Sweden" "Switzerland" "Taiwan" "Turkey" "Ukraine" "United Kingdom" "United States" "Uzbekistan" "Viet Nam")
+  local countries_code=("AU" "BY" "BE" "BR" "BG" "CA" "CL" "CN" "CO" "CZ" "DK" "EE" "FI" "FR" "DE" "GR" "HK" "HU" "IN" "IE" "IL" "IT" "JP" "KZ" "KR" "LV" "LU" "MK" "NL" "NC" "NZ" "NO" "PL" "PT" "RO" "RU" "RS" "SG" "SK" "ZA" "ES" "LK" "SE" "CH" "TW" "TR" "UA" "GB" "US" "UZ" "VN")
+  local countries_name=("Australia" "Belarus" "Belgium" "Brazil" "Bulgaria" "Canada" "Chile" "China" "Colombia" "Czech Republic" "Denmark" "Estonia" "Finland" "France" "Germany" "Greece" "Hong Kong" "Hungary" "India" "Ireland" "Israel" "Italy" "Japan" "Kazakhstan" "Korea" "Latvia" "Luxembourg" "Macedonia" "Netherlands" "New Caledonia" "New Zealand" "Norway" "Poland" "Portugal" "Romania" "Russian" "Serbia" "Singapore" "Slovakia" "South Africa" "Spain" "Sri Lanka" "Sweden" "Switzerland" "Taiwan" "Turkey" "Ukraine" "United Kingdom" "United States" "Uzbekistan" "Viet Nam")
   country_list(){
     #`reflector --list-countries | sed 's/[0-9]//g' | sed 's/^/"/g' | sed 's/,.*//g' | sed 's/ *$//g'  | sed 's/$/"/g' | sed -e :a -e '$!N; s/\n/ /; ta'`
     PS3="$prompt1"
@@ -65,6 +65,26 @@ configure_mirrorlist(){
   $EDITOR /etc/pacman.d/mirrorlist
 }
 
+mount_boot_partition(){
+  print_title "Mount /boot partition"
+  partitions=(`cat /proc/partitions | awk 'length($3)>1' | awk '{print "/dev/" $4}' | awk 'length($0)>8' | grep 'sd\|hd'`)
+
+  echo "Select the boot partition:"
+  select DEVICE in "${partitions[@]}"; do
+   #get the selected number - 1
+   DEVICE_NUMBER=$(( $REPLY - 1 ))
+   if contains_element "$DEVICE" "${partitions[@]}"; then
+      BOOT_DEVICE=`echo $DEVICE | sed 's/[0-9]//'`
+      break
+   else
+     invalid_option
+   fi
+  done
+
+  mount $DEVICE /boot
+  mkdir -p ${MOUNTPOINT}/boot/efi
+}
+
 install_base_system() {
   print_title "Install base sytem"
   print_info "Using the pacstrap script we install the base system. The base-devel package group will be installed also."
@@ -79,7 +99,7 @@ configure_hostname(){
   print_title "HOSTNAME - https://wiki.archlinux.org/index.php/HOSTNAME"
   print_info "A host name is a unique name created to identify a machine on a network.Host names are restricted to alphanumeric characters.\nThe hyphen (-) can be used, but a host name cannot start or end with it. Length is restricted to 63 characters."
   read -p "Hostname [ex: archlinux]: " HN
-  echo "$HN" > $MOUNTPOINT/etc/hostname
+  echo "$HN" > ${MOUNTPOINT}/etc/hostname
   arch_chroot "sed -i '/127.0.0.1/s/$/ '${HN}'/' /etc/hosts"
   arch_chroot "sed -i '/::1/s/$/ '${HN}'/' /etc/hosts"
 }
@@ -103,51 +123,40 @@ configure_locale(){
     setlocale
     read_input_text "Confirm locale ($LOCALE)"
   done
-  echo 'LANG="'$LOCALE_UTF8'"' > $MOUNTPOINT/etc/locale.conf
+  echo 'LANG="'$LOCALE_UTF8'"' > ${MOUNTPOINT}/etc/locale.conf
   arch_chroot "sed -i '/'${LOCALE}'/s/^#//' /etc/locale.gen"
   arch_chroot "locale-gen"
-}
-
-generate_ramdisk(){
-  print_title "Generating initial ramdisk"
-  # Move block to right after udev in HOOKS array
-  # This makes it possible to boot from usb devices
-  sed -i "s/block//" ${MOUNTPOINT}/etc/mkinitcpio.conf
-  sed -i "s/udev/udev block/" ${MOUNTPOINT}/etc/mkinitcpio.conf
-  arch_chroot "mkinitcpio -p linux"
 }
 
 install_bootloader(){
   print_title "Installing GRUB"
   if [[ $UEFI -eq 1 ]]; then
-    pacstrap $MOUNTPOINT grub dosfstools efibootmgr
+    pacstrap ${MOUNTPOINT} grub dosfstools efibootmgr
   else
-    pacstrap $MOUNTPOINT grub
+    pacstrap ${MOUNTPOINT} grub
   fi
+}
+
+configure_mkinitcpio(){
+  print_title "Configuring mkinitcpio"
+
+  # Move block to right after udev in HOOKS array
+  # This makes it possible to boot from usb devices
+  sed -i "s/block//" ${MOUNTPOINT}/etc/mkinitcpio.conf
+  sed -i "s/udev/udev block/" ${MOUNTPOINT}/etc/mkinitcpio.conf
+  # Add encrypt for LUKS support
+  sed -i "s/filesystems/encrypt filesystems/" ${MOUNTPOINT}/etc/mkinitcpio.conf
+  arch_chroot "mkinitcpio -p linux"
 }
 
 configure_bootloader(){
   print_title "Configuring GRUB"
-  partitions=(`cat /proc/partitions | awk 'length($3)>1' | awk '{print "/dev/" $4}' | awk 'length($0)>8' | grep 'sd\|hd'`)
 
-  echo "Select the partition:"
-  select DEVICE in "${partitions[@]}"; do
-   #get the selected number - 1
-   DEVICE_NUMBER=$(( $REPLY - 1 ))
-   if contains_element "$DEVICE" "${partitions[@]}"; then
-      BOOT_DEVICE=`echo $DEVICE | sed 's/[0-9]//'`
-      break
-   else
-     invalid_option
-   fi
-  done
+  sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=\"quiet\"/" ${MOUNTPOINT}/etc/default/grub
 
   arch_chroot "modprobe dm-mod"
   if [[ $UEFI -eq 1 ]]; then
     echo "Configuring for UEFI"
-    arch_chroot "mkdir -p /boot/efi"
-    # TODO Check if this works
-    arch_chroot "mount -t vfat $DEVICE /boot/efi"
     arch_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub --recheck"
   else
     arch_chroot "grub-install --recheck ${BOOT_DEVICE}"
@@ -170,7 +179,7 @@ finish_install(){
 
   read_input_text "Unmount partition?"
   if [[ $OPTION == y ]]; then
-    umount ${MOUNTPOINT}
+    umount -R ${MOUNTPOINT}
   fi
   echo "Finished"
 }
@@ -213,7 +222,7 @@ check_root
 check_archlinux
 
 print_title "This script makes the following assumptions:"
-print_info "- Network is functional\n- There is a valid mirror in /etc/pacman.d/mirrorlist\n- You have formatted a partition and mounted it in $MOUNTPOINT"
+print_info "- Network is functional\n- There is a valid mirror in /etc/pacman.d/mirrorlist\n- You have formatted a partition and mounted it in ${MOUNTPOINT}\n- You have a separate /boot partition that is NOT mounted"
 read_input_text "Do you want to continue?"
 
 if [[ $OPTION != y ]]; then exit 0; fi
@@ -221,13 +230,14 @@ if [[ $OPTION != y ]]; then exit 0; fi
 check_boot_system
 system_update
 configure_mirrorlist
+mount_boot_partition
 install_base_system
-# TODO: check why tempfs is not added to fstab
 genfstab -U ${MOUNTPOINT} >> ${MOUNTPOINT}/etc/fstab
+echo 'tmpfs		/tmp	tmpfs	nodev,nosuid	0	0' >> ${MOUNTPOINT}/etc/fstab
 configure_hostname
 configure_timezone
 configure_locale
-generate_ramdisk
+configure_mkinitcpio
 install_bootloader
 configure_bootloader
 install_network
@@ -242,15 +252,3 @@ finish_install
 
 # TODO change SigLevel to Never before??
 #pacman --root ${mountpoint} -S base-devel vim grub wicd
-
-# Add / and tmpfs to fstab
-#echo 'tmpfs		/tmp	tmpfs	nodev,nosuid	0	0' >> ${new_arch}/etc/fstab
-#echo 'UUID=$uuid / ext4 defaults 0 1' >> ${new_arch}/etc/fstab
-
-# Install grub
-# chroot ${new_arch} /bin/bash grub-install $partition
-# chroot ${new_arch} /bin/bash grub-mkconfig -o /boot/grub/grub.cfg
-
-# Cleanup
-# umount ${new_arch}/{proc,sys,dev}
-# umount ${new_arch}
