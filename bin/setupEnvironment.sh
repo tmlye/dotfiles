@@ -11,9 +11,8 @@ else
   exit 1
 fi
 
-install_DE(){
-  package_install "xorg-server xorg-apps xorg-xinit xf86-video-vesa xautolock slock awesome zsh rxvt-unicode slim ttf-dejavu gtk-engine-murrine xclip"
-  aur_package_install "allblack-icons xcmenu-git"
+install_desktop_environment(){
+  package_install "zsh rxvt-unicode wayland sway swaylock swayidle swaybg xorg-server-xwayland grim slurp ttf-dejavu gtk3"
 }
 
 install_communication(){
@@ -30,16 +29,16 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "calc virtualbox calibre viewnior zathura zathura-pdf-poppler htop scrot whois dnsutils darktable"
+  package_install "calc virtualbox calibre viewnior zathura zathura-pdf-poppler htop whois dnsutils darktable"
 }
 
 install_dev(){
-  package_install "nodejs code"
+  package_install "npm code terraform hugo aws-cli python-boto3"
+  aur_package_install "nvm"
 }
 
 install_power(){
-  aur_package_install "tpacpi-bat"
-  package_install "powertop acpi_call"
+  package_install "powertop acpi acpi_call tpacpi-bat"
 }
 
 finish_install(){
@@ -69,22 +68,22 @@ finish_install(){
   sudo -u $USER cp -r /home/$USER/mount/backup/code /home/$USER/
   sudo -u $USER cp -r /home/$USER/mount/backup/desktop /home/$USER/
   sudo -u $USER cp -r /home/$USER/mount/backup/downloads /home/$USER/
-  cp -f /home/$USER/mount/backup/OS/slim.conf /etc/
-  mkdir -p /usr/share/slim/themes
-  cp -r /home/$USER/mount/backup/OS/slim/simple /usr/share/slim/themes/
   sudo -u $USER cp -r /home/$USER/mount/backup/OS/home/.* /home/$USER/
-  echo "Enabling slim"
-  system_ctl enable slim
+  #cp -f /home/$USER/mount/backup/OS/slim.conf /etc/
+  #mkdir -p /usr/share/slim/themes
+  #cp -r /home/$USER/mount/backup/OS/slim/simple /usr/share/slim/themes/
+  #echo "Enabling slim"
+  #system_ctl enable slim
   pause_function
 }
 
-AUR_PGK_MANAGER=yaourt
+AUR_PGK_MANAGER=pikaur
 check_root
 check_archlinux
 check_pacman_blocked
 echo "Type in your username:"
 read -p "User: " USER
-install_DE
+install_desktop_environment
 install_communication
 install_music
 install_internet

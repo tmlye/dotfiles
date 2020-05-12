@@ -43,15 +43,10 @@ configure_sudo(){
     print_title "SUDO - https://wiki.archlinux.org/index.php/Sudo"
     package_install "sudo"
   fi
-  #CONFIGURE SUDOERS {{{
   if [[ ! -f  /etc/sudoers.aui ]]; then
     cp -v /etc/sudoers /etc/sudoers.aui
-    ## Uncomment to allow members of group wheel to execute any command
     sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers
-    ## Same thing without a password (not secure)
-    #sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^#//' /etc/sudoers
 
-    #This config is especially helpful for those using terminal multiplexers like screen, tmux, or ratpoison, and those using sudo from scripts/cronjobs:
     echo "" >> /etc/sudoers
     echo 'Defaults !requiretty, !tty_tickets, !umask' >> /etc/sudoers
     echo 'Defaults visiblepw, path_info, insults, lecture=always' >> /etc/sudoers
@@ -62,7 +57,6 @@ configure_sudo(){
     echo 'Defaults timestamp_timeout=300' >> /etc/sudoers
     echo 'Defaults passprompt="[sudo] password for %u: "' >> /etc/sudoers
   fi
-  #}}}
 }
 
 create_new_user(){
@@ -104,19 +98,16 @@ enable_multilib(){
 }
 
 install_basic_setup(){
+  print_info "Enabling timesyncd"
+  system_ctl enable systemd-timesyncd.service
   print_title "Installing basic tools"
-  package_install "efivar gptfdisk rsync mlocate ranger w3m gvim git openssh wget traceroute bluez bluez-libs bluez-utils"
-  print_info "Installing chrony NTP client"
-  package_install "chrony"
-  is_package_installed "chrony" && system_ctl enable chrony
+  package_install "efivar gptfdisk rsync mlocate ranger w3m openssh wget traceroute bluez bluez-libs bluez-utils"
   print_info "Installing compression tools"
   package_install "zip unzip unrar"
   print_info "Installing audio"
   package_install "alsa-utils alsa-plugins lib32-alsa-plugins pulseaudio pulseaudio-alsa pulseaudio-bluetooth"
   print_info "Installing filesystems+tools"
-  package_install "ntfs-3g dosfstools exfat-utils fuse fuse-exfat"
-  aur_package_install "jmtpfs"
-  is_package_installed "fuse" && add_module "fuse"
+  package_install "ntfs-3g dosfstools exfat-utils fuse2 fuse3 mtpfs"
 }
 
 
