@@ -27,7 +27,6 @@ install_music(){
 
 install_internet(){
   package_install "firefox chromium flashplugin rtorrent"
-  aur_package_install "google-talkplugin"
 }
 
 install_tools(){

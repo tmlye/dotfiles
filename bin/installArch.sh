@@ -141,6 +141,11 @@ install_bootloader(){
 configure_mkinitcpio(){
   print_title "Configuring mkinitcpio"
 
+  # Create a keyfile to avoid entering password twice on boot
+  dd bs=512 count=4 if=/dev/random of=${MOUNTPOINT}/root/keyfile.bin iflag=fullblock
+  arch_chroot "chmod 600 ${MOUNTPOINT}/root/keyfile.bin"
+  sed -i "s/FILES=.*/FILES=(\/root\/keyfile.bin)/" ${MOUNTPOINT}/etc/mkinitcpio.conf
+
   # Move block to right after udev in HOOKS array
   # This makes it possible to boot from usb devices
   sed -i "s/block//" ${MOUNTPOINT}/etc/mkinitcpio.conf
@@ -148,6 +153,7 @@ configure_mkinitcpio(){
   # Add encrypt for LUKS support
   sed -i "s/filesystems/encrypt filesystems/" ${MOUNTPOINT}/etc/mkinitcpio.conf
   arch_chroot "mkinitcpio -p linux"
+  arch_chroot "chmod 600 /boot/initramfs-linux*"
   pause_function
 }
 
@@ -165,9 +171,11 @@ configure_bootloader(){
    fi
   done
 
+  cryptsetup -v luksAddKey $DEVICE ${MOUNTPOINT}/root/keyfile.bin
+
   ROOT_UUID=$(blkid -s UUID -o value $DEVICE)
 
-  sed -i "s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$ROOT_UUID\:cryptroot\"/" ${MOUNTPOINT}/etc/default/grub
+  sed -i "s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$ROOT_UUID\:cryptroot cryptkey=rootfs\:\/root\/keyfile.bin\"/" ${MOUNTPOINT}/etc/default/grub
   sed -i "s/#GRUB_ENABLE_CRYPTODISK=y/GRUB_ENABLE_CRYPTODISK=y/" ${MOUNTPOINT}/etc/default/grub
   sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=\"quiet\"/" ${MOUNTPOINT}/etc/default/grub
 
@@ -180,7 +188,7 @@ configure_bootloader(){
 
 install_network(){
   print_title "Installing network management"
-  arch_chroot "pacman -S netctl ca-certificates wpa_supplicant dialog openvpn"
+  arch_chroot "pacman -S netctl dhcpcd ca-certificates wpa_supplicant dialog openvpn"
   pause_function
 }
 
