@@ -17,14 +17,16 @@ install_pikaur(){
     package_install "base-devel git"
     git clone https://aur.archlinux.org/pikaur.git
     cd pikaur
-    makepkg -fsri
+    sudo -u $USER makepkg -fsr
+    pacman -U *.pkg.tar.xz
+    cd ..
+    rm -rf pikaur
     if ! is_package_installed "pikaur" ; then
       echo "Pikaur not installed. EXIT now"
       pause_function
       exit 0
     fi
   fi
-  AUR_PKG_MANAGER="pikaur"
   pause_function
 }
 
@@ -67,7 +69,6 @@ finish_install(){
   sudo -u $USER mkdir /home/$USER/mount2
   print_warning "If your backup drive is not connected, please do it now."
   pause_function
-  #tee /etc/modules-load.d/truecrypt.conf <<< "loop"
   partitions=(`cat /proc/partitions | awk 'length($3)>1' | awk '{print "/dev/" $4}' | awk 'length($0)>8' | grep 'sd\|hd'`)
   fdisk -l
   echo "Select the backup drive:"
@@ -100,6 +101,7 @@ check_archlinux
 check_pacman_blocked
 echo "Type in your username:"
 read -p "User: " USER
+install_pikaur
 install_desktop_environment
 install_communication
 install_music

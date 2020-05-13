@@ -60,7 +60,7 @@ configure_sudo(){
 }
 
 create_new_user(){
-  read -p "Username: " USER_NAME
+  read -p "Username for new user: " USER_NAME
   useradd -m -g users -G wheel -s /bin/bash ${USER_NAME}
   chfn ${USER_NAME}
   passwd ${USER_NAME}
