@@ -11,6 +11,23 @@ else
   exit 1
 fi
 
+install_pikaur(){
+  print_title "Installing pikaur"
+  if ! is_package_installed "pikaur" ; then
+    package_install "base-devel git"
+    git clone https://aur.archlinux.org/pikaur.git
+    cd pikaur
+    makepkg -fsri
+    if ! is_package_installed "pikaur" ; then
+      echo "Pikaur not installed. EXIT now"
+      pause_function
+      exit 0
+    fi
+  fi
+  AUR_PKG_MANAGER="pikaur"
+  pause_function
+}
+
 install_desktop_environment(){
   package_install "zsh rxvt-unicode wayland sway swaylock swayidle swaybg xorg-server-xwayland grim slurp ttf-dejavu gtk3"
 }

@@ -25,7 +25,7 @@ else
   exit 1
 fi
 
-setup_network(){
+check_network(){
   print_title "Network setup"
   print_warning "You need to have your network connection setup. Netctl should be setup by this point."
   read_input_text "Is your network setup?"
@@ -66,23 +66,6 @@ create_new_user(){
   passwd ${USER_NAME}
 }
 
-install_pikaur(){
-  print_title "Installing pikaur"
-  if ! is_package_installed "pikaur" ; then
-    package_install "base-devel git"
-    git clone https://aur.archlinux.org/pikaur.git
-    cd pikaur
-    makepkg -fsri
-    if ! is_package_installed "pikaur" ; then
-      echo "Pikaur not installed. EXIT now"
-      pause_function
-      exit 0
-    fi
-  fi
-  AUR_PKG_MANAGER="pikaur"
-  pause_function
-}
-
 enable_multilib(){
   print_title "Enabling Multilib"
   local MULTILIB=`grep -n "\[multilib\]" /etc/pacman.conf | cut -f1 -d:`
@@ -110,7 +93,6 @@ install_basic_setup(){
   package_install "ntfs-3g dosfstools exfat-utils fuse2 fuse3 mtpfs"
 }
 
-
 finish_install(){
   print_title "Installation complete"
   print_info "A script called setupEnvironment was copied to your home folder.\n Login with your user and execute it to continue."
@@ -124,13 +106,12 @@ check_root
 check_archlinux
 check_hostname
 check_pacman_blocked
-setup_network
+check_network
 check_connection
 system_upgrade
 root_password
 configure_sudo
 create_new_user
-install_pikaur
 enable_multilib
 install_basic_setup
 finish_install
