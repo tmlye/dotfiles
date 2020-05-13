@@ -1,6 +1,6 @@
 # Mail #
 
-This is the mail setup I use, it is almost identical Jason Graham's setup (see below). Changes I made include file/directory locations and the removal of imapfilter. I also added Google contacts integration with goobook.
+This is the mail setup I use, it is almost identical Jason Graham's setup (see below). Changes I made include file/directory locations and the removal of imapfilter.
 
 This will not work out of the box; it is strongly recommended that you go through each of the config files and adjust the settings according to your needs.
 You should also read the blog post linked to below.

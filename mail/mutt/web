@@ -6,7 +6,6 @@ set record = +web/Sent
 set postponed = +web/Drafts
 set trash = +web/Trash
 unset signature
-#set signature = ~/.dotfiles/mail/mutt/sig_school.sig
 
 set sendmail="ssh tml@web01 -p 799 sendmail -f se@saschaeglau.com"
 

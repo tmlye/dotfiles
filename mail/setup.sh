@@ -12,15 +12,15 @@
 
 function notes {
 	echo "If you haven't already, you will need to install mutt,"
-    echo "offlineimap,( imapfilter,) archivemail, mairix, and msmtp,"
+    echo "offlineimap, archivemail, mairix,"
 	echo "as well as the python bindings for gnome-keyring"
 	echo ""
-	echo "Also, to let offlineimap/imapfilter be run through cron,"
-	echo "add export_x_info.sh to your startup scripts."
+	echo "Also, to let offlineimap be run through cron,"
+	echo "add export-dbus-session.sh to your startup scripts."
 	echo ""
-	echo "When these have been installed, use bin/msmtp-gnome-tool.py"
-	echo "and bin/offlineimap-gnome-tool.py to populate gnome-keyring"
-	echo "with your passwords, for gmail use the server imap.gmail.com."
+	echo "When these have been installed,"
+	echo "use bin/offlineimap-gnome-tool.py to populate gnome-keyring"
+	echo "with your passwords"
 	echo ""
 	echo ""
 	echo "Insert something like the following into your crontab (crontab -e)"
@@ -31,14 +31,13 @@ function notes {
 }
 
 # Make the required mail directories
-mkdir -p $HOME/.mail/ohm
 mkdir -p $HOME/.mail/web
 
 # We need to make $HOME/.mairix too
 mkdir -p $HOME/.mairix
 
 # Symlinks
-declare -a links=(.msmtprc .mutt .offlineimaprc .mairixrc)
+declare -a links=(.mutt .offlineimaprc .mairixrc)
 # If files already exist create backups
 for i in ${links[*]}
 do
@@ -47,13 +46,9 @@ do
   fi
 done
 
-ln -s $HOME/.dotfiles/mail/msmtprc $HOME/.msmtprc
 ln -s $HOME/.dotfiles/mail/mutt $HOME/.mutt
 ln -s $HOME/.dotfiles/mail/offlineimaprc $HOME/.offlineimaprc
 ln -s $HOME/.dotfiles/mail/mairixrc $HOME/.mairixrc
-
-# msmtprc needs to be 600 permissions
-chmod 600 $HOME/.dotfiles/mail/msmtprc
 
 # binary files
 rm $HOME/.dotfiles/bin/pullmail.sh
@@ -64,4 +59,3 @@ mkdir -p $HOME/.mutt/{temp,cache}
 
 # Print out the notes to end
 notes
-
