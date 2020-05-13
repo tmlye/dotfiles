@@ -35,24 +35,28 @@ install_desktop_environment(){
 }
 
 install_communication(){
-  package_install "neomutt mairix"
+  package_install "neomutt offlineimap mairix gnupg keybase"
   aur_package_install "muttvcardsearch archivemail"
 }
 
 install_music(){
-  package_install "mpd ncmpcpp picard mplayer"
+  package_install "mpd ncmpcpp picard mplayer smplayer flac ffmpeg"
 }
 
 install_internet(){
-  package_install "firefox chromium flashplugin rtorrent"
+  package_install "firefox chromium flashplugin rtorrent mtr"
 }
 
 install_tools(){
-  package_install "calc virtualbox calibre viewnior zathura zathura-pdf-poppler htop whois dnsutils darktable"
+  package_install "util-linux bind-tools calc virtualbox calibre htop whois nmon duplicity"
+  # Images
+  package_install "viewnior darktable perl-image-exiftool"
+  # Documents
+  package_install "texlive-most texlive-bin zathura zathura-pdf-poppler"
 }
 
 install_dev(){
-  package_install "npm code terraform hugo aws-cli python-boto3"
+  package_install "npm code terraform hugo aws-cli python-boto3 jdk11-openjdk kotlin docker docker-compose"
   aur_package_install "nvm"
 }
 
