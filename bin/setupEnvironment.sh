@@ -1,9 +1,6 @@
 #!/bin/bash
 # This script sets up the desktop environment and installs many programs I use.
 
-set -e
-set -u
-
 if [[ -f `pwd`/sharedfuncs ]]; then
   source sharedfuncs
 else
@@ -15,7 +12,7 @@ install_pikaur(){
   print_title "Installing pikaur"
   if ! is_package_installed "pikaur" ; then
     package_install "base-devel git"
-    git clone https://aur.archlinux.org/pikaur.git
+    sudo -u $USER git clone https://aur.archlinux.org/pikaur.git
     cd pikaur
     sudo -u $USER makepkg -fsr
     pacman -U *.pkg.tar.xz
