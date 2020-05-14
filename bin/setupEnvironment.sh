@@ -91,11 +91,6 @@ finish_install(){
   sudo -u $USER cp -r /home/$USER/mount/backup/desktop /home/$USER/
   sudo -u $USER cp -r /home/$USER/mount/backup/downloads /home/$USER/
   sudo -u $USER cp -r /home/$USER/mount/backup/OS/home/.* /home/$USER/
-  #cp -f /home/$USER/mount/backup/OS/slim.conf /etc/
-  #mkdir -p /usr/share/slim/themes
-  #cp -r /home/$USER/mount/backup/OS/slim/simple /usr/share/slim/themes/
-  #echo "Enabling slim"
-  #system_ctl enable slim
   pause_function
 }
 
