@@ -3,7 +3,7 @@
 # Create .config directory if needed
 mkdir -p $HOME/.config
 
-declare -a links=(.config/awesome .Xresources .zshrc .ncmpcpp .vim .vimrc .XkeymapUS .XkeymapDE .config/zathura/zathurarc)
+declare -a links=(.zshrc .ncmpcpp .vim .vimrc .config/zathura/zathurarc)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -12,15 +12,6 @@ do
     then mv ~/$i ~/$i.backup
   fi
 done
-
-# Awesome
-ln -s $HOME/.dotfiles/awesome/ $HOME/.config/awesome
-
-# X
-ln -s $HOME/.dotfiles/X/xinitrc $HOME/.xinitrc
-ln -s $HOME/.dotfiles/X/Xresources $HOME/.Xresources
-ln -s $HOME/.dotfiles/X/XkeymapUS $HOME/.XkeymapUS
-ln -s $HOME/.dotfiles/X/XkeymapDE $HOME/.XkeymapDE
 
 # zsh
 ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
