@@ -3,7 +3,7 @@
 # Create .config directory if needed
 mkdir -p $HOME/.config
 
-declare -a links=(.zshrc .ncmpcpp .vim .vimrc .config/zathura/zathurarc)
+declare -a links=(.bash_profile .zshrc .ncmpcpp .vim .vimrc .config/zathura/zathurarc)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -48,6 +48,9 @@ ln -s $HOME/.dotfiles/various/viewnior.conf $HOME/.config/viewnior/viewnior.conf
 mkdir -p $HOME/.config/Code\ -\ OSS/User
 ln -s $HOME/.dotfiles/vscode/settings.json $HOME/.config/Code\ -\ OSS/User/settings.json
 ln -s $HOME/.dotfiles/vscode/keybindings.json $HOME/.config/Code\ -\ OSS/User/keybindings.json
+
+# bash profile for autostarting sway
+ln -s $HOME/.dotfiles/various/bash_profile $HOME/.bash_profile
 
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
