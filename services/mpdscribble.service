@@ -1,9 +1,0 @@
-[Unit]
-Description=MPD Scrobbler
-After=mpd.service
-
-[Service]
-ExecStart=/usr/bin/mpdscribble --no-daemon
-
-[Install]
-WantedBy=default.target

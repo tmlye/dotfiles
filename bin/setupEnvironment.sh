@@ -37,8 +37,8 @@ install_communication(){
   aur_package_install "muttvcardsearch archivemail"
 }
 
-install_music(){
-  package_install "mpd ncmpcpp picard mplayer smplayer flac ffmpeg"
+install_media(){
+  package_install "picard mplayer smplayer flac ffmpeg"
 }
 
 install_internet(){
@@ -84,7 +84,7 @@ read -p "User: " USER
 install_pikaur
 install_desktop_environment
 install_communication
-install_music
+install_media
 install_internet
 install_tools
 install_dev

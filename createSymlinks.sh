@@ -16,9 +16,6 @@ done
 # zsh
 ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 
-# ncmpcpp
-ln -s $HOME/.dotfiles/ncmpcpp/ $HOME/.ncmpcpp
-
 # vim
 ln -s $HOME/.dotfiles/vim/vim/ $HOME/.vim
 ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc

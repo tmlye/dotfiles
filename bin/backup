@@ -11,6 +11,5 @@ rsync -a --delete $HOME/.ssh $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.wallpaper $HOME/mount/backup/OS/home/
 # Files
 rsync -a $HOME/.gitconfig $HOME/mount/backup/OS/home/
-rsync -a $HOME/.mpdconf $HOME/mount/backup/OS/home/
 
 # vim:set filetype=sh:
