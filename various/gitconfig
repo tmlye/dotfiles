@@ -1,0 +1,7 @@
+[user]
+	name = Sascha Eglau
+	email = se@saschaeglau.com
+[push]
+	default = simple
+[core]
+	editor = vim
