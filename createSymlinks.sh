@@ -3,7 +3,7 @@
 # Create .config directory if needed
 mkdir -p $HOME/.config
 
-declare -a links=(.gitconfig .bash_profile .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/viewnior/viewnior.conf .config/user-dirs.dirs)
+declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/viewnior/viewnior.conf .config/user-dirs.dirs)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -51,7 +51,7 @@ ln -s $HOME/.dotfiles/vscode/settings.json $HOME/.config/Code\ -\ OSS/User/setti
 ln -s $HOME/.dotfiles/vscode/keybindings.json $HOME/.config/Code\ -\ OSS/User/keybindings.json
 
 # bash profile for autostarting sway
-ln -s $HOME/.dotfiles/various/bash_profile $HOME/.bash_profile
+ln -s $HOME/.dotfiles/various/zlogin $HOME/.zlogin
 
 # git
 ln -s $HOME/.dotfiles/various/gitconfig $HOME/.gitconfig
