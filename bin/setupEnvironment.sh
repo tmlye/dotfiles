@@ -53,7 +53,7 @@ install_tools(){
 }
 
 install_dev(){
-  package_install "npm code terraform hugo aws-cli python-boto3 jdk11-openjdk kotlin docker docker-compose"
+  package_install "npm code terraform hugo aws-cli python-boto3 jdk11-openjdk kotlin docker docker-compose ruby"
   aur_package_install "nvm"
 }
 
@@ -91,7 +91,7 @@ finish_install(){
   pause_function
 }
 
-AUR_PGK_MANAGER=pikaur
+export AUR_PKG_MANAGER=pikaur
 check_root
 check_archlinux
 check_pacman_blocked

@@ -399,10 +399,10 @@
       if ! is_package_installed "${PKG}" ; then
         if [[ $AUTOMATIC_MODE -eq 1 ]]; then
           ncecho " ${BBlue}[${Reset}${Bold}X${BBlue}]${Reset} Installing ${AUR} ${Bold}${PKG}${Reset} "
-          su - ${USER_NAME} -c "${AUR_PKG_MANAGER} --noconfirm -S ${PKG}" >>"$LOG" 2>&1 &
+          ${AUR_PKG_MANAGER} --noconfirm -S ${PKG} >>"$LOG" 2>&1 &
           pid=$!;progress $pid
         else
-          su - ${USER_NAME} -c "${AUR_PKG_MANAGER} --noconfirm -S ${PKG}"
+          ${AUR_PKG_MANAGER} --noconfirm -S ${PKG}
         fi
       else
         if [[ $VERBOSE_MODE -eq 0 ]]; then
