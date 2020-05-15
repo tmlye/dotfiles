@@ -64,31 +64,14 @@ install_power(){
 
 finish_install(){
   print_title "Finishing Installation"
-  sudo -u $USER git clone https://github.com/tmlye/dotfiles.git /home/$USER/.dotfiles
-  is_package_installed "zsh" && sudo -u $USER chsh -s /bin/zsh
-  sudo -u $USER ./.dotfiles/createSymlinks.sh
+
   sudo -u $USER mkdir /home/$USER/mount
   sudo -u $USER mkdir /home/$USER/mount2
-  print_warning "If your backup drive is not connected, please do it now."
-  pause_function
-  partitions=(`cat /proc/partitions | awk 'length($3)>1' | awk '{print "/dev/" $4}' | awk 'length($0)>8' | grep 'sd\|hd'`)
-  fdisk -l
-  echo "Select the backup drive:"
-  select DEVICE in "${partitions[@]}"; do
-   DEVICE_NUMBER=$(( $REPLY - 1 ))
-   if contains_element "$DEVICE" "${partitions[@]}"; then
-      BACKUP_DRIVE=`echo $DEVICE | sed 's/[0-9]//'`
-      break
-   else
-     invalid_option
-   fi
-  done
-  sudo cryptsetup --type luks open $DEVICE extern
-  sudo mount -t ext4 /dev/mapper/extern /home/$USER/mount
-  sudo -u $USER cp -r /home/$USER/mount/backup/code /home/$USER/
-  sudo -u $USER cp -r /home/$USER/mount/backup/desktop /home/$USER/
-  sudo -u $USER cp -r /home/$USER/mount/backup/downloads /home/$USER/
-  sudo -u $USER cp -r /home/$USER/mount/backup/OS/home/.* /home/$USER/
+
+  sudo -u $USER git clone https://github.com/tmlye/dotfiles.git /home/$USER/.dotfiles
+  sudo -u $USER ./.dotfiles/createSymlinks.sh
+  is_package_installed "zsh" && sudo -u $USER chsh -s /bin/zsh
+
   pause_function
 }
 
