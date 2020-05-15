@@ -13,6 +13,10 @@ do
   fi
 done
 
+# sway
+mkdir -p $HOME/.config/sway
+ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
+
 # zsh
 ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 

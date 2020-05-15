@@ -4,7 +4,7 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-if [[ $(tty) = /dev/tty1 ]]; then
+if [ "$(tty)" = "/dev/tty1" ]; then
   unset DISPLAY
-  XKB_DEFAULT_LAYOUT=us exec sway
+  exec sway
 fi
