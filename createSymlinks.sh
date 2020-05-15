@@ -3,7 +3,7 @@
 # Create .config directory if needed
 mkdir -p $HOME/.config
 
-declare -a links=(.gitconfig .bash_profile .zshrc .ncmpcpp .vim .vimrc .config/zathura/zathurarc .config/htop .config/gtk-3.0 .config/ranger .tmux.conf .config/viewnior/viewnior.conf)
+declare -a links=(.gitconfig .bash_profile .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/viewnior/viewnior.conf .config/user-dirs.dirs)
 
 # If files already exist create backups
 for i in ${links[*]}
