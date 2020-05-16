@@ -59,7 +59,10 @@ install_dev(){
 }
 
 install_power(){
-  package_install "powertop acpi acpi_call tpacpi-bat"
+  package_install "powertop tlp acpi acpi_call tpacpi-bat tp_smapi"
+  systemctl enable tlp
+  systemctl mask systemd-rfkill.service
+  systemctl mask systemd-rfkill.socket
 }
 
 finish_install(){
