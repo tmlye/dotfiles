@@ -17,6 +17,9 @@ done
 mkdir -p $HOME/.config/sway
 ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
 
+# X
+ln -s $HOME/.dotfiles/X/Xresources $HOME/.Xresources
+
 # zsh
 ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 

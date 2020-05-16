@@ -29,7 +29,7 @@ install_pikaur(){
 
 install_desktop_environment(){
   package_install "mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver"
-  package_install "zsh rxvt-unicode wayland sway swaylock swayidle swaybg xorg-server-xwayland grim slurp ttf-dejavu gtk3"
+  package_install "zsh wayland sway swaylock swayidle swaybg xorg-server-xwayland grim slurp ttf-dejavu gtk3 alacritty dmenu"
 }
 
 install_communication(){
