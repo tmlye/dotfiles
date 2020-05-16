@@ -67,21 +67,9 @@ configure_mirrorlist(){
 
 mount_boot_partition(){
   print_title "Mount EFI system partition"
-  partitions=(`cat /proc/partitions | awk 'length($3)>1' | awk '{print "/dev/" $4}' | awk 'length($0)>8' | grep 'sd\|hd'`)
-
-  echo "Select the EFI system partition:"
-  select DEVICE in "${partitions[@]}"; do
-   DEVICE_NUMBER=$(( $REPLY - 1 ))
-   if contains_element "$DEVICE" "${partitions[@]}"; then
-      BOOT_DEVICE=`echo $DEVICE | sed 's/[0-9]//'`
-      break
-   else
-     invalid_option
-   fi
-  done
 
   mkdir -p ${MOUNTPOINT}/efi
-  mount -t vfat $DEVICE ${MOUNTPOINT}/efi
+  mount -t vfat $BOOT_PARTITION ${MOUNTPOINT}/efi
 }
 
 install_base_system() {
@@ -143,7 +131,7 @@ configure_mkinitcpio(){
 
   # Create a keyfile to avoid entering password twice on boot
   dd bs=512 count=4 if=/dev/random of=${MOUNTPOINT}/root/keyfile.bin iflag=fullblock
-  arch_chroot "chmod 600 ${MOUNTPOINT}/root/keyfile.bin"
+  arch_chroot "chmod 600 /root/keyfile.bin"
   sed -i "s/FILES=.*/FILES=(\/root\/keyfile.bin)/" ${MOUNTPOINT}/etc/mkinitcpio.conf
 
   # Move block to right after udev in HOOKS array
@@ -160,20 +148,9 @@ configure_mkinitcpio(){
 configure_bootloader(){
   print_title "Configuring GRUB"
 
-  partitions=(`cat /proc/partitions | awk 'length($3)>1' | awk '{print "/dev/" $4}' | awk 'length($0)>8' | grep 'sd\|hd'`)
-  echo "Select the encrypted root partition:"
-  select DEVICE in "${partitions[@]}"; do
-   DEVICE_NUMBER=$(( $REPLY - 1 ))
-   if contains_element "$DEVICE" "${partitions[@]}"; then
-     break
-   else
-     invalid_option
-   fi
-  done
+  cryptsetup -v luksAddKey $ROOT_PARTITION ${MOUNTPOINT}/root/keyfile.bin
 
-  cryptsetup -v luksAddKey $DEVICE ${MOUNTPOINT}/root/keyfile.bin
-
-  ROOT_UUID=$(blkid -s UUID -o value $DEVICE)
+  ROOT_UUID=$(blkid -s UUID -o value $ROOT_PARTITION)
 
   sed -i "s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$ROOT_UUID\:cryptroot cryptkey=rootfs\:\/root\/keyfile.bin\"/" ${MOUNTPOINT}/etc/default/grub
   sed -i "s/#GRUB_ENABLE_CRYPTODISK=y/GRUB_ENABLE_CRYPTODISK=y/" ${MOUNTPOINT}/etc/default/grub
@@ -206,25 +183,23 @@ finish_install(){
   echo "Finished"
 }
 
-
 usage() {
   cat <<EOF
-usage: ${0##*/} [options] /path/to/mountpoint
+usage: ${0##*/} [options]
 
   Options:
     -h             Print this help message
+    -m             Path to where the root partition is mounted
+    -d             The disk, for example /dev/sda
+    -b             The boot partition (EFI system partition), for example /dev/sda1
+    -p             The root partition, for example /dev/sda2, should match what is mounted at the path given with -m
 
 This script will create a fresh Arch install on a partition mounted
-at mountpoint. It is a wrapper around the AUI Script created by https://github.com/helmuthdu
-Most of the credit goes to him.
+at the mountpoint. It is a wrapper around the AUI Script created by https://github.com/helmuthdu
 
 EOF
 }
 
-if [[ -z $1 || $1 = @(-h|--help) ]]; then
-  usage
-  exit $(( $# ? 0 : 1 ))
-fi
 
 # Get the directory this script is in
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -235,11 +210,76 @@ else
   exit 1
 fi
 
-if [[ ! -d $1 ]]; then
-    error_msg "ERROR! Mountpoint does not exist or is not a directory."
+unset BOOT_PARTITION DISK MOUNTPOINT ROOT_PARTITION
+
+while getopts ":m:d:b:p:h" opt; do
+  case $opt in
+    b)
+      if [[ ! -e $OPTARG ]]; then
+        error_msg "ERROR! Boot partition does not exist $OPTARG"
+        exit 1
+      fi
+      BOOT_PARTITION=$OPTARG
+      ;;
+    d)
+      if [[ ! -e $OPTARG ]]; then
+        error_msg "ERROR! Disk does not exist $OPTARG"
+        exit 1
+      fi
+      DISK=$OPTARG
+      ;;
+    h)
+      usage
+      exit 0
+      ;;
+    m)
+      if [[ ! -d $OPTARG ]]; then
+        error_msg "ERROR! Mountpoint does not exist or is not a directory."
+        exit 1
+      fi
+      MOUNTPOINT=$OPTARG
+      ;;
+    p)
+      if [[ ! -e $OPTARG ]]; then
+        error_msg "ERROR! Root partition does not exist $OPTARG"
+        exit 1
+      fi
+      ROOT_PARTITION=$OPTARG
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [ "x" == "x$BOOT_PARTITION" ]; then
+  echo "-b [option] is required, specify the boot partition"
+  usage
+  exit
 fi
 
-MOUNTPOINT=$1
+if [ "x" == "x$DISK" ]; then
+  echo "-d [option] is required, specify the disk"
+  usage
+  exit
+fi
+
+if [ "x" == "x$MOUNTPOINT" ]; then
+  echo "-m [option] is required, specify the mountpoint"
+  usage
+  exit
+fi
+
+if [ "x" == "x$ROOT_PARTITION" ]; then
+  echo "-p [option] is required, specify the root partition"
+  usage
+  exit
+fi
+
 check_root
 check_archlinux
 
