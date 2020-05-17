@@ -50,7 +50,7 @@ input type:keyboard {
 
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+# Read `man 5 sway-input` and `man 7 xkeyboard-config` for more information
 
 ### Key bindings
 #
