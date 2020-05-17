@@ -29,7 +29,7 @@ install_pikaur(){
 
 install_desktop_environment(){
   package_install "mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver"
-  package_install "zsh wayland sway swaylock swayidle swaybg xorg-server-xwayland grim slurp gtk3 alacritty dmenu gnome-keyring libsecret brightnessctl waybar"
+  package_install "zsh wayland sway swaylock swayidle swaybg xorg-server-xwayland grim slurp gtk3 alacritty gnome-keyring libsecret brightnessctl waybar wofi"
   package_install "ttf-font-awesome ttf-dejavu"
 }
 
