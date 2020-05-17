@@ -44,10 +44,10 @@
     },
 
     "battery": {
-        "interval": 10,
+        "interval": 30,
         "states": {
-            "warning": 30,
-            "critical": 15
+            "warning": 20,
+            "critical": 10
         },
         // Connected to AC
         "format": "  {icon} {capacity}%", // Icon: bolt
