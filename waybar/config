@@ -1,0 +1,111 @@
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+// modified version of: https://github.com/robertjk/dotfiles/blob/master/.config/waybar/config
+
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+
+    "layer": "top",
+
+    "position": "top",
+
+    // If height property would be not present, it'd be calculated dynamically
+    "height": 30,
+
+    "modules-left": [
+        "sway/workspaces"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+		"pulseaudio",
+        "network",
+        "custom/keyboard-layout",
+        "battery",
+        "tray",
+        "clock"
+    ],
+
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        // Connected to AC
+        "format": "  {icon} {capacity}%", // Icon: bolt
+        // Not connected to AC
+        "format-discharging": "{icon} {capacity}%",
+        "format-icons": [
+            "", // Icon: battery-full
+            "", // Icon: battery-three-quarters
+            "", // Icon: battery-half
+            "", // Icon: battery-quarter
+            ""  // Icon: battery-empty
+        ],
+        "tooltip": true
+    },
+
+    "clock": {
+      "interval": 5,
+      "format": "{:%a %b %e %H:%M}",
+      "tooltip-format": "{:%e %B %Y %H:%M}"
+    },
+
+    "custom/keyboard-layout": {
+      "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+      // Interval set only as a fallback, as the value is updated by signal
+      "interval": 30,
+      "format": " {}", // Icon: keyboard
+      // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+      "signal": 1, // SIGHUP
+      "tooltip": false
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": " {essid} ({signalStrength}%)", // Icon: wifi
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 120
+    },
+
+    "sway/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": true,
+        "format": "{name}"
+    },
+
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }
+}

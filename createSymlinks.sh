@@ -17,6 +17,11 @@ done
 mkdir -p $HOME/.config/sway
 ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
 
+# waybar
+mkdir -p $HOME/.config/waybar
+ln -s $HOME/.dotfiles/waybar/config $HOME/.config/waybar/config
+ln -s $HOME/.dotfiles/waybar/style.css $HOME/.config/waybar/style.css
+
 # alacritty
 mkdir -p $HOME/.config/alacritty
 ln -s $HOME/.dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
