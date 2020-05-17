@@ -1,8 +1,6 @@
 #
-# ~/.bash_profile
+# ~/.zlogin
 #
-
-[[ -f ~/.bashrc ]] && . ~/.bashrc
 
 if [ "$(tty)" = "/dev/tty1" ]; then
   unset DISPLAY
