@@ -71,4 +71,6 @@ export HISTFILE=$HOME/.dotfiles/zsh/log/.zsh_history
 
 if [ -x "$(command -v gnome-keyring-daemon)" ]; then
   eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+  export GNOME_KEYRING_CONTROL
+  export SSH_AUTH_SOCK
 fi
