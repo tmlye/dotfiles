@@ -21,6 +21,7 @@ ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
 mkdir -p $HOME/.config/waybar
 ln -s $HOME/.dotfiles/waybar/config $HOME/.config/waybar/config
 ln -s $HOME/.dotfiles/waybar/style.css $HOME/.config/waybar/style.css
+ln -s $HOME/.dotfiles/waybar/weather.sh $HOME/.config/waybar/weather.sh
 
 # alacritty
 mkdir -p $HOME/.config/alacritty
