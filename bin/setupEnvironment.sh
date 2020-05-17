@@ -46,7 +46,7 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "util-linux bind-tools calc virtualbox calibre htop whois nmon duplicity"
+  package_install "util-linux bind-tools calc virtualbox calibre htop whois nmon duplicity cronie"
   # Images
   package_install "viewnior darktable perl-image-exiftool"
   # Documents
@@ -74,6 +74,8 @@ finish_install(){
   sudo -u $USER git clone https://github.com/tmlye/dotfiles.git /home/$USER/.dotfiles
   sudo -u $USER ./.dotfiles/createSymlinks.sh
   is_package_installed "zsh" && sudo -u $USER chsh -s /bin/zsh
+
+  systemctl enable fstrim.timer
 
   pause_function
 }
