@@ -44,12 +44,11 @@ alias um2='newumount $HOME/mount2'
 
 alias msd='sudo mount /dev/mmcblk0p1 $HOME/mount2'
 alias musb='sudo mount -U 651B-DF09 $HOME/mount2'
-alias msa='sudo mount -U 66a9777d-0d9e-4f18-8a31-09cd2efa4790 .msata'
 
 # Cryptsetup
 # ==========
 
-alias me='sudo cryptsetup --type luks open `sudo fdisk -l | grep -A 3 "^Disk identifier: 0xbf40ec14" | grep -o "/dev/sd[a-z]1"` extern && sudo mount -t ext4 /dev/mapper/extern $HOME/mount'
+alias me='sudo cryptsetup --type luks open /dev/disk/by-uuid/2c501317-75d0-4816-807e-00b4b37a9f8b extern && sudo mount -t ext4 /dev/mapper/extern $HOME/mount'
 alias dmnt='sudo umount $HOME/mount; sudo cryptsetup close extern'
 
 # Power
