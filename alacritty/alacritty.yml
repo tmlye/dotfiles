@@ -1,4 +1,6 @@
 # defaults: /usr/share/doc/alacritty/example/alacritty.yml
+font:
+  size: 12
 colors:
   primary:
     background: '#151515'
@@ -6,17 +8,17 @@ colors:
 
   normal:
    black:   '#101010'
-   red:     '#E84F4F'
-   green:   '#B8D68C'
+   red:     '#D23D3D'
+   green:   '#B9CA4A'
    yellow:  '#E1AA5D'
    blue:    '#7DC1CF'
-   magenta: '#9B64FB'
+   magenta: '#B77EE0'
    cyan:    '#6D878D'
    white:   '#DDDDDD'
 
   bright:
    black:   '#404040'
-   red:     '#D23D3D'
+   red:     '#E84F4F'
    green:   '#A0CF5D'
    yellow:  '#F39D21'
    blue:    '#4E9FB1'
