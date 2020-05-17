@@ -17,6 +17,10 @@ done
 mkdir -p $HOME/.config/sway
 ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
 
+# alacritty
+mkdir -p $HOME/.config/alacritty
+ln -s $HOME/.dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
 # X
 ln -s $HOME/.dotfiles/X/Xresources $HOME/.Xresources
 
