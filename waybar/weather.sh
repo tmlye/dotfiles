@@ -1,4 +1,5 @@
 #!/bin/bash
+# based on https://github.com/Robinhuett/dotfiles/blob/master/.config/waybar/modules/weather.sh
 
 cachedir=~/.cache/rbn
 cachefile=${0##*/}-$1
