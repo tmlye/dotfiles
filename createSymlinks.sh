@@ -3,7 +3,7 @@
 # Create .config directory if needed
 mkdir -p $HOME/.config
 
-declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/viewnior/viewnior.conf .config/user-dirs.dirs)
+declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/viewnior/viewnior.conf .config/user-dirs.dirs .config/waybar)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -18,10 +18,7 @@ mkdir -p $HOME/.config/sway
 ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
 
 # waybar
-mkdir -p $HOME/.config/waybar
-ln -s $HOME/.dotfiles/waybar/config $HOME/.config/waybar/config
-ln -s $HOME/.dotfiles/waybar/style.css $HOME/.config/waybar/style.css
-ln -s $HOME/.dotfiles/waybar/weather.sh $HOME/.config/waybar/weather.sh
+ln -s $HOME/.dotfiles/waybar $HOME/.config/waybar
 
 # alacritty
 mkdir -p $HOME/.config/alacritty

@@ -55,7 +55,7 @@ install_tools(){
 }
 
 install_dev(){
-  package_install "npm code terraform hugo aws-cli python-boto3 jdk11-openjdk kotlin docker docker-compose ruby"
+  package_install "npm code terraform hugo aws-cli python-boto3 jdk11-openjdk kotlin docker docker-compose ruby jq"
   aur_package_install "nvm"
 }
 
