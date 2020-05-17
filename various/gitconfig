@@ -5,3 +5,5 @@
 	default = simple
 [core]
 	editor = vim
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret

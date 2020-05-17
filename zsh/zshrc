@@ -62,7 +62,6 @@ export PATH="/usr/local/bin:\
 /usr/sbin:\
 /sbin:\
 /opt/java/jre/bin:\
-$HOME/.gem/ruby/2.5.0/bin:\
 /usr/bin/site_perl:\
 /usr/bin/vendor_perl:\
 /usr/bin/core_perl:\
@@ -70,12 +69,6 @@ $HOME/.dotfiles/bin:"
 
 export HISTFILE=$HOME/.dotfiles/zsh/log/.zsh_history
 
-
-if [ -x "$(command -v ssh-agent)" ]; then
-  if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent | grep -v 'echo' > "$XDG_RUNTIME_DIR/ssh-agent.env"
-  fi
-  if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
-  fi
+if [ -x "$(command -v gnome-keyring-daemon)" ]; then
+  eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 fi
