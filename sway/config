@@ -215,7 +215,4 @@ hide_edge_borders both
 
 exec xrdb ~/.Xresources
 
-exec eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-exec export SSH_AUTH_SOCK
-
 include /etc/sway/config.d/*

@@ -70,18 +70,12 @@ $HOME/.dotfiles/bin:"
 
 export HISTFILE=$HOME/.dotfiles/zsh/log/.zsh_history
 
-# export MANPATH="/usr/local/man:$MANPATH"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
+if [ -x "$(command -v ssh-agent)" ]; then
+  if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent | grep -v 'echo' > "$XDG_RUNTIME_DIR/ssh-agent.env"
+  fi
+  if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
+  fi
+fi
