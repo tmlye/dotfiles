@@ -47,7 +47,7 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "util-linux bind-tools calc virtualbox calibre htop whois nmon duplicity cronie"
+  package_install "util-linux bind-tools calc virtualbox virtualbox-host-modules-arch calibre htop whois nmon duplicity cronie"
   # Images
   package_install "viewnior darktable perl-image-exiftool"
   # Documents
@@ -60,7 +60,7 @@ install_dev(){
 }
 
 install_power(){
-  package_install "powertop tlp acpi acpi_call tpacpi-bat tp_smapi"
+  package_install "powertop tlp acpi acpi_call tpacpi-bat"
   systemctl enable tlp
   systemctl mask systemd-rfkill.service
   systemctl mask systemd-rfkill.socket
