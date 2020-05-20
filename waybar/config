@@ -37,10 +37,12 @@
         "format": "{}",
         "format-alt": "{alt}: {}",
         "format-alt-click": "click-right",
-        "interval": 600,
+        "interval": 1800,
         "return-type": "json",
         "exec": "$HOME/.config/waybar/weather.sh",
-        "exec-if": "ping wttr.in -c1"
+        "exec-if": "ping wttr.in -c1",
+        "signal": 8,
+        "on-click": "pkill -SIGRTMIN+8 waybar"
     },
 
     "battery": {
