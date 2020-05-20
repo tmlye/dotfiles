@@ -37,7 +37,7 @@
         "format": "{}",
         "format-alt": "{alt}: {}",
         "format-alt-click": "click-right",
-        "interval": 1800,
+        "interval": 600,
         "return-type": "json",
         "exec": "$HOME/.config/waybar/weather.sh",
         "exec-if": "ping wttr.in -c1"
