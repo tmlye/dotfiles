@@ -15,7 +15,7 @@ alias moff='xrandr --output DP1 --off'
 # Package Management
 # ==================
 
-alias update='pikaur -Syua --noconfirm'
+alias update='pikaur -Syu --noconfirm'
 alias install='pikaur -S'
 alias uninstall='pikaur -Rns'
 alias search='pikaur -Ss'
