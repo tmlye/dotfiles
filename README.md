@@ -6,6 +6,8 @@ Forking is highly encouraged.
 
 ## Installation
 
+Check the folder names to see which programs are configured with these dotfiles.
+
 Run
 ```sh
 git clone https://github.com/tmlye/dotfiles.git ~/.dotfiles
@@ -15,32 +17,15 @@ and then execute the script. This should symlink all the files in the `~/.dotfil
 locations in your home folder. Backups will be saved as filename.backup.
 If you want to use the browser or mail files, you'll have to symlink them manually.
 
-### Awesome
-
-- *Wireless*: You will probably have to change the name of the wireless card, you can do this in the at the top of the rc.lua file.
-  The widget displays 'off', if the card is currently powered down, e.g. by rfkill.
-- *Browser*: I use firefox as my default browser, change the value in rc.lua if you use anything different
-- *Keybindings*: You might want to change the keybindings as well, here's what I use
-  - mod4 + q : launches browser
-  - mod4 + e : launches filemanager (ranger)
-  - mod4 + F12 : lock screen (requires xautolock and slock)
-  - All other keys are default awesome bindings
-- *Battery*: In case you have two batteries in your laptop, the battery widget will show both, if not, it won't
-- *Volumne*: Uses the default sound card. Left clicking the text will open alsamixer. Scrolling while hovering over the text will change master volumne. Muting and unmuting with right click will work with minor adjustments. You probably need to adjust the first line in the setVolIconBasedOnStatus function in rc.lua.
-- *MPD*: The MPD icon changes according to the state MPD is in. If the state is 'stop' nothing will be shown. You can specify the IP, port and password at the top of rc.lua.
-- *Weather*: You will need to change the ICAO (airport code) to your city at the top of rc.lua
-
-
 ### Wallpaper
 
 Simply place your wallpaper in `~/.wallpaper/current.jpg` and everything should work fine.
-You can modify the location for the wallpaper in `~/.dotfiles/awesome/theme.lua`.
+You can modify the location for the wallpaper in `~/.dotfiles/sway/config`.
 
 ## Screenshots
 
 ![clean](https://saschaeglau.com/files/clean2.png "Clean")
 ![dirty](https://saschaeglau.com/files/dirty2.png "Dirty")
-![browser](https://saschaeglau.com/files/browser.png "Browser")
 
 ## Credit
 
