@@ -24,8 +24,8 @@ You can modify the location for the wallpaper in `~/.dotfiles/sway/config`.
 
 ## Screenshots
 
-![clean](https://saschaeglau.com/files/clean2.png "Clean")
-![dirty](https://saschaeglau.com/files/dirty2.png "Dirty")
+![clean](https://saschaeglau.com/files/clean.png "Clean")
+![dirty](https://saschaeglau.com/files/dirty.png "Dirty")
 
 ## Credit
 
