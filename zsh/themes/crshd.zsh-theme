@@ -16,14 +16,23 @@ theme_precmd () {
     vcs_info
 }
 
+get_kubecontext() {
+    if [[ -z ${KUBECTL_CONTEXT+x} ]] {
+        echo ""
+    } else {
+        kubectl config current-context
+    }
+}
+
 setprompt() {
   local USER="%{$fg[yellow]%}%n%f"
   local HOST="%{$fg[green]%}%M%f"
   local PWD="%F{7}$($HOME/.dotfiles/bin/rzsh_path)%f"
   local EXIT="%(?..%{$fg_bold[red]%}%?%f)"
   local GIT="${vcs_info_msg_0_}"
+  local KUBECONTEXT="$(get_kubecontext)"
 
-  PROMPT="${USER}@$HOST %F{8}:: ${PWD} ${GIT}
+  PROMPT="${USER}@$HOST %F{8}:: ${PWD} ${GIT} ${KUBECONTEXT}
 ${EXIT} %{$fg_bold[red]%}›%f "
 }
 
