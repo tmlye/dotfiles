@@ -6,9 +6,8 @@ ZSH=$HOME/.dotfiles/zsh
 
 # Put each kubeconfig file into ~/.kube with a .yml extension
 function get_kubeconfig() {
-  cd $HOME/.kube
   first=true
-  for i in $(ls *.yml); do
+  for i in $(ls $HOME/.kube/*.yml); do
     if $first; then
       result=$i
       first=false
