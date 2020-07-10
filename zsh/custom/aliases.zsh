@@ -95,6 +95,6 @@ alias gpl='git pull'
 # Kubectl
 # =======
 
-alias k='kubectl'
+alias k='kubectl "--context=${KUBECTL_CONTEXT:-$(kubectl config current-context)}" ${KUBECTL_NAMESPACE/[[:alnum:]-]*/--namespace=${KUBECTL_NAMESPACE}}'
 alias kd='kubectl describe'
 alias kg='kubectl get'
