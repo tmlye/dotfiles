@@ -4,6 +4,22 @@ ZSH=$HOME/.dotfiles/zsh
 # Put all your secrets in ~/.secrets
 [ -f ~/.secrets ] && source ~/.secrets
 
+# Put each kubeconfig file into ~/.kube with a .yml extension
+function get_kubeconfig() {
+  cd $HOME/.kube
+  first=true
+  for i in $(ls *.yml); do
+    if $first; then
+      result=$i
+      first=false
+    else
+      result="$result:$i"
+    fi
+  done
+  echo $result
+}
+[ -x "$(command -v kubectl)" ] && export KUBECONFIG=$(get_kubeconfig)
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
