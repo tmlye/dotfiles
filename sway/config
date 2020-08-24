@@ -15,11 +15,19 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu "wofi -i -s $HOME/.dotfiles/wofi/style.css -S run"
+set $laptop eDP-1
+
+### Clamshell Mode
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg $HOME/.wallpaper/current.jpg fill
+
+
+output DP-2 scale 2
 #
 # Example configuration:
 #
@@ -201,7 +209,7 @@ bindsym $mod+Shift+r mode "resize"
 #
 # Launching programs
 #
-bindsym $mod+q exec firefox
+bindsym $mod+q exec MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+w exec $term -e neomutt
 bindsym $mod+e exec $term -e ranger
 
