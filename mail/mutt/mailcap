@@ -1,7 +1,7 @@
 # This file tells mutt how to open mail attachments.
 
 # hitting m will open attachment in firefox
-text/html; firefox -new-tab %s;
+text/html; MOZ_DBUS_REMOTE=1 MOZ_ENABLE_WAYLAND=1 firefox -new-tab %s;
 text/html; w3m -v -F -T text/html %s; nametemplate=%s.html; copiousoutput; needsterminal
 image/*; viewnior %s
 application/pdf; zathura %s
