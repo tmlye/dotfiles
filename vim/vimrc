@@ -10,7 +10,6 @@ set number                  " Line numbers
 set encoding=UTF-8          " Encoding
 set laststatus=2            " Always show statusline
 set autoread                " Reload files changed outside vim
-set clipboard=unnamedplus   " Use X window clipboard
 set showcmd                 " Display unfinished commands
 set ruler                   " Show cursor position in status bar
 set hidden                  " Buffers can exist in the background
@@ -174,4 +173,7 @@ nnoremap <Leader>w :w<CR>
 imap <c-f> <ESC>:r!muttvcardsearch <cword><CR><ESC>
 
 " Open a terminal in the current buffer's file's directory
-map <silent> <Leader>t :lcd %:h<CR>:vertical terminal <CR>
+map <silent> <leader>t :lcd %:h<CR>:vertical terminal <CR>
+
+" Copy to wayland clipboard
+vnoremap <silent> <leader>y :'<,'>w !wl-copy<CR><CR>
