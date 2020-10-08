@@ -1,2 +1,0 @@
-#!/bin/bash
-sudo xboxdrv --evdev /dev/input/event16 --evdev-absmap ABS_Y=Y1,ABS_X=X1,ABS_Z=Y2,ABS_RZ=X2 --evdev-keymap BTN_THUMB2=a,BTN_TOP=b,BTN_THUMB=y,BTN_TRIGGER=x,BTN_BASE=rb,BTN_BASE2=rt,BTN_TOP2=lb,BTN_PINKIE=lt,BTN_BASE4=start,BTN_BASE3=back,BTN_BASE5=tl,BTN_BASE6=tr --mimic-xpad --axismap -Y1=Y1,-Y2=Y2
