@@ -66,8 +66,8 @@ create_new_user(){
   passwd ${USER_NAME}
 }
 
-enable_multilib(){
-  print_title "Enabling Multilib"
+configure_pacman(){
+  print_title "Configuring Pacman"
   local MULTILIB=`grep -n "\[multilib\]" /etc/pacman.conf | cut -f1 -d:`
   if [[ -z $MULTILIB ]]; then
     echo -e "\n[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
@@ -77,6 +77,8 @@ enable_multilib(){
     local MULTILIB=$(( $MULTILIB + 1 ))
     sed -i "${MULTILIB}s/^#//" /etc/pacman.conf
   fi
+  package_install "pacman-contrib"
+  systemctl enable --now paccache.timer
   pause_function
 }
 
@@ -112,6 +114,6 @@ system_upgrade
 root_password
 configure_sudo
 create_new_user
-enable_multilib
+configure_pacman
 install_basic_setup
 finish_install
