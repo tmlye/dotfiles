@@ -17,6 +17,10 @@ done
 mkdir -p $HOME/.config/sway
 ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
 
+# fix firefox desktop file for xdg-open
+mkdir -p $HOME/.local/share/applications
+ln -s $HOME/.dotfiles/various/firefox.desktop $HOME/.local/share/applications/firefox.desktop
+
 # waybar
 ln -s $HOME/.dotfiles/waybar $HOME/.config/waybar
 

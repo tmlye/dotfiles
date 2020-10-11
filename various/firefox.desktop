@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Firefox
+Exec=env MOZ_DBUS_REMOTE=1 MOZ_ENABLE_WAYLAND=1 /usr/bin/firefox %u
+X-MultipleArgs=false
+Icon=firefox-esr
+Categories=Network;WebBrowser;
+Terminal=false
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
