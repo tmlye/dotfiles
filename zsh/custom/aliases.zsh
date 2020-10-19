@@ -1,17 +1,3 @@
-# Keyboard
-# ========
-
-alias de='test -f ~/.XkeymapDE && xkbcomp -w 0 ~/.XkeymapDE $DISPLAY'
-alias us='test -f ~/.XkeymapUS && xkbcomp -w 0 ~/.XkeymapUS $DISPLAY'
-
-# External Screens
-# ================
-
-alias hdmi='xrandr --output HDMI1 --auto --left-of eDP1'
-alias pres='xrandr --fb 1366x768 --output DP2 --mode 1024x768 --panning 1366x0'
-alias mon='xrandr --output DP1 --mode 2560x1080 --output eDP1 --mode 1366x768 --below DP1'
-alias moff='xrandr --output DP1 --off'
-
 # Package Management
 # ==================
 

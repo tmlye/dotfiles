@@ -212,6 +212,7 @@ bindsym $mod+Shift+r mode "resize"
 bindsym $mod+q exec MOZ_DBUS_REMOTE=1 MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+w exec $term -e neomutt
 bindsym $mod+e exec $term -e ranger
+bindsym $mod+F12 exec grim -t jpeg -g "$(slurp)" ~/$(date +%Y-%m-%d_%H-%m-%s).jpg
 
 #
 # Status Bar:
