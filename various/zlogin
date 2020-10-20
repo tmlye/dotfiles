@@ -1,8 +1,0 @@
-#
-# ~/.zlogin
-#
-
-if [ "$(tty)" = "/dev/tty1" ]; then
-  unset DISPLAY
-  exec sway
-fi
