@@ -16,6 +16,7 @@ done
 # sway
 mkdir -p $HOME/.config/sway
 ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
+ln -s $HOME/.dotfiles/zsh/zlogin $HOME/.zlogin
 
 # fix firefox desktop file for xdg-open
 mkdir -p $HOME/.local/share/applications
