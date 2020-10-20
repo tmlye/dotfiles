@@ -18,9 +18,9 @@ mkdir -p $HOME/.config/sway
 ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
 ln -s $HOME/.dotfiles/zsh/zlogin $HOME/.zlogin
 
-# fix firefox desktop file for xdg-open
-mkdir -p $HOME/.local/share/applications
-ln -s $HOME/.dotfiles/various/firefox.desktop $HOME/.local/share/applications/firefox.desktop
+# set environment variables so firefox uses wayland and xdg-desktop-portal-wlr works
+mkdir -p $HOME/.config/environment.d
+ln -s $HOME/.dotfiles/various/env.conf $HOME/.config/environment.d/env.conf
 
 # waybar
 ln -s $HOME/.dotfiles/waybar $HOME/.config/waybar
