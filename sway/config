@@ -230,4 +230,6 @@ hide_edge_borders both
 
 exec xrdb ~/.Xresources
 
+exec mako
+
 include /etc/sway/config.d/*
