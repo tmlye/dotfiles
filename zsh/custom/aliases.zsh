@@ -74,8 +74,8 @@ alias his='grephistory'
 
 alias gcb='git checkout -b'
 alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
-alias gfm='git fetch origin master:master'
-alias grm='git rebase master'
+alias gfm='git fetch origin main:main'
+alias grm='git rebase main'
 alias gpl='git pull'
 
 # Kubectl
