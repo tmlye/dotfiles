@@ -74,8 +74,8 @@ alias his='grephistory'
 
 alias gcb='git checkout -b'
 alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
-alias gfm='git fetch origin main:main'
-alias grm='git rebase main'
+alias gfm='DEFAULT_BRANCH=`git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"` git fetch origin $DEFAULT_BRANCH:$DEFAULT_BRANCH'
+alias grm='git rebase `git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"`'
 alias gpl='git pull'
 
 # Kubectl
