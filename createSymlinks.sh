@@ -43,6 +43,9 @@ ln -s $HOME/.dotfiles/zsh/zlogin $HOME/.zlogin
 ln -s $HOME/.dotfiles/vim/vim/ $HOME/.vim
 ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 
+# nvim
+ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
+
 # gtk
 ln -s $HOME/.dotfiles/gtk $HOME/.config/gtk-3.0
 
