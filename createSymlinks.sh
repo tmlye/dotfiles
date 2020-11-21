@@ -16,7 +16,6 @@ done
 # sway
 mkdir -p $HOME/.config/sway
 ln -s $HOME/.dotfiles/sway/config $HOME/.config/sway/config
-ln -s $HOME/.dotfiles/zsh/zlogin $HOME/.zlogin
 
 # set environment variables so firefox uses wayland and xdg-desktop-portal-wlr works
 mkdir -p $HOME/.config/environment.d
@@ -29,11 +28,16 @@ ln -s $HOME/.dotfiles/waybar $HOME/.config/waybar
 mkdir -p $HOME/.config/alacritty
 ln -s $HOME/.dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
+# mako
+mkdir -p $HOME/.config/mako
+ln -s $HOME/.dotfiles/mako/config $HOME/.config/mako/config
+
 # X
 ln -s $HOME/.dotfiles/X/Xresources $HOME/.Xresources
 
 # zsh
 ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
+ln -s $HOME/.dotfiles/zsh/zlogin $HOME/.zlogin
 
 # vim
 ln -s $HOME/.dotfiles/vim/vim/ $HOME/.vim
@@ -64,9 +68,6 @@ ln -s $HOME/.dotfiles/various/viewnior.conf $HOME/.config/viewnior/viewnior.conf
 mkdir -p $HOME/.config/Code\ -\ OSS/User
 ln -s $HOME/.dotfiles/vscode/settings.json $HOME/.config/Code\ -\ OSS/User/settings.json
 ln -s $HOME/.dotfiles/vscode/keybindings.json $HOME/.config/Code\ -\ OSS/User/keybindings.json
-
-# bash profile for autostarting sway
-ln -s $HOME/.dotfiles/various/zlogin $HOME/.zlogin
 
 # git
 ln -s $HOME/.dotfiles/various/gitconfig $HOME/.gitconfig
