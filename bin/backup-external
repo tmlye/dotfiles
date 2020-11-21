@@ -1,13 +1,23 @@
 #!/bin/bash
 export AWS_PROFILE=personal-backup
-duplicity --exclude-filelist $HOME/mount/backup/duplicity-exclude-list \
-          --allow-source-mismatch \
-          --verbosity 8 \
-          --tempdir . \
-          --num-retries 5 \
-          --asynchronous-upload \
-          --volsize 100 \
-          --s3-use-ia \
-          $HOME/mount/ boto3+s3://duplicity-backup-j7v3a
+source $HOME/.duplicity-passphrase
+
+declare -a FOLDERS=(
+"documents"
+"media/pictures"
+"media/videos"
+)
+
+for FOLDER in "${FOLDERS[@]}"; do
+	duplicity --allow-source-mismatch \
+			  --verbosity 8 \
+			  --tempdir $HOME/.cache/duplicity \
+			  --num-retries 5 \
+			  --asynchronous-upload \
+			  --volsize 100 \
+			  --s3-use-ia \
+			  $HOME/$FOLDER/ boto3+s3://duplicity-backup-j7v3a/$FOLDER
+done
 unset AWS_PROFILE
+unset PASSPHRASE
 # vim:set filetype=sh:

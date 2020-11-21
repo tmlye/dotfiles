@@ -53,7 +53,6 @@ case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
     ;;
 "patchy rain possible" | "patchy light drizzle" | "light drizzle" | "patchy light rain" | "light rain" | "light rain shower" | "rain")
     condition="&#xf743;"
-
     ;;
 "moderate rain at times" | "moderate rain" | "heavy rain at times" | "heavy rain" | "moderate or heavy rain shower" | "torrential rain shower" | "rain shower")
     condition=""
