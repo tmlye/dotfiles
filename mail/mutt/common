@@ -11,7 +11,7 @@ set imap_check_subscribed = yes
 #======================================================#
 # which editor do you want to use?
 # vim of course!
-set editor="vim -c 'set tw=70 et' -c 'set spell spelllang=de,en' '+/^$' "
+set editor="nvim -c 'set tw=70 et' -c 'set spell spelllang=de,en' '+/^$' "
 set edit_headers          # See the headers when editing
 
 #======================================================#

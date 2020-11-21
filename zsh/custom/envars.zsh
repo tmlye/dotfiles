@@ -6,7 +6,7 @@ export DISPLAY=:0
 
 export SHELL='/bin/zsh'
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 export GOPATH=$HOME/code/go
 
