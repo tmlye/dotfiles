@@ -4,6 +4,7 @@
 set packpath=~/.config/nvim
 set termguicolors
 set clipboard=unnamedplus
+set number                  " Show linenumbers
 set hidden                  " Buffers can exist in the background
 set showmatch               " Briefly jump to matching bracket
 set matchtime=2             " Time match is shown in 0.1s
@@ -32,6 +33,8 @@ set smartcase
 " ============
 
 set noswapfile          " Don't use swap files
+set undofile            " Keeps undo history after save/close
+set undodir=~/.nvim_undo
 
 " Indentation, Whitespace, Linewrapping
 " =====================================
@@ -67,36 +70,16 @@ set scrolloff=10        " Lines around cursor kept on screen
 set sidescrolloff=10    " Same for sidescrolling
 set sidescroll=5        " Columns to scroll when cursor off screen
 
-" Gui specific settings
-" ======================
-
-if has('gui_running')
-    set guicursor=                  " Use standard cursor
-    set guioptions-=m               " No Menubar
-    set guioptions-=T               " No Toolbar
-    set guioptions-=l               " No Scrollbar left
-    set guioptions-=L               " No Scrollbar left when split
-    set guioptions-=r               " No Scrollbar right
-    set guioptions-=R               " No Scrollbar right when split
-
-    " Set Font
-    if has("gui_gtk3")
-      set guifont=DejaVu\ Sans\ Mono\ 11
-    elseif has("gui_macvim")
-      set guifont=Menlo\ Regular:h14
-    elseif has("gui_win32")
-      set guifont=Consolas:h11:cANSI
-    endif
-
-    set lines=40                    " Height
-    set columns=85                  " Width
-endif
-
 " Filetype correction
 " ===================
 
 au BufRead,BufNewFile *.jade setfiletype jade
 let g:tex_flavor='latex'
+
+" UI
+" ==
+
+set guicursor=          " Use standard cursor in insert mode
 
 " Mappings
 " ========
