@@ -42,11 +42,8 @@ case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
 "partly cloudy")
     condition=""
     ;;
-"cloudy")
+"overcast" | "cloudy")
     condition=""
-    ;;
-"overcast")
-    condition="&#xf6c4;"
     ;;
 "mist" | "fog" | "freezing fog")
     condition="&#xf275f;"
