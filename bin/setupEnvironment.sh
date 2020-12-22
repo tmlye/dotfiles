@@ -51,7 +51,7 @@ install_internet(){
 install_tools(){
   package_install "util-linux bind-tools calc virtualbox virtualbox-host-modules-arch calibre htop whois nmon duplicity cronie net-tools"
   # Images
-  package_install "viewnior darktable perl-image-exiftool"
+  package_install "imv darktable perl-image-exiftool"
   # Documents
   package_install "texlive-most texlive-bin zathura zathura-pdf-poppler"
 }

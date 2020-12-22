@@ -3,7 +3,7 @@
 # Create .config directory if needed
 mkdir -p $HOME/.config
 
-declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/viewnior/viewnior.conf .config/user-dirs.dirs .config/waybar)
+declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/user-dirs.dirs .config/waybar)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -62,10 +62,6 @@ ln -s $HOME/.dotfiles/various/zathurarc $HOME/.config/zathura/zathurarc
 # htop
 mkdir -p $HOME/.config/htop
 ln -s $HOME/.dotfiles/various/htoprc $HOME/.config/htop/htoprc
-
-# viewnior
-mkdir -p $HOME/.config/viewnior
-ln -s $HOME/.dotfiles/various/viewnior.conf $HOME/.config/viewnior/viewnior.conf
 
 # vscode
 mkdir -p $HOME/.config/Code\ -\ OSS/User
