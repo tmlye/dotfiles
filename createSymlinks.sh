@@ -71,6 +71,10 @@ ln -s $HOME/.dotfiles/vscode/keybindings.json $HOME/.config/Code\ -\ OSS/User/ke
 # git
 ln -s $HOME/.dotfiles/various/gitconfig $HOME/.gitconfig
 
+# imv
+mkdir -p $HOME/.config/imv
+ln -s $HOME/.dotfiles/various/imv_config $HOME/.config/imv/config
+
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
 
