@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# pdfmerge [first.pdf] [second.pdf] [result.pdf]
+
+if [ $# -lt 3 ]
+then
+        echo "Usage: pdfmerge first.pdf second.pdf output.pdf"
+        exit 1
+fi
+gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -sOutputFile="$3" "$1" "$2" >& /dev/null
