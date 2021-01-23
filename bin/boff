@@ -6,9 +6,6 @@ do
     pacmd move-sink-input $ID 1
 done
 
-bluetoothctl << EOD
-power off
-exit
-EOD
+bluetoothctl power off
 
 # vim:set filetype=sh:

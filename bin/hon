@@ -2,9 +2,9 @@
 set -eu
 
 bluetoothctl power on
-bluetoothctl connect "CC:90:93:04:9E:96"
+bluetoothctl connect "70:26:05:62:0E:C7"
 
-SINK=`pacmd list-sinks | grep -B 1 bluez_sink.CC_90_93_04_9E_96 | head -1 | sed 's/.* *index: \([0-9]*\)/\1/'`
+SINK=`pacmd list-sinks | grep -B 1 bluez_sink.70_26_05_62_0E_C7 | head -1 | sed 's/.* *index_ \([0-9]*\)/\1/'`
 pacmd set-default-sink $SINK
 pacmd list-sink-inputs | grep index | sed 's/ *index: \([0-9]*\)/\1/' | while read ID
 do
