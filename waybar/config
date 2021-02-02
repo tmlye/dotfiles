@@ -97,7 +97,6 @@
     },
 
     "pulseaudio": {
-        //"scroll-step": 1,
         "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}%",
         "format-muted": "",
@@ -110,7 +109,8 @@
             "car": "",
             "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "amixer -q sset Master toggle"
     },
 
     "tray": {
