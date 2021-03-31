@@ -72,9 +72,15 @@ alias his='grephistory'
 # GIT
 # ===
 
+function fetch_default_branch()
+{
+    DEFAULT_BRANCH=`git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"`
+    git fetch origin $DEFAULT_BRANCH:$DEFAULT_BRANCH
+}
+
 alias gcb='git checkout -b'
 alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
-alias gfm='DEFAULT_BRANCH=`git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"` git fetch origin $DEFAULT_BRANCH:$DEFAULT_BRANCH'
+alias gfm='fetch_default_branch'
 alias grm='git rebase `git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"`'
 alias gpl='git pull'
 
