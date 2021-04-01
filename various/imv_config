@@ -1,3 +1,4 @@
 [binds]
 
 <Delete> = exec rm "$imv_current_file"; close
+<Shift+H> = exec cp "$imv_current_file" $HOME;
