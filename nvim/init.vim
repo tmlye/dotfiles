@@ -137,3 +137,6 @@ map <silent> <leader>t :lcd %:h<CR>:vertical terminal <CR>
 
 " Copy to wayland clipboard
 vnoremap <silent> <leader>y :'<,'>w !wl-copy<CR><CR>
+
+" open current file in nerdtree
+nmap <leader>m :NERDTreeFind<CR>
