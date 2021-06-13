@@ -15,7 +15,6 @@ cd ~/.dotfiles
 ```
 and then execute the script. This should symlink all the files in the `~/.dotfiles` directory to the correct
 locations in your home folder. Backups will be saved as filename.backup.
-If you want to use the browser or mail files, you'll have to symlink them manually.
 
 ### Wallpaper
 

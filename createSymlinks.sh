@@ -77,5 +77,3 @@ ln -s $HOME/.dotfiles/various/imv_config $HOME/.config/imv/config
 
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
-
-echo "If you want to setup mail, check the .dotfiles/mail directory."
