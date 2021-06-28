@@ -2,3 +2,4 @@
 
 <Delete> = exec rm "$imv_current_file"; close
 <Shift+H> = exec cp "$imv_current_file" $HOME;
+<Shift+R> = rotate by 90; zoom -11
