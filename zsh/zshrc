@@ -55,6 +55,8 @@ export PATH="/usr/local/bin:\
 /usr/bin/core_perl:\
 $HOME/.dotfiles/bin:"
 
+[ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)"
+
 export HISTFILE=$HOME/.dotfiles/zsh/log/.zsh_history
 
 if [ -x "$(command -v gnome-keyring-daemon)" ]; then
