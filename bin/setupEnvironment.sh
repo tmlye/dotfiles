@@ -35,11 +35,6 @@ install_desktop_environment(){
   package_install "ttf-font-awesome ttf-dejavu"
 }
 
-install_communication(){
-  package_install "neomutt offlineimap mairix gnupg keybase"
-  aur_package_install "muttvcardsearch archivemail"
-}
-
 install_media(){
   package_install "picard mplayer smplayer flac ffmpeg"
 }
@@ -49,7 +44,7 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "util-linux bind-tools calc virtualbox virtualbox-host-modules-arch calibre htop whois nmon duplicity cronie net-tools"
+  package_install "util-linux bind-tools calc virtualbox virtualbox-host-modules-arch calibre htop whois nmon duplicity cronie net-tools gnupg"
   # Images
   package_install "imv darktable perl-image-exiftool"
   # Documents
@@ -91,7 +86,6 @@ echo "Type in your username:"
 read -p "User: " USER
 install_pikaur
 install_desktop_environment
-install_communication
 install_media
 install_internet
 install_tools
