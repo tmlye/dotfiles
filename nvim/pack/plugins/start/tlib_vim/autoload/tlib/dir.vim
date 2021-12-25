@@ -1,15 +1,7 @@
-" dir.vim
 " @Author:      Tom Link (micathom AT gmail com?subject=[vim])
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
-" @Created:     2007-06-30.
-" @Last Change: 2013-09-25.
-" @Revision:    0.0.37
-
-if &cp || exists("loaded_tlib_dir_autoload")
-    finish
-endif
-let loaded_tlib_dir_autoload = 1
+" @Revision:    43
 
 " TLet g:tlib#dir#sep = '/'
 TLet g:tlib#dir#sep = exists('+shellslash') && !&shellslash ? '\' : '/'
@@ -21,10 +13,11 @@ let s:dir_stack = []
 "   tlib#dir#CanonicName('foo/bar')
 "   => 'foo/bar/'
 function! tlib#dir#CanonicName(dirname) "{{{3
-    if a:dirname !~ '[/\\]$'
-        return a:dirname . g:tlib#dir#sep
+    let dirname = tlib#file#Canonic(a:dirname)
+    if dirname !~ '[/\\]$'
+        return dirname . g:tlib#dir#sep
     endif
-    return a:dirname
+    return dirname
 endf
 
 
@@ -72,12 +65,12 @@ endf
 
 " :def: function! tlib#dir#CD(dir, ?locally=0) => CWD
 function! tlib#dir#CD(dir, ...) "{{{3
-    TVarArg ['locally', 0]
-    let cmd = locally ? 'lcd ' : 'cd '
+    TVarArg ['locally', haslocaldir()]
+    let cmd = locally ? 'lcd! ' : 'cd! '
     " let cwd = getcwd()
     let cmd .= tlib#arg#Ex(a:dir)
     " TLogVAR a:dir, locally, cmd
-    exec cmd
+    exec 'silent' cmd
     " return cwd
     return getcwd()
 endf
@@ -85,7 +78,7 @@ endf
 
 " :def: function! tlib#dir#Push(dir, ?locally=0) => CWD
 function! tlib#dir#Push(dir, ...) "{{{3
-    TVarArg ['locally', 0]
+    TVarArg ['locally', haslocaldir()]
     call add(s:dir_stack, [getcwd(), locally])
     return tlib#dir#CD(a:dir, locally)
 endf

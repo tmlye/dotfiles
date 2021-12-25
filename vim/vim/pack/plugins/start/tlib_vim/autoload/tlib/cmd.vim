@@ -1,15 +1,7 @@
-" cmd.vim
 " @Author:      Tom Link (micathom AT gmail com?subject=[vim])
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
-" @Created:     2007-08-23.
-" @Last Change: 2013-05-14.
-" @Revision:    0.0.46
-
-if &cp || exists("loaded_tlib_cmd_autoload")
-    finish
-endif
-let loaded_tlib_cmd_autoload = 1
+" @Revision:    58
 
 
 let g:tlib#cmd#last_output = []
@@ -58,10 +50,12 @@ endf
 "   call tlib#cmd#BrowseOutputWithCallback('tlib#cmd#ParseScriptname', 'scriptnames')
 function! tlib#cmd#BrowseOutputWithCallback(callback, command) "{{{3
     let list = tlib#cmd#OutputAsList(a:command)
-    let cmd = tlib#input#List('s', 'Output of: '. a:command, list)
-    if !empty(cmd)
-        let Callback = function(a:callback)
-        call call(Callback, [cmd])
+    let cmds = tlib#input#List('m', 'Output of: '. a:command, list)
+    if !empty(cmds)
+        for cmd in cmds
+            let Callback = function(a:callback)
+            call call(Callback, [cmd])
+        endfor
     endif
 endf
 
@@ -70,9 +64,16 @@ function! tlib#cmd#DefaultBrowseOutput(cmd) "{{{3
 endf
 
 function! tlib#cmd#ParseScriptname(line) "{{{3
-    let parsedValue = substitute(a:line, '^.\{-}\/', '/', '')
-    exe ':e '. parsedValue
+    " let parsedValue = substitute(a:line, '^.\{-}\/', '/', '')
+    let parsedValue = matchstr(a:line, '^\s*\d\+:\s*\zs.*$')
+    exe 'drop '. fnameescape(parsedValue)
 endf
+
+
+function! tlib#cmd#TBrowseScriptnames() abort "{{{3
+   call tlib#cmd#BrowseOutputWithCallback("tlib#cmd#ParseScriptname", "scriptnames")
+endf
+
 
 " :def: function! tlib#cmd#UseVertical(?rx='')
 " Look at the history whether the command was called with vertical. If 
@@ -104,5 +105,13 @@ function! tlib#cmd#Time(cmd) "{{{3
         let diff = (localtime() - start) .'s'
     endif
     echom 'Time: '. diff .': '. a:cmd
+endf
+
+
+function! tlib#cmd#Capture(cmd) "{{{3
+    redir => s
+    silent exec a:cmd
+    redir END
+    return s
 endf
 

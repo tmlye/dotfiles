@@ -3,8 +3,8 @@
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2007-06-30.
-" @Last Change: 2013-09-25.
-" @Revision:    0.0.352
+" @Last Change: 2017-09-28.
+" @Revision:    12.1.352
 
 
 " Where to display the line when using |tlib#buffer#ViewLine|.
@@ -15,19 +15,19 @@ TLet g:tlib_viewline_position = 'zz'
 let s:bmru = []
 
 
-function! tlib#buffer#EnableMRU() "{{{3
+function! tlib#buffer#EnableMRU() abort "{{{3
     call tlib#autocmdgroup#Init()
     autocmd TLib BufEnter * call s:BMRU_Push(bufnr('%'))
 endf
 
 
-function! tlib#buffer#DisableMRU() "{{{3
+function! tlib#buffer#DisableMRU() abort "{{{3
     call tlib#autocmdgroup#Init()
     autocmd! TLib BufEnter
 endf
 
 
-function! s:BMRU_Push(bnr) "{{{3
+function! s:BMRU_Push(bnr) abort "{{{3
     let i = index(s:bmru, a:bnr)
     if i >= 0
         call remove(s:bmru, i)
@@ -36,7 +36,7 @@ function! s:BMRU_Push(bnr) "{{{3
 endf
 
 
-function! s:CompareBuffernameByBasename(a, b) "{{{3
+function! s:CompareBuffernameByBasename(a, b) abort "{{{3
     let rx = '"\zs.\{-}\ze" \+\S\+ \+\d\+$'
     let an = matchstr(a:a, rx)
     let an = fnamemodify(an, ':t')
@@ -47,7 +47,7 @@ function! s:CompareBuffernameByBasename(a, b) "{{{3
 endf
 
 
-function! s:CompareBufferNrByMRU(a, b) "{{{3
+function! s:CompareBufferNrByMRU(a, b) abort "{{{3
     let an = matchstr(a:a, '\s*\zs\d\+\ze')
     let bn = matchstr(a:b, '\s*\zs\d\+\ze')
     let ai = index(s:bmru, 0 + an)
@@ -66,7 +66,7 @@ endf
 
 " Set the buffer to buffer and return a command as string that can be 
 " evaluated by |:execute| in order to restore the original view.
-function! tlib#buffer#Set(buffer) "{{{3
+function! tlib#buffer#Set(buffer) abort "{{{3
     let lazyredraw = &lazyredraw
     set lazyredraw
     try
@@ -91,12 +91,12 @@ function! tlib#buffer#Set(buffer) "{{{3
 endf
 
 
-" :def: function! tlib#buffer#Eval(buffer, code)
+" :def: function! tlib#buffer#Eval(buffer, code) abort
 " Evaluate CODE in BUFFER.
 "
 " EXAMPLES: >
 "   call tlib#buffer#Eval('foo.txt', 'echo b:bar')
-function! tlib#buffer#Eval(buffer, code) "{{{3
+function! tlib#buffer#Eval(buffer, code) abort "{{{3
     " let cb = bufnr('%')
     " let wb = bufwinnr('%')
     " " TLogVAR cb
@@ -134,7 +134,7 @@ function! tlib#buffer#Eval(buffer, code) "{{{3
 endf
 
 
-" :def: function! tlib#buffer#GetList(?show_hidden=0, ?show_number=0, " ?order='bufnr')
+" :def: function! tlib#buffer#GetList(?show_hidden=0, ?show_number=0, " ?order='bufnr') abort
 " Possible values for the "order" argument:
 "   bufnr    :: Default behaviour
 "   mru      :: Sort buffers according to most recent use
@@ -142,7 +142,7 @@ endf
 "
 " NOTE: MRU order works on second invocation only. If you want to always 
 " use MRU order, call tlib#buffer#EnableMRU() in your ~/.vimrc file.
-function! tlib#buffer#GetList(...)
+function! tlib#buffer#GetList(...) abort
     TVarArg ['show_hidden', 0], ['show_number', 0], ['order', '']
     " TLogVAR show_hidden, show_number, order
     let ls_bang = show_hidden ? '!' : ''
@@ -150,17 +150,17 @@ function! tlib#buffer#GetList(...)
     exec 'silent ls'. ls_bang
     redir END
     let buffer_list = split(bfs, '\n')
-    if order == 'mru'
+    if order ==# 'mru'
         if empty(s:bmru)
             call tlib#buffer#EnableMRU()
             echom 'tlib: Installed Buffer MRU logger; disable with: call tlib#buffer#DisableMRU()'
         else
             call sort(buffer_list, function('s:CompareBufferNrByMRU'))
         endif
-    elseif order == 'basename'
+    elseif order ==# 'basename'
         call sort(buffer_list, function('s:CompareBuffernameByBasename'))
     endif
-    let buffer_nr = map(copy(buffer_list), 'matchstr(v:val, ''\s*\zs\d\+\ze'')')
+    let buffer_nr = map(copy(buffer_list), 'str2nr(matchstr(v:val, ''\s*\zs\d\+\ze''))')
     " TLogVAR buffer_list, buffer_nr
     if show_number
         call map(buffer_list, 'matchstr(v:val, ''^\s*\d\+.\{-}\ze\s\+\S\+ \d\+\s*$'')')
@@ -176,11 +176,11 @@ function! tlib#buffer#GetList(...)
 endf
 
 
-" :def: function! tlib#buffer#ViewLine(line, ?position='z')
+" :def: function! tlib#buffer#ViewLine(line, ?position='z') abort
 " line is either a number or a string that begins with a number.
 " For possible values for position see |scroll-cursor|.
 " See also |g:tlib_viewline_position|.
-function! tlib#buffer#ViewLine(line, ...) "{{{3
+function! tlib#buffer#ViewLine(line, ...) abort "{{{3
     if a:line
         TVarArg 'pos'
         let ln = matchstr(a:line, '^\d\+')
@@ -200,8 +200,8 @@ function! tlib#buffer#ViewLine(line, ...) "{{{3
 endf
 
 
-function! s:UndoHighlightLine() "{{{3
-    3match none
+function! s:UndoHighlightLine() abort "{{{3
+    2match none
     autocmd! TLib CursorMoved,CursorMovedI <buffer>
     autocmd! TLib CursorHold,CursorHoldI <buffer>
     autocmd! TLib InsertEnter,InsertChange,InsertLeave <buffer>
@@ -209,10 +209,10 @@ function! s:UndoHighlightLine() "{{{3
 endf
 
 
-function! tlib#buffer#HighlightLine(...) "{{{3
+function! tlib#buffer#HighlightLine(...) abort "{{{3
     TVarArg ['line', line('.')]
-    " exec '3match MatchParen /^\%'. a:line .'l.*/'
-    exec '3match Search /^\%'. line .'l.*/'
+    " exec '2match MatchParen /^\%'. a:line .'l.*/'
+    exec '2match Search /^\%'. line .'l.*/'
     call tlib#autocmdgroup#Init()
     exec 'autocmd TLib CursorMoved,CursorMovedI <buffer> if line(".") != '. line .' | call s:UndoHighlightLine() | endif'
     autocmd TLib CursorHold,CursorHoldI <buffer> call s:UndoHighlightLine()
@@ -222,7 +222,7 @@ endf
 
 
 " Delete the lines in the current buffer. Wrapper for |:delete|.
-function! tlib#buffer#DeleteRange(line1, line2) "{{{3
+function! tlib#buffer#DeleteRange(line1, line2) abort "{{{3
     let r = @t
     try
         exec a:line1.','.a:line2.'delete t'
@@ -233,14 +233,14 @@ endf
 
 
 " Replace a range of lines.
-function! tlib#buffer#ReplaceRange(line1, line2, lines)
+function! tlib#buffer#ReplaceRange(line1, line2, lines) abort
     call tlib#buffer#DeleteRange(a:line1, a:line2)
     call append(a:line1 - 1, a:lines)
 endf
 
 
 " Initialize some scratch area at the bottom of the current buffer.
-function! tlib#buffer#ScratchStart() "{{{3
+function! tlib#buffer#ScratchStart() abort "{{{3
     norm! Go
     let b:tlib_inbuffer_scratch = line('$')
     return b:tlib_inbuffer_scratch
@@ -248,7 +248,7 @@ endf
 
 
 " Remove the in-buffer scratch area.
-function! tlib#buffer#ScratchEnd() "{{{3
+function! tlib#buffer#ScratchEnd() abort "{{{3
     if !exists('b:tlib_inbuffer_scratch')
         echoerr 'tlib: In-buffer scratch not initalized'
     endif
@@ -258,14 +258,14 @@ endf
 
 
 " Run exec on all buffers via bufdo and return to the original buffer.
-function! tlib#buffer#BufDo(exec) "{{{3
+function! tlib#buffer#BufDo(exec) abort "{{{3
     let bn = bufnr('%')
     exec 'bufdo '. a:exec
     exec 'buffer! '. bn
 endf
 
 
-" :def: function! tlib#buffer#InsertText(text, keyargs)
+" :def: function! tlib#buffer#InsertText(text, keyargs) abort
 " Keyargs:
 "   'shift': 0|N
 "   'col': col('.')|N
@@ -273,31 +273,32 @@ endf
 "   'indent': 0|1
 "   'pos': 'e'|'s' ... Where to locate the cursor (somewhat like s and e in {offset})
 " Insert text (a string) in the buffer.
-function! tlib#buffer#InsertText(text, ...) "{{{3
+function! tlib#buffer#InsertText(text, ...) abort "{{{3
     TVarArg ['keyargs', {}]
     " TLogVAR a:text, keyargs
-    TKeyArg keyargs, ['shift', 0], ['col', col('.')], ['lineno', line('.')], ['pos', 'e'],
-                \ ['indent', 0]
-    " TLogVAR shift, col, lineno, pos, indent
+    let keyargs = extend({
+                \ 'shift': 0, 'col': col('.'), 'lineno': line('.'), 'pos': 'e', 'indent': 0
+                \ }, keyargs)
+    " TLogVAR keyargs
     let grow = 0
     let post_del_last_line = line('$') == 1
-    let line = getline(lineno)
-    if col + shift > 0
-        let pre  = line[0 : (col - 1 + shift)]
-        let post = line[(col + shift): -1]
+    let line = getline(keyargs.lineno)
+    if keyargs.col + keyargs.shift > 0
+        let pre  = line[0 : (keyargs.col - 1 + keyargs.shift)]
+        let post = line[(keyargs.col + keyargs.shift): -1]
     else
         let pre  = ''
         let post = line
     endif
-    " TLogVAR lineno, line, pre, post
+    " TLogVAR keyargs.lineno, line, pre, post
     let text0 = pre . a:text . post
     let text  = split(text0, '\n', 1)
     " TLogVAR text
     let icol = len(pre)
-    " exec 'norm! '. lineno .'G'
-    call cursor(lineno, col)
-    if indent && col > 1
-		if &fo =~# '[or]'
+    " exec 'norm! '. keyargs.lineno .'G'
+    call cursor(keyargs.lineno, keyargs.col)
+    if keyargs.indent && keyargs.col > 1
+		if &formatoptions =~# '[or]'
             " FIXME: Is the simple version sufficient?
             " VERSION 1
 			" " This doesn't work because it's not guaranteed that the 
@@ -306,13 +307,13 @@ function! tlib#buffer#InsertText(text, ...) "{{{3
 			" norm! a
 			" "norm! o
 			" " TAssertExec redraw | sleep 3
-			" let idt = strpart(getline('.'), 0, col('.') + shift)
+			" let idt = tlib#string#Strcharpart(getline('.'), 0, keyargs.col('.') + keyargs.shift)
 			" " TLogVAR idt
 			" let idtl = len(idt)
 			" -1,.delete
 			" " TAssertExec redraw | sleep 3
-			" call append(lineno - 1, cline)
-			" call cursor(lineno, col)
+			" call append(keyargs.lineno - 1, cline)
+			" call cursor(keyargs.lineno, keyargs.col)
 			" " TAssertExec redraw | sleep 3
 			" if idtl == 0 && icol != 0
 			" 	let idt = matchstr(pre, '^\s\+')
@@ -336,33 +337,33 @@ function! tlib#buffer#InsertText(text, ...) "{{{3
         endfor
     endif
     " TLogVAR text
-    " exec 'norm! '. lineno .'Gdd'
+    " exec 'norm! '. keyargs.lineno .'Gdd'
     call tlib#normal#WithRegister('"tdd', 't')
-    call append(lineno - 1, text)
+    call append(keyargs.lineno - 1, text)
     if post_del_last_line
         call tlib#buffer#KeepCursorPosition('$delete')
     endif
     let tlen = len(text)
-    let posshift = matchstr(pos, '\d\+')
-    " TLogVAR pos
-    if pos =~ '^e'
-        exec lineno + tlen - 1
+    let posshift = matchstr(keyargs.pos, '\d\+')
+    " TLogVAR keyargs.pos
+    if keyargs.pos =~# '^e'
+        exec keyargs.lineno + tlen - 1
         exec 'norm! 0'. (len(text[-1]) - len(post) + posshift - 1) .'l'
-    elseif pos =~ '^s'
-        " TLogVAR lineno, pre, posshift
-        exec lineno
+    elseif keyargs.pos =~# '^s'
+        " TLogVAR keyargs.lineno, pre, posshift
+        exec keyargs.lineno
         exec 'norm! '. len(pre) .'|'
         if !empty(posshift)
             exec 'norm! '. posshift .'h'
         endif
     endif
-    " TLogDBG getline(lineno)
+    " TLogDBG getline(keyargs.lineno)
     " TLogDBG string(getline(1, '$'))
     return grow
 endf
 
 
-function! tlib#buffer#InsertText0(text, ...) "{{{3
+function! tlib#buffer#InsertText0(text, ...) abort "{{{3
     TVarArg ['keyargs', {}]
     let mode = get(keyargs, 'mode', 'i')
     " TLogVAR mode
@@ -381,13 +382,13 @@ function! tlib#buffer#InsertText0(text, ...) "{{{3
 endf
 
 
-function! tlib#buffer#CurrentByte() "{{{3
+function! tlib#buffer#CurrentByte() abort "{{{3
     return line2byte(line('.')) + col('.')
 endf
 
 
 " Evaluate cmd while maintaining the cursor position and jump registers.
-function! tlib#buffer#KeepCursorPosition(cmd) "{{{3
+function! tlib#buffer#KeepCursorPosition(cmd) abort "{{{3
     " let pos = getpos('.')
     let view = winsaveview()
     try
