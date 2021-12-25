@@ -75,5 +75,8 @@ ln -s $HOME/.dotfiles/various/gitconfig $HOME/.gitconfig
 mkdir -p $HOME/.config/imv
 ln -s $HOME/.dotfiles/various/imv_config $HOME/.config/imv/config
 
+# mpv
+ln -s $HOME/.dotfiles/mpv/ $HOME/.config/mpv
+
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
