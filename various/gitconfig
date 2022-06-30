@@ -6,6 +6,8 @@
 [core]
 	editor = vim
 	sshCommand = ssh -i $HOME/.ssh/github_personal
+    fsmonitor = true
+    untrackedcache = true
 [credential]
 	helper = /usr/lib/git-core/git-credential-libsecret
 [pull]
