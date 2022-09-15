@@ -21,4 +21,4 @@ fi
 unfunction grep-flag-available
 
 alias grep="grep $GREP_OPTIONS"
-export GREP_COLOR='1;32'
+export GREP_COLORS='mt=1;32'

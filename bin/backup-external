@@ -1,6 +1,5 @@
 #!/bin/bash
-export AWS_PROFILE=personal-backup
-source $HOME/.duplicity-passphrase
+source $HOME/.secrets-duplicity-backup
 
 declare -a FOLDERS=(
 "documents"
@@ -15,9 +14,9 @@ for FOLDER in "${FOLDERS[@]}"; do
 			  --num-retries 5 \
 			  --asynchronous-upload \
 			  --volsize 100 \
-			  --s3-use-ia \
-			  $HOME/$FOLDER/ boto3+s3://duplicity-backup-j7v3a/$FOLDER
+			  $HOME/$FOLDER/ b2://$BACKBLAZE_KEY_ID:$BACKBLAZE_APP_KEY@duplicity-backup-j7v3a/$FOLDER
 done
-unset AWS_PROFILE
 unset PASSPHRASE
+unset BACKBLAZE_KEY_ID
+unset BACKBLAZE_APP_KEY
 # vim:set filetype=sh:
