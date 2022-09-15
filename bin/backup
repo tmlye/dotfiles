@@ -10,7 +10,5 @@ rsync -a --delete $HOME/desktop $HOME/mount/
 rsync -a --delete $HOME/documents $HOME/mount/
 rsync -a --delete $HOME/downloads $HOME/mount/
 rsync -a --delete $HOME/media $HOME/mount/
-# Files
-rsync -a $HOME/.gitconfig $HOME/mount/backup/OS/home/
 
 # vim:set filetype=sh:
