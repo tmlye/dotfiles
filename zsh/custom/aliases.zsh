@@ -34,7 +34,7 @@ alias musb='sudo mount -U 651B-DF09 $HOME/mount2'
 # Cryptsetup
 # ==========
 
-alias me='sudo cryptsetup --type luks open /dev/disk/by-uuid/2c501317-75d0-4816-807e-00b4b37a9f8b extern && sudo mount -t ext4 /dev/mapper/extern $HOME/mount'
+alias me='sudo cryptsetup --type luks open /dev/disk/by-uuid/afe18f3e-0b42-40d7-8a3d-8128f8e832b6 extern && sudo mount -t ext4 /dev/mapper/extern $HOME/mount'
 alias dmnt='sudo umount $HOME/mount; sudo cryptsetup close extern'
 
 # Power
@@ -53,7 +53,6 @@ alias web='ssh web01 -p 799'
 # =======
 
 alias c='clear'
-alias ps='ps -a -c -o pid,command -x'
 alias v='gvim'
 alias ls='ls --color=auto'
 alias tf='terraform'
