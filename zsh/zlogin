@@ -10,5 +10,6 @@ if [ "$(tty)" = "/dev/tty1" ]; then
   export XDG_SESSION_TYPE=wayland
   export QT_QPA_PLATFORM=wayland
   export GDK_BACKEND=wayland
+  export _JAVA_AWT_WM_NONREPARENTING=1
   exec sway
 fi
