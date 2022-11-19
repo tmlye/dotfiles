@@ -76,11 +76,6 @@ set sidescroll=5        " Columns to scroll when cursor off screen
 au BufRead,BufNewFile *.jade setfiletype jade
 let g:tex_flavor='latex'
 
-" UI
-" ==
-
-set guicursor=          " Use standard cursor in insert mode
-
 " Mappings
 " ========
 
