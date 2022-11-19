@@ -59,6 +59,7 @@
 #clock,
 #cpu,
 #custom-keyboard-layout,
+#custom-weather,
 #memory,
 #mode,
 #network,
@@ -67,6 +68,7 @@
 #tray {
     padding-left: 10px;
     padding-right: 10px;
+    color: #D7D0C7;
 }
 
 
@@ -137,7 +139,6 @@
 }
 
 #network {
-    /* No styles */
 }
 
 #network.disconnected {
@@ -145,7 +146,6 @@
 }
 
 #pulseaudio {
-    /* No styles */
 }
 
 #pulseaudio.muted {
@@ -157,7 +157,6 @@
 }
 
 #temperature {
-    /* No styles */
 }
 
 #temperature.critical {
