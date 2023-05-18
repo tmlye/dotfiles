@@ -36,11 +36,11 @@ install_desktop_environment(){
 }
 
 install_media(){
-  package_install "picard mplayer smplayer mpv flac ffmpeg"
+  package_install "picard mplayer smplayer mpv flac ffmpeg pipewire"
 }
 
 install_internet(){
-  package_install "firefox chromium flashplugin rtorrent mtr"
+  package_install "firefox chromium flashplugin qbittorrent mtr"
 }
 
 install_tools(){
@@ -52,8 +52,8 @@ install_tools(){
 }
 
 install_dev(){
-  package_install "npm code terraform hugo aws-cli python-boto3 jdk11-openjdk kotlin docker docker-compose ruby jq"
-  aur_package_install "nvm"
+  package_install "npm code hugo aws-cli python-boto3 jdk11-openjdk kotlin docker docker-compose ruby jq"
+  aur_package_install "nvm tfenv"
 }
 
 install_power(){
