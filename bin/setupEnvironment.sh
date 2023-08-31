@@ -36,7 +36,7 @@ install_desktop_environment(){
 }
 
 install_media(){
-  package_install "picard mplayer smplayer mpv flac ffmpeg pipewire"
+  package_install "picard mplayer smplayer mpv flac ffmpeg easyeffects lsp-plugins"
 }
 
 install_internet(){

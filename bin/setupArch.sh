@@ -90,7 +90,7 @@ install_basic_setup(){
   print_info "Installing compression tools"
   package_install "zip unzip unrar"
   print_info "Installing audio"
-  package_install "alsa-utils alsa-plugins lib32-alsa-plugins pulseaudio pulseaudio-alsa pulseaudio-bluetooth"
+  package_install "alsa-utils alsa-plugins lib32-alsa-plugins pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber"
   print_info "Installing filesystems+tools"
   package_install "ntfs-3g dosfstools exfat-utils fuse2 fuse3 mtpfs"
 }
