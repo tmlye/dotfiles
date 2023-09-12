@@ -1,3 +1,11 @@
+" Plugins
+" =======
+
+call plug#begin()
+  Plug 'tpope/vim-sleuth'   " auto detect indent
+  Plug 'preservim/nerdtree' " file tree
+call plug#end()
+
 " General
 " =======
 
