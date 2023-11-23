@@ -4,7 +4,27 @@
 call plug#begin()
   Plug 'tpope/vim-sleuth'   " auto detect indent
   Plug 'preservim/nerdtree' " file tree
+  Plug 'williamboman/mason.nvim'
+  Plug 'williamboman/mason-lspconfig.nvim'
+  Plug 'neovim/nvim-lspconfig'
 call plug#end()
+
+lua <<EOF
+require("mason").setup()
+require("mason-lspconfig").setup{
+  ensure_installed = { "lua_ls", "rust_analyzer" },
+}
+require("lspconfig").lua_ls.setup {}
+require("lspconfig").rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = true;
+      }
+    }
+  }
+}
+EOF
 
 " General
 " =======
@@ -29,7 +49,8 @@ au FocusGained,BufEnter * :checktime
 " Syntax
 " ======
 
-colorscheme getfresh    " Place your schemes in .vim/colors
+let g:hybrid_custom_term_colors = 1
+colorscheme hybrid      " Place your schemes in .vim/colors
 
 " Search
 " ======
