@@ -2,11 +2,11 @@
 set -eu
 
 bluetoothctl power on
-bluetoothctl connect "70:26:05:62:0E:C7"
-CARD=`pactl list cards short | grep 70_26_05 | awk '{print $1}'`
+bluetoothctl connect "88:C9:E8:58:E1:03"
+CARD=`pactl list cards short | grep 88_C9_E8 | awk '{print $1}'`
 pactl set-card-profile $CARD off
 pactl set-card-profile $CARD a2dp_sink
-SINK=`pactl list sinks short | grep 70_26_05 | awk '{print $1}'`
+SINK=`pactl list sinks short | grep 88_C9_E8 | awk '{print $1}'`
 pacmd set-default-sink $SINK
 
 # vim:set filetype=sh:
