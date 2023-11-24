@@ -32,7 +32,7 @@ install_desktop_environment(){
   package_install "zsh wayland sway swaylock swayidle swaybg wl-clipboard xdg-desktop-portal-wlr"
   package_install "xorg-server-xwayland grim slurp gtk3 qt5-wayland alacritty"
   package_install "gnome-keyring libsecret brightnessctl waybar wofi mako libnotify"
-  package_install "ttf-font-awesome ttf-dejavu"
+  package_install "ttf-font-awesome ttf-dejavu-nerd"
 }
 
 install_media(){
@@ -52,7 +52,7 @@ install_tools(){
 }
 
 install_dev(){
-  package_install "npm code hugo aws-cli python-boto3 jdk11-openjdk kotlin docker docker-compose docker-buildx ruby jq"
+  package_install "npm code aws-cli python-boto3 jdk11-openjdk docker docker-compose docker-buildx ruby jq rustup"
   aur_package_install "nvm tfenv"
 }
 
