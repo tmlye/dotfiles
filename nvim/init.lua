@@ -177,6 +177,16 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- Highlight trailing whitespace
+vim.cmd [[
+  set list listchars=tab:\ \ ,trail:·
+  augroup trailing        " Don't show trailing spaces in insert mode
+    autocmd!
+    autocmd InsertEnter * :set listchars-=trail:·
+    autocmd InsertLeave * :set listchars+=trail:·
+  augroup end
+]]
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
