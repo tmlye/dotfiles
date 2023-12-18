@@ -22,6 +22,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  'm4xshen/autoclose.nvim',
   'norcalli/nvim-colorizer.lua',
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -48,7 +49,7 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
-      'L3MON4D3/LuaSnip',
+      { 'L3MON4D3/LuaSnip', build = "make install_jsregexp" },
       'saadparwaiz1/cmp_luasnip',
 
       -- Adds LSP completion capabilities
@@ -235,6 +236,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+require("autoclose").setup()
 require'colorizer'.setup()
 
 -- [[ Configure Telescope ]]
