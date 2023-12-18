@@ -4,7 +4,7 @@
 
 if [ $# -lt 3 ]
 then
-        echo "Usage: pdfmerge first.pdf second.pdf output.pdf"
+        echo "Usage: pdfmerge output.pdf first.pdf second.pdf .... n.pdf"
         exit 1
 fi
-gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -sOutputFile="$3" "$1" "$2" >& /dev/null
+gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -sOutputFile="$1" "${@:2}" >& /dev/null
