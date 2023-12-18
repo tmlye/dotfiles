@@ -26,7 +26,9 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export HISTFILE=$HOME/.dotfiles/zsh/log/.zsh_history
-export PATH="/usr/local/bin:\
+export PATH="\
+$HOME/.dotfiles/bin:\
+/usr/local/bin:\
 /usr/bin:\
 /bin:\
 /usr/local/sbin:\
@@ -37,7 +39,7 @@ export PATH="/usr/local/bin:\
 /usr/bin/vendor_perl:\
 /usr/bin/core_perl:\
 $HOME/.cargo/bin:\
-$HOME/.dotfiles/bin:"
+"
 
 # Put each kubeconfig file into ~/.kube with a .yml extension
 function get_kubeconfig() {
