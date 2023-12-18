@@ -57,8 +57,9 @@ install_dev(){
 }
 
 install_power(){
-  package_install "powertop tlp acpi acpi_call tpacpi-bat"
-  systemctl enable tlp
+  package_install "powertop acpi acpi_call tpacpi-bat"
+  aur_package_install "laptop-mode-tools"
+  systemctl enable laptop-mode.service
   systemctl mask systemd-rfkill.service
   systemctl mask systemd-rfkill.socket
 }
