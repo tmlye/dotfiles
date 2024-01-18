@@ -26,7 +26,7 @@ ln -s $HOME/.dotfiles/waybar $HOME/.config/waybar
 
 # alacritty
 mkdir -p $HOME/.config/alacritty
-ln -s $HOME/.dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+ln -s $HOME/.dotfiles/alacritty/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 
 # mako
 mkdir -p $HOME/.config/mako
