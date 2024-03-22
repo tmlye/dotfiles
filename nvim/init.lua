@@ -43,6 +43,7 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
+  'simrat39/rust-tools.nvim',
 
   {
     -- Autocompletion
@@ -395,12 +396,34 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 
   nmap('<leader>f', vim.lsp.buf.format, '[F]ormat buffer')
+  nmap('<leader>H', vim.lsp.inlay_hint.enable(bufnr, true))
 end
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
 require('mason-lspconfig').setup()
+
+--local rt = require("rust-tools")
+--
+--rt.setup({
+--  tools = {
+--    -- These apply to the default RustSetInlayHints command
+--    inlay_hints = {
+--      -- automatically set inlay hints (type hints)
+--      -- default: true
+--      auto = true,
+--    }
+--  },
+--  server = {
+--    on_attach = function(_, bufnr)
+--      -- Hover actions
+--      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+--      -- Code action groups
+--      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+--    end,
+--  },
+--})
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -414,7 +437,14 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  rust_analyzer = {},
+  rust_analyzer = {
+      inlayHints = {
+        enable = true,
+        showParameterNames = true,
+        parameterHintsPrefix = "<- ",
+        otherHintsPrefix = "=> ",
+      },
+  },
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
@@ -429,10 +459,6 @@ local servers = {
 -- Setup neovim lua configuration
 require('neodev').setup()
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
 
@@ -440,6 +466,8 @@ mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
 }
 
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 mason_lspconfig.setup_handlers {
   function(server_name)
     require('lspconfig')[server_name].setup {
@@ -580,7 +608,9 @@ require("neo-tree").setup({
     },
   },
   filesystem = {
-    follow_current_file = true,
+    follow_current_file = {
+      enabled = true
+    },
     window = {
       mappings = {
         ["H"] = "toggle_hidden",

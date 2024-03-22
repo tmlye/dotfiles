@@ -16,5 +16,6 @@
     "terminal.integrated.scrollback": 10000,
     "window.menuBarVisibility": "toggle",
     "workbench.colorTheme": "Monokai",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "go.toolsManagement.autoUpdate": true
 }
