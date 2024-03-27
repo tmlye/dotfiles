@@ -10,7 +10,6 @@ require("neo-tree").setup({
   window = {
     mappings = {
       ["o"] = "toggle_node",
-      ["<2-LeftMouse>"] = "open",
       ["<cr>"] = "open",
       ["S"] = "open_split",
       ["s"] = "open_vsplit",
