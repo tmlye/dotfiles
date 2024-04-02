@@ -214,7 +214,6 @@ bindsym $mod+q exec MOZ_DBUS_REMOTE=1 MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+e exec $term -e ranger
 bindsym $mod+F12 exec grim -t jpeg -g "$(slurp)" ~/$(date +%Y-%m-%d_%H-%m-%s).jpg
 bindsym $mod+c exec chromium
-bindsym $mod+m exec mattermost-desktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto
 
 #
 # Status Bar:
