@@ -15,48 +15,33 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  -- Auto pairs and closes brackets
   'm4xshen/autoclose.nvim',
+  -- Colors hex codes #000
   'norcalli/nvim-colorizer.lua',
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-
+  -- Colorscheme
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- LSP
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+  {'neovim/nvim-lspconfig'},
+  {'williamboman/mason.nvim'},
+  {'williamboman/mason-lspconfig.nvim'},
+  -- Autocompletion
+  {'hrsh7th/nvim-cmp'},
+  {"hrsh7th/cmp-buffer"},
+  {"hrsh7th/cmp-path"},
+  {'hrsh7th/cmp-nvim-lsp'},
+  {"hrsh7th/cmp-nvim-lua"},
+  {"saadparwaiz1/cmp_luasnip"},
+  -- Snippets
+  {'L3MON4D3/LuaSnip'},
+  {"rafamadriz/friendly-snippets"},
+  -- "gc" to comment visual regions/lines
+  { 'numToStr/Comment.nvim', opts = {} },
+  -- Status line
   {
-    -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-
-      -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-
-      -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim',
-    },
-  },
-  'simrat39/rust-tools.nvim',
-
-  {
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
-      { 'L3MON4D3/LuaSnip', build = "make install_jsregexp" },
-      'saadparwaiz1/cmp_luasnip',
-
-      -- Adds LSP completion capabilities
-      'hrsh7th/cmp-nvim-lsp',
-
-      -- Adds a number of user-friendly snippets
-      'rafamadriz/friendly-snippets',
-    },
-  },
-
-  { "catppuccin/nvim",      name = "catppuccin", priority = 1000 },
-  {
-    -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
@@ -68,18 +53,6 @@ require('lazy').setup({
       },
     },
   },
-
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
-    main = 'ibl',
-    opts = {},
-  },
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -102,8 +75,8 @@ require('lazy').setup({
     },
   },
 
+  -- Highlight, edit, and navigate code
   {
-    -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
@@ -111,6 +84,7 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  -- File tree
   {
     'nvim-neo-tree/neo-tree.nvim',
     branch = "v3.x",
