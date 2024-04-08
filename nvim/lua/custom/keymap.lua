@@ -18,6 +18,12 @@ vim.keymap.set("x", "p", [["_dP]])
 -- Delete text without copying it to default register
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
 -- Prevent moving cursor with space
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 

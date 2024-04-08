@@ -39,3 +39,14 @@ cmp.setup({
   --- (Optional) Show source name in completion menu
   formatting = cmp_format,
 })
+
+require'lspconfig'.lua_ls.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+    },
+  },
+}
