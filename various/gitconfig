@@ -4,7 +4,7 @@
 [push]
 	default = simple
 [core]
-	editor = vim
+	editor = nvim
 	sshCommand = ssh -i $HOME/.ssh/github_personal
     fsmonitor = true
     untrackedcache = true
