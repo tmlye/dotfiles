@@ -1,6 +1,6 @@
 ## dotfiles
 
-I'm using Arch Linux and this repo represents a huge part of my system configuration.
+I'm using Arch Linux and this repo contains most of my system configuration.
 Scroll down to see what it looks like.
 Forking is highly encouraged.
 
@@ -28,6 +28,6 @@ You can modify the location for the wallpaper in `~/.dotfiles/sway/config`.
 
 ## Credit
 
-Credit for the colors and parts of the zsh theme goes to [crshd](https://github.com/crshd).
+Credit for the terminal colors and parts of the zsh theme goes to [crshd](https://github.com/crshd).
+The Nvim setup is based on [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)'s.
 Some of the remaining dotfiles are based on other people's work as well, but modified beyond recognition.
-This repo is heavily inspired by [holman's dotfiles](https://github.com/holman/dotfiles).

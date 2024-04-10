@@ -52,7 +52,7 @@ install_tools(){
 }
 
 install_dev(){
-  package_install "npm code aws-cli python-boto3 jdk11-openjdk docker docker-compose docker-buildx ruby jq rustup"
+  package_install "nvim npm code aws-cli python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup"
   aur_package_install "nvm tfenv"
 }
 
