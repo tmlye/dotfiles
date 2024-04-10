@@ -18,3 +18,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- Autoclose reference window after jumping to one with o
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function()
+        local bufnr = vim.fn.bufnr('%')
+        vim.keymap.set("n", "o", function()
+            vim.api.nvim_command([[execute "normal! \<cr>"]])
+            vim.api.nvim_command(bufnr .. 'bd')
+        end, { buffer = bufnr })
+    end,
+    pattern = "qf",
+})

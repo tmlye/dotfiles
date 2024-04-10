@@ -1,5 +1,3 @@
--- vim: ts=2 sts=2 sw=2 et
-
 require("custom.keymap")
 require("custom.options")
 require("custom.commands")
@@ -54,10 +52,7 @@ require("catppuccin").setup({
     nvimtree = true,
     treesitter = true,
     notify = false,
-    mini = {
-      enabled = true,
-      indentscope_color = "",
-    },
+    mini = false,
   },
 })
 
