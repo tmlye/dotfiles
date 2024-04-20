@@ -171,12 +171,13 @@ install_network(){
 }
 
 root_password(){
-  print_title "ROOT PASSWORD"
+  print_title "Setting root password"
   print_warning "Enter your new root password"
   arch_chroot passwd
 }
 
 setup_dns(){
+  print_title "Setting up DNS"
   arch_chroot systemctl enable systemd-resolved.service
   ln -sf /run/systemd/resolve/stub-resolv.conf ${MOUNTPOINT}/etc/resolv.conf
   mkdir ${MOUNTPOINT}/etc/systemd/resolved.conf.d/
@@ -187,6 +188,7 @@ DNSOverTLS=opportunistic
 DNS=1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
 Domains=~.
 EOF
+  pause_function
 }
 
 finish_install(){
