@@ -14,8 +14,7 @@ install_pikaur(){
     package_install "base-devel git"
     sudo -u $USER git clone https://aur.archlinux.org/pikaur.git
     cd pikaur
-    sudo -u $USER makepkg -fsr
-    pacman -U *.pkg.tar.xz
+    sudo -u $USER makepkg -fsri
     cd ..
     rm -rf pikaur
     if ! is_package_installed "pikaur" ; then
@@ -40,7 +39,7 @@ install_media(){
 }
 
 install_internet(){
-  package_install "firefox chromium flashplugin qbittorrent mtr"
+  package_install "firefox chromium qbittorrent mtr"
 }
 
 install_tools(){
@@ -57,27 +56,10 @@ install_dev(){
 }
 
 install_power(){
-  package_install "powertop acpi acpi_call tpacpi-bat"
-  aur_package_install "laptop-mode-tools"
-  systemctl enable laptop-mode.service
+  package_install "powertop tlp ethtool acpi acpi_call tpacpi-bat"
+  systemctl enable tlp.service
   systemctl mask systemd-rfkill.service
   systemctl mask systemd-rfkill.socket
-}
-
-setup_network(){
-  systemctl enable systemd-resolved.service
-  mkdir /etc/systemd/resolved.conf.d/
-  cat << EOF > /etc/systemd/resolved.conf.d/custom.conf
-[Resolve]
-DNSSEC=yes
-DNSOverTLS=opportunistic
-EOF
-  cat << EOF > /etc/resolv.conf
-nameserver 1.1.1.1
-nameserver 1.0.0.1
-nameserver 2606:4700:4700::1111
-nameserver 2606:4700:4700::1001
-EOF
 }
 
 finish_install(){
@@ -108,5 +90,4 @@ install_internet
 install_tools
 install_dev
 install_power
-setup_network
 finish_install
