@@ -43,7 +43,7 @@ configure_mirrorlist(){
     read_input_text "Confirm country: $OPT"
   done
 
-  url="https://www.archlinux.org/mirrorlist/?country=${country}&use_mirror_status=on"
+  url="https://www.archlinux.org/mirrorlist/?country=${country}&protocol=http&protocol=https&ip_version=4&use_mirror_status=on"
 
   tmpfile=$(mktemp --suffix=-mirrorlist)
 
@@ -148,7 +148,8 @@ configure_mkinitcpio(){
 configure_bootloader(){
   print_title "Configuring GRUB"
 
-  cryptsetup -v luksAddKey $ROOT_PARTITION ${MOUNTPOINT}/root/keyfile.bin
+  # Grub only supports pbkdf2 and sha256
+  cryptsetup -v luksAddKey --pbkdf pbkdf2 --hash sha256 $ROOT_PARTITION ${MOUNTPOINT}/root/keyfile.bin
 
   ROOT_UUID=$(blkid -s UUID -o value $ROOT_PARTITION)
 
@@ -165,8 +166,27 @@ configure_bootloader(){
 
 install_network(){
   print_title "Installing network management"
-  arch_chroot "pacman -S netctl dhcpcd ca-certificates wpa_supplicant dialog openvpn"
+  arch_chroot "pacman -S systemd-resolvconf netctl dhcpcd ca-certificates wpa_supplicant dialog openvpn"
   pause_function
+}
+
+root_password(){
+  print_title "ROOT PASSWORD"
+  print_warning "Enter your new root password"
+  arch_chroot passwd
+}
+
+setup_dns(){
+  arch_chroot systemctl enable systemd-resolved.service
+  ln -sf /run/systemd/resolve/stub-resolv.conf ${MOUNTPOINT}/etc/resolv.conf
+  mkdir ${MOUNTPOINT}/etc/systemd/resolved.conf.d/
+  cat << EOF > ${MOUNTPOINT}/etc/systemd/resolved.conf.d/custom.conf
+[Resolve]
+DNSSEC=yes
+DNSOverTLS=opportunistic
+DNS=1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
+Domains=~.
+EOF
 }
 
 finish_install(){
@@ -290,8 +310,6 @@ read_input_text "Do you want to continue?"
 if [[ $OPTION != y ]]; then exit 0; fi
 
 check_boot_system
-system_update
-configure_mirrorlist
 mount_boot_partition
 install_base_system
 genfstab -U ${MOUNTPOINT} >> ${MOUNTPOINT}/etc/fstab
@@ -304,4 +322,6 @@ configure_mkinitcpio
 install_bootloader
 configure_bootloader
 install_network
+root_password
+setup_dns
 finish_install
