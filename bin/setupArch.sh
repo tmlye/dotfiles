@@ -32,12 +32,6 @@ check_network(){
   if [[ $OPTION != y ]]; then exit 0; fi
 }
 
-root_password(){
-  print_title "ROOT PASSWORD"
-  print_warning "Enter your new root password"
-  passwd
-}
-
 configure_sudo(){
   if ! is_package_installed "sudo" ; then
     print_title "SUDO - https://wiki.archlinux.org/index.php/Sudo"
@@ -77,7 +71,7 @@ configure_pacman(){
     local MULTILIB=$(( $MULTILIB + 1 ))
     sed -i "${MULTILIB}s/^#//" /etc/pacman.conf
   fi
-  package_install "pacman-contrib"
+  package_install "pacman-contrib reflector"
   systemctl enable --now paccache.timer
   pause_function
 }
@@ -93,6 +87,8 @@ install_basic_setup(){
   package_install "alsa-utils alsa-plugins lib32-alsa-plugins pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber"
   print_info "Installing filesystems+tools"
   package_install "ntfs-3g dosfstools exfat-utils fuse2 fuse3 mtpfs"
+  print_info "Installing CPU microcode"
+  package_install "amd-ucode intel-ucode"
 }
 
 finish_install(){
@@ -111,7 +107,6 @@ check_pacman_blocked
 check_network
 check_connection
 system_upgrade
-root_password
 configure_sudo
 create_new_user
 configure_pacman
