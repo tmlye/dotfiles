@@ -77,15 +77,13 @@ install_basic_setup(){
   print_info "Enabling timesyncd"
   system_ctl enable systemd-timesyncd.service
   print_title "Installing basic tools"
-  package_install "efivar gptfdisk rsync mlocate ranger w3m openssh wget traceroute bluez bluez-libs bluez-utils"
+  package_install "efivar gptfdisk rsync mlocate ranger w3m openssh wget traceroute bluez bluez-libs bluez-utils arch-install-scripts"
   print_info "Installing compression tools"
   package_install "zip unzip unrar"
   print_info "Installing audio"
   package_install "alsa-utils alsa-plugins lib32-alsa-plugins pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber"
   print_info "Installing filesystems+tools"
   package_install "ntfs-3g dosfstools exfat-utils fuse2 fuse3 mtpfs"
-  print_info "Installing CPU microcode"
-  package_install "amd-ucode intel-ucode"
 }
 
 finish_install(){

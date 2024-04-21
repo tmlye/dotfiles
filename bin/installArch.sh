@@ -116,9 +116,9 @@ configure_locale(){
 }
 
 install_linux(){
-  print_title "Installing Linux, vim"
+  print_title "Installing Linux, vim, microcode"
 
-  pacstrap -c -i ${MOUNTPOINT} linux linux-firmware man-db man-pages vim
+  pacstrap -c -i ${MOUNTPOINT} linux linux-firmware man-db man-pages vim amd-ucode intel-ucode
 }
 
 install_bootloader(){
@@ -136,10 +136,8 @@ configure_mkinitcpio(){
 
   # Move block to right after udev in HOOKS array
   # This makes it possible to boot from usb devices
-  sed -i "s/block//" ${MOUNTPOINT}/etc/mkinitcpio.conf
-  sed -i "s/udev/udev block/" ${MOUNTPOINT}/etc/mkinitcpio.conf
-  # Add encrypt for LUKS support
-  sed -i "s/filesystems/encrypt filesystems/" ${MOUNTPOINT}/etc/mkinitcpio.conf
+  # Add encrypt for LUKS support and microcode to update CPU microcode
+  sed -i "s/HOOKS=\(.*\)/HOOKS=\(base udev block autodetect microcode modconf encrypt filesystems keyboard fsck\)/" ${MOUNTPOINT}/etc/mkinitcpio.conf
   arch_chroot "mkinitcpio -p linux"
   arch_chroot "chmod 600 /boot/initramfs-linux*"
   pause_function
@@ -153,13 +151,14 @@ configure_bootloader(){
 
   ROOT_UUID=$(blkid -s UUID -o value $ROOT_PARTITION)
 
-  sed -i "s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$ROOT_UUID\:cryptroot cryptkey=rootfs\:\/root\/keyfile.bin\"/" ${MOUNTPOINT}/etc/default/grub
+  sed -i "s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$ROOT_UUID\:cryptroot:allow-discards cryptkey=rootfs\:\/root\/keyfile.bin\"/" ${MOUNTPOINT}/etc/default/grub
   sed -i "s/#GRUB_ENABLE_CRYPTODISK=y/GRUB_ENABLE_CRYPTODISK=y/" ${MOUNTPOINT}/etc/default/grub
   sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=\"quiet\"/" ${MOUNTPOINT}/etc/default/grub
 
   curl https://gist.githubusercontent.com/tmlye/a682d07e40ad9b5d7237bd46f4f72e60/raw > ${MOUNTPOINT}/etc/grub.d/31_hold_shift
   chmod +x ${MOUNTPOINT}/etc/grub.d/31_hold_shift
-  arch_chroot "grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=arch_grub --boot-directory=/efi --removable --recheck --modules=\"part_gpt part_msdos\""
+  # Since our /boot partition is encrypted, we install grub into the efi partition
+  arch_chroot "grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/efi --bootloader-id=GRUB --removable --recheck --modules=\"part_gpt part_msdos\""
   arch_chroot "grub-mkconfig -o /efi/grub/grub.cfg"
   pause_function
 }
@@ -178,7 +177,9 @@ root_password(){
 
 setup_dns(){
   print_title "Setting up DNS"
-  arch_chroot systemctl enable systemd-resolved.service
+  # enable systemd-resolved.service
+  ln -sf /usr/lib/systemd/system/systemd-resolved.service ${MOUNTPOINT}/etc/systemd/system/dbus-org.freedesktop.resolve1.service
+  ln -sf /usr/lib/systemd/system/systemd-resolved.service ${MOUNTPOINT}/etc/systemd/system/sysinit.target.wants/systemd-resolved.service
   ln -sf /run/systemd/resolve/stub-resolv.conf ${MOUNTPOINT}/etc/resolv.conf
   mkdir ${MOUNTPOINT}/etc/systemd/resolved.conf.d/
   cat << EOF > ${MOUNTPOINT}/etc/systemd/resolved.conf.d/custom.conf
