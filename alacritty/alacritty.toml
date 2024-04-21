@@ -23,4 +23,20 @@ background = "#151515"
 foreground = "#D7D0C7"
 
 [font]
-size = 12
+size = 13
+
+[font.bold]
+family = "DejaVu Sans Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "DejaVu Sans Mono"
+style = "Bold Oblique"
+
+[font.italic]
+family = "DejaVu Sans Mono"
+style = "Oblique"
+
+[font.normal]
+family = "DejaVu Sans Mono"
+style = "Regular"
