@@ -38,9 +38,8 @@ configure_sudo(){
     package_install "sudo"
   fi
 
-  sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers
-
   echo "" >> /etc/sudoers
+  echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
   echo 'Defaults !requiretty, !tty_tickets, !umask' >> /etc/sudoers
   echo 'Defaults visiblepw, path_info, insults, lecture=always' >> /etc/sudoers
   echo 'Defaults loglinelen=0, logfile =/var/log/sudo.log, log_year, log_host, syslog=auth' >> /etc/sudoers
