@@ -49,7 +49,7 @@ install_tools(){
   # Images
   package_install "imv darktable perl-image-exiftool"
   # Documents
-  package_install "texlive zathura zathura-pdf-poppler"
+  package_install "texlive-basic texlive-latex texlive-latexrecommended texlive-latexextra zathura zathura-pdf-poppler"
 }
 
 install_dev(){
