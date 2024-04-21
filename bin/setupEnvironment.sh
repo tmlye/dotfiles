@@ -43,20 +43,23 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "util-linux bind-tools calc virtualbox virtualbox-host-modules-arch calibre htop whois nmon duplicity cronie net-tools gnupg"
+  package_install "util-linux bind-tools calc virtualbox calibre htop whois nmon duplicity cronie net-tools gnupg"
+  package_remove "virtualbox-host-dkms"
+  package_install "virtualbox-host-modules-arch"
   # Images
   package_install "imv darktable perl-image-exiftool"
   # Documents
-  package_install "texlive-most texlive-bin zathura zathura-pdf-poppler"
+  package_install "texlive zathura zathura-pdf-poppler"
 }
 
 install_dev(){
-  package_install "nvim npm code aws-cli python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup"
+  package_install "neovim npm code aws-cli python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup"
   aur_package_install "nvm tfenv"
 }
 
 install_power(){
-  package_install "powertop tlp ethtool acpi acpi_call tpacpi-bat"
+  package_install "powertop tlp ethtool acpi acpi_call"
+  aur_package_install "tpacpi-bat"
   systemctl enable tlp.service
   systemctl mask systemd-rfkill.service
   systemctl mask systemd-rfkill.socket
