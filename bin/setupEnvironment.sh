@@ -31,7 +31,7 @@ install_desktop_environment(){
   package_install "zsh wayland sway swaylock swayidle swaybg wl-clipboard xdg-desktop-portal-wlr"
   package_install "xorg-server-xwayland grim slurp gtk3 qt5-wayland alacritty"
   package_install "gnome-keyring libsecret brightnessctl waybar wofi mako libnotify"
-  package_install "ttf-font-awesome ttf-dejavu-nerd"
+  package_install "ttf-dejavu ttf-dejavu-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji"
 }
 
 install_media(){
