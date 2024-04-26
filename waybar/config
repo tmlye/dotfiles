@@ -52,7 +52,7 @@
             "critical": 10
         },
         // Connected to AC
-        "format": "  {icon} {capacity}%", // Icon: bolt
+        "format": " {icon} {capacity}%", // Icon: bolt
         // Not connected to AC
         "format-discharging": "{icon} {capacity}%",
         "format-icons": [
@@ -79,7 +79,7 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": " {essid} ({signalStrength}%)", // Icon: wifi
+        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}"
@@ -99,7 +99,7 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}%",
-        "format-muted": "",
+        "format-muted": " ",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -107,7 +107,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "default": [" ", " "]
         },
         "on-click": "pavucontrol",
         "on-click-right": "amixer -q sset Master toggle"
