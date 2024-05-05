@@ -39,7 +39,9 @@ install_media(){
 }
 
 install_internet(){
-  package_install "firefox chromium qbittorrent mtr"
+  package_install "firefox qbittorrent mtr"
+  aur_package_install "ungoogled-chromium-bin chromium-extension-web-store"
+  sudo -u $USER dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 }
 
 install_tools(){
