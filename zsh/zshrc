@@ -57,6 +57,10 @@ function get_kubeconfig() {
 
 [ -x "$(command -v kubectl)" ] && export KUBECONFIG="$(get_kubeconfig)"
 [ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)" && export PATH="$(pyenv root)/shims:$PATH"
+[ -s ~/.google-cloud-sdk/path.zsh.inc ] && . ~/.google-cloud-sdk/path.zsh.inc
+[ -s ~/.google-cloud-sdk/completion.zsh.inc ] && . ~/.google-cloud-sdk/completion.zsh.inc
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 if [ -x "$(command -v gnome-keyring-daemon)" ]; then
   eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
