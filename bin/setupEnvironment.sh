@@ -54,8 +54,8 @@ install_tools(){
 }
 
 install_dev(){
-  package_install "neovim npm code aws-cli python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup"
-  aur_package_install "nvm tfenv"
+  package_install "neovim npm code python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup go"
+  aur_package_install "nvm tfenv aws-cli-v2-bin"
 }
 
 install_power(){

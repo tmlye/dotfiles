@@ -39,6 +39,7 @@ $HOME/.dotfiles/bin:\
 /usr/bin/vendor_perl:\
 /usr/bin/core_perl:\
 $HOME/.cargo/bin:\
+$GOPATH/bin:\
 "
 
 # Put each kubeconfig file into ~/.kube with a .yml extension
