@@ -10,7 +10,7 @@ end)
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'rust_analyzer'},
+  ensure_installed = {'rust_analyzer', 'terraformls', 'tflint'},
   handlers = {
     lsp.default_setup,
   }
@@ -28,6 +28,7 @@ cmp.setup({
     {name = 'luasnip'},
   },
   mapping = cmp.mapping.preset.insert({
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
   }),
@@ -50,3 +51,6 @@ require'lspconfig'.lua_ls.setup {
     },
   },
 }
+
+require'lspconfig'.terraformls.setup{}
+require'lspconfig'.tflint.setup{}
