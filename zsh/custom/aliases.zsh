@@ -82,6 +82,8 @@ alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gfm='fetch_default_branch'
 alias grm='git rebase `git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"`'
 alias gpl='git pull'
+alias gcm='git checkout `git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"`'
+alias gcmpl='git stash && git checkout `git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"` && git pull && git stash pop'
 
 # Kubectl
 # =======

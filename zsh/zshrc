@@ -61,7 +61,8 @@ function get_kubeconfig() {
 [ -s ~/.google-cloud-sdk/path.zsh.inc ] && . ~/.google-cloud-sdk/path.zsh.inc
 [ -s ~/.google-cloud-sdk/completion.zsh.inc ] && . ~/.google-cloud-sdk/completion.zsh.inc
 export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# Uncomment below for nvm, commented because it's really slow
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 if [ -x "$(command -v gnome-keyring-daemon)" ]; then
   eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
