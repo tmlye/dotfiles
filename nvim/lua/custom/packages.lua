@@ -1,6 +1,6 @@
 -- Install package manager
---    https://github.com/folke/lazy.nvim
---    `:help lazy.nvim.txt` for more info
+-- https://github.com/folke/lazy.nvim
+-- `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
@@ -21,6 +21,10 @@ require('lazy').setup({
   'norcalli/nvim-colorizer.lua',
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+  -- Make it easier to deal with quotes and tags
+  'tpope/vim-surround',
+  -- Make it possible to repeat plugin maps
+  'tpope/vim-repeat',
   -- Colorscheme
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   -- LSP
