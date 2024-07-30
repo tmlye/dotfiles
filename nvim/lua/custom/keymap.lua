@@ -43,6 +43,21 @@ vim.keymap.set('i', '<c-k>', '<c-o><c-k>')
 vim.keymap.set('i', '<c-h>', '<c-o><c-h>')
 vim.keymap.set('i', '<c-l>', '<c-o><c-l>')
 
+-- Tab Navigation
+vim.keymap.set('n', 'H', 'gT')
+vim.keymap.set('n', 'L', 'gt')
+-- Map alt-x keys to jump to a tab
+vim.keymap.set('n', '<M-1>', '1gt')
+vim.keymap.set('n', '<M-2>', '2gt')
+vim.keymap.set('n', '<M-3>', '3gt')
+vim.keymap.set('n', '<M-4>', '4gt')
+vim.keymap.set('n', '<M-5>', '5gt')
+vim.keymap.set('n', '<M-6>', '6gt')
+vim.keymap.set('n', '<M-7>', '7gt')
+vim.keymap.set('n', '<M-8>', '8gt')
+vim.keymap.set('n', '<M-9>', ':tablast<CR>')
+vim.keymap.set('n', '<M-0>', ':tabprevious<CR>')
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })

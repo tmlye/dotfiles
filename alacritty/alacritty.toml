@@ -40,3 +40,8 @@ style = "Oblique"
 [font.normal]
 family = "DejaVu Sans Mono"
 style = "Regular"
+
+[[keyboard.bindings]]
+key = "-"
+mods = "Control"
+action = "None"
