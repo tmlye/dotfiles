@@ -28,6 +28,10 @@ output * bg $HOME/.wallpaper/current.jpg fill
 
 
 output DP-2 scale 2
+
+# Toggle laptop screen
+bindsym $mod+m output $laptop toggle
+
 #
 # Example configuration:
 #
