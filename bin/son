@@ -4,12 +4,12 @@ set -eu
 bluetoothctl power on
 bluetoothctl connect "CC:90:93:04:9E:96"
 
-SINK=`pacmd list-sinks | grep -B 1 bluez_sink.CC_90_93_04_9E_96 | head -1 | sed 's/.* *index: \([0-9]*\)/\1/'`
-pacmd set-default-sink $SINK
-pacmd list-sink-inputs | grep index | sed 's/ *index: \([0-9]*\)/\1/' | while read ID
+SINK=`pactl list sinks | grep -B 1 bluez_sink.CC_90_93_04_9E_96 | head -1 | sed 's/.* *index: \([0-9]*\)/\1/'`
+pactl set-default-sink $SINK
+pactl list sink-inputs | grep index | sed 's/ *index: \([0-9]*\)/\1/' | while read ID
 do
     echo "Moving input $ID to sink $SINK"
-    pacmd move-sink-input $ID $SINK
+    pactl move-sink-input $ID $SINK
 done
 
 # vim:set filetype=sh:

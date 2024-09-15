@@ -7,6 +7,6 @@ CARD=`pactl list cards short | grep 30_50_75 | awk '{print $1}'`
 pactl set-card-profile $CARD off
 pactl set-card-profile $CARD a2dp_sink
 SINK=`pactl list sinks short | grep 30_50_75 | awk '{print $1}'`
-pacmd set-default-sink $SINK
+pactl set-default-sink $SINK
 
 # vim:set filetype=sh:
