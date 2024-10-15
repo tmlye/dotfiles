@@ -61,10 +61,18 @@ input "5426:131:Razer_Razer_Basilisk_X_HyperSpeed" {
     pointer_accel 0
 }
 
+# Dongle
 input "1133:50504:Logitech_USB_Receiver_Mouse" {
     accel_profile flat
     pointer_accel 0
-    scroll_factor 0.03
+    scroll_factor 0.04
+}
+
+# Bluetooth
+input "1133:45108:Logitech_MX_Master_3S" {
+    accel_profile flat
+    pointer_accel 0
+    scroll_factor 0.5
 }
 
 # Hide mouse cursor after 5s of inactivity.
