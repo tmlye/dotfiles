@@ -32,6 +32,8 @@ install_desktop_environment(){
   package_install "xorg-server-xwayland grim slurp gtk3 qt5-wayland alacritty"
   package_install "gnome-keyring libsecret brightnessctl waybar wofi mako libnotify"
   package_install "ttf-dejavu ttf-dejavu-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-font-awesome"
+  aur_package_install "logiops"
+  systemctl enable logid.service
 }
 
 install_media(){

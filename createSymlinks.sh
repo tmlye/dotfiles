@@ -80,3 +80,7 @@ ln -s $HOME/.dotfiles/mpv/ $HOME/.config/mpv
 
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
+
+echo "logid does not check the home directory for a config. Run"
+echo "sudo ln -sf $HOME/.dotfiles/various/logid.cfg /etc/logid.cfg"
+echo "if you want to use it."
