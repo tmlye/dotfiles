@@ -61,6 +61,12 @@ input "5426:131:Razer_Razer_Basilisk_X_HyperSpeed" {
     pointer_accel 0
 }
 
+input "1133:50504:Logitech_USB_Receiver_Mouse" {
+    accel_profile flat
+    pointer_accel 0
+    scroll_factor 0.03
+}
+
 # Hide mouse cursor after 5s of inactivity.
 seat seat0 hide_cursor 5000
 
