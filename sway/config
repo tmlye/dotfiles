@@ -72,7 +72,7 @@ input "1133:50504:Logitech_USB_Receiver_Mouse" {
 input "1133:45108:Logitech_MX_Master_3S" {
     accel_profile flat
     pointer_accel 0
-    scroll_factor 0.5
+    scroll_factor 0.6
 }
 
 # Hide mouse cursor after 5s of inactivity.

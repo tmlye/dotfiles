@@ -27,7 +27,8 @@ fi
 
 check_network(){
   print_title "Network setup"
-  print_warning "You need to have your network connection setup. Netctl should be setup by this point."
+  print_warning "You need to have your network connection setup. Check if systemd-resolvd, NetworkManager and wpa_supplicant are running."
+  print_warning "Use nmcli d wifi list and nmcli --ask dev wifi connect <ssid>"
   read_input_text "Is your network setup?"
   if [[ $OPTION != y ]]; then exit 0; fi
 }
@@ -59,17 +60,9 @@ create_new_user(){
 
 configure_pacman(){
   print_title "Configuring Pacman"
-  local MULTILIB=`grep -n "\[multilib\]" /etc/pacman.conf | cut -f1 -d:`
-  if [[ -z $MULTILIB ]]; then
-    echo -e "\n[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
-    echo -e '\nMultilib repository added into pacman.conf file'
-  else
-    sed -i "${MULTILIB}s/^#//" /etc/pacman.conf
-    local MULTILIB=$(( $MULTILIB + 1 ))
-    sed -i "${MULTILIB}s/^#//" /etc/pacman.conf
-  fi
   package_install "pacman-contrib reflector"
   systemctl enable --now paccache.timer
+  reflector --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
   pause_function
 }
 

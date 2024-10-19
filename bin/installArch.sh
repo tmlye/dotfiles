@@ -165,7 +165,11 @@ configure_bootloader(){
 
 install_network(){
   print_title "Installing network management"
-  arch_chroot "pacman -S systemd-resolvconf netctl dhcpcd ca-certificates wpa_supplicant dialog openvpn"
+  arch_chroot "pacman -S systemd-resolvconf networkmanager wpa_supplicant ca-certificates"
+  # enable wpa_supplicant.service and NetworkManager.service
+  ln -sf /usr/lib/systemd/system/wpa_supplicant.service ${MOUNTPOINT}/etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service
+  ln -sf /usr/lib/systemd/system/NetworkManager.service ${MOUNTPOINT}/etc/systemd/system/multi-user.target.wants/NetworkManager.service
+  ln -sf /usr/lib/systemd/system/NetworkManager-dispatcher.service ${MOUNTPOINT}/etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service
   pause_function
 }
 
