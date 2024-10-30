@@ -8,11 +8,11 @@ declare -a FOLDERS=(
 )
 
 for FOLDER in "${FOLDERS[@]}"; do
-	duplicity --allow-source-mismatch \
+	duplicity backup --allow-source-mismatch \
 			  --verbosity 8 \
 			  --tempdir $HOME/.cache/duplicity \
 			  --num-retries 5 \
-			  --asynchronous-upload \
+			  --concurrency 2 \
 			  --volsize 100 \
 			  $HOME/$FOLDER/ b2://$BACKBLAZE_KEY_ID:$BACKBLAZE_APP_KEY@duplicity-backup-j7v3a/$FOLDER
 done
