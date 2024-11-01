@@ -34,7 +34,7 @@ alias musb='sudo mount -U 651B-DF09 $HOME/mount2'
 # Cryptsetup
 # ==========
 
-alias me='sudo cryptsetup --type luks open /dev/disk/by-uuid/afe18f3e-0b42-40d7-8a3d-8128f8e832b6 extern && sudo mount -t ext4 /dev/mapper/extern $HOME/mount'
+alias me='sudo cryptsetup --allow-discards open /dev/disk/by-uuid/5a4ab066-ccf6-4289-aa44-8cb7407dfdc2 extern && sudo mount -t btrfs -o compress=zstd /dev/mapper/extern $HOME/mount'
 alias dmnt='sudo umount $HOME/mount; sudo cryptsetup close extern'
 
 # Power

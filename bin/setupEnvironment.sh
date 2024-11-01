@@ -27,7 +27,7 @@ install_pikaur(){
 }
 
 install_desktop_environment(){
-  package_install "mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver"
+  package_install "mesa vulkan-radeon libva-mesa-driver mesa-vdpau"
   package_install "zsh wayland sway swaylock swayidle swaybg wl-clipboard xdg-desktop-portal-wlr"
   package_install "xorg-server-xwayland grim slurp gtk3 qt5-wayland alacritty"
   package_install "gnome-keyring libsecret brightnessctl waybar wofi mako libnotify"
@@ -89,6 +89,7 @@ check_archlinux
 check_pacman_blocked
 echo "Type in your username:"
 read -p "User: " USER
+system_update
 install_pikaur
 install_desktop_environment
 install_media

@@ -27,10 +27,75 @@ fi
 
 check_network(){
   print_title "Network setup"
-  print_warning "You need to have your network connection setup. Check if systemd-resolvd, NetworkManager and wpa_supplicant are running."
+  print_warning "You need to have your network connection setup. Check if systemd-resolved, NetworkManager and wpa_supplicant are running."
   print_warning "Use nmcli d wifi list and nmcli --ask dev wifi connect <ssid>"
   read_input_text "Is your network setup?"
   if [[ $OPTION != y ]]; then exit 0; fi
+}
+
+ask_secureboot(){
+  print_title "Secure Boot Setup"
+  read_input_text "Would you like to set up Secure Boot?"
+  if [[ $OPTION == y ]]; then
+    check_secureboot_setup
+    setup_secureboot
+  else
+    print_warning "Skipping Secure Boot setup"
+  fi
+}
+
+ask_tpm(){
+  print_title "TPM2 for disk decryption"
+  read_input_text "Would you like to set up TPM2 for disk decryption?"
+  if [[ $OPTION == y ]]; then
+    configure_tpm_encryption
+  else
+    print_warning "Skipping TPM2 configuration"
+  fi
+}
+
+check_secureboot_setup(){
+  print_title "Checking Secure Boot Setup Mode"
+  if ! command -v sbctl &> /dev/null; then
+    print_warning "sbctl is not installed. Installing it now..."
+    package_install "sbctl"
+  fi
+
+  if ! sbctl status | grep "Setup Mode" | grep -q "Enabled"; then
+    print_error "Secure Boot Setup Mode is not enabled!"
+    print_warning "Please enable Secure Boot Setup Mode in your UEFI settings and try again."
+    print_warning "This is required to enroll your own Secure Boot keys."
+    exit 1
+  fi
+
+  print_info "Secure Boot Setup Mode is enabled"
+  pause_function
+}
+
+setup_secureboot(){
+  print_title "Setting up Secure Boot"
+
+  print_info "Creating secure boot keys..."
+  sbctl create-keys
+
+  print_info "Enrolling keys into firmware..."
+  sbctl enroll-keys -m
+
+  if ! sbctl verify; then
+    print_error "Secure boot keys verification failed!"
+    print_warning "There might be an issue with the key enrollment."
+    read_input_text "Do you want to continue anyway?"
+    if [[ $OPTION != y ]]; then exit 1; fi
+  else
+    print_info "Secure boot keys were successfully enrolled"
+  fi
+
+  sbctl sign -s -o /usr/lib/systemd/boot/efi/systemd-bootx64.efi.signed /usr/lib/systemd/boot/efi/systemd-bootx64.efi
+  sbctl sign -s /efi/EFI/BOOT/BOOTX64.EFI
+  sbctl sign -s /efi/EFI/Linux/arch-linux.efi
+  sbctl sign -s /efi/EFI/Linux/arch-linux-fallback.efi
+
+  pause_function
 }
 
 configure_sudo(){
@@ -62,7 +127,6 @@ configure_pacman(){
   print_title "Configuring Pacman"
   package_install "pacman-contrib reflector"
   systemctl enable --now paccache.timer
-  reflector --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
   pause_function
 }
 
@@ -76,7 +140,7 @@ install_basic_setup(){
   print_info "Installing audio"
   package_install "alsa-utils alsa-plugins pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber"
   print_info "Installing filesystems+tools"
-  package_install "ntfs-3g dosfstools exfat-utils fuse2 fuse3 mtpfs"
+  package_install "ntfs-3g exfat-utils fuse2 fuse3 mtpfs"
 }
 
 finish_install(){
@@ -88,13 +152,58 @@ finish_install(){
   rm setupArch.sh
 }
 
+configure_tpm_encryption(){
+  print_title "Configuring TPM2 + PIN disk encryption"
+
+  package_install tpm2-tss
+
+  if ! command -v tpm2_getcap &> /dev/null; then
+    print_warning "tpm2-tools not installed. Installing required packages..."
+    package_install "tpm2-tools"
+  fi
+
+  if ! tpm2_getcap properties-fixed 2>/dev/null | grep -q "TPM2_PT_MANUFACTURER"; then
+    print_error "No TPM2 device found or not accessible!"
+    print_warning "Make sure TPM2 is enabled in UEFI settings."
+    read_input_text "Do you want to continue without TPM2 configuration?"
+    if [[ $OPTION != y ]]; then exit 1; fi
+  fi
+
+  root_part=$(findmnt -n -o SOURCE /)
+  if [[ $root_part == /dev/mapper/* ]]; then
+    crypt_dev=$(dmsetup deps -o devname "$root_part" | sed -n 's/.*(\(.*\))/\/dev\/\1/p')
+    if [[ -n $crypt_dev ]]; then
+      print_info "Found encrypted device: $crypt_dev"
+
+      print_info "Enrolling TPM2 with PIN for disk encryption..."
+      systemd-cryptenroll --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=0+7 "$crypt_dev"
+
+#      if ! grep -q "tpm2-device=auto" /etc/crypttab; then
+#        print_info "Updating /etc/crypttab with TPM2 configuration..."
+#        uuid=$(blkid -s UUID -o value "$crypt_dev")
+#        sed -i "s|UUID=$uuid.*|UUID=$uuid - none tpm2-device=auto,tpm2-with-pin=yes|" /etc/crypttab
+#      fi
+
+      print_info "TPM2 + PIN enrollment complete"
+    else
+      print_error "Could not find encrypted device!"
+    fi
+  else
+    print_warning "No encrypted root partition found. Skipping TPM2 configuration."
+  fi
+
+  pause_function
+}
+
 check_root
 check_archlinux
 check_hostname
 check_pacman_blocked
 check_network
+ask_secureboot
 check_connection
 system_upgrade
+ask_tpm
 configure_sudo
 create_new_user
 configure_pacman
