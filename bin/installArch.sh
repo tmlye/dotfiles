@@ -19,52 +19,6 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-configure_mirrorlist(){
-  local countries_code=("AU" "BY" "BE" "BR" "BG" "CA" "CL" "CN" "CO" "CZ" "DK" "EE" "FI" "FR" "DE" "GR" "HK" "HU" "IN" "IE" "IL" "IT" "JP" "KZ" "KR" "LV" "LU" "MK" "NL" "NC" "NZ" "NO" "PL" "PT" "RO" "RU" "RS" "SG" "SK" "ZA" "ES" "LK" "SE" "CH" "TW" "TR" "UA" "GB" "US" "UZ" "VN")
-  local countries_name=("Australia" "Belarus" "Belgium" "Brazil" "Bulgaria" "Canada" "Chile" "China" "Colombia" "Czech Republic" "Denmark" "Estonia" "Finland" "France" "Germany" "Greece" "Hong Kong" "Hungary" "India" "Ireland" "Israel" "Italy" "Japan" "Kazakhstan" "Korea" "Latvia" "Luxembourg" "Macedonia" "Netherlands" "New Caledonia" "New Zealand" "Norway" "Poland" "Portugal" "Romania" "Russian" "Serbia" "Singapore" "Slovakia" "South Africa" "Spain" "Sri Lanka" "Sweden" "Switzerland" "Taiwan" "Turkey" "Ukraine" "United Kingdom" "United States" "Uzbekistan" "Viet Nam")
-  country_list(){
-    #`reflector --list-countries | sed 's/[0-9]//g' | sed 's/^/"/g' | sed 's/,.*//g' | sed 's/ *$//g'  | sed 's/$/"/g' | sed -e :a -e '$!N; s/\n/ /; ta'`
-    PS3="$prompt1"
-    echo "Select your country:"
-    select OPT in "${countries_name[@]}"; do
-      if contains_element "$OPT" "${countries_name[@]}"; then
-        country=${countries_code[$(( $REPLY - 1 ))]}
-        break
-      else
-        invalid_option
-      fi
-    done
-  }
-  print_title "MIRRORLIST - https://wiki.archlinux.org/index.php/Mirrors"
-  print_info "This option is a guide to selecting and configuring your mirrors, and a listing of current available mirrors."
-  OPTION=n
-  while [[ $OPTION != y ]]; do
-    country_list
-    read_input_text "Confirm country: $OPT"
-  done
-
-  url="https://www.archlinux.org/mirrorlist/?country=${country}&protocol=http&protocol=https&ip_version=4&use_mirror_status=on"
-
-  tmpfile=$(mktemp --suffix=-mirrorlist)
-
-  # Get latest mirror list and save to tmpfile
-  curl -so ${tmpfile} ${url}
-  sed -i 's/^#Server/Server/g' ${tmpfile}
-
-  # Backup and replace current mirrorlist file (if new file is non-zero)
-  if [[ -s ${tmpfile} ]]; then
-   { echo " Backing up the original mirrorlist..."
-     mv -i /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.orig; } &&
-   { echo " Rotating the new list into place..."
-     mv -i ${tmpfile} /etc/pacman.d/mirrorlist; }
-  else
-    echo " Unable to update, could not download list."
-  fi
-  # allow global read access (required for non-root yaourt execution)
-  chmod +r /etc/pacman.d/mirrorlist
-  $EDITOR /etc/pacman.d/mirrorlist
-}
-
 mount_boot_partition(){
   print_title "Mount EFI system partition"
 
@@ -116,60 +70,89 @@ configure_locale(){
 }
 
 install_linux(){
-  print_title "Installing Linux, vim, microcode"
+  print_title "Installing Linux, neovim, microcode etc"
 
-  pacstrap -c -i ${MOUNTPOINT} linux linux-firmware man-db man-pages vim amd-ucode intel-ucode
-}
-
-install_bootloader(){
-  print_title "Installing GRUB"
-  pacstrap -c -i ${MOUNTPOINT} grub dosfstools efibootmgr
+  pacstrap -c -i ${MOUNTPOINT} linux linux-firmware man-db man-pages neovim amd-ucode intel-ucode sbctl btrfs-progs dosfstools efibootmgr
 }
 
 configure_mkinitcpio(){
   print_title "Configuring mkinitcpio"
 
-  # Create a keyfile to avoid entering password twice on boot
-  dd bs=512 count=4 if=/dev/random of=${MOUNTPOINT}/root/keyfile.bin iflag=fullblock
-  arch_chroot "chmod 600 /root/keyfile.bin"
-  sed -i "s/FILES=.*/FILES=(\/root\/keyfile.bin)/" ${MOUNTPOINT}/etc/mkinitcpio.conf
+  echo "quiet rw" > ${MOUNTPOINT}/etc/kernel/cmdline
+  mkdir -p ${MOUNTPOINT}/efi/EFI/Linux
 
-  # Move block to right after udev in HOOKS array
-  # This makes it possible to boot from usb devices
-  # Add encrypt for LUKS support and microcode to update CPU microcode
-  sed -i "s/HOOKS=\(.*\)/HOOKS=\(base udev block autodetect microcode modconf encrypt filesystems keyboard fsck\)/" ${MOUNTPOINT}/etc/mkinitcpio.conf
-  arch_chroot "mkinitcpio -p linux"
+  # We'll use a systemd based ramdisk
+  sed -i "s/HOOKS=\(.*\)/HOOKS=\(base systemd udev block autodetect microcode modconf sd-encrypt filesystems keyboard fsck\)/" ${MOUNTPOINT}/etc/mkinitcpio.conf
+
+  cat << EOF > ${MOUNTPOINT}/etc/mkinitcpio.d/linux.preset
+# mkinitcpio preset file to generate UKIs
+
+ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-linux"
+ALL_microcode=(/boot/*-ucode.img)
+
+PRESETS=('default' 'fallback')
+
+#default_config="/etc/mkinitcpio.conf"
+#default_image="/boot/initramfs-linux.img"
+default_uki="/efi/EFI/Linux/arch-linux.efi"
+default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
+
+#fallback_config="/etc/mkinitcpio.conf"
+#fallback_image="/boot/initramfs-linux-fallback.img"
+fallback_uki="/efi/EFI/Linux/arch-linux-fallback.efi"
+fallback_options="-S autodetect"
+EOF
+
+  arch_chroot "mkinitcpio -P"
   arch_chroot "chmod 600 /boot/initramfs-linux*"
   pause_function
 }
 
-configure_bootloader(){
-  print_title "Configuring GRUB"
+get_dm_uuid(){
+  print_title "Getting LUKS device UUID"
+  print_info "Please provide the UUID of the dm-crypt device (dm-0, dm-1, etc.)"
+  print_info "You can find this by running: ls -l /dev/disk/by-uuid/"
+  print_warning "This is NOT the UUID of the partition, but of the decrypted LUKS device"
 
-  # Grub only supports pbkdf2 and sha256
-  cryptsetup -v luksAddKey --pbkdf pbkdf2 --hash sha256 $ROOT_PARTITION ${MOUNTPOINT}/root/keyfile.bin
+  while true; do
+    read -p "Enter dm-crypt device UUID: " DM_UUID
+    if [[ -z "$DM_UUID" ]]; then
+      print_warning "UUID cannot be empty. Please try again."
+    else
+      read_input_text "Is this UUID correct: $DM_UUID"
+      [[ $OPTION == y ]] && break
+    fi
+  done
+}
+
+configure_bootloader(){
+  print_title "Configuring Bootloader"
+  mkdir -p ${MOUNTPOINT}/efi/loader/entries
+  cat << EOF > ${MOUNTPOINT}/efi/loader/loader.conf
+default arch.conf
+timeout 3
+console-mode auto
+editor no
+EOF
 
   ROOT_UUID=$(blkid -s UUID -o value $ROOT_PARTITION)
+  cat << EOF > ${MOUNTPOINT}/efi/loader/entries/arch.conf
+title   Arch Linux
+efi     /EFI/Linux/arch-linux.efi
+options luks.uuid=$ROOT_UUID luks.name=cryptroot root=UUID=$DM_UUID rw
+EOF
 
-  sed -i "s/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$ROOT_UUID\:cryptroot:allow-discards cryptkey=rootfs\:\/root\/keyfile.bin\"/" ${MOUNTPOINT}/etc/default/grub
-  sed -i "s/#GRUB_ENABLE_CRYPTODISK=y/GRUB_ENABLE_CRYPTODISK=y/" ${MOUNTPOINT}/etc/default/grub
-  sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=\"quiet\"/" ${MOUNTPOINT}/etc/default/grub
-
-  curl https://gist.githubusercontent.com/tmlye/a682d07e40ad9b5d7237bd46f4f72e60/raw > ${MOUNTPOINT}/etc/grub.d/31_hold_shift
-  chmod +x ${MOUNTPOINT}/etc/grub.d/31_hold_shift
-  # Since our /boot partition is encrypted, we install grub into the efi partition
-  arch_chroot "grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/efi --bootloader-id=GRUB --removable --recheck --modules=\"part_gpt part_msdos\""
-  arch_chroot "grub-mkconfig -o /efi/grub/grub.cfg"
+  arch_chroot "bootctl install --esp-path=/efi"
   pause_function
 }
 
 install_network(){
   print_title "Installing network management"
-  arch_chroot "pacman -S systemd-resolvconf networkmanager wpa_supplicant ca-certificates"
-  # enable wpa_supplicant.service and NetworkManager.service
-  ln -sf /usr/lib/systemd/system/wpa_supplicant.service ${MOUNTPOINT}/etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service
-  ln -sf /usr/lib/systemd/system/NetworkManager.service ${MOUNTPOINT}/etc/systemd/system/multi-user.target.wants/NetworkManager.service
-  ln -sf /usr/lib/systemd/system/NetworkManager-dispatcher.service ${MOUNTPOINT}/etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service
+  arch_chroot "pacman -S systemd-resolvconf networkmanager wpa_supplicant"
+  systemctl --root=${MOUNTPOINT} enable wpa_supplicant
+  systemctl --root=${MOUNTPOINT} enable NetworkManager
+  systemctl --root=${MOUNTPOINT} mask systemd-networkd
   pause_function
 }
 
@@ -181,9 +164,7 @@ root_password(){
 
 setup_dns(){
   print_title "Setting up DNS"
-  # enable systemd-resolved.service
-  ln -sf /usr/lib/systemd/system/systemd-resolved.service ${MOUNTPOINT}/etc/systemd/system/dbus-org.freedesktop.resolve1.service
-  ln -sf /usr/lib/systemd/system/systemd-resolved.service ${MOUNTPOINT}/etc/systemd/system/sysinit.target.wants/systemd-resolved.service
+  systemctl --root=${MOUNTPOINT} enable systemd-resolved
   ln -sf /run/systemd/resolve/stub-resolv.conf ${MOUNTPOINT}/etc/resolv.conf
   mkdir ${MOUNTPOINT}/etc/systemd/resolved.conf.d/
   cat << EOF > ${MOUNTPOINT}/etc/systemd/resolved.conf.d/custom.conf
@@ -327,7 +308,7 @@ configure_timezone
 configure_locale
 install_linux
 configure_mkinitcpio
-install_bootloader
+get_dm_uuid
 configure_bootloader
 install_network
 root_password
