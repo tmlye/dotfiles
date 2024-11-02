@@ -32,17 +32,18 @@ install_desktop_environment(){
   package_install "xorg-server-xwayland grim slurp gtk3 qt5-wayland alacritty qmk"
   package_install "gnome-keyring libsecret brightnessctl waybar wofi mako libnotify"
   package_install "ttf-dejavu ttf-dejavu-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-font-awesome"
+  systemctl enable --now bluetooth.service
   aur_package_install "logiops"
-  systemctl enable logid.service
+  systemctl enable --now logid.service
 }
 
 install_media(){
-  package_install "picard mplayer smplayer mpv flac ffmpeg easyeffects lsp-plugins"
+  package_install "picard mplayer smplayer mpv flac ffmpeg easyeffects lsp-plugins pavucontrol"
 }
 
 install_internet(){
   package_install "firefox qbittorrent mtr"
-  aur_package_install "ungoogled-chromium-bin chromium-extension-web-store"
+  aur_package_install "ungoogled-chromium-bin chromium-extension-web-store chromium-widevine"
 }
 
 install_tools(){
