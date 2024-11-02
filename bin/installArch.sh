@@ -76,9 +76,16 @@ install_linux(){
 }
 
 configure_mkinitcpio(){
+  # We are using UKIs: https://wiki.archlinux.org/title/Unified_kernel_image
   print_title "Configuring mkinitcpio"
 
-  echo "quiet rw" > ${MOUNTPOINT}/etc/kernel/cmdline
+  ROOT_UUID=$(blkid -s UUID -o value $ROOT_PARTITION)
+  # We need to set this in /etc/crypttab.initramfs to create a /etc/crypttab inside the UKI
+  # systemd-cryptsetup-generator will pick this up and use it
+  echo "root  UUID=$ROOT_UUID  none  discard" > ${MOUNTPOINT}/etc/crypttab.initramfs
+  # Embed kernel parameters into the UKI, everything else is ignored when secure boot is enabled
+  echo "rootfstype=btrfs quiet rw" > ${MOUNTPOINT}/etc/kernel/cmdline
+
   mkdir -p ${MOUNTPOINT}/efi/EFI/Linux
 
   # We'll use a systemd based ramdisk
@@ -105,7 +112,6 @@ fallback_options="-S autodetect"
 EOF
 
   arch_chroot "mkinitcpio -P"
-  arch_chroot "chmod 600 /boot/initramfs-linux*"
   pause_function
 }
 
@@ -128,6 +134,8 @@ get_dm_uuid(){
 
 configure_bootloader(){
   print_title "Configuring Bootloader"
+
+  # TODO: this might not be needed if embedded in the UKI inside configure_mkinitcpio
   mkdir -p ${MOUNTPOINT}/efi/loader/entries
   cat << EOF > ${MOUNTPOINT}/efi/loader/loader.conf
 default arch.conf
@@ -307,8 +315,8 @@ configure_hostname
 configure_timezone
 configure_locale
 install_linux
-configure_mkinitcpio
 get_dm_uuid
+configure_mkinitcpio
 configure_bootloader
 install_network
 root_password

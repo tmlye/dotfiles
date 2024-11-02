@@ -79,6 +79,7 @@ setup_secureboot(){
   sbctl create-keys
 
   print_info "Enrolling keys into firmware..."
+  print_warning "You might have to run chattr -i on some keys, pay attention to the output"
   sbctl enroll-keys -m
 
   if ! sbctl verify; then
@@ -176,7 +177,12 @@ configure_tpm_encryption(){
       print_info "Found encrypted device: $crypt_dev"
 
       print_info "Enrolling TPM2 with PIN for disk encryption..."
-      systemd-cryptenroll --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=0+7 "$crypt_dev"
+      systemd-cryptenroll --tpm2-device=auto --tpm2-with-pin=yes "$crypt_dev"
+
+      ROOT_UUID=$(blkid -s UUID -o value $crypt_dev)
+      echo "root  UUID=$ROOT_UUID  none  discard,tpm2-device=auto" > /etc/crypttab.initramfs
+
+      mkinitcpio -P
 
 #      if ! grep -q "tpm2-device=auto" /etc/crypttab; then
 #        print_info "Updating /etc/crypttab with TPM2 configuration..."
@@ -203,7 +209,7 @@ check_network
 ask_secureboot
 check_connection
 system_upgrade
-ask_tpm
+#ask_tpm
 configure_sudo
 create_new_user
 configure_pacman
