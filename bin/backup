@@ -3,6 +3,7 @@
 rsync -a --delete $HOME/.aws $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.config $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.gnupg $HOME/mount/backup/OS/home/
+rsync -a --delete $HOME/.kube $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.ssh $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/.wallpaper $HOME/mount/backup/OS/home/
 rsync -a --delete $HOME/code $HOME/mount/

@@ -57,6 +57,7 @@ install_tools(){
 
 install_dev(){
   package_install "neovim npm code python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup go"
+  package_install "kubectl pyenv"
   aur_package_install "nvm tfenv aws-cli-v2-bin"
 }
 
@@ -73,6 +74,8 @@ finish_install(){
 
   sudo -u $USER mkdir /home/$USER/mount
   sudo -u $USER mkdir /home/$USER/mount2
+
+  sudo -u $USER touch ~/.secrets
 
   sudo -u $USER git clone https://github.com/tmlye/dotfiles.git /home/$USER/.dotfiles
   sudo -u $USER ./.dotfiles/createSymlinks.sh
