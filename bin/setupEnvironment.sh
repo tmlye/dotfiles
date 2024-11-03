@@ -29,12 +29,11 @@ install_pikaur(){
 install_desktop_environment(){
   package_install "mesa vulkan-radeon libva-mesa-driver mesa-vdpau"
   package_install "zsh wayland sway swaylock swayidle swaybg wl-clipboard xdg-desktop-portal-wlr"
-  package_install "xorg-server-xwayland grim slurp gtk3 qt5-wayland alacritty qmk"
+  package_install "xorg-server-xwayland grim slurp gtk3 qt5-wayland alacritty qmk syncthing"
   package_install "gnome-keyring libsecret brightnessctl waybar wofi mako libnotify"
   package_install "ttf-dejavu ttf-dejavu-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-font-awesome"
   systemctl enable --now bluetooth.service
   aur_package_install "logiops"
-  systemctl enable --now logid.service
 }
 
 install_media(){
@@ -58,8 +57,10 @@ install_tools(){
 
 install_dev(){
   package_install "neovim npm code python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup go"
-  package_install "kubectl pyenv"
+  package_install "kubectl helm pyenv"
   aur_package_install "nvm tfenv aws-cli-v2-bin"
+  sudo -u $USER rustup default stable
+  sudo -u $USER helm repo update
 }
 
 install_power(){
@@ -83,6 +84,9 @@ finish_install(){
   is_package_installed "zsh" && sudo -u $USER chsh -s /bin/zsh
 
   systemctl enable fstrim.timer
+
+  cp /home/$USER/.dotfiles/various/logid.cfg /etc/logid.cfg
+  systemctl enable --now logid.service
 
   pause_function
 }
