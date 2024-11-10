@@ -57,18 +57,17 @@ install_tools(){
 
 install_dev(){
   package_install "neovim npm code python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup go"
-  package_install "kubectl k9s helm pyenv"
+  package_install "kubectl k9s helm pyenv postgresql gnu-netcat direnv"
   aur_package_install "nvm tfenv aws-cli-v2-bin"
   sudo -u $USER rustup default stable
   sudo -u $USER helm repo update
+  sudo -u $USER pyenv global system
 }
 
 install_power(){
   package_install "powertop tlp ethtool acpi acpi_call"
   aur_package_install "tpacpi-bat"
   systemctl enable tlp.service
-  systemctl mask systemd-rfkill.service
-  systemctl mask systemd-rfkill.socket
 }
 
 finish_install(){

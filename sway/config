@@ -74,6 +74,11 @@ input "1133:45108:Logitech_MX_Master_3S" {
     pointer_accel 0
     scroll_factor 0.6
 }
+input "1133:45108:MX_Master_3S" {
+    accel_profile flat
+    pointer_accel 0
+    scroll_factor 0.05
+}
 
 # Hide mouse cursor after 5s of inactivity.
 seat seat0 hide_cursor 5000
