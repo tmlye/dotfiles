@@ -10,7 +10,7 @@ declare -a FOLDERS=(
 for FOLDER in "${FOLDERS[@]}"; do
 	duplicity backup --allow-source-mismatch \
 			  --verbosity 8 \
-			  --tempdir $HOME/.cache/duplicity \
+			  --tempdir=$HOME/.cache/duplicity \
 			  --num-retries 5 \
 			  --concurrency 2 \
 			  --volsize 100 \
