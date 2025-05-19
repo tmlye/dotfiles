@@ -64,12 +64,6 @@ export NVM_DIR=~/.nvm
 # Uncomment below for nvm, commented because it's really slow
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-if [ -x "$(command -v gnome-keyring-daemon)" ]; then
-  eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-  export GNOME_KEYRING_CONTROL
-  export SSH_AUTH_SOCK
-fi
-
 # Put all your secrets in ~/.secrets
 [ -f ~/.secrets ] && source ~/.secrets
 
