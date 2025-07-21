@@ -33,7 +33,7 @@ install_desktop_environment(){
   package_install "libsecret gcr-4 brightnessctl waybar wofi mako libnotify"
   package_install "ttf-dejavu ttf-dejavu-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-font-awesome"
   systemctl enable --now bluetooth.service
-  aur_package_install "logiops"
+  aur_package_install "logiops archey4"
 }
 
 install_media(){
@@ -41,8 +41,8 @@ install_media(){
 }
 
 install_internet(){
-  package_install "firefox qbittorrent mtr"
-  aur_package_install "ungoogled-chromium-bin chromium-extension-web-store chromium-widevine"
+  package_install "firefox chromium qbittorrent mtr"
+  aur_package_install "zen-browser-bin chromium-widevine"
 }
 
 install_tools(){

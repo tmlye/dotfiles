@@ -1,0 +1,36 @@
+{
+	"allow_overriding": true,
+	"parallel_loading": true,
+	"suppress_warnings": true,
+	"entries_color": "",
+	"honor_ansi_color": true,
+	"logo_style": "",
+	"entries_icon": false,
+	"entries": [
+		{ "type": "Distro" },
+		{
+			"type": "Kernel",
+			"check_version": false
+		},
+		{ "type": "WindowManager" },
+		{ "type": "Shell" },
+		{
+			"type": "Terminal",
+			"use_unicode": true
+		},
+		{
+			"type": "Custom",
+			"name": "Editor",
+			"icon": "\ue735",
+			"shell": true,
+			"command": "echo $EDITOR"
+		}
+	],
+	"default_strings": {
+		"latest": "latest",
+		"available": "available",
+		"no_address": "No Address",
+		"not_detected": "Not detected",
+		"virtual_environment": "Virtual Environment"
+	}
+}
