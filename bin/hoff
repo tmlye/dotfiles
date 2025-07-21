@@ -1,6 +1,0 @@
-#!/bin/sh
-
-bluetoothctl disconnect "88:C9:E8:58:E1:03"
-bluetoothctl power off
-
-# vim:set filetype=sh:
