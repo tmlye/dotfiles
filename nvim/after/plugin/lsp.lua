@@ -10,7 +10,7 @@ end)
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'rust_analyzer', 'terraformls', 'tflint'},
+  ensure_installed = {'rust_analyzer', 'terraformls', 'tflint', 'gopls'},
   handlers = {
     lsp.default_setup,
   }
