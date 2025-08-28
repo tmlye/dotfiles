@@ -29,9 +29,6 @@ output * bg $HOME/.wallpaper/current.jpg fill
 output DP-1 scale 2
 output DP-2 scale 2
 
-# Toggle laptop screen
-bindsym $mod+m output $laptop toggle
-
 #
 # Example configuration:
 #
@@ -110,6 +107,12 @@ seat seat0 hide_cursor 5000
 
     # Reload the configuration file
     bindsym $mod+Shift+q reload
+
+    # Lock screen
+    bindsym $mod+F11 exec swaylock -f -c 000000
+
+    # Toggle laptop screen
+    bindsym $mod+m output $laptop toggle
 
     # Exit sway (logs you out of your Wayland session)
     #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -238,6 +241,12 @@ bindsym $mod+q exec MOZ_DBUS_REMOTE=1 MOZ_ENABLE_WAYLAND=1 zen-browser
 bindsym $mod+e exec $term -e ranger
 bindsym $mod+F12 exec grim -t jpeg -g "$(slurp)" ~/$(date +%Y-%m-%d_%H-%m-%s).jpg
 bindsym $mod+c exec chromium
+
+#
+# Clipboard
+#
+exec wl-paste --watch cliphist store
+bindsym $mod+v exec cliphist list | wofi -i -s $HOME/.dotfiles/wofi/style.css -S dmenu | cliphist decode | wtype -
 
 #
 # Status Bar:
