@@ -43,6 +43,10 @@ vim.keymap.set('i', '<c-k>', '<c-o><c-k>')
 vim.keymap.set('i', '<c-h>', '<c-o><c-h>')
 vim.keymap.set('i', '<c-l>', '<c-o><c-l>')
 
+-- Buffer Navigation
+-- Jump to last used buffer
+vim.keymap.set('n', '<leader>j', ':b#<CR>')
+
 -- Tab Navigation
 vim.keymap.set('n', 'H', 'gT')
 vim.keymap.set('n', 'L', 'gt')
