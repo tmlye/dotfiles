@@ -1,0 +1,2 @@
+max-items 10
+db-path /tmp/cliphist.db

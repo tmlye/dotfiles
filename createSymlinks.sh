@@ -3,7 +3,7 @@
 # Create .config directory if needed
 mkdir -p $HOME/.config
 
-declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/user-dirs.dirs .config/waybar)
+declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/user-dirs.dirs .config/waybar .config/nvim .config/imv/config .config/archey4/config.json .config/cliphist/config)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -81,6 +81,11 @@ ln -s $HOME/.dotfiles/mpv/ $HOME/.config/mpv
 # archey4
 mkdir -p $HOME/.config/archey4
 ln -s $HOME/.dotfiles/various/archey4.json $HOME/.config/archey4/config.json
+
+# cliphist
+mkdir -p $HOME/.config/cliphist
+ln -s $HOME/.dotfiles/various/cliphist_config $HOME/.config/cliphist/config
+
 
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
