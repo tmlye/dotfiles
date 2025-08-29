@@ -26,6 +26,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Formatting
 vim.keymap.set('n', '<leader>ff', vim.lsp.buf.format)
+-- Toggle inlay hints
+vim.keymap.set('n', '<leader>h', function ()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = 'Toggle Inlay [H]ints'})
 
 -- Prevent moving cursor with space
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
