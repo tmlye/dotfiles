@@ -29,9 +29,9 @@ vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = '[S]earch [F]iles'
 vim.keymap.set('n', '<leader>g', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>o', builtin.lsp_document_symbols, { desc = '[S]earch Symb[o]ls' })
 vim.keymap.set('n', '<leader>r', builtin.lsp_references, { desc = '[S]earch [R]eferences' })
-vim.keymap.set('n', '<leader>b', function()
+vim.keymap.set('n', '<leader>space', function()
   builtin.buffers { sort_mru = true, ignore_current_buffer = true }
-end, { desc = '[S]earch [B]uffers' })
+end, { desc = 'Search Buffers' })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })

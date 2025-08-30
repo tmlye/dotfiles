@@ -25,7 +25,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Formatting
-vim.keymap.set('n', '<leader>ff', vim.lsp.buf.format)
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = '[L]SP [F]ormat'})
 -- Toggle inlay hints
 vim.keymap.set('n', '<leader>h', function ()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
