@@ -38,6 +38,7 @@ $HOME/.dotfiles/bin:\
 /usr/bin/site_perl:\
 /usr/bin/vendor_perl:\
 /usr/bin/core_perl:\
+$HOME/.local/bin:\
 $HOME/.cargo/bin:\
 $GOPATH/bin:\
 "
