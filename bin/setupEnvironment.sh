@@ -56,7 +56,7 @@ install_tools(){
 }
 
 install_dev(){
-  package_install "neovim npm code python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup go"
+  package_install "neovim npm code zed python-boto3 jdk21-openjdk docker docker-compose docker-buildx ruby jq rustup go"
   package_install "kubectl k9s helm pyenv postgresql gnu-netcat direnv"
   aur_package_install "nvm tfenv aws-cli-v2-bin"
   sudo -u $USER rustup default stable

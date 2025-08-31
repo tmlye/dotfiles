@@ -86,6 +86,11 @@ ln -s $HOME/.dotfiles/various/archey4.json $HOME/.config/archey4/config.json
 mkdir -p $HOME/.config/cliphist
 ln -s $HOME/.dotfiles/various/cliphist_config $HOME/.config/cliphist/config
 
+# zed
+mkdir -p $HOME/.config/zed
+ln -s $HOME/.dotfiles/zed/settings.json $HOME/.config/zed/settings.json
+ln -s $HOME/.dotfiles/zed/keymap.json $HOME/.config/zed/keymap.json
+
 
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs

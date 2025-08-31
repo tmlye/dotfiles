@@ -1,0 +1,16 @@
+[
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space n": "workspace::ToggleLeftDock",
+      "space w": "workspace::Save",
+      "space f": "file_finder::Toggle",
+      "space g": "pane::DeploySearch",
+      "space r": "editor::FindAllReferences",
+      "space e": "pane::RevealInProjectPanel",
+      "space h": "editor::ToggleInlayHints",
+      "space o": "outline::Toggle",
+      "shift-k": "editor::Hover"
+    }
+  }
+]
