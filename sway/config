@@ -14,7 +14,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu "wofi -i -s $HOME/.dotfiles/wofi/style.css -S run"
+set $menu "wofi -i -S run"
 set $laptop eDP-1
 
 ### Clamshell Mode
@@ -246,7 +246,7 @@ bindsym $mod+c exec chromium
 # Clipboard
 #
 exec wl-paste --watch cliphist store
-bindsym $mod+v exec cliphist list | wofi -i -s $HOME/.dotfiles/wofi/style.css -S dmenu | cliphist decode | wtype -
+bindsym $mod+v exec cliphist list | wofi -i -S dmenu | cliphist decode | wtype -
 
 #
 # Status Bar:

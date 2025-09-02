@@ -86,6 +86,9 @@ ln -s $HOME/.dotfiles/various/archey4.json $HOME/.config/archey4/config.json
 mkdir -p $HOME/.config/cliphist
 ln -s $HOME/.dotfiles/various/cliphist_config $HOME/.config/cliphist/config
 
+# wofi
+ln -s $HOME/.dotfiles/wofi $HOME/.config/wofi
+
 # zed
 mkdir -p $HOME/.config/zed
 ln -s $HOME/.dotfiles/zed/settings.json $HOME/.config/zed/settings.json
