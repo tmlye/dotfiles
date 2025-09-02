@@ -19,7 +19,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-syntax-highlighting systemd vi-mode history-substring-search)
+plugins=(git zsh-syntax-highlighting systemd vi-mode history-substring-search fzf)
+export FZF_CTRL_R_OPTS="--height 10 --layout reverse --border"
 
 source $ZSH/oh-my-zsh.sh
 
