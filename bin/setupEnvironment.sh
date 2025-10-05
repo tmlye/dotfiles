@@ -46,7 +46,7 @@ install_internet(){
 }
 
 install_tools(){
-  package_install "util-linux bind-tools calc virtualbox calibre htop whois nmon duplicity cronie net-tools gnupg"
+  package_install "util-linux bind-tools calc virtualbox calibre htop whois nmon duplicity python-b2sdk cronie net-tools gnupg"
   package_remove "virtualbox-host-dkms"
   package_install "virtualbox-host-modules-arch"
   # Images

@@ -10,7 +10,8 @@
       "space e": "pane::RevealInProjectPanel",
       "space h": "editor::ToggleInlayHints",
       "space o": "outline::Toggle",
-      "shift-k": "editor::Hover"
+      "shift-k": "editor::Hover",
+      "space l f": "editor::Format"
     }
   }
 ]
