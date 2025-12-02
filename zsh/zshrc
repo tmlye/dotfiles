@@ -42,6 +42,7 @@ $HOME/.dotfiles/bin:\
 $HOME/.local/bin:\
 $HOME/.cargo/bin:\
 $GOPATH/bin:\
+$HOME/.nix-profile/bin:\
 "
 
 # Put each kubeconfig file into ~/.kube with a .yml extension
