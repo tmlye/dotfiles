@@ -42,7 +42,7 @@ $HOME/.dotfiles/bin:\
 $HOME/.local/bin:\
 $HOME/.cargo/bin:\
 $GOPATH/bin:\
-$HOME/.nix-profile/bin:\
+/nix/var/nix/profiles/default/bin:\
 "
 
 # Put each kubeconfig file into ~/.kube with a .yml extension
@@ -70,6 +70,7 @@ export NVM_DIR=~/.nvm
 # Put all your secrets in ~/.secrets
 [ -f ~/.secrets ] && source ~/.secrets
 
+# eval "$(direnv hook zsh)"
 _direnv_hook() {
   trap -- '' SIGINT
   eval "$("/usr/bin/direnv" export zsh)"
