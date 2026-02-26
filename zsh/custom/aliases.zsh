@@ -68,6 +68,8 @@ function grephistory() # search history
 }
 alias his='grephistory'
 
+alias amp='amp --visibility private'
+
 # GIT
 # ===
 
