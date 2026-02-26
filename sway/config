@@ -262,9 +262,9 @@ bar {
 # Looks
 #
 default_border pixel 1
-client.focused #303030 #151515 #303030 #8542FF #303030
-client.unfocused #151515 #151515 #6D878D #101010 #151515
-client.focused_inactive #151515 #151515 #6D878D #101010 #151515
+client.focused #303030 #151515 #303030 #303030 #303030
+client.unfocused #151515 #151515 #6D878D #151515 #151515
+client.focused_inactive #151515 #151515 #6D878D #151515 #151515
 
 exec xrdb ~/.Xresources
 
