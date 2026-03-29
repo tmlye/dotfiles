@@ -29,7 +29,7 @@ install_pikaur(){
 install_desktop_environment(){
   package_install "mesa vulkan-radeon libva-mesa-driver mesa-vdpau"
   package_install "zsh wayland sway swaylock swayidle swaybg wl-clipboard xdg-desktop-portal-wlr cliphist wtype fzf"
-  package_install "xorg-server-xwayland grim slurp gtk3 qt5-wayland alacritty qmk syncthing"
+  package_install "xorg-server-xwayland grim slurp gtk3 qt5-wayland alacritty kitty qmk syncthing"
   package_install "libsecret gcr-4 brightnessctl waybar wofi mako libnotify"
   package_install "ttf-dejavu ttf-dejavu-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji woff2-font-awesome"
   systemctl enable --now bluetooth.service
