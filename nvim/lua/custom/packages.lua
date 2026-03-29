@@ -38,10 +38,6 @@ require('lazy').setup({
   {"hrsh7th/cmp-path"},
   {'hrsh7th/cmp-nvim-lsp'},
   {"hrsh7th/cmp-nvim-lua"},
-  {"saadparwaiz1/cmp_luasnip"},
-  -- Snippets
-  {'L3MON4D3/LuaSnip'},
-  {"rafamadriz/friendly-snippets"},
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
   -- Status line
@@ -98,4 +94,40 @@ require('lazy').setup({
       "MunifTanjim/nui.nvim",
     }
   },
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
+    opts = {
+      explorer = {
+        view_mode = "tree",
+        initial_focus = "modified",
+      },
+      history = {
+        initial_focus = "modified",
+      },
+      diff = {
+        disable_inlay_hints = true,
+        max_computation_time_ms = 5000,
+      },
+      keymaps = {
+        view = {
+          next_hunk = "]c",
+          prev_hunk = "[c",
+          next_file = "<Tab>",
+          prev_file = "<S-Tab>",
+        },
+        explorer = {
+          select = "<CR>",
+          hover = "K",
+          refresh = "R",
+        },
+      },
+    },
+    keys = {
+      { "<leader>dd", ":CodeDiff<CR>", desc = "Toggle CodeDiff", silent = true },
+      { "<leader>do", ":CodeDiff main...<CR>", desc = "Toggle CodeDiff against main", silent = true },
+      { "<leader>dh", ":CodeDiff history %<CR>", desc = "File history", silent = true },
+      { "<leader>dH", ":CodeDiff history<CR>", desc = "Repo history", silent = true },
+    },
+  }
 }, {})
