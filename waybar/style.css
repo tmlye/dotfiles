@@ -1,6 +1,6 @@
 /* =============================================================================
  *
- * Waybar configuration — Parchment 1850 Light
+ * Waybar configuration — Parchment 1850 Dark
  *
  * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
  *
@@ -12,23 +12,23 @@
 
 @keyframes blink-warning {
     70% {
-        color: #f5efe0;
+        color: #1e1810;
     }
 
     to {
-        color: #f5efe0;
-        background-color: #a05c10;
+        color: #1e1810;
+        background-color: #c88040;
     }
 }
 
 @keyframes blink-critical {
     70% {
-      color: #f5efe0;
+      color: #1e1810;
     }
 
     to {
-        color: #f5efe0;
-        background-color: #a03020;
+        color: #1e1810;
+        background-color: #c0624a;
     }
 }
 
@@ -48,8 +48,8 @@
 
 /* The whole bar */
 #waybar {
-    background: #ede4d0;
-    color: #2a1f10;
+    background: #26201a;
+    color: #d4c4a8;
     font-family: DejaVuSansMono, sans-serif;
     font-size: 13px;
 }
@@ -68,7 +68,7 @@
 #tray {
     padding-left: 10px;
     padding-right: 10px;
-    color: #2a1f10;
+    color: #d4c4a8;
 }
 
 
@@ -83,11 +83,11 @@
 }
 
 #battery.warning {
-    color: #a05c10;
+    color: #c88040;
 }
 
 #battery.critical {
-    color: #a03020;
+    color: #c0624a;
 }
 
 #battery.warning.discharging {
@@ -108,11 +108,11 @@
 }
 
 #cpu.warning {
-    color: #a05c10;
+    color: #c88040;
 }
 
 #cpu.critical {
-    color: #a03020;
+    color: #c0624a;
 }
 
 #memory {
@@ -122,18 +122,18 @@
 }
 
 #memory.warning {
-    color: #a05c10;
+    color: #c88040;
 }
 
 #memory.critical {
-    color: #a03020;
+    color: #c0624a;
     animation-name: blink-critical;
     animation-duration: 2s;
 }
 
 #mode {
-    background: #d4c8b0;
-    border-top: 2px solid #2a1f10;
+    background: #3a3228;
+    border-top: 2px solid #d4c4a8;
     /* To compensate for the top border and still have vertical centering */
     padding-bottom: 2px;
 }
@@ -142,7 +142,7 @@
 }
 
 #network.disconnected {
-    color: #a05c10;
+    color: #c88040;
 }
 
 #pulseaudio {
@@ -153,14 +153,14 @@
 }
 
 #custom-spotify {
-    color: #3a7a28;
+    color: #7a9e68;
 }
 
 #temperature {
 }
 
 #temperature.critical {
-    color: #a03020;
+    color: #c0624a;
 }
 
 #tray {
@@ -177,14 +177,14 @@
     padding-bottom: 2px;
     padding-left: 5px;
     padding-right: 5px;
-    color: #9a8870;
+    color: #6b5c48;
 }
 
 #workspaces button.focused {
-    color: #2a1f10;
+    color: #d4c4a8;
 }
 
 #workspaces button.urgent {
-    border-color: #a03020;
-    color: #a03020;
+    border-color: #c0624a;
+    color: #c0624a;
 }

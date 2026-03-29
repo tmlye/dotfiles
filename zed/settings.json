@@ -23,7 +23,7 @@
     }
   },
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "One Light",
     "dark": "One Dark"
   }

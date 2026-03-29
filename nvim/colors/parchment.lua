@@ -1,28 +1,28 @@
--- Parchment 1850 Light — colorscheme for Neovim
+-- Parchment 1850 Dark — colorscheme for Neovim
 
 vim.cmd("hi clear")
 if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
-vim.o.background = "light"
+vim.o.background = "dark"
 vim.g.colors_name = "parchment"
 
 local c = {
-  bg0     = "#f5efe0",
-  bg1     = "#ede4d0",
-  bg2     = "#e2d8c4",
-  bg3     = "#d4c8b0",
-  ui      = "#c8b898",
-  comment = "#9a8870",
-  subtle  = "#7a6650",
-  fg      = "#2a1f10",
-  bright  = "#180e04",
-  red     = "#a03020",
-  orange  = "#a05c10",
-  yellow  = "#8a6500",
-  green   = "#3a7a28",
-  teal    = "#246e5e",
-  blue    = "#2a5c90",
-  purple  = "#7040a0",
-  pink    = "#884060",
+  bg0     = "#1e1810",
+  bg1     = "#26201a",
+  bg2     = "#2e2820",
+  bg3     = "#3a3228",
+  ui      = "#4a4035",
+  comment = "#6b5c48",
+  subtle  = "#8c7a62",
+  fg      = "#d4c4a8",
+  bright  = "#e8d8b8",
+  red     = "#c0624a",
+  orange  = "#c88040",
+  yellow  = "#c4a850",
+  green   = "#7a9e68",
+  teal    = "#5e9e8a",
+  blue    = "#6e8cb0",
+  purple  = "#9e7ab0",
+  pink    = "#b07080",
   none    = "NONE",
 }
 
@@ -32,33 +32,33 @@ end
 
 -- Editor
 hi("Normal",       { fg = c.fg, bg = c.bg1 })
-hi("NormalFloat",  { fg = c.fg, bg = c.bg1 })
-hi("FloatBorder",  { fg = c.ui, bg = c.bg1 })
+hi("NormalFloat",  { fg = c.fg, bg = c.bg2 })
+hi("FloatBorder",  { fg = c.ui, bg = c.bg2 })
 hi("Cursor",       { fg = c.bg0, bg = c.orange })
-hi("CursorLine",   { bg = c.bg1 })
-hi("CursorColumn", { bg = c.bg1 })
-hi("ColorColumn",  { bg = c.bg1 })
+hi("CursorLine",   { bg = c.bg2 })
+hi("CursorColumn", { bg = c.bg2 })
+hi("ColorColumn",  { bg = c.bg2 })
 hi("LineNr",       { fg = c.ui })
 hi("CursorLineNr", { fg = c.subtle, bold = true })
-hi("SignColumn",   { fg = c.ui, bg = c.bg0 })
-hi("VertSplit",    { fg = c.ui, bg = c.bg0 })
-hi("WinSeparator", { fg = c.ui, bg = c.bg0 })
-hi("StatusLine",   { fg = c.fg, bg = c.bg2 })
-hi("StatusLineNC", { fg = c.comment, bg = c.bg1 })
-hi("TabLine",      { fg = c.comment, bg = c.bg1 })
-hi("TabLineFill",  { bg = c.bg1 })
-hi("TabLineSel",   { fg = c.fg, bg = c.bg0, bold = true })
-hi("Pmenu",        { fg = c.fg, bg = c.bg1 })
+hi("SignColumn",   { fg = c.ui, bg = c.bg1 })
+hi("VertSplit",    { fg = c.ui, bg = c.bg1 })
+hi("WinSeparator", { fg = c.ui, bg = c.bg1 })
+hi("StatusLine",   { fg = c.fg, bg = c.bg3 })
+hi("StatusLineNC", { fg = c.comment, bg = c.bg2 })
+hi("TabLine",      { fg = c.comment, bg = c.bg2 })
+hi("TabLineFill",  { bg = c.bg2 })
+hi("TabLineSel",   { fg = c.fg, bg = c.bg1, bold = true })
+hi("Pmenu",        { fg = c.fg, bg = c.bg2 })
 hi("PmenuSel",     { fg = c.fg, bg = c.bg3 })
-hi("PmenuSbar",    { bg = c.bg2 })
+hi("PmenuSbar",    { bg = c.bg3 })
 hi("PmenuThumb",   { bg = c.ui })
 hi("Visual",       { bg = c.bg3 })
 hi("VisualNOS",    { bg = c.bg3 })
 hi("Search",       { fg = c.bg0, bg = c.yellow })
 hi("IncSearch",    { fg = c.bg0, bg = c.orange })
 hi("CurSearch",    { fg = c.bg0, bg = c.orange })
-hi("Folded",       { fg = c.comment, bg = c.bg1 })
-hi("FoldColumn",   { fg = c.ui, bg = c.bg0 })
+hi("Folded",       { fg = c.comment, bg = c.bg2 })
+hi("FoldColumn",   { fg = c.ui, bg = c.bg1 })
 hi("NonText",      { fg = c.ui })
 hi("SpecialKey",   { fg = c.ui })
 hi("Whitespace",   { fg = c.ui })
@@ -75,10 +75,10 @@ hi("Conceal",      { fg = c.comment })
 hi("WildMenu",     { fg = c.fg, bg = c.bg3 })
 
 -- Diff
-hi("DiffAdd",    { bg = "#d0e8c0" })
-hi("DiffChange", { bg = "#e8e0c0" })
-hi("DiffDelete", { fg = c.red, bg = "#e8d0c8" })
-hi("DiffText",   { bg = "#d8d0a8", bold = true })
+hi("DiffAdd",    { bg = "#2a3828" })
+hi("DiffChange", { bg = "#2e2820" })
+hi("DiffDelete", { fg = c.red, bg = "#3a2020" })
+hi("DiffText",   { bg = "#3a3020", bold = true })
 
 -- Diagnostics
 hi("DiagnosticError", { fg = c.red })
@@ -178,8 +178,8 @@ hi("GitSignsChange", { fg = c.yellow })
 hi("GitSignsDelete", { fg = c.red })
 
 -- Neo-tree
-hi("NeoTreeNormal",       { fg = c.fg, bg = c.bg1 })
-hi("NeoTreeNormalNC",      { fg = c.fg, bg = c.bg1 })
+hi("NeoTreeNormal",       { fg = c.fg, bg = c.bg2 })
+hi("NeoTreeNormalNC",      { fg = c.fg, bg = c.bg2 })
 hi("NeoTreeDirectoryName", { fg = c.blue })
 hi("NeoTreeDirectoryIcon", { fg = c.blue })
 hi("NeoTreeRootName",      { fg = c.orange, bold = true })
@@ -190,10 +190,10 @@ hi("NeoTreeGitDeleted",    { fg = c.red })
 hi("NeoTreeGitUntracked",  { fg = c.comment })
 
 -- Telescope
-hi("TelescopeNormal",       { fg = c.fg, bg = c.bg1 })
-hi("TelescopeBorder",       { fg = c.ui, bg = c.bg1 })
-hi("TelescopePromptNormal", { fg = c.fg, bg = c.bg2 })
-hi("TelescopePromptBorder", { fg = c.ui, bg = c.bg2 })
+hi("TelescopeNormal",       { fg = c.fg, bg = c.bg2 })
+hi("TelescopeBorder",       { fg = c.ui, bg = c.bg2 })
+hi("TelescopePromptNormal", { fg = c.fg, bg = c.bg3 })
+hi("TelescopePromptBorder", { fg = c.ui, bg = c.bg3 })
 hi("TelescopePromptTitle",  { fg = c.bg0, bg = c.orange })
 hi("TelescopePreviewTitle", { fg = c.bg0, bg = c.green })
 hi("TelescopeResultsTitle", { fg = c.bg0, bg = c.blue })
@@ -201,10 +201,10 @@ hi("TelescopeSelection",    { bg = c.bg3 })
 hi("TelescopeMatching",     { fg = c.orange, bold = true })
 
 -- LSP
-hi("LspReferenceText",  { bg = c.bg2 })
-hi("LspReferenceRead",  { bg = c.bg2 })
-hi("LspReferenceWrite", { bg = c.bg3 })
-hi("LspInlayHint",      { fg = c.comment, bg = c.bg1, italic = true })
+hi("LspReferenceText",  { bg = c.bg3 })
+hi("LspReferenceRead",  { bg = c.bg3 })
+hi("LspReferenceWrite", { bg = c.ui })
+hi("LspInlayHint",      { fg = c.comment, bg = c.bg2, italic = true })
 
 -- CMP
 hi("CmpItemAbbr",           { fg = c.fg })
@@ -214,19 +214,19 @@ hi("CmpItemKind",           { fg = c.purple })
 hi("CmpItemMenu",           { fg = c.comment })
 
 -- Terminal colors
-vim.g.terminal_color_0  = "#2a1f10"
-vim.g.terminal_color_1  = "#a03020"
-vim.g.terminal_color_2  = "#3a7a28"
-vim.g.terminal_color_3  = "#8a6500"
-vim.g.terminal_color_4  = "#2a5c90"
-vim.g.terminal_color_5  = "#7040a0"
-vim.g.terminal_color_6  = "#246e5e"
-vim.g.terminal_color_7  = "#ede4d0"
-vim.g.terminal_color_8  = "#7a6650"
-vim.g.terminal_color_9  = "#a05c10"
-vim.g.terminal_color_10 = "#3a7a28"
-vim.g.terminal_color_11 = "#a05c10"
-vim.g.terminal_color_12 = "#2a5c90"
-vim.g.terminal_color_13 = "#884060"
-vim.g.terminal_color_14 = "#246e5e"
-vim.g.terminal_color_15 = "#f5efe0"
+vim.g.terminal_color_0  = "#1e1810"
+vim.g.terminal_color_1  = "#c0624a"
+vim.g.terminal_color_2  = "#7a9e68"
+vim.g.terminal_color_3  = "#c4a850"
+vim.g.terminal_color_4  = "#6e8cb0"
+vim.g.terminal_color_5  = "#9e7ab0"
+vim.g.terminal_color_6  = "#5e9e8a"
+vim.g.terminal_color_7  = "#d4c4a8"
+vim.g.terminal_color_8  = "#8c7a62"
+vim.g.terminal_color_9  = "#c88040"
+vim.g.terminal_color_10 = "#7a9e68"
+vim.g.terminal_color_11 = "#c88040"
+vim.g.terminal_color_12 = "#6e8cb0"
+vim.g.terminal_color_13 = "#b07080"
+vim.g.terminal_color_14 = "#5e9e8a"
+vim.g.terminal_color_15 = "#e8d8b8"

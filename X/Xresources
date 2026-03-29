@@ -1,40 +1,40 @@
-! ~/.Xresources — Parchment 1850 Light
+! ~/.Xresources — Parchment 1850 Dark
 !
 ! vim: set filetype=xdefaults :
-*foreground: #2a1f10
-*background: #ede4d0
+*foreground: #d4c4a8
+*background: #26201a
 
 !black
-*color0:     #2a1f10
-*color8:     #7a6650
+*color0:     #1e1810
+*color8:     #8c7a62
 !red
-*color1:     #a03020
-*color9:     #a05c10
+*color1:     #c0624a
+*color9:     #c88040
 !green
-*color2:     #3a7a28
-*color10:    #3a7a28
+*color2:     #7a9e68
+*color10:    #7a9e68
 !yellow
-*color3:     #8a6500
-*color11:    #a05c10
+*color3:     #c4a850
+*color11:    #c88040
 !blue
-*color4:     #2a5c90
-*color12:    #2a5c90
+*color4:     #6e8cb0
+*color12:    #6e8cb0
 !magenta
-*color5:     #7040a0
-*color13:    #884060
+*color5:     #9e7ab0
+*color13:    #b07080
 !cyan
-*color6:     #246e5e
-*color14:    #246e5e
+*color6:     #5e9e8a
+*color14:    #5e9e8a
 !white
-*color7:     #ede4d0
-*color15:    #f5efe0
+*color7:     #d4c4a8
+*color15:    #e8d8b8
 
 URxvt.perl-lib: /usr/lib/urxvt/perl/
 
-URxvt.borderColor:        #ede4d0
-URxvt.colorBD:            #180e04
-URxvt.cursorColor:        #a05c10
-URxvt.cursorColor2:       #f5efe0
+URxvt.borderColor:        #26201a
+URxvt.colorBD:            #e8d8b8
+URxvt.cursorColor:        #c88040
+URxvt.cursorColor2:       #26201a
 
 URxvt.perl-ext-common:  default,matcher
 URxvt.url-launcher:      /usr/bin/firefox

@@ -17,9 +17,9 @@ theme_precmd () {
 }
 
 setprompt() {
-  local USER="%{$fg[blue]%}%n%f"
+  local USER="%{$fg[yellow]%}%n%f"
   local HOST="%{$fg[green]%}%M%f"
-  local PWD="%F{0}$($HOME/.dotfiles/bin/rzsh_path)%f"
+  local PWD="%F{7}$($HOME/.dotfiles/bin/rzsh_path)%f"
   local EXIT="%(?..%{$fg_bold[red]%}%?%f)"
   local GIT="${vcs_info_msg_0_}"
 

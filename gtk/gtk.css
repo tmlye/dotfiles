@@ -1,4 +1,4 @@
-@define-color vimbg #f5efe0;
+@define-color vimbg #26201a;
 
 window#vim-main-window {
     background-color: @vimbg;
