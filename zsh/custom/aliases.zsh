@@ -70,6 +70,14 @@ alias his='grephistory'
 
 alias amp='amp --visibility private'
 
+function cdr() {
+  local tempfile=$(mktemp)
+  ranger --choosedir="$tempfile" "$@"
+  local dir=$(cat "$tempfile")
+  rm -f "$tempfile"
+  [ -n "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+}
+
 # GIT
 # ===
 
