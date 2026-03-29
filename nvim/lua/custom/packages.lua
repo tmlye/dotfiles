@@ -106,6 +106,7 @@ require('lazy').setup({
         initial_focus = "modified",
       },
       diff = {
+        layout = "inline",
         disable_inlay_hints = true,
         max_computation_time_ms = 5000,
       },
