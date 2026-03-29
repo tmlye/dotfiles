@@ -1,8 +1,8 @@
 # Statusbar
-set statusbar-fg "#D7D0C7"
-set statusbar-bg "#151515"
+set statusbar-fg "#2a1f10"
+set statusbar-bg "#ede4d0"
 
 # Recolor by default
 set recolor true
-set recolor-lightcolor "#151515"
-set recolor-darkcolor "#D7D0C7"
+set recolor-lightcolor "#f5efe0"
+set recolor-darkcolor "#2a1f10"

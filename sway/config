@@ -43,10 +43,10 @@ output DP-7 scale 2
 # your displays after 300 seconds and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-         timeout 310 'swaylock -f -c 000000' \
+         timeout 310 'swaylock -f -c f5efe0' \
          timeout 600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -c f5efe0'
 
 ### Input configuration
 #
@@ -111,7 +111,7 @@ seat seat0 hide_cursor 5000
     bindsym $mod+Shift+q reload
 
     # Lock screen
-    bindsym $mod+F11 exec swaylock -f -c 000000
+    bindsym $mod+F11 exec swaylock -f -c f5efe0
 
     # Toggle laptop screen
     bindsym $mod+m output $laptop toggle
@@ -262,9 +262,9 @@ bar {
 # Looks
 #
 default_border pixel 1
-client.focused #303030 #151515 #303030 #303030 #303030
-client.unfocused #151515 #151515 #6D878D #151515 #151515
-client.focused_inactive #151515 #151515 #6D878D #151515 #151515
+client.focused #c8b898 #ede4d0 #2a1f10 #a05c10 #c8b898
+client.unfocused #e2d8c4 #f5efe0 #9a8870 #e2d8c4 #e2d8c4
+client.focused_inactive #e2d8c4 #f5efe0 #9a8870 #e2d8c4 #e2d8c4
 
 exec xrdb ~/.Xresources
 

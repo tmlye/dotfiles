@@ -14,7 +14,7 @@
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.scrollback": 10000,
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "JetBrains New Dark",
+    "workbench.colorTheme": "Default Light+",
     "workbench.startupEditor": "newUntitledFile",
     "go.toolsManagement.autoUpdate": true,
     "editor.multiCursorModifier": "ctrlCmd",

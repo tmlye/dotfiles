@@ -25,8 +25,7 @@ require('lazy').setup({
   'tpope/vim-surround',
   -- Make it possible to repeat plugin maps
   'tpope/vim-repeat',
-  -- Colorscheme
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- Colorscheme loaded from nvim/colors/parchment.lua
   -- LSP
   {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
   {'neovim/nvim-lspconfig'},
@@ -47,7 +46,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },

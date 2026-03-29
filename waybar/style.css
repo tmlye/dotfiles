@@ -1,6 +1,6 @@
 /* =============================================================================
  *
- * Waybar configuration
+ * Waybar configuration — Parchment 1850 Light
  *
  * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
  *
@@ -12,23 +12,23 @@
 
 @keyframes blink-warning {
     70% {
-        color: white;
+        color: #f5efe0;
     }
 
     to {
-        color: white;
-        background-color: orange;
+        color: #f5efe0;
+        background-color: #a05c10;
     }
 }
 
 @keyframes blink-critical {
     70% {
-      color: white;
+      color: #f5efe0;
     }
 
     to {
-        color: white;
-        background-color: red;
+        color: #f5efe0;
+        background-color: #a03020;
     }
 }
 
@@ -48,8 +48,8 @@
 
 /* The whole bar */
 #waybar {
-    background: #151515;
-    color: #D7D0C7;
+    background: #ede4d0;
+    color: #2a1f10;
     font-family: DejaVuSansMono, sans-serif;
     font-size: 13px;
 }
@@ -68,7 +68,7 @@
 #tray {
     padding-left: 10px;
     padding-right: 10px;
-    color: #D7D0C7;
+    color: #2a1f10;
 }
 
 
@@ -83,11 +83,11 @@
 }
 
 #battery.warning {
-    color: orange;
+    color: #a05c10;
 }
 
 #battery.critical {
-    color: red;
+    color: #a03020;
 }
 
 #battery.warning.discharging {
@@ -108,11 +108,11 @@
 }
 
 #cpu.warning {
-    color: orange;
+    color: #a05c10;
 }
 
 #cpu.critical {
-    color: red;
+    color: #a03020;
 }
 
 #memory {
@@ -122,18 +122,18 @@
 }
 
 #memory.warning {
-    color: orange;
+    color: #a05c10;
 }
 
 #memory.critical {
-    color: red;
+    color: #a03020;
     animation-name: blink-critical;
     animation-duration: 2s;
 }
 
 #mode {
-    background: #64727D;
-    border-top: 2px solid white;
+    background: #d4c8b0;
+    border-top: 2px solid #2a1f10;
     /* To compensate for the top border and still have vertical centering */
     padding-bottom: 2px;
 }
@@ -142,7 +142,7 @@
 }
 
 #network.disconnected {
-    color: orange;
+    color: #a05c10;
 }
 
 #pulseaudio {
@@ -153,14 +153,14 @@
 }
 
 #custom-spotify {
-    color: rgb(102, 220, 105);
+    color: #3a7a28;
 }
 
 #temperature {
 }
 
 #temperature.critical {
-    color: red;
+    color: #a03020;
 }
 
 #tray {
@@ -177,14 +177,14 @@
     padding-bottom: 2px;
     padding-left: 5px;
     padding-right: 5px;
-    color: #888888;
+    color: #9a8870;
 }
 
 #workspaces button.focused {
-    color: white;
+    color: #2a1f10;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+    border-color: #a03020;
+    color: #a03020;
 }

@@ -32,7 +32,7 @@ au FocusGained,BufEnter * :checktime
 " ======
 
 syntax on               " Syntax highlighting
-colorscheme getfresh    " Place your schemes in .vim/colors
+colorscheme parchment   " Place your schemes in .vim/colors
 
 " Search
 " ======

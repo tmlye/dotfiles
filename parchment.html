@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parchment 1850</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f0e8d8;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    color: #2a1f10;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.2rem;
+  }
+
+  .subtitle {
+    color: #7a6650;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-family: monospace;
+  }
+
+  /* Tab switcher */
+  .tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tab {
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: 1px solid #c0a880;
+    background: transparent;
+    color: #7a6650;
+    letter-spacing: 0.05em;
+    transition: all 0.15s;
+  }
+
+  .tab.active-dark {
+    background: #1e1810;
+    color: #d4c4a8;
+    border-color: #1e1810;
+  }
+
+  .tab.active-light {
+    background: #f5efe0;
+    color: #2a1f10;
+    border-color: #c0a880;
+    box-shadow: inset 0 0 0 1px #c0a880;
+    font-weight: bold;
+  }
+
+  /* Panels */
+  .scheme { display: none; }
+  .scheme.visible { display: block; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+
+  .full { grid-column: 1 / -1; }
+
+  /* ── DARK theme panel styles ── */
+  .dark-panel {
+    background: #26201a;
+    border: 1px solid #3a3228;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .dark-panel .panel-title {
+    background: #2e2820;
+    color: #8c7a62;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #3a3228;
+    font-family: monospace;
+  }
+
+  .dark-code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.75;
+    padding: 1rem 1.2rem;
+    background: #26201a;
+    color: #d4c4a8;
+    overflow-x: auto;
+  }
+
+  .dark-term {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    padding: 1rem 1.2rem;
+    background: #1e1810;
+    color: #d4c4a8;
+  }
+
+  .dark-spec { width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.78rem; }
+  .dark-spec td { padding: 0.45rem 1rem; border-bottom: 1px solid #3a3228; color: #d4c4a8; }
+  .dark-spec td:first-child { color: #8c7a62; width: 42%; }
+  .dark-spec tr:last-child td { border-bottom: none; }
+
+  /* dark syntax */
+  .d-kw   { color: #9e7ab0; }
+  .d-fn   { color: #c4a850; }
+  .d-cls  { color: #c88040; }
+  .d-str  { color: #7a9e68; }
+  .d-num  { color: #c0624a; }
+  .d-cmt  { color: #6b5c48; font-style: italic; }
+  .d-op   { color: #5e9e8a; }
+  .d-attr { color: #6e8cb0; }
+  .d-self { color: #b07080; }
+
+  /* dark terminal */
+  .d-prompt { color: #c4a850; }
+  .d-path   { color: #6e8cb0; }
+  .d-ok     { color: #7a9e68; }
+  .d-err    { color: #c0624a; }
+  .d-dim    { color: #6b5c48; }
+
+  /* ── LIGHT theme panel styles ── */
+  .light-panel {
+    background: #f5efe0;
+    border: 1px solid #c8b898;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .light-panel .panel-title {
+    background: #ede4d0;
+    color: #7a6650;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #c8b898;
+    font-family: monospace;
+  }
+
+  .light-code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.75;
+    padding: 1rem 1.2rem;
+    background: #f5efe0;
+    color: #2a1f10;
+    overflow-x: auto;
+  }
+
+  .light-term {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    padding: 1rem 1.2rem;
+    background: #ede4d0;
+    color: #2a1f10;
+  }
+
+  .light-spec { width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.78rem; }
+  .light-spec td { padding: 0.45rem 1rem; border-bottom: 1px solid #c8b898; color: #2a1f10; }
+  .light-spec td:first-child { color: #7a6650; width: 42%; }
+  .light-spec tr:last-child td { border-bottom: none; }
+
+  /* light syntax */
+  .l-kw   { color: #7040a0; }
+  .l-fn   { color: #8a6500; }
+  .l-cls  { color: #a05c10; }
+  .l-str  { color: #3a7a28; }
+  .l-num  { color: #a03020; }
+  .l-cmt  { color: #9a8870; font-style: italic; }
+  .l-op   { color: #246e5e; }
+  .l-attr { color: #2a5c90; }
+  .l-self { color: #884060; }
+
+  /* light terminal */
+  .l-prompt { color: #8a6500; }
+  .l-path   { color: #2a5c90; }
+  .l-ok     { color: #2a6018; }
+  .l-err    { color: #a03020; }
+  .l-dim    { color: #9a8870; }
+
+  /* shared */
+  .swatch-row { display: flex; flex-wrap: wrap; gap: 0.6rem; padding: 1rem; }
+  .swatch { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+  .swatch-box { width: 44px; height: 44px; border-radius: 5px; border: 1px solid rgba(0,0,0,0.1); }
+  .swatch-name { font-size: 0.6rem; font-family: monospace; text-align: center; }
+  .dark-swatch-name  { color: #6b5c48; }
+  .light-swatch-name { color: #9a8870; }
+
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 0.5rem; vertical-align: middle; border: 1px solid rgba(0,0,0,0.15); }
+
+  .cursor {
+    display: inline-block; width: 0.55em; height: 1em;
+    vertical-align: text-bottom;
+    animation: blink 1.1s step-end infinite;
+  }
+  .cursor-dark  { background: #c88040; }
+  .cursor-light { background: #a05c10; }
+  @keyframes blink { 50% { opacity: 0; } }
+</style>
+</head>
+<body>
+
+<h1>Parchment 1850</h1>
+<p class="subtitle">a terminal &amp; editor colorscheme — ink on aged paper</p>
+
+<div class="tabs">
+  <button class="tab active-dark" onclick="show('dark', this)">◼ Dark</button>
+  <button class="tab" onclick="show('light', this)">◻ Light</button>
+</div>
+
+<!-- ═══════════ DARK ═══════════ -->
+<div class="scheme visible" id="scheme-dark">
+  <div class="grid">
+
+    <div class="dark-panel full">
+      <div class="panel-title">Palette — Dark</div>
+      <div class="swatch-row">
+        <div class="swatch"><div class="swatch-box" style="background:#1e1810"></div><div class="swatch-name dark-swatch-name">bg0<br>#1e1810</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#26201a"></div><div class="swatch-name dark-swatch-name">bg1<br>#26201a</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#2e2820"></div><div class="swatch-name dark-swatch-name">bg2<br>#2e2820</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#3a3228"></div><div class="swatch-name dark-swatch-name">bg3<br>#3a3228</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#4a4035"></div><div class="swatch-name dark-swatch-name">ui<br>#4a4035</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#6b5c48"></div><div class="swatch-name dark-swatch-name">comment<br>#6b5c48</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#8c7a62"></div><div class="swatch-name dark-swatch-name">subtle<br>#8c7a62</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#d4c4a8"></div><div class="swatch-name dark-swatch-name">fg<br>#d4c4a8</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#e8d8b8"></div><div class="swatch-name dark-swatch-name">bright<br>#e8d8b8</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#c0624a"></div><div class="swatch-name dark-swatch-name">red<br>#c0624a</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#c88040"></div><div class="swatch-name dark-swatch-name">orange<br>#c88040</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#c4a850"></div><div class="swatch-name dark-swatch-name">yellow<br>#c4a850</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#7a9e68"></div><div class="swatch-name dark-swatch-name">green<br>#7a9e68</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#5e9e8a"></div><div class="swatch-name dark-swatch-name">teal<br>#5e9e8a</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#6e8cb0"></div><div class="swatch-name dark-swatch-name">blue<br>#6e8cb0</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#9e7ab0"></div><div class="swatch-name dark-swatch-name">purple<br>#9e7ab0</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#b07080"></div><div class="swatch-name dark-swatch-name">pink<br>#b07080</div></div>
+      </div>
+    </div>
+
+    <div class="dark-panel">
+      <div class="panel-title">Python — syntax preview</div>
+      <div class="dark-code">
+<span class="d-cmt"># Parchment 1850 — ink on old paper</span>
+<span class="d-kw">from</span> <span class="d-attr">dataclasses</span> <span class="d-kw">import</span> <span class="d-fn">dataclass</span>
+
+<span class="d-fn">@dataclass</span>
+<span class="d-kw">class</span> <span class="d-cls">Manuscript</span>:
+    <span class="d-attr">title</span>: <span class="d-cls">str</span>
+    <span class="d-attr">year</span>: <span class="d-cls">int</span> <span class="d-op">=</span> <span class="d-num">1850</span>
+    <span class="d-attr">pages</span>: <span class="d-cls">list</span> <span class="d-op">=</span> <span class="d-fn">None</span>
+
+    <span class="d-kw">def</span> <span class="d-fn">describe</span>(<span class="d-self">self</span>) <span class="d-op">-></span> <span class="d-cls">str</span>:
+        <span class="d-kw">return</span> (
+            <span class="d-str">f"&lt;em&gt;{'{'}self.title{'}'}&lt;/em&gt;"</span>
+            <span class="d-str">f" — circa {'{'}self.year{'}'}"</span>
+        )
+
+    <span class="d-kw">def</span> <span class="d-fn">word_count</span>(<span class="d-self">self</span>) <span class="d-op">-></span> <span class="d-cls">int</span>:
+        <span class="d-kw">if not</span> <span class="d-self">self</span>.<span class="d-attr">pages</span>:
+            <span class="d-kw">return</span> <span class="d-num">0</span>
+        <span class="d-kw">return</span> <span class="d-fn">sum</span>(
+            <span class="d-fn">len</span>(p.split()) <span class="d-kw">for</span> p <span class="d-kw">in</span> <span class="d-self">self</span>.<span class="d-attr">pages</span>
+        )
+      </div>
+    </div>
+
+    <div class="dark-panel">
+      <div class="panel-title">Terminal — shell preview</div>
+      <div class="dark-term">
+<span class="d-dim">Last login: Mon Mar 29 09:12:01</span>
+
+<span class="d-prompt">❯</span> <span class="d-path">~/manuscripts</span> ls -lh
+<span class="d-dim">total 48K</span>
+<span class="d-ok">drwxr-xr-x</span>  drafts/
+<span class="d-ok">-rw-r--r--</span>  manuscript.py     <span class="d-dim">3.2K</span>
+<span class="d-ok">-rw-r--r--</span>  index.md          <span class="d-dim">1.1K</span>
+
+<span class="d-prompt">❯</span> <span class="d-path">~/manuscripts</span> python manuscript.py
+<span class="d-ok">✔ Loaded 3 manuscripts</span>
+<span class="d-ok">✔ Word count: 42,180</span>
+
+<span class="d-prompt">❯</span> <span class="d-path">~/manuscripts</span> git status
+<span class="d-err">✘ 2 files modified, not staged</span>
+<span class="d-dim">  manuscript.py</span>
+<span class="d-dim">  index.md</span>
+
+<span class="d-prompt">❯</span> <span class="d-path">~/manuscripts</span> <span class="cursor cursor-dark"></span>
+      </div>
+    </div>
+
+    <div class="dark-panel full">
+      <div class="panel-title">Semantic Roles — Dark</div>
+      <table class="dark-spec">
+        <tr><td>Background (deep)</td><td><span class="dot" style="background:#1e1810"></span>#1e1810</td></tr>
+        <tr><td>Background (editor)</td><td><span class="dot" style="background:#26201a"></span>#26201a</td></tr>
+        <tr><td>Background (alt / sidebar)</td><td><span class="dot" style="background:#2e2820"></span>#2e2820</td></tr>
+        <tr><td>Selection / highlight</td><td><span class="dot" style="background:#3a3228"></span>#3a3228</td></tr>
+        <tr><td>UI borders / gutters</td><td><span class="dot" style="background:#4a4035"></span>#4a4035</td></tr>
+        <tr><td>Comments / disabled</td><td><span class="dot" style="background:#6b5c48"></span>#6b5c48</td></tr>
+        <tr><td>Line numbers / subtle</td><td><span class="dot" style="background:#8c7a62"></span>#8c7a62</td></tr>
+        <tr><td>Foreground (body)</td><td><span class="dot" style="background:#d4c4a8"></span>#d4c4a8</td></tr>
+        <tr><td>Foreground (bright)</td><td><span class="dot" style="background:#e8d8b8"></span>#e8d8b8</td></tr>
+        <tr><td>Keywords</td><td><span class="dot" style="background:#9e7ab0"></span>#9e7ab0</td></tr>
+        <tr><td>Functions</td><td><span class="dot" style="background:#c4a850"></span>#c4a850</td></tr>
+        <tr><td>Classes / types</td><td><span class="dot" style="background:#c88040"></span>#c88040</td></tr>
+        <tr><td>Strings</td><td><span class="dot" style="background:#7a9e68"></span>#7a9e68</td></tr>
+        <tr><td>Numbers</td><td><span class="dot" style="background:#c0624a"></span>#c0624a</td></tr>
+        <tr><td>Operators</td><td><span class="dot" style="background:#5e9e8a"></span>#5e9e8a</td></tr>
+        <tr><td>Attributes / imports</td><td><span class="dot" style="background:#6e8cb0"></span>#6e8cb0</td></tr>
+        <tr><td>Self / special vars</td><td><span class="dot" style="background:#b07080"></span>#b07080</td></tr>
+        <tr><td>Cursor / accent</td><td><span class="dot" style="background:#c88040"></span>#c88040</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════ LIGHT ═══════════ -->
+<div class="scheme" id="scheme-light">
+  <div class="grid">
+
+    <div class="light-panel full">
+      <div class="panel-title">Palette — Light</div>
+      <div class="swatch-row">
+        <div class="swatch"><div class="swatch-box" style="background:#f5efe0"></div><div class="swatch-name light-swatch-name">bg0<br>#f5efe0</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#ede4d0"></div><div class="swatch-name light-swatch-name">bg1<br>#ede4d0</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#e2d8c4"></div><div class="swatch-name light-swatch-name">bg2<br>#e2d8c4</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#d4c8b0"></div><div class="swatch-name light-swatch-name">bg3<br>#d4c8b0</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#c8b898"></div><div class="swatch-name light-swatch-name">ui<br>#c8b898</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#9a8870"></div><div class="swatch-name light-swatch-name">comment<br>#9a8870</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#7a6650"></div><div class="swatch-name light-swatch-name">subtle<br>#7a6650</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#2a1f10"></div><div class="swatch-name light-swatch-name">fg<br>#2a1f10</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#180e04"></div><div class="swatch-name light-swatch-name">bright<br>#180e04</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#a03020"></div><div class="swatch-name light-swatch-name">red<br>#a03020</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#a05c10"></div><div class="swatch-name light-swatch-name">orange<br>#a05c10</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#8a6500"></div><div class="swatch-name light-swatch-name">yellow<br>#8a6500</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#3a7a28"></div><div class="swatch-name light-swatch-name">green<br>#3a7a28</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#246e5e"></div><div class="swatch-name light-swatch-name">teal<br>#246e5e</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#2a5c90"></div><div class="swatch-name light-swatch-name">blue<br>#2a5c90</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#7040a0"></div><div class="swatch-name light-swatch-name">purple<br>#7040a0</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#884060"></div><div class="swatch-name light-swatch-name">pink<br>#884060</div></div>
+      </div>
+    </div>
+
+    <div class="light-panel">
+      <div class="panel-title">Python — syntax preview</div>
+      <div class="light-code">
+<span class="l-cmt"># Parchment 1850 — ink on old paper</span>
+<span class="l-kw">from</span> <span class="l-attr">dataclasses</span> <span class="l-kw">import</span> <span class="l-fn">dataclass</span>
+
+<span class="l-fn">@dataclass</span>
+<span class="l-kw">class</span> <span class="l-cls">Manuscript</span>:
+    <span class="l-attr">title</span>: <span class="l-cls">str</span>
+    <span class="l-attr">year</span>: <span class="l-cls">int</span> <span class="l-op">=</span> <span class="l-num">1850</span>
+    <span class="l-attr">pages</span>: <span class="l-cls">list</span> <span class="l-op">=</span> <span class="l-fn">None</span>
+
+    <span class="l-kw">def</span> <span class="l-fn">describe</span>(<span class="l-self">self</span>) <span class="l-op">-></span> <span class="l-cls">str</span>:
+        <span class="l-kw">return</span> (
+            <span class="l-str">f"&lt;em&gt;{'{'}self.title{'}'}&lt;/em&gt;"</span>
+            <span class="l-str">f" — circa {'{'}self.year{'}'}"</span>
+        )
+
+    <span class="l-kw">def</span> <span class="l-fn">word_count</span>(<span class="l-self">self</span>) <span class="l-op">-></span> <span class="l-cls">int</span>:
+        <span class="l-kw">if not</span> <span class="l-self">self</span>.<span class="l-attr">pages</span>:
+            <span class="l-kw">return</span> <span class="l-num">0</span>
+        <span class="l-kw">return</span> <span class="l-fn">sum</span>(
+            <span class="l-fn">len</span>(p.split()) <span class="l-kw">for</span> p <span class="l-kw">in</span> <span class="l-self">self</span>.<span class="l-attr">pages</span>
+        )
+      </div>
+    </div>
+
+    <div class="light-panel">
+      <div class="panel-title">Terminal — shell preview</div>
+      <div class="light-term">
+<span class="l-dim">Last login: Mon Mar 29 09:12:01</span>
+
+<span class="l-prompt">❯</span> <span class="l-path">~/manuscripts</span> ls -lh
+<span class="l-dim">total 48K</span>
+<span class="l-ok">drwxr-xr-x</span>  drafts/
+<span class="l-ok">-rw-r--r--</span>  manuscript.py     <span class="l-dim">3.2K</span>
+<span class="l-ok">-rw-r--r--</span>  index.md          <span class="l-dim">1.1K</span>
+
+<span class="l-prompt">❯</span> <span class="l-path">~/manuscripts</span> python manuscript.py
+<span class="l-ok">✔ Loaded 3 manuscripts</span>
+<span class="l-ok">✔ Word count: 42,180</span>
+
+<span class="l-prompt">❯</span> <span class="l-path">~/manuscripts</span> git status
+<span class="l-err">✘ 2 files modified, not staged</span>
+<span class="l-dim">  manuscript.py</span>
+<span class="l-dim">  index.md</span>
+
+<span class="l-prompt">❯</span> <span class="l-path">~/manuscripts</span> <span class="cursor cursor-light"></span>
+      </div>
+    </div>
+
+    <div class="light-panel full">
+      <div class="panel-title">Semantic Roles — Light</div>
+      <table class="light-spec">
+        <tr><td>Background (deep)</td><td><span class="dot" style="background:#f5efe0"></span>#f5efe0</td></tr>
+        <tr><td>Background (editor)</td><td><span class="dot" style="background:#ede4d0"></span>#ede4d0</td></tr>
+        <tr><td>Background (alt / sidebar)</td><td><span class="dot" style="background:#e2d8c4"></span>#e2d8c4</td></tr>
+        <tr><td>Selection / highlight</td><td><span class="dot" style="background:#d4c8b0"></span>#d4c8b0</td></tr>
+        <tr><td>UI borders / gutters</td><td><span class="dot" style="background:#c8b898"></span>#c8b898</td></tr>
+        <tr><td>Comments / disabled</td><td><span class="dot" style="background:#9a8870"></span>#9a8870</td></tr>
+        <tr><td>Line numbers / subtle</td><td><span class="dot" style="background:#7a6650"></span>#7a6650</td></tr>
+        <tr><td>Foreground (body)</td><td><span class="dot" style="background:#2a1f10"></span>#2a1f10</td></tr>
+        <tr><td>Foreground (bright)</td><td><span class="dot" style="background:#180e04"></span>#180e04</td></tr>
+        <tr><td>Keywords</td><td><span class="dot" style="background:#7040a0"></span>#7040a0</td></tr>
+        <tr><td>Functions</td><td><span class="dot" style="background:#8a6500"></span>#8a6500</td></tr>
+        <tr><td>Classes / types</td><td><span class="dot" style="background:#a05c10"></span>#a05c10</td></tr>
+        <tr><td>Strings</td><td><span class="dot" style="background:#3a7a28"></span>#3a7a28</td></tr>
+        <tr><td>Numbers</td><td><span class="dot" style="background:#a03020"></span>#a03020</td></tr>
+        <tr><td>Operators</td><td><span class="dot" style="background:#246e5e"></span>#246e5e</td></tr>
+        <tr><td>Attributes / imports</td><td><span class="dot" style="background:#2a5c90"></span>#2a5c90</td></tr>
+        <tr><td>Self / special vars</td><td><span class="dot" style="background:#884060"></span>#884060</td></tr>
+        <tr><td>Cursor / accent</td><td><span class="dot" style="background:#a05c10"></span>#a05c10</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function show(theme, btn) {
+    document.querySelectorAll('.scheme').forEach(s => s.classList.remove('visible'));
+    document.getElementById('scheme-' + theme).classList.add('visible');
+    document.querySelectorAll('.tab').forEach(t => {
+      t.classList.remove('active-dark', 'active-light');
+    });
+    btn.classList.add('active-' + theme);
+  }
+</script>
+</body>
+</html>
