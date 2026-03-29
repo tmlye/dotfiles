@@ -45,3 +45,8 @@ style = "Regular"
 key = "-"
 mods = "Control"
 action = "None"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+command = { program = "/bin/sh", args = ["-c", "PID=$(pgrep -P $PPID -ox zsh || pgrep -P $PPID -ox bash || pgrep -P $PPID -ox fish) && alacritty --working-directory \"$(readlink /proc/$PID/cwd)\" || alacritty"] }
