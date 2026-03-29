@@ -86,10 +86,3 @@ alias grm='git rebase `git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/
 alias gpl='git pull'
 alias gcm='git checkout `git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"`'
 alias gcmpl='git stash && git checkout `git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"` && git pull && git stash pop'
-
-# Kubectl
-# =======
-
-alias k='kubectl "--context=${KUBECTL_CONTEXT:-$(kubectl config current-context)}" ${KUBECTL_NAMESPACE/[[:alnum:]-]*/--namespace=${KUBECTL_NAMESPACE}}'
-alias kd='kubectl describe'
-alias kg='kubectl get'
