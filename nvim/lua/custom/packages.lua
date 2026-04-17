@@ -18,7 +18,7 @@ require('lazy').setup({
   -- Auto pairs and closes brackets
   'm4xshen/autoclose.nvim',
   -- Colors hex codes #000
-  'norcalli/nvim-colorizer.lua',
+  'catgoose/nvim-colorizer.lua',
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   -- Make it easier to deal with quotes and tags

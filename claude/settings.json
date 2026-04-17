@@ -32,6 +32,7 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
+  "fastMode": true,
   "skipDangerousModePermissionPrompt": true
 }
