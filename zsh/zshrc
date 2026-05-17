@@ -45,6 +45,9 @@ $GOPATH/bin:\
 /nix/var/nix/profiles/default/bin:\
 "
 
+# systemctl --user enable --now ssh-agent.socket
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 # Put each kubeconfig file into ~/.kube with a .yml extension
 function get_kubeconfig() {
   first=true
