@@ -48,8 +48,8 @@ $GOPATH/bin:\
 /nix/var/nix/profiles/default/bin:\
 "
 
-# systemctl --user enable --now ssh-agent.socket
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# systemctl --user enable --now gcr-ssh-agent.socket
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
 # Put each kubeconfig file into ~/.kube with a .yml extension
 function get_kubeconfig() {
