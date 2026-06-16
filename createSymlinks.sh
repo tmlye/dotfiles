@@ -103,6 +103,7 @@ ln -s $HOME/.dotfiles/zed/keymap.json $HOME/.config/zed/keymap.json
 mkdir -p $HOME/.claude
 ln -s $HOME/.dotfiles/claude/settings.json $HOME/.claude/settings.json
 ln -s $HOME/.dotfiles/claude/statusline-command.sh $HOME/.claude/statusline-command.sh
+ln -s $HOME/.dotfiles/claude/CLAUDE.md $HOME/.claude/CLAUDE.md
 
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs

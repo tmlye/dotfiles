@@ -12,7 +12,6 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "claude-opus-4-6[1m]",
   "hooks": {
     "Notification": [
       {
@@ -38,6 +37,7 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
+  "autoCompactWindow": 500000,
   "fastMode": true,
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
