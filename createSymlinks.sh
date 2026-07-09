@@ -3,7 +3,7 @@
 # Create .config directory if needed
 mkdir -p $HOME/.config
 
-declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/user-dirs.dirs .config/waybar .config/nvim .config/imv/config .config/archey4/config.json .config/cliphist/config)
+declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/user-dirs.dirs .config/waybar .config/nvim .config/imv/config .config/archey4/config.json .config/cliphist/config .config/rio/config.toml)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -89,6 +89,10 @@ ln -s $HOME/.dotfiles/various/cliphist_config $HOME/.config/cliphist/config
 # kitty
 mkdir -p $HOME/.config/kitty
 ln -s $HOME/.dotfiles/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
+
+# rio
+mkdir -p $HOME/.config/rio
+ln -s $HOME/.dotfiles/rio/config.toml $HOME/.config/rio/config.toml
 
 # wofi
 ln -s $HOME/.dotfiles/wofi $HOME/.config/wofi
