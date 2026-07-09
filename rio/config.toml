@@ -1,0 +1,32 @@
+[colors]
+background = "#26201a"
+foreground = "#d4c4a8"
+cursor = "#d4c4a8"
+
+black = "#1e1810"
+red = "#c0624a"
+green = "#7a9e68"
+yellow = "#c4a850"
+blue = "#6e8cb0"
+magenta = "#9e7ab0"
+cyan = "#5e9e8a"
+white = "#d4c4a8"
+
+light-black = "#8c7a62"
+light-red = "#c88040"
+light-green = "#7a9e68"
+light-yellow = "#c88040"
+light-blue = "#6e8cb0"
+light-magenta = "#b07080"
+light-cyan = "#5e9e8a"
+light-white = "#e8d8b8"
+
+[fonts]
+family = "DejaVu Sans Mono"
+# rio sizes are px, not pt: 13pt * 96/72
+size = 17.33
+
+[bindings]
+keys = [
+  { key = "-", with = "control", action = "none" },
+]
