@@ -29,4 +29,5 @@ size = 17.33
 [bindings]
 keys = [
   { key = "-", with = "control", action = "none" },
+  { key = "space", with = "control | shift", action = "ToggleViMode" },
 ]
