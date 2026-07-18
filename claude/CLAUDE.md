@@ -1,12 +1,19 @@
+# Communication
+
+Communicate clearly and concisely. Make sure communication to the user is well written and understandable.
+
+# Linear tickets
+
+If the user did not provide a ticket number, ask them whether they want to provide one or whether you should create a ticket. Create tickets in the infra team by default.
+
 # Code comments
 
-Default to no comments. Add one only when the *why* is non-obvious — a hidden
-constraint, a workaround, or behavior that would surprise a reader. Keep it to
-one line. Don't restate what the code does, don't narrate the change ("now we
-also…", "updated to…"), don't add section dividers, don't leave commented-out code.
-Prefer a clearer name or a named constant over a comment.
+Default to no comments. Use them VERY sparingly. If you comment, be concise.
+After you make your changes, go through all the comments and remove most of them.
+Shorten the ones that are left.
 
 # Pull requests
 
 Before pushing to an existing pull request, always check if it is already merged or not.
 When talking about pull requests to the user, always provide the link to a PR instead of just the number.
+Make sure to include the Linear ticket number in the title of the PR.
