@@ -86,10 +86,6 @@ ln -s $HOME/.dotfiles/various/archey4.json $HOME/.config/archey4/config.json
 mkdir -p $HOME/.config/cliphist
 ln -s $HOME/.dotfiles/various/cliphist_config $HOME/.config/cliphist/config
 
-# kitty
-mkdir -p $HOME/.config/kitty
-ln -s $HOME/.dotfiles/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
-
 # rio
 mkdir -p $HOME/.config/rio
 ln -s $HOME/.dotfiles/rio/config.toml $HOME/.config/rio/config.toml
