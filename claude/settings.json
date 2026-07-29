@@ -12,7 +12,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "claude-fable-5[1m]",
+  "model": "Opus",
   "hooks": {
     "Notification": [
       {
@@ -38,12 +38,12 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
-  "autoCompactWindow": 500000,
+  "autoCompactWindow": 400000,
   "fastMode": true,
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
+  "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "remoteControlAtStartup": true
+  "skipAutoPermissionPrompt": true
 }
