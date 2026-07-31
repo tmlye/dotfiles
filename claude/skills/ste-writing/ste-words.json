@@ -1,0 +1,10406 @@
+{
+ "approved": [
+  "a",
+  "able",
+  "about",
+  "above",
+  "abrasive",
+  "absorb",
+  "accept",
+  "access",
+  "accident",
+  "accidental",
+  "accidentally",
+  "accurate",
+  "accurately",
+  "across",
+  "activate",
+  "active",
+  "adapt",
+  "add",
+  "adjacent",
+  "adjacent to",
+  "adjust",
+  "adjustable",
+  "adjustment",
+  "aft",
+  "aft of",
+  "after",
+  "again",
+  "against",
+  "agent",
+  "agree",
+  "aid",
+  "air",
+  "airborne",
+  "airflow",
+  "align",
+  "all",
+  "almost",
+  "along",
+  "also",
+  "alternative",
+  "although",
+  "always",
+  "an",
+  "analog",
+  "analysis",
+  "and",
+  "angular",
+  "apart",
+  "applicable",
+  "apply",
+  "approval",
+  "approved",
+  "approximately",
+  "area",
+  "arm",
+  "around",
+  "arrow",
+  "as",
+  "as ... as",
+  "assemble",
+  "assembly",
+  "at",
+  "attach",
+  "authority",
+  "automatic",
+  "auxiliary",
+  "available",
+  "axial",
+  "axially",
+  "back",
+  "bad",
+  "balance",
+  "bank",
+  "bare",
+  "basic",
+  "be",
+  "because",
+  "because of",
+  "become",
+  "before",
+  "behind",
+  "below",
+  "bend",
+  "better",
+  "between",
+  "bleed",
+  "blockage",
+  "blocked",
+  "blow",
+  "blunt",
+  "bond",
+  "bottom",
+  "break",
+  "breathe",
+  "bright",
+  "brightly",
+  "brush",
+  "bubble",
+  "burn",
+  "but",
+  "by",
+  "bypass",
+  "calculate",
+  "calibrate",
+  "calibration",
+  "can",
+  "cancel",
+  "cannot",
+  "cap",
+  "capacity",
+  "careful",
+  "carefully",
+  "catch",
+  "category",
+  "caught",
+  "cause",
+  "center",
+  "change",
+  "channel",
+  "charge",
+  "check",
+  "chemical",
+  "chock",
+  "circular",
+  "class",
+  "clean",
+  "clear",
+  "clearance",
+  "clearly",
+  "click",
+  "clockwise",
+  "clogged",
+  "close",
+  "closed",
+  "code",
+  "coil",
+  "cold",
+  "collect",
+  "color",
+  "come",
+  "come on",
+  "communication",
+  "compare",
+  "compatible",
+  "complete",
+  "completed",
+  "component",
+  "compress",
+  "concentric",
+  "condition",
+  "configuration",
+  "connect",
+  "connection",
+  "constant",
+  "contact",
+  "contain",
+  "container",
+  "contamination",
+  "contents",
+  "continue",
+  "continuous",
+  "continuously",
+  "contour",
+  "control",
+  "cool",
+  "copy",
+  "corner",
+  "correct",
+  "correction",
+  "correctly",
+  "corrosion",
+  "could",
+  "count",
+  "cover",
+  "crack",
+  "curve",
+  "cut",
+  "cycle",
+  "damage",
+  "damaged",
+  "dangerous",
+  "data",
+  "date",
+  "de-energize",
+  "deactivate",
+  "decision",
+  "decrease",
+  "dedicated",
+  "deep",
+  "defect",
+  "defective",
+  "deflate",
+  "deformation",
+  "defuel",
+  "dent",
+  "deploy",
+  "depth",
+  "device",
+  "difference",
+  "different",
+  "differently",
+  "digital",
+  "digitally",
+  "dim",
+  "dimension",
+  "dimly",
+  "direction",
+  "directly",
+  "dirty",
+  "disarm",
+  "disassemble",
+  "discard",
+  "disconnect",
+  "disengage",
+  "disinfectant",
+  "display",
+  "distance",
+  "divide",
+  "do",
+  "do not",
+  "down",
+  "drain",
+  "drink",
+  "drop",
+  "dry",
+  "during",
+  "each",
+  "easily",
+  "easy",
+  "eat",
+  "edge",
+  "effect",
+  "eject",
+  "electric",
+  "electrical",
+  "electronic",
+  "emergency",
+  "empty",
+  "end",
+  "energize",
+  "engage",
+  "entrance",
+  "entry",
+  "equal",
+  "equally",
+  "equipment",
+  "equivalent",
+  "erase",
+  "error",
+  "estimate",
+  "examine",
+  "example",
+  "exhaust",
+  "exit",
+  "expand",
+  "expired",
+  "explosion",
+  "explosive",
+  "extend",
+  "extension",
+  "external",
+  "extinguish",
+  "face",
+  "fact",
+  "failure",
+  "fall",
+  "far",
+  "fast",
+  "faster",
+  "feather",
+  "feel",
+  "fill",
+  "filter",
+  "filtered",
+  "find",
+  "finish",
+  "fire",
+  "first",
+  "fit",
+  "flame",
+  "flammable",
+  "flange",
+  "flash",
+  "flat",
+  "flexible",
+  "flight",
+  "flow",
+  "fluid",
+  "flush",
+  "focus",
+  "fold",
+  "follow",
+  "for",
+  "force",
+  "forward",
+  "free",
+  "freely",
+  "freeze",
+  "frequent",
+  "frequently",
+  "from",
+  "front",
+  "full",
+  "fully",
+  "function",
+  "galling",
+  "gas",
+  "general",
+  "get",
+  "give",
+  "glossy",
+  "go",
+  "go off",
+  "good",
+  "gouge",
+  "gradually",
+  "graph",
+  "grease",
+  "groove",
+  "ground",
+  "group",
+  "guard",
+  "half",
+  "hang",
+  "hard",
+  "have",
+  "haze",
+  "head",
+  "hear",
+  "heat",
+  "heavy",
+  "height",
+  "help",
+  "here",
+  "high",
+  "hit",
+  "hold",
+  "hole",
+  "horizontal",
+  "hot",
+  "how",
+  "hum",
+  "hydraulic",
+  "ice",
+  "identify",
+  "idle",
+  "if",
+  "ignition",
+  "ignore",
+  "illuminate",
+  "immediately",
+  "important",
+  "in",
+  "in one",
+  "in progress",
+  "inboard",
+  "incident",
+  "include",
+  "incorrect",
+  "incorrectly",
+  "increase",
+  "increment",
+  "independently",
+  "indication",
+  "inflate",
+  "information",
+  "initial",
+  "initially",
+  "injury",
+  "inner",
+  "input",
+  "inspection",
+  "install",
+  "installation",
+  "instruction",
+  "instrument",
+  "insulation",
+  "intensity",
+  "interchange",
+  "interface",
+  "interference",
+  "internal",
+  "internally",
+  "intersection",
+  "interval",
+  "into",
+  "investigation",
+  "irregular",
+  "irritation",
+  "isolate",
+  "isolated",
+  "it",
+  "item",
+  "its",
+  "jack",
+  "joint",
+  "keep",
+  "key",
+  "kill",
+  "kink",
+  "know",
+  "label",
+  "laminated",
+  "lamination",
+  "landing",
+  "large",
+  "last",
+  "latch",
+  "lateral",
+  "laterally",
+  "layer",
+  "leak",
+  "leakage",
+  "left",
+  "length",
+  "less",
+  "let",
+  "let \u2026. stay",
+  "level",
+  "life",
+  "lift",
+  "light",
+  "lighting",
+  "lightly",
+  "limit",
+  "linear",
+  "linearly",
+  "liquid",
+  "list",
+  "listen",
+  "live",
+  "load",
+  "local",
+  "locally",
+  "location",
+  "lock",
+  "long",
+  "look",
+  "loop",
+  "loose",
+  "loosely",
+  "loosen",
+  "low",
+  "lower",
+  "lubricate",
+  "magnetic",
+  "maintenance",
+  "make",
+  "make sure",
+  "malfunction",
+  "mandatory",
+  "manual",
+  "manually",
+  "many",
+  "mark",
+  "mass",
+  "material",
+  "mating",
+  "matt",
+  "maximum",
+  "measure",
+  "mechanical",
+  "mechanism",
+  "medical",
+  "melt",
+  "method",
+  "middle",
+  "minimum",
+  "minus",
+  "missing",
+  "mix",
+  "mixture",
+  "mobile",
+  "mode",
+  "moderate",
+  "modification",
+  "moist",
+  "momentarily",
+  "monitor",
+  "moor",
+  "more",
+  "most",
+  "motoring",
+  "movable",
+  "move",
+  "movement",
+  "much",
+  "multiply",
+  "must",
+  "name",
+  "near",
+  "necessary",
+  "netic",
+  "netically",
+  "neutral",
+  "new",
+  "next",
+  "no",
+  "noise",
+  "none",
+  "nose",
+  "not",
+  "notch",
+  "number",
+  "obey",
+  "object",
+  "occur",
+  "of",
+  "off",
+  "oil",
+  "on",
+  "one",
+  "only",
+  "onto",
+  "open",
+  "opening",
+  "operate",
+  "operation",
+  "opposite",
+  "optional",
+  "or",
+  "order",
+  "other",
+  "out",
+  "out of",
+  "outboard",
+  "outdoors",
+  "outer",
+  "output",
+  "overhaul",
+  "overlap",
+  "override",
+  "paint",
+  "pair",
+  "parallel",
+  "park",
+  "part",
+  "particle",
+  "paste",
+  "patch",
+  "period",
+  "permanent",
+  "permitted",
+  "person",
+  "personnel",
+  "piece",
+  "play",
+  "plug",
+  "plus",
+  "pneumatic",
+  "point",
+  "poisonous",
+  "polish",
+  "position",
+  "possible",
+  "possibly",
+  "precaution",
+  "precision",
+  "prepare",
+  "preservation",
+  "pressure",
+  "pressurize",
+  "prevent",
+  "previous",
+  "previously",
+  "primary",
+  "problem",
+  "procedure",
+  "property",
+  "proportion",
+  "protection",
+  "protective",
+  "protrude",
+  "pull",
+  "push",
+  "put",
+  "put on",
+  "quality",
+  "quantity",
+  "quickly",
+  "radial",
+  "radially",
+  "radius",
+  "random",
+  "randomly",
+  "range",
+  "rate",
+  "read",
+  "rear",
+  "rearward",
+  "receive",
+  "recess",
+  "recoil",
+  "recommend",
+  "record",
+  "recycle",
+  "refer",
+  "reflection",
+  "refuel",
+  "regular",
+  "regularly",
+  "reject",
+  "related",
+  "relation",
+  "release",
+  "remaining",
+  "removal",
+  "remove",
+  "repair",
+  "replace",
+  "report",
+  "resistant",
+  "result",
+  "retract",
+  "retraction",
+  "right",
+  "rigid",
+  "risk",
+  "rope",
+  "rough",
+  "rounded",
+  "routing",
+  "row",
+  "rub",
+  "safe",
+  "safely",
+  "safety",
+  "same",
+  "sample",
+  "satisfactorily",
+  "satisfactory",
+  "scan",
+  "schedule",
+  "score",
+  "scratch",
+  "seal",
+  "secondary",
+  "see",
+  "select",
+  "selection",
+  "send",
+  "sense",
+  "sensitive",
+  "separation",
+  "sequence",
+  "serration",
+  "serviceable",
+  "servicing",
+  "set",
+  "shake",
+  "shape",
+  "sharp",
+  "sheet",
+  "shiny",
+  "shock",
+  "short",
+  "show",
+  "side",
+  "sign",
+  "simulate",
+  "since",
+  "skid",
+  "slope",
+  "slot",
+  "slow",
+  "slower",
+  "slowly",
+  "small",
+  "smell",
+  "smoke",
+  "smooth",
+  "smoothly",
+  "soak",
+  "soap",
+  "soft",
+  "solid",
+  "solution",
+  "some",
+  "sound",
+  "source",
+  "space",
+  "span",
+  "spark",
+  "speak",
+  "special",
+  "specially",
+  "specified",
+  "speed",
+  "spherical",
+  "spill",
+  "spline",
+  "spray",
+  "stable",
+  "stain",
+  "standard",
+  "start",
+  "stay",
+  "step",
+  "stop",
+  "storage",
+  "stow",
+  "straight",
+  "strain",
+  "strip",
+  "stripe",
+  "strong",
+  "structure",
+  "subsequent",
+  "subsequently",
+  "subtract",
+  "such",
+  "sudden",
+  "suddenly",
+  "sufficient",
+  "sufficiently",
+  "sum",
+  "supply",
+  "support",
+  "sure",
+  "surface",
+  "swallow",
+  "symbol",
+  "symptom",
+  "synchronized",
+  "system",
+  "tacky",
+  "tag",
+  "tap",
+  "tape",
+  "task",
+  "telescopic",
+  "tell",
+  "temporary",
+  "tension",
+  "tertiary",
+  "test",
+  "than",
+  "that",
+  "the",
+  "the two",
+  "their",
+  "them",
+  "then",
+  "there",
+  "these",
+  "they",
+  "thick",
+  "thickness",
+  "thin",
+  "think",
+  "this",
+  "those",
+  "thread",
+  "through",
+  "thru",
+  "thus",
+  "tight",
+  "tighten",
+  "tightly",
+  "tilt",
+  "time",
+  "to",
+  "together",
+  "tolerance",
+  "too",
+  "tool",
+  "top",
+  "torily",
+  "torque",
+  "tory",
+  "total",
+  "touch",
+  "tow",
+  "transmit",
+  "transparent",
+  "transport",
+  "travel",
+  "try",
+  "tune",
+  "turn",
+  "twist",
+  "two",
+  "type",
+  "typical",
+  "unfold",
+  "unit",
+  "unknown",
+  "unless",
+  "unlock",
+  "unserviceable",
+  "until",
+  "unusual",
+  "unusually",
+  "unwanted",
+  "unwind",
+  "up",
+  "upstream",
+  "use",
+  "used",
+  "usual",
+  "usually",
+  "value",
+  "vertical",
+  "vertically",
+  "very",
+  "very bad",
+  "very cold",
+  "very high",
+  "very hot",
+  "vibration",
+  "view",
+  "visual",
+  "visually",
+  "voice",
+  "volume",
+  "wait",
+  "walk",
+  "want",
+  "warm",
+  "warning",
+  "we",
+  "weak",
+  "wear",
+  "weather",
+  "weigh",
+  "weight",
+  "wet",
+  "when",
+  "where",
+  "which",
+  "while",
+  "who",
+  "wide",
+  "width",
+  "will",
+  "wind",
+  "wise",
+  "with",
+  "with a file",
+  "without",
+  "work",
+  "worn",
+  "write",
+  "yes",
+  "you",
+  "your",
+  "zero"
+ ],
+ "unapproved": {
+  "abaft": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "AFT OF (prep)"
+   ]
+  },
+  "abandon": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GO (v)",
+    "STOP (v)"
+   ]
+  },
+  "abate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "ability": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CAN (v)"
+   ]
+  },
+  "abnormal": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "UNUSUAL (adj)",
+    "INCORRECT (adj)"
+   ]
+  },
+  "abnormality": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DEFECT (TN)"
+   ]
+  },
+  "abrupt": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SUDDEN (adj)",
+    "SUDDENLY (adv)"
+   ]
+  },
+  "absence": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "NONE (pron)",
+    "NOT (adv)",
+    "NO (adj)"
+   ]
+  },
+  "absent": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MISSING (adj)",
+    "NO (adj)"
+   ]
+  },
+  "absolutely": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "FULLY (adv)"
+   ]
+  },
+  "absorption": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ABSORB (v)"
+   ]
+  },
+  "abundant": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LARGE (adj)"
+   ]
+  },
+  "abut": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TOUCH (v)"
+   ]
+  },
+  "accelerate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INCREASE (v)",
+    "FASTER (adj)"
+   ]
+  },
+  "acceptable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "PERMITTED (adj)",
+    "SATISFACTORY (adj)",
+    "SERVICEABLE (adj)"
+   ]
+  },
+  "acceptance": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ACCEPT (v)"
+   ]
+  },
+  "accessible": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ACCESS (n)"
+   ]
+  },
+  "accommodate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LET (v)"
+   ]
+  },
+  "accomplish": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DO (v)",
+    "COMPLETE (v)"
+   ]
+  },
+  "according to": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REFER (v)"
+   ]
+  },
+  "account for": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)"
+   ]
+  },
+  "accumulate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "COLLECT (v)"
+   ]
+  },
+  "accumulation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "QUANTITY (n)",
+    "COLLECT (v)"
+   ]
+  },
+  "accuracy": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PRECISION (n)"
+   ]
+  },
+  "achieve": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GET (v)"
+   ]
+  },
+  "acquire": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GET (v)"
+   ]
+  },
+  "acrid": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DANGEROUS (adj)"
+   ]
+  },
+  "act": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "action": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "STEP (n)",
+    "PROCEDURE (n)",
+    "TASK (n)"
+   ]
+  },
+  "activity": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "TASK (n)",
+    "PROCEDURE (n)",
+    "WORK (n)"
+   ]
+  },
+  "actuate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "START (v)",
+    "OPERATE (v)",
+    "PUSH (v)"
+   ]
+  },
+  "actuation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "OPERATION (n)"
+   ]
+  },
+  "addition": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ADD (v)"
+   ]
+  },
+  "additional": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MORE (adj)"
+   ]
+  },
+  "adequate": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SUFFICIENT (adj)"
+   ]
+  },
+  "adhere": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BOND (v)",
+    "OBEY (v)"
+   ]
+  },
+  "adhesion": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "BOND (n)"
+   ]
+  },
+  "adjoining": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ADJACENT (adj)"
+   ]
+  },
+  "admit": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LET (v)"
+   ]
+  },
+  "adopt": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "USE (v)"
+   ]
+  },
+  "advance": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "FORWARD (adj)",
+    "SET (v)",
+    "FORWARD (adv)"
+   ]
+  },
+  "adverse": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "BAD (adj)"
+   ]
+  },
+  "advisable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RECOMMEND (v)"
+   ]
+  },
+  "advise": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)",
+    "RECOMMEND (v)"
+   ]
+  },
+  "affect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "EFFECT (n)"
+   ]
+  },
+  "aggravate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INCREASE (v)"
+   ]
+  },
+  "agitate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHAKE (v)"
+   ]
+  },
+  "agitation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SHAKE (v)"
+   ]
+  },
+  "ahead": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "FORWARD (adv)"
+   ]
+  },
+  "aim": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "POINT (v)"
+   ]
+  },
+  "air-dry": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DRY (v)"
+   ]
+  },
+  "alert": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)"
+   ]
+  },
+  "alignment": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ALIGN (v)"
+   ]
+  },
+  "allocate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GIVE (v)"
+   ]
+  },
+  "allow": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LET (v)"
+   ]
+  },
+  "allowable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "PERMITTED (adj)",
+    "APPROVED (adj)"
+   ]
+  },
+  "already": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "IN PROGRESS (adv)"
+   ]
+  },
+  "alter": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CHANGE (v)"
+   ]
+  },
+  "alteration": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CHANGE (v)"
+   ]
+  },
+  "alternate": {
+   "pos": [
+    "adj",
+    "v"
+   ],
+   "alts": [
+    "ALTERNATIVE (adj)",
+    "THEN (adv)"
+   ]
+  },
+  "alternately": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "IN ONE (TN)"
+   ]
+  },
+  "alternatively": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "ALTERNATIVE (n)"
+   ]
+  },
+  "amend": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CHANGE (v)"
+   ]
+  },
+  "amendment": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CHANGE (n)",
+    "CHANGE (v)"
+   ]
+  },
+  "among": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "IN (prep)"
+   ]
+  },
+  "amount": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "QUANTITY (n)"
+   ]
+  },
+  "analyze": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ANALYSIS (TN)"
+   ]
+  },
+  "anchor": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)"
+   ]
+  },
+  "ancillary": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "AUXILIARY (adj)",
+    "SECONDARY (adj)"
+   ]
+  },
+  "annotation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "WRITE (v)",
+    "RECORD (v)"
+   ]
+  },
+  "annunciate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHOW (v)"
+   ]
+  },
+  "another": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ONE (TN)",
+    "DIFFERENT (adj)",
+    "AGAIN (adv)"
+   ]
+  },
+  "any": {
+   "pos": [
+    "adj",
+    "pron"
+   ],
+   "alts": [
+    "ONE (TN)"
+   ]
+  },
+  "anytime": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "WHEN (conj)"
+   ]
+  },
+  "aperture": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "OPENING (n)"
+   ]
+  },
+  "apparent": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SEE (v)",
+    "FIND (v)"
+   ]
+  },
+  "appear": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHOW (v)",
+    "VIEW (n)",
+    "THINK (v)",
+    "POSSIBLE (adj)"
+   ]
+  },
+  "application": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "APPLY (v)"
+   ]
+  },
+  "appoint": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)"
+   ]
+  },
+  "approach": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "appropriate": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "APPLICABLE (adj)"
+   ]
+  },
+  "approve": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPROVAL (n)"
+   ]
+  },
+  "arise": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OCCUR (v)",
+    "CAUSE (v)"
+   ]
+  },
+  "arrange": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "arrangement": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CONFIGURATION (TN)",
+    "PREPARE (v)"
+   ]
+  },
+  "arrest": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STOP (v)",
+    "HOLD (v)"
+   ]
+  },
+  "arrive": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GET (v)"
+   ]
+  },
+  "article": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "OBJECT (n)"
+   ]
+  },
+  "ascertain": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)"
+   ]
+  },
+  "ask": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)",
+    "SPEAK (v)"
+   ]
+  },
+  "assess": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CALCULATE (v)",
+    "ESTIMATE (n)"
+   ]
+  },
+  "assessment": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ESTIMATE (n)",
+    "CALCULATE (v)"
+   ]
+  },
+  "assign": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GIVE (v)"
+   ]
+  },
+  "assist": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HELP (v)"
+   ]
+  },
+  "assistance": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "AID (n)",
+    "HELP (v)"
+   ]
+  },
+  "associated": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CORRECT (adj)",
+    "RELATED (adj)",
+    "ITS (adj)",
+    "THEIR (adj)"
+   ]
+  },
+  "assume": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "THINK (v)"
+   ]
+  },
+  "assure": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)"
+   ]
+  },
+  "as to": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "ABOUT (prep)"
+   ]
+  },
+  "asymmetric": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "attachment": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ATTACH (v)"
+   ]
+  },
+  "attain": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHOW (v)",
+    "BE (v)",
+    "GET (v)"
+   ]
+  },
+  "attempt": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "TRY (v)"
+   ]
+  },
+  "attention": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "AID (n)",
+    "CAREFUL (adj)",
+    "MONITOR (v)"
+   ]
+  },
+  "audible": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "HEAR (v)",
+    "LISTEN (v)"
+   ]
+  },
+  "augment": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INCREASE (v)"
+   ]
+  },
+  "aurally": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "LISTEN (v)",
+    "HEAR (v)"
+   ]
+  },
+  "authentic": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ACCURATE (adj)"
+   ]
+  },
+  "authorized": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "APPROVED (adj)"
+   ]
+  },
+  "avert": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)"
+   ]
+  },
+  "avoid": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)"
+   ]
+  },
+  "aware": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "KNOW (v)",
+    "TELL (v)"
+   ]
+  },
+  "back and forth": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DIRECTION (n)"
+   ]
+  },
+  "back off": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LOOSEN (v)"
+   ]
+  },
+  "backup": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "EMERGENCY (n)",
+    "AUXILIARY (adj)"
+   ]
+  },
+  "backward": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "REARWARD (adv)"
+   ]
+  },
+  "badly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "INCORRECTLY (adv)",
+    "DECREASE (v)"
+   ]
+  },
+  "bared": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "BARE (adj)"
+   ]
+  },
+  "base": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "BOTTOM (n)",
+    "USE (v)"
+   ]
+  },
+  "begin": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "START (v)"
+   ]
+  },
+  "beginning": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "START (n)",
+    "SOURCE (n)",
+    "START (v)"
+   ]
+  },
+  "beneath": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "BELOW (prep)"
+   ]
+  },
+  "beside": {
+   "pos": [
+    "prep"
+   ],
+   "alts": []
+  },
+  "beware": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CAREFUL (adj)"
+   ]
+  },
+  "beyond": {
+   "pos": [
+    "prep"
+   ],
+   "alts": []
+  },
+  "big": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LARGE (adj)"
+   ]
+  },
+  "bind": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FREELY (adv)"
+   ]
+  },
+  "blank": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SEAL (v)",
+    "CAP (TN)",
+    "COVER (TN)"
+   ]
+  },
+  "blend": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MIX (v)"
+   ]
+  },
+  "block": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "blot": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DRY (v)"
+   ]
+  },
+  "blunted": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "BLUNT (adj)"
+   ]
+  },
+  "bolt": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)"
+   ]
+  },
+  "both": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "THE TWO (TN)"
+   ]
+  },
+  "bounds": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "LIMIT (n)"
+   ]
+  },
+  "brace": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HOLD (v)",
+    "STRONG (adj)"
+   ]
+  },
+  "branch": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DIVIDE (v)"
+   ]
+  },
+  "breadth": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "WIDTH (n)"
+   ]
+  },
+  "breakdown": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "STOP (v)"
+   ]
+  },
+  "brilliance": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "INTENSITY (n)",
+    "BRIGHT (adj)"
+   ]
+  },
+  "bring": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "PUT (v)"
+   ]
+  },
+  "briskly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "QUICKLY (adv)"
+   ]
+  },
+  "broadcast": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TRANSMIT (v)"
+   ]
+  },
+  "brush on": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BRUSH (TN)"
+   ]
+  },
+  "build": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "STRUCTURE (n)",
+    "ASSEMBLE (v)"
+   ]
+  },
+  "bump": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HIT (v)"
+   ]
+  },
+  "burst": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BREAK (v)"
+   ]
+  },
+  "butt": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TOUCH (v)"
+   ]
+  },
+  "by means of": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "WITH (prep)"
+   ]
+  },
+  "calculation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CALCULATE (v)"
+   ]
+  },
+  "call": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)"
+   ]
+  },
+  "capability": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "FUNCTION (n)",
+    "CAN (v)"
+   ]
+  },
+  "capable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "APPROVED (adj)",
+    "CAN (v)"
+   ]
+  },
+  "care": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PRECAUTION (n)",
+    "CAREFUL (adj)",
+    "CAREFULLY (adv)"
+   ]
+  },
+  "carry": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TRANSMIT (v)",
+    "TRANSPORT (TN)"
+   ]
+  },
+  "carry out": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DO (v)",
+    "MEASURE (v)"
+   ]
+  },
+  "case": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CONDITION (n)"
+   ]
+  },
+  "in case of": {
+   "pos": [
+    "conj"
+   ],
+   "alts": [
+    "IF (conj)"
+   ]
+  },
+  "categorize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CATEGORY (TN)"
+   ]
+  },
+  "caution": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)"
+   ]
+  },
+  "cautiously": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "CAREFULLY (adv)"
+   ]
+  },
+  "cavity": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "HOLE (n)",
+    "SPACE (n)"
+   ]
+  },
+  "cease": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STOP (v)"
+   ]
+  },
+  "centralize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CENTER (TN)"
+   ]
+  },
+  "certain": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SURE (adj)",
+    "SOME (adj)",
+    "SPECIFIED (adj)"
+   ]
+  },
+  "certify": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "WRITE (v)",
+    "APPROVAL (n)"
+   ]
+  },
+  "chafe": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RUB (v)"
+   ]
+  },
+  "chafed": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "WORN (adj)"
+   ]
+  },
+  "chance": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "RISK (n)"
+   ]
+  },
+  "by chance": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ACCIDENTALLY (adv)"
+   ]
+  },
+  "characteristic": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PROPERTY (n)",
+    "QUALITY (n)"
+   ]
+  },
+  "chip": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "PARTICLE (n)",
+    "DAMAGED (adj)"
+   ]
+  },
+  "choice": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SELECTION (n)",
+    "ALTERNATIVE (adj)"
+   ]
+  },
+  "choose": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SELECT (v)",
+    "ALTERNATIVE (adj)"
+   ]
+  },
+  "circa": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "APPROXIMATELY (adv)"
+   ]
+  },
+  "circle": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "AROUND (prep)"
+   ]
+  },
+  "circulate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SUPPLY (v)"
+   ]
+  },
+  "clamp": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)",
+    "PUT (v)"
+   ]
+  },
+  "classification": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CLASS (TN)",
+    "CATEGORY (TN)"
+   ]
+  },
+  "cleanliness": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CLEAN (adj)"
+   ]
+  },
+  "clip": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CUT (v)",
+    "ATTACH (v)"
+   ]
+  },
+  "closely": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "CAREFULLY (adv)"
+   ]
+  },
+  "close to": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "NEAR (prep)"
+   ]
+  },
+  "coat": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "LAYER (n)"
+   ]
+  },
+  "coating": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "LAYER (n)"
+   ]
+  },
+  "cock": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SET (v)"
+   ]
+  },
+  "coincide": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ALIGN (v)"
+   ]
+  },
+  "coincident": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SYNCHRONIZED (adj)",
+    "ALIGN (v)"
+   ]
+  },
+  "collapse": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CLOSE (v)",
+    "FALL (v)"
+   ]
+  },
+  "color code": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "IDENTIFY (v)",
+    "CODE (n)"
+   ]
+  },
+  "colored": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "COLOR (n)"
+   ]
+  },
+  "combine": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MIX (v)"
+   ]
+  },
+  "combustible": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FLAMMABLE (adj)"
+   ]
+  },
+  "commence": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "START (v)"
+   ]
+  },
+  "commencement": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "START (v)"
+   ]
+  },
+  "common": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SAME (adv)"
+   ]
+  },
+  "communicate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONTACT (v)",
+    "SPEAK (v)",
+    "HEAR (v)",
+    "COMMUNICATION (n)"
+   ]
+  },
+  "comparison": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "COMPARE (v)"
+   ]
+  },
+  "compile": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RECORD (v)",
+    "COLLECT (v)"
+   ]
+  },
+  "completely": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "FULLY (adv)"
+   ]
+  },
+  "completion": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "END (n)",
+    "COMPLETE (v)"
+   ]
+  },
+  "complicated": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "comply": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OBEY (v)"
+   ]
+  },
+  "comprehensive": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FULL (adj)"
+   ]
+  },
+  "comprise": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HAVE (v)",
+    "CONTAIN (v)"
+   ]
+  },
+  "compulsory": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MANDATORY (adj)"
+   ]
+  },
+  "compute": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CALCULATE (v)"
+   ]
+  },
+  "concentrate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ALL (adj)"
+   ]
+  },
+  "concern": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLICABLE (adj)"
+   ]
+  },
+  "conclusion": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "END (n)",
+    "RESULT (n)"
+   ]
+  },
+  "concurrently": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "conduct": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DO (v)"
+   ]
+  },
+  "confine to": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ONLY (adv)"
+   ]
+  },
+  "confirm": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)"
+   ]
+  },
+  "conflict": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DIFFERENT (adj)",
+    "AGREE (v)"
+   ]
+  },
+  "conform": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "AGREE (v)"
+   ]
+  },
+  "conformance": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "AGREE (v)"
+   ]
+  },
+  "conformity": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "AGREE (v)"
+   ]
+  },
+  "consecutive": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ONE (TN)"
+   ]
+  },
+  "consecutively": {
+   "pos": [
+    "TN"
+   ],
+   "alts": [
+    "ONE (TN)",
+    "SEQUENCE (n)"
+   ]
+  },
+  "consequence": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "BECAUSE OF (prep)"
+   ]
+  },
+  "consider": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "THINK (v)"
+   ]
+  },
+  "considerable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LARGE (adj)",
+    "IMPORTANT (adj)",
+    "DANGEROUS (adj)"
+   ]
+  },
+  "consist of": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HAVE (v)"
+   ]
+  },
+  "consistent": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "AGREE (v)"
+   ]
+  },
+  "construct": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ASSEMBLE (v)"
+   ]
+  },
+  "consult": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REFER (v)"
+   ]
+  },
+  "contaminant": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CONTAMINATION (n)"
+   ]
+  },
+  "contaminated": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DIRTY (adj)",
+    "CONTAMINATION (n)"
+   ]
+  },
+  "contiguous": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ADJACENT (adj)"
+   ]
+  },
+  "conventional": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "STANDARD (adj)"
+   ]
+  },
+  "converse": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "OPPOSITE (adj)"
+   ]
+  },
+  "convert": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CHANGE (v)"
+   ]
+  },
+  "convey": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "TELL (v)"
+   ]
+  },
+  "coordinate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SYNCHRONIZED (adj)"
+   ]
+  },
+  "correctness": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CORRECT (adj)",
+    "CORRECTLY (adv)"
+   ]
+  },
+  "correspond": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "AGREE (v)",
+    "SAME (adj)",
+    "DIFFERENT (adj)"
+   ]
+  },
+  "corresponding": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RELATED (adj)"
+   ]
+  },
+  "corrode": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CORROSION (TN)"
+   ]
+  },
+  "corrosive": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CORROSION (TN)"
+   ]
+  },
+  "couple": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONNECT (v)",
+    "ATTACH (v)"
+   ]
+  },
+  "create": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE (v)",
+    "CAUSE (v)"
+   ]
+  },
+  "critical": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CAREFUL (adj)"
+   ]
+  },
+  "cross": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ACROSS (adv)",
+    "CORRECTLY (adv)"
+   ]
+  },
+  "curvature": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "BEND (n)",
+    "CURVE (n)",
+    "RADIUS (TN)"
+   ]
+  },
+  "damp": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MOIST (adj)"
+   ]
+  },
+  "dampen": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "danger": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "RISK (n)",
+    "DANGEROUS (adj)"
+   ]
+  },
+  "dangerously": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "DANGEROUS (adj)"
+   ]
+  },
+  "deadly": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "KILL (v)"
+   ]
+  },
+  "deaerate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BLEED (v)",
+    "AIR (TN)"
+   ]
+  },
+  "dearm": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DISARM (v)",
+    "REMOVE (v)"
+   ]
+  },
+  "decay": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "decelerate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)",
+    "SLOWER (adj)"
+   ]
+  },
+  "decide": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SELECT (v)",
+    "DECISION (n)"
+   ]
+  },
+  "decrement": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "INCREMENT (n)"
+   ]
+  },
+  "define": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CALCULATE (v)",
+    "GIVE (v)",
+    "SPECIFIED (adj)"
+   ]
+  },
+  "deflect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)"
+   ]
+  },
+  "deflection": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "MOVEMENT (n)",
+    "POSITION (n)",
+    "TRAVEL (n)"
+   ]
+  },
+  "deformed": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DAMAGED (adj)",
+    "DEFORMATION (TN)"
+   ]
+  },
+  "defueling": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DEFUEL (v)"
+   ]
+  },
+  "degrease": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GREASE (TN)"
+   ]
+  },
+  "de-ice": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ICE (TN)"
+   ]
+  },
+  "delay": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "INTERVAL (n)",
+    "IMMEDIATELY (adv)",
+    "AFTER (prep)"
+   ]
+  },
+  "delete": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ERASE (v)",
+    "REMOVE (v)"
+   ]
+  },
+  "delicate": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "deliver": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SUPPLY (v)"
+   ]
+  },
+  "delivery": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SUPPLY (v)"
+   ]
+  },
+  "demand": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "NECESSARY (adj)"
+   ]
+  },
+  "denote": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHOW (v)"
+   ]
+  },
+  "depend": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "IF (conj)"
+   ]
+  },
+  "deplete": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "deposit": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PARTICLE (n)",
+    "CONTAMINATION (n)"
+   ]
+  },
+  "depress": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUSH (v)"
+   ]
+  },
+  "depressurize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PRESSURE (TN)"
+   ]
+  },
+  "describe": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GIVE (v)"
+   ]
+  },
+  "deselect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CANCEL (v)"
+   ]
+  },
+  "design": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HAVE (v)"
+   ]
+  },
+  "desired": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "NECESSARY (adj)",
+    "CORRECT (adj)"
+   ]
+  },
+  "destroy": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BREAK (v)"
+   ]
+  },
+  "detach": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DISCONNECT (v)",
+    "DISENGAGE (v)",
+    "REMOVE (v)"
+   ]
+  },
+  "detail": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "INSTRUCTION (n)",
+    "GIVE (v)",
+    "REFER (v)",
+    "SPECIFIED (adj)"
+   ]
+  },
+  "detect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FIND (v)",
+    "SENSE (v)"
+   ]
+  },
+  "determine": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FIND (v)",
+    "GIVE (v)",
+    "SELECT (v)",
+    "CALCULATE (v)"
+   ]
+  },
+  "detrimental": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DANGEROUS (adj)",
+    "DAMAGE (n)"
+   ]
+  },
+  "develop": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "START (v)",
+    "CAUSE (v)"
+   ]
+  },
+  "deviate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OBEY (v)"
+   ]
+  },
+  "devise": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE (v)",
+    "FIND (v)"
+   ]
+  },
+  "diagnose": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FIND (v)"
+   ]
+  },
+  "diametrically": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "OPPOSITE (adj)"
+   ]
+  },
+  "differ": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DIFFERENT (adj)"
+   ]
+  },
+  "differentiate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "IDENTIFY (v)"
+   ]
+  },
+  "difficult": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "difficulty": {
+   "pos": [
+    "n"
+   ],
+   "alts": []
+  },
+  "dilute": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MIX (v)",
+    "ADD (v)"
+   ]
+  },
+  "diminish": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "dip": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOMENTARILY (adv)"
+   ]
+  },
+  "direct": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "POINT (v)"
+   ]
+  },
+  "disappear": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "VIEW (n)"
+   ]
+  },
+  "discharge": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RELEASE (v)",
+    "GO (v)"
+   ]
+  },
+  "discontinue": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STOP (v)"
+   ]
+  },
+  "discover": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FIND (v)"
+   ]
+  },
+  "discrepancy": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DIFFERENCE (n)"
+   ]
+  },
+  "disinfect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DISINFECTANT (TN)"
+   ]
+  },
+  "dismantle": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DISASSEMBLE (v)"
+   ]
+  },
+  "dispatch": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SEND (v)"
+   ]
+  },
+  "disperse": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "displace": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)"
+   ]
+  },
+  "dispose of": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DISCARD (v)"
+   ]
+  },
+  "disposition": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "LOCATION (n)",
+    "POSITION (n)"
+   ]
+  },
+  "disregard": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "IGNORE (v)"
+   ]
+  },
+  "distinct": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CLEAR (adj)"
+   ]
+  },
+  "distinctly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "CLEARLY (adv)"
+   ]
+  },
+  "distort": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TWIST (v)"
+   ]
+  },
+  "distribute": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLY (v)",
+    "SUPPLY (v)"
+   ]
+  },
+  "distribution": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SUPPLY (n)"
+   ]
+  },
+  "disturb": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "CHANGE (v)"
+   ]
+  },
+  "don": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "USE (v)",
+    "PUT ON (v)"
+   ]
+  },
+  "doubt": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "THINK (v)"
+   ]
+  },
+  "downward": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "DOWN (adv)"
+   ]
+  },
+  "drag": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PULL (v)"
+   ]
+  },
+  "draw": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE (v)",
+    "PULL (v)"
+   ]
+  },
+  "dress": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "USE (v)",
+    "PUT ON (v)"
+   ]
+  },
+  "drift": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "REMOVE (v)"
+   ]
+  },
+  "drive": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "REMOVE (v)",
+    "OPERATE (v)"
+   ]
+  },
+  "droop": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)"
+   ]
+  },
+  "due to": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "BECAUSE OF (prep)",
+    "BECAUSE (conj)"
+   ]
+  },
+  "dull": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DIM (adj)",
+    "MATT (adj)"
+   ]
+  },
+  "duration": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DURING (prep)"
+   ]
+  },
+  "dust": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLY (v)"
+   ]
+  },
+  "early": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SHORT (adj)"
+   ]
+  },
+  "earth": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "GROUND (n)",
+    "GROUND (v)"
+   ]
+  },
+  "ease": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "EASILY (adv)",
+    "EASY (adj)"
+   ]
+  },
+  "effective": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "GOOD (adj)"
+   ]
+  },
+  "efficacious": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "GOOD (adj)"
+   ]
+  },
+  "efficient": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SATISFACTORY (adj)"
+   ]
+  },
+  "efficiently": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "SATISFACTORILY (adv)"
+   ]
+  },
+  "efflux": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "EXHAUST (n)"
+   ]
+  },
+  "effort": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "FORCE (TN)",
+    "TRY (v)"
+   ]
+  },
+  "either": {
+   "pos": [
+    "adj",
+    "conj",
+    "pron"
+   ],
+   "alts": [
+    "ONE (TN)",
+    "OR (conj)"
+   ]
+  },
+  "ejection": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "EJECT (v)"
+   ]
+  },
+  "elapse": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TIME (n)",
+    "AFTER (prep)",
+    "INTERVAL (n)"
+   ]
+  },
+  "eliminate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)",
+    "STOP (v)",
+    "PREVENT (v)"
+   ]
+  },
+  "emit": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FROM (prep)"
+   ]
+  },
+  "employ": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "USE (v)",
+    "HAVE (v)"
+   ]
+  },
+  "enable": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LET (v)"
+   ]
+  },
+  "encircle": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "AROUND (prep)"
+   ]
+  },
+  "enclosed": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CLOSED (adj)"
+   ]
+  },
+  "encounter": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BE (v)",
+    "FIND (v)"
+   ]
+  },
+  "enforce": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OBEY (v)"
+   ]
+  },
+  "engagement": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ENGAGE (v)"
+   ]
+  },
+  "enlarge": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INCREASE (v)",
+    "LARGE (adj)"
+   ]
+  },
+  "enough": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SUFFICIENT (adj)"
+   ]
+  },
+  "ensue": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CAUSE (v)"
+   ]
+  },
+  "ensure": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)"
+   ]
+  },
+  "enter": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RECORD (v)",
+    "ENTRY (n)"
+   ]
+  },
+  "entire": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FULL (adj)",
+    "ALL (adj)"
+   ]
+  },
+  "entirely": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "FULLY (adv)"
+   ]
+  },
+  "equip": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INSTALL (v)"
+   ]
+  },
+  "equipped": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "HAVE (v)"
+   ]
+  },
+  "erect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ASSEMBLE (v)"
+   ]
+  },
+  "erratic": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "IRREGULAR (adj)"
+   ]
+  },
+  "escape": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DEFLATE (v)",
+    "RELEASE (v)"
+   ]
+  },
+  "establish": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)"
+   ]
+  },
+  "evaluate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "EXAMINE (v)",
+    "ANALYSIS (TN)"
+   ]
+  },
+  "evaluation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "EXAMINE (v)",
+    "ANALYSIS (TN)"
+   ]
+  },
+  "evaporate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DRY (v)"
+   ]
+  },
+  "even": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SMOOTH (adj)",
+    "SAME (adj)",
+    "FLAT (adj)",
+    "FLUSH (adj)",
+    "LEVEL (adj)"
+   ]
+  },
+  "evenly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "GRADUALLY (adv)",
+    "EQUALLY (adv)"
+   ]
+  },
+  "event": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "IF (conj)"
+   ]
+  },
+  "eventually": {
+   "pos": [
+    "adv"
+   ],
+   "alts": []
+  },
+  "every": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ALL (adj)",
+    "EACH (adj)",
+    "INTERVAL (n)"
+   ]
+  },
+  "evidence": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "INDICATION (n)",
+    "SIGN (n)",
+    "SHOW (v)",
+    "FIND (v)"
+   ]
+  },
+  "evident": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FIND (v)"
+   ]
+  },
+  "exact": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ACCURATE (adj)",
+    "CORRECT (adj)"
+   ]
+  },
+  "exactly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "ACCURATELY (adv)",
+    "FULLY (adv)",
+    "CORRECT (adj)"
+   ]
+  },
+  "examination": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "EXAMINE (v)",
+    "FIND (v)"
+   ]
+  },
+  "exceed": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "except": {
+   "pos": [
+    "prep"
+   ],
+   "alts": []
+  },
+  "exception": {
+   "pos": [
+    "n"
+   ],
+   "alts": []
+  },
+  "exceptional": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "UNUSUAL (adj)"
+   ]
+  },
+  "exceptionally": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "UNUSUALLY (adv)"
+   ]
+  },
+  "excess": {
+   "pos": [
+    "adj",
+    "n"
+   ],
+   "alts": [
+    "UNWANTED (adj)"
+   ]
+  },
+  "excessive": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "excessively": {
+   "pos": [
+    "adv"
+   ],
+   "alts": []
+  },
+  "exchange": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INTERCHANGE (v)",
+    "REPLACE (v)"
+   ]
+  },
+  "exclude": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "excluding": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "WITHOUT (prep)"
+   ]
+  },
+  "execute": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DO (v)"
+   ]
+  },
+  "exempt": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "NO (adj)"
+   ]
+  },
+  "exercise": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)",
+    "CAREFUL (adj)"
+   ]
+  },
+  "exert": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLY (v)",
+    "PUT (v)"
+   ]
+  },
+  "exhale": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BREATHE (v)"
+   ]
+  },
+  "exhaustive": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ALL (adj)",
+    "FULL (adj)"
+   ]
+  },
+  "exist": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BE (v)"
+   ]
+  },
+  "expect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "POSSIBLE (adj)"
+   ]
+  },
+  "expel": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)",
+    "BLEED (v)",
+    "RELEASE (v)"
+   ]
+  },
+  "explain": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)"
+   ]
+  },
+  "expose": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GET (v)"
+   ]
+  },
+  "extent": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DEPTH (n)",
+    "LENGTH (n)",
+    "WIDTH (n)"
+   ]
+  },
+  "exterior": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "EXTERNAL (adj)"
+   ]
+  },
+  "extra": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MORE (adj)"
+   ]
+  },
+  "extract": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "extreme": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "VERY HIGH (adj)",
+    "VERY BAD (adj)",
+    "VERY COLD (adj)",
+    "VERY HOT (adj)"
+   ]
+  },
+  "extremely": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "VERY (adv)"
+   ]
+  },
+  "exude": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OUT OF (prep)"
+   ]
+  },
+  "fabricate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE (v)"
+   ]
+  },
+  "facilitate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HELP (v)"
+   ]
+  },
+  "facility": {
+   "pos": [
+    "n"
+   ],
+   "alts": []
+  },
+  "factor": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CAUSE (n)"
+   ]
+  },
+  "fail": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FAILURE (TN)"
+   ]
+  },
+  "failed": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DEFECTIVE (adj)",
+    "UNSERVICEABLE (adj)"
+   ]
+  },
+  "failure": {
+   "pos": [
+    "n"
+   ],
+   "alts": []
+  },
+  "faint": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DIM (adj)",
+    "INTENSITY (n)",
+    "BRIGHT (adj)"
+   ]
+  },
+  "false": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "INCORRECT (adj)"
+   ]
+  },
+  "falter": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SMOOTHLY (adv)",
+    "CONSTANT (adj)"
+   ]
+  },
+  "familiar": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "KNOW (v)"
+   ]
+  },
+  "fashion": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PROCEDURE (n)"
+   ]
+  },
+  "fasten": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)",
+    "CONNECT (v)"
+   ]
+  },
+  "fatal": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "KILL (v)"
+   ]
+  },
+  "faulty": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DEFECTIVE (adj)",
+    "INCORRECT (adj)",
+    "UNSERVICEABLE (adj)"
+   ]
+  },
+  "fear": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "THINK (v)",
+    "MAKE SURE (v)"
+   ]
+  },
+  "feasible": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "POSSIBLE (adj)"
+   ]
+  },
+  "feature": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HAVE (v)"
+   ]
+  },
+  "feed": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)",
+    "SUPPLY (v)"
+   ]
+  },
+  "few": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "a few": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SOME (adj)"
+   ]
+  },
+  "file": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)",
+    "WITH A FILE (TN)"
+   ]
+  },
+  "filing": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PARTICLE (n)"
+   ]
+  },
+  "film": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "LAYER (n)"
+   ]
+  },
+  "final": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LAST (adj)"
+   ]
+  },
+  "finding": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "RESULT (n)"
+   ]
+  },
+  "fine": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SMALL (adj)"
+   ]
+  },
+  "finger-tighten": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "firmly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "TIGHTLY (adv)"
+   ]
+  },
+  "fix": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)",
+    "SET (v)",
+    "REPAIR (v)",
+    "INSTALL (v)"
+   ]
+  },
+  "flatness": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "FLAT (adj)"
+   ]
+  },
+  "flatten": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FLAT (adj)"
+   ]
+  },
+  "flaw": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DAMAGE (n)",
+    "DEFECTIVE (adj)"
+   ]
+  },
+  "flex": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BEND (v)"
+   ]
+  },
+  "flood": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "fluctuate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONSTANT (adj)"
+   ]
+  },
+  "following": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "THESE (adj)",
+    "FOLLOW (v)"
+   ]
+  },
+  "forbidden": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "forecast": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "POSSIBLE (adj)"
+   ]
+  },
+  "foreign": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "UNWANTED (adj)"
+   ]
+  },
+  "foremost": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FRONT (n)"
+   ]
+  },
+  "form": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "SHAPE (n)",
+    "BE (v)"
+   ]
+  },
+  "fortify": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STRONG (adj)"
+   ]
+  },
+  "foul": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CATCH (v)",
+    "HIT (v)",
+    "TOUCH (v)",
+    "CLEARANCE (n)"
+   ]
+  },
+  "fouled": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DIRTY (adj)",
+    "CLOGGED (adj)",
+    "CATCH (v)"
+   ]
+  },
+  "fragile": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "free from": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "NO (adj)"
+   ]
+  },
+  "fresh": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CLEAN (adj)",
+    "NEW (adj)"
+   ]
+  },
+  "fuel": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REFUEL (v)"
+   ]
+  },
+  "fulfill": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OBEY (v)"
+   ]
+  },
+  "fundamental": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "IMPORTANT (adj)"
+   ]
+  },
+  "further": {
+   "pos": [
+    "adj",
+    "adv"
+   ],
+   "alts": [
+    "MORE (adj)",
+    "MORE (adv)"
+   ]
+  },
+  "gain": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "INCREASE (v)",
+    "GET (v)"
+   ]
+  },
+  "gall": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GALLING (TN)"
+   ]
+  },
+  "gap": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CLEARANCE (n)",
+    "DISTANCE (n)",
+    "SPACE (n)"
+   ]
+  },
+  "garbled": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CLEAR (adj)",
+    "CLEARLY (adv)"
+   ]
+  },
+  "garner": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "COLLECT (v)"
+   ]
+  },
+  "gaseous": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "GAS (n)"
+   ]
+  },
+  "gash": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DAMAGED (adj)"
+   ]
+  },
+  "gather": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "COLLECT (v)"
+   ]
+  },
+  "gauge": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MEASURE (v)"
+   ]
+  },
+  "generally": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "USUALLY (adv)"
+   ]
+  },
+  "generate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BE (v)",
+    "GIVE (v)",
+    "SUPPLY (v)"
+   ]
+  },
+  "generous": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LARGE (adj)",
+    "THICK (adj)"
+   ]
+  },
+  "generously": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "LARGE (adj)",
+    "THICK (adj)"
+   ]
+  },
+  "gentle": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CAREFULLY (adv)",
+    "LIGHTLY (adv)"
+   ]
+  },
+  "gently": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "CAREFULLY (adv)",
+    "LIGHTLY (adv)"
+   ]
+  },
+  "genuine": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CORRECT (adj)"
+   ]
+  },
+  "get away": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "get down": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "get into": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "get off": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "get to": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BE (v)",
+    "GO (v)",
+    "INCREASE (v)"
+   ]
+  },
+  "gleam": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHINY (adj)"
+   ]
+  },
+  "glitch": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ERROR (n)",
+    "FAILURE (TN)",
+    "UNSERVICEABLE (adj)"
+   ]
+  },
+  "gloss": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SHINY (adj)"
+   ]
+  },
+  "glow": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BE (v)"
+   ]
+  },
+  "glue": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BOND (v)",
+    "ATTACH (v)"
+   ]
+  },
+  "govern": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONTROL (v)"
+   ]
+  },
+  "grab": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "USE (v)",
+    "HOLD (v)"
+   ]
+  },
+  "gradient": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SLOPE (n)"
+   ]
+  },
+  "gradual": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "GRADUALLY (adv)"
+   ]
+  },
+  "grasp": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HOLD (v)"
+   ]
+  },
+  "grave": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DANGEROUS (adj)"
+   ]
+  },
+  "great": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LARGE (adj)",
+    "VERY (adv)"
+   ]
+  },
+  "greatly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": []
+  },
+  "grip": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "HOLD (v)"
+   ]
+  },
+  "grow": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BECOME (v)"
+   ]
+  },
+  "guide": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)",
+    "MOVE (v)"
+   ]
+  },
+  "gush": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FLOW (n)"
+   ]
+  },
+  "halt": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STOP (v)"
+   ]
+  },
+  "halve": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HALF (TN)"
+   ]
+  },
+  "hamper": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)"
+   ]
+  },
+  "handle": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "TOUCH (v)",
+    "USE (v)",
+    "CAREFUL (adj)"
+   ]
+  },
+  "hand-tight": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "hand-tighten": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "happen": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OCCUR (v)"
+   ]
+  },
+  "harden": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HARD (adj)"
+   ]
+  },
+  "harm": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INJURY (n)",
+    "IRRITATION (TN)"
+   ]
+  },
+  "harmful": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DANGEROUS (adj)",
+    "INJURY (n)"
+   ]
+  },
+  "harmonize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "AGREE (v)",
+    "ALIGN (v)"
+   ]
+  },
+  "haul": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TOW (v)",
+    "MOVE (v)"
+   ]
+  },
+  "have to": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "hazard": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DANGEROUS (adj)"
+   ]
+  },
+  "hazardous": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DANGEROUS (adj)"
+   ]
+  },
+  "hazy": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "HAZE (TN)"
+   ]
+  },
+  "heighten": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INCREASE (v)"
+   ]
+  },
+  "helpful": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "HELP (v)"
+   ]
+  },
+  "hesitation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SMOOTHLY (adv)",
+    "CORRECTLY (adv)",
+    "IMMEDIATELY (adv)"
+   ]
+  },
+  "highly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "VERY (adv)"
+   ]
+  },
+  "hinder": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)",
+    "DECREASE (v)",
+    "BLOCKAGE (n)",
+    "CLOGGED (adj)"
+   ]
+  },
+  "hinge": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TURN (v)"
+   ]
+  },
+  "hitch": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONNECT (v)"
+   ]
+  },
+  "hoist": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LIFT (v)"
+   ]
+  },
+  "hold back": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)"
+   ]
+  },
+  "hold off": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)"
+   ]
+  },
+  "hook": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "hook up": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONNECT (v)"
+   ]
+  },
+  "house": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONTAIN (v)"
+   ]
+  },
+  "however": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "BUT (conj)"
+   ]
+  },
+  "huge": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LARGE (adj)"
+   ]
+  },
+  "hurt": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INJURY (n)"
+   ]
+  },
+  "identical": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SAME (adj)"
+   ]
+  },
+  "ignite": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "IGNITION (TN)"
+   ]
+  },
+  "immediate": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "IMMEDIATELY (adv)"
+   ]
+  },
+  "immerse": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SOAK (v)"
+   ]
+  },
+  "immobilize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LOCK (v)"
+   ]
+  },
+  "impact": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "HIT (v)",
+    "EFFECT (n)"
+   ]
+  },
+  "impair": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "implement": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DO (v)"
+   ]
+  },
+  "implementation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DO (v)"
+   ]
+  },
+  "impossible": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CANNOT (v)"
+   ]
+  },
+  "impregnate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SOAK (v)"
+   ]
+  },
+  "impression": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "THINK (v)"
+   ]
+  },
+  "improper": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "INCORRECT (adj)"
+   ]
+  },
+  "improperly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "INCORRECTLY (adv)"
+   ]
+  },
+  "improve": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BETTER (adj)"
+   ]
+  },
+  "impurity": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CONTAMINATION (n)"
+   ]
+  },
+  "inactive": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "inadvertent": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ACCIDENTAL (adj)"
+   ]
+  },
+  "inadvertently": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "ACCIDENTALLY (adv)"
+   ]
+  },
+  "incline": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SLOPE (n)"
+   ]
+  },
+  "including": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "THRU (prep)",
+    "WITH (prep)"
+   ]
+  },
+  "incompatible": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "incomplete": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ALL (adj)"
+   ]
+  },
+  "incorporate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INCLUDE (v)",
+    "HAVE (v)"
+   ]
+  },
+  "incorporation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "INCLUDE (v)"
+   ]
+  },
+  "incur": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CAUSE (v)"
+   ]
+  },
+  "independent": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "INDEPENDENTLY (adv)"
+   ]
+  },
+  "indicate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHOW (v)",
+    "IDENTIFY (v)",
+    "SPECIFIED (adj)"
+   ]
+  },
+  "induce": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CAUSE (v)"
+   ]
+  },
+  "ineffective": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "UNSERVICEABLE (adj)"
+   ]
+  },
+  "inflammable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FLAMMABLE (adj)"
+   ]
+  },
+  "inform": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)"
+   ]
+  },
+  "ingest": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SWALLOW (v)"
+   ]
+  },
+  "ingress": {
+   "pos": [
+    "n"
+   ],
+   "alts": []
+  },
+  "inhale": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BREATHE (v)"
+   ]
+  },
+  "inhibit": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)"
+   ]
+  },
+  "initiate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "START (v)"
+   ]
+  },
+  "inject": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "injection": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "injure": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INJURY (n)"
+   ]
+  },
+  "inoperative": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "OFF (adj)"
+   ]
+  },
+  "insert": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)",
+    "ENGAGE (v)"
+   ]
+  },
+  "inside": {
+   "pos": [
+    "adj",
+    "n",
+    "prep"
+   ],
+   "alts": [
+    "INNER (adj)",
+    "IN (prep)",
+    "INTO (prep)"
+   ]
+  },
+  "inspect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "EXAMINE (v)",
+    "INSPECTION (n)"
+   ]
+  },
+  "instead": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "ALTERNATIVE (n)"
+   ]
+  },
+  "instead of": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "ALTERNATIVE (n)"
+   ]
+  },
+  "insufficient": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "insure": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)"
+   ]
+  },
+  "intact": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "integral": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "PART (n)"
+   ]
+  },
+  "interconnect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONNECT (v)"
+   ]
+  },
+  "interfere": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HIT (v)",
+    "CATCH (v)",
+    "TOUCH (v)",
+    "INTERFERENCE (TN)"
+   ]
+  },
+  "interference": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "HIT (v)",
+    "CATCH (v)",
+    "TOUCH (v)"
+   ]
+  },
+  "interior": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "INTERNALLY (adv)",
+    "INTERNAL (adj)"
+   ]
+  },
+  "intermediate": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MIDDLE (adj)",
+    "BETWEEN (prep)"
+   ]
+  },
+  "interrupt": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STOP (v)"
+   ]
+  },
+  "intersect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INTERSECTION (TN)"
+   ]
+  },
+  "investigate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INVESTIGATION (n)"
+   ]
+  },
+  "inward": {
+   "pos": [
+    "adj",
+    "adv"
+   ],
+   "alts": [
+    "INNER (adj)",
+    "IN (adv)"
+   ]
+  },
+  "irregularity": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DAMAGE (n)",
+    "DEFECT (TN)",
+    "IRREGULAR (adj)",
+    "UNUSUAL (adj)"
+   ]
+  },
+  "isolation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ISOLATE (v)"
+   ]
+  },
+  "jam": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FREELY (adv)"
+   ]
+  },
+  "job": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "WORK (n)",
+    "TASK (n)"
+   ]
+  },
+  "join": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BOND (v)",
+    "ATTACH (v)",
+    "CONNECT (v)"
+   ]
+  },
+  "just": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "IMMEDIATELY (adv)"
+   ]
+  },
+  "kind": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "TYPE (n)"
+   ]
+  },
+  "knock": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HIT (v)"
+   ]
+  },
+  "lack": {
+   "pos": [
+    "n"
+   ],
+   "alts": []
+  },
+  "land": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LANDING (TN)"
+   ]
+  },
+  "later": {
+   "pos": [
+    "adj",
+    "adv"
+   ],
+   "alts": [
+    "SUBSEQUENT (adj)",
+    "THEN (adv)",
+    "SUBSEQUENTLY (adv)",
+    "WHEN (conj)",
+    "AFTER (prep)"
+   ]
+  },
+  "lay": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "lead": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "least": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "MINIMUM (adj)"
+   ]
+  },
+  "at least": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MINIMUM (adj)",
+    "MINIMUM (n)"
+   ]
+  },
+  "leave": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "KEEP (v)",
+    "LET \u2026. STAY (v)",
+    "GO (v)"
+   ]
+  },
+  "left-hand": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LEFT (adj)"
+   ]
+  },
+  "legible": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "READ (v)"
+   ]
+  },
+  "lengthen": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INCREASE (v)"
+   ]
+  },
+  "lethal": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "KILL (v)"
+   ]
+  },
+  "liberal": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LARGE (adj)",
+    "THICK (adj)"
+   ]
+  },
+  "liberally": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "LARGE (adj)",
+    "THICK (adj)"
+   ]
+  },
+  "lie": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BE (v)"
+   ]
+  },
+  "limitation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "LIMIT (n)"
+   ]
+  },
+  "limited": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SMALL (adj)"
+   ]
+  },
+  "link": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONNECT (v)",
+    "ATTACH (v)"
+   ]
+  },
+  "little": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SMALL (adj)",
+    "SHORT (adj)"
+   ]
+  },
+  "a little": {
+   "pos": [
+    "adj",
+    "adv"
+   ],
+   "alts": [
+    "SMALL (adj)"
+   ]
+  },
+  "locate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FIND (v)",
+    "ENGAGE (v)",
+    "PUT (v)"
+   ]
+  },
+  "log": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RECORD (v)"
+   ]
+  },
+  "as long as": {
+   "pos": [
+    "conj"
+   ],
+   "alts": [
+    "WHILE (conj)"
+   ]
+  },
+  "lose": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "lost": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "lowermost": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "BOTTOM (adj)"
+   ]
+  },
+  "lukewarm": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "WARM (adj)"
+   ]
+  },
+  "main": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "PRIMARY (adj)"
+   ]
+  },
+  "maintain": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "KEEP (v)",
+    "HOLD (v)",
+    "MAINTENANCE (n)"
+   ]
+  },
+  "major": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "PRIMARY (adj)"
+   ]
+  },
+  "make certain": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)"
+   ]
+  },
+  "maladjusted": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "manipulate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "ADJUST (v)"
+   ]
+  },
+  "manufacture": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE (v)"
+   ]
+  },
+  "mask": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLY (v)"
+   ]
+  },
+  "match": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ALIGN (v)",
+    "AGREE (v)"
+   ]
+  },
+  "mate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONNECT (v)",
+    "ENGAGE (v)",
+    "TOGETHER (adv)"
+   ]
+  },
+  "matter": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "MATERIAL (n)"
+   ]
+  },
+  "may": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CAN (v)",
+    "POSSIBLY (adv)"
+   ]
+  },
+  "medium": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MODERATE (adj)"
+   ]
+  },
+  "meet": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ENGAGE (v)",
+    "TOUCH (v)"
+   ]
+  },
+  "mention": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GIVE (v)"
+   ]
+  },
+  "mesh": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ENGAGE (v)"
+   ]
+  },
+  "meteorological": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "WEATHER (n)"
+   ]
+  },
+  "mid": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MIDDLE (adj)"
+   ]
+  },
+  "mild": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "WEAK (adj)"
+   ]
+  },
+  "minimize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MINIMUM (n)"
+   ]
+  },
+  "minor": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SMALL (adj)"
+   ]
+  },
+  "miscellaneous": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "OTHER (adj)",
+    "ALL (adj)"
+   ]
+  },
+  "misrigged": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "modify": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CHANGE (v)",
+    "MODIFICATION (TN)"
+   ]
+  },
+  "moisten": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOIST (adj)"
+   ]
+  },
+  "momentary": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MOMENTARILY (adv)"
+   ]
+  },
+  "motion": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "MOVEMENT (n)"
+   ]
+  },
+  "motor": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOTORING (TN)"
+   ]
+  },
+  "mount": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INSTALL (v)",
+    "ATTACH (v)",
+    "PUT (v)"
+   ]
+  },
+  "nearly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "ALMOST (adv)"
+   ]
+  },
+  "need": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "NECESSARY (adj)"
+   ]
+  },
+  "neither": {
+   "pos": [
+    "adj",
+    "pron"
+   ],
+   "alts": [
+    "TWO (TN)"
+   ]
+  },
+  "neutralize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "NEUTRAL (adj)"
+   ]
+  },
+  "never": {
+   "pos": [
+    "adv"
+   ],
+   "alts": []
+  },
+  "next to": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "ADJACENT TO (prep)"
+   ]
+  },
+  "noisy": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "NOISE (n)"
+   ]
+  },
+  "nor": {
+   "pos": [
+    "conj"
+   ],
+   "alts": [
+    "NOT (adv)"
+   ]
+  },
+  "normal": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "USUAL (adj)",
+    "CORRECT (adj)"
+   ]
+  },
+  "normally": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "USUALLY (adv)",
+    "CORRECTLY (adv)"
+   ]
+  },
+  "note": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RECORD (v)"
+   ]
+  },
+  "notify": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)",
+    "CONTACT (v)",
+    "WRITE (v)"
+   ]
+  },
+  "now": {
+   "pos": [
+    "adv"
+   ],
+   "alts": []
+  },
+  "observe": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MONITOR (v)",
+    "SEE (v)",
+    "OBEY (v)"
+   ]
+  },
+  "obstruct": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CATCH (v)",
+    "PREVENT (v)",
+    "BLOCKAGE (n)"
+   ]
+  },
+  "obstructed": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "BLOCKED (adj)",
+    "CLOGGED (adj)"
+   ]
+  },
+  "obstruction": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "BLOCKAGE (n)"
+   ]
+  },
+  "obtain": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GET (v)"
+   ]
+  },
+  "often": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "FREQUENTLY (adv)"
+   ]
+  },
+  "oil-free": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "OIL (TN)"
+   ]
+  },
+  "old": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "REMAINING (adj)",
+    "USED (adj)",
+    "EXPIRED (adj)"
+   ]
+  },
+  "omit": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "IGNORE (v)"
+   ]
+  },
+  "once": {
+   "pos": [
+    "adv",
+    "conj"
+   ],
+   "alts": [
+    "ONE (TN)",
+    "WHEN (conj)"
+   ]
+  },
+  "opaque": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "operable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "OPERATE (v)"
+   ]
+  },
+  "operational": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SERVICEABLE (adj)",
+    "OPERATE (v)"
+   ]
+  },
+  "opportunity": {
+   "pos": [
+    "n"
+   ],
+   "alts": []
+  },
+  "option": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ALTERNATIVE (n)",
+    "POSSIBLE (adj)",
+    "CAN (v)"
+   ]
+  },
+  "order": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SEQUENCE (n)"
+   ]
+  },
+  "orient": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "POINT (v)"
+   ]
+  },
+  "origin": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SOURCE (n)"
+   ]
+  },
+  "original": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "INITIAL (adj)"
+   ]
+  },
+  "originate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SOURCE (n)"
+   ]
+  },
+  "otherwise": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "DIFFERENTLY (adv)"
+   ]
+  },
+  "outline": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GIVE (v)"
+   ]
+  },
+  "outside": {
+   "pos": [
+    "adj",
+    "adv",
+    "n",
+    "prep"
+   ],
+   "alts": [
+    "EXTERNAL (adj)",
+    "OUTER (adj)",
+    "OUTDOORS (adv)",
+    "NEAR (prep)"
+   ]
+  },
+  "outwards": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "OUT (adv)"
+   ]
+  },
+  "over": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "ABOVE (prep)",
+    "ALONG (prep)",
+    "ON (prep)"
+   ]
+  },
+  "overfill": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "overfull": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "overheat": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "overtighten": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "pack": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)",
+    "FILL (v)"
+   ]
+  },
+  "partial": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "partially": {
+   "pos": [
+    "adv"
+   ],
+   "alts": []
+  },
+  "particular": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "VERY (adv)"
+   ]
+  },
+  "particularly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "VERY (adv)"
+   ]
+  },
+  "partly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": []
+  },
+  "pass": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GO (v)",
+    "THROUGH (prep)",
+    "GIVE (v)"
+   ]
+  },
+  "passage": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "FLOW (n)",
+    "HOLE (n)",
+    "OPENING (n)"
+   ]
+  },
+  "past": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "AROUND (prep)",
+    "THROUGH (prep)"
+   ]
+  },
+  "penetrate": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "people": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PERSON (n)",
+    "PERSONNEL (n)"
+   ]
+  },
+  "per": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "REFER (v)"
+   ]
+  },
+  "perforated": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "HOLE (n)"
+   ]
+  },
+  "perform": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DO (v)",
+    "MEASURE (v)"
+   ]
+  },
+  "periodically": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "INTERVAL (n)"
+   ]
+  },
+  "permissible": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "PERMITTED (adj)"
+   ]
+  },
+  "permit": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LET (v)"
+   ]
+  },
+  "persist": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONTINUE (v)"
+   ]
+  },
+  "persistent": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CONTINUOUS (adj)"
+   ]
+  },
+  "pertinent": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "APPLICABLE (adj)"
+   ]
+  },
+  "picket": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOOR (v)"
+   ]
+  },
+  "pierced": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "HOLE (n)"
+   ]
+  },
+  "placard": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "place": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "POSITION (n)",
+    "AREA (n)",
+    "PUT (v)"
+   ]
+  },
+  "plot": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE (v)"
+   ]
+  },
+  "plug": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONNECT (v)",
+    "SEAL (v)"
+   ]
+  },
+  "poor": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DEFECTIVE (adj)",
+    "UNSERVICEABLE (adj)"
+   ]
+  },
+  "pop": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OPEN (v)",
+    "PROTRUDE (v)",
+    "OUT (adv)"
+   ]
+  },
+  "port": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LEFT (adj)"
+   ]
+  },
+  "portion": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PIECE (n)",
+    "PART (n)"
+   ]
+  },
+  "potential": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "POSSIBLE (adj)"
+   ]
+  },
+  "pour": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "power": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SUPPLY (v)"
+   ]
+  },
+  "precautionary": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PRECAUTION (n)"
+   ]
+  },
+  "precede": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BEFORE (conj)"
+   ]
+  },
+  "precise": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ACCURATE (adj)"
+   ]
+  },
+  "precisely": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "ACCURATELY (adv)"
+   ]
+  },
+  "preferable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RECOMMEND (v)"
+   ]
+  },
+  "preferably": {
+   "pos": [
+    "adv"
+   ],
+   "alts": []
+  },
+  "preheat": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HEAT (n)"
+   ]
+  },
+  "preload": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LOAD (TN)"
+   ]
+  },
+  "premature": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "BEFORE (conj)"
+   ]
+  },
+  "prematurely": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "BEFORE (conj)"
+   ]
+  },
+  "preparation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PREPARE (v)"
+   ]
+  },
+  "prescribed": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SPECIFIED (adj)"
+   ]
+  },
+  "presence": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "BE (v)"
+   ]
+  },
+  "present": {
+   "pos": [
+    "adj",
+    "v"
+   ],
+   "alts": [
+    "BE (v)",
+    "GIVE (v)",
+    "SHOW (v)"
+   ]
+  },
+  "preserve": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PRESERVATION (TN)"
+   ]
+  },
+  "preset": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SET (v)"
+   ]
+  },
+  "press": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUSH (v)"
+   ]
+  },
+  "preventive": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "PREVENT (v)"
+   ]
+  },
+  "primarily": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "PRIMARY (adj)"
+   ]
+  },
+  "prime": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FILL (v)",
+    "PUT (v)"
+   ]
+  },
+  "principal": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "PRIMARY (adj)"
+   ]
+  },
+  "prior to": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "BEFORE (conj)"
+   ]
+  },
+  "priority": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "IMPORTANT (adj)",
+    "BEFORE (prep)",
+    "FIRST (adv)"
+   ]
+  },
+  "probability": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "RISK (n)"
+   ]
+  },
+  "probable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RISK (n)"
+   ]
+  },
+  "probe": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FIND (v)"
+   ]
+  },
+  "proceed": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONTINUE (v)"
+   ]
+  },
+  "process (in the": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "DURING (prep)"
+   ]
+  },
+  "process of )": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "WHILE (conj)"
+   ]
+  },
+  "process": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "PROCEDURE (n)",
+    "DO (v)"
+   ]
+  },
+  "produce": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CAUSE (v)",
+    "GIVE (v)",
+    "MAKE (v)",
+    "SUPPLY (v)"
+   ]
+  },
+  "product": {
+   "pos": [
+    "n"
+   ],
+   "alts": []
+  },
+  "profile": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CONTOUR (n)"
+   ]
+  },
+  "program": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SEQUENCE (n)"
+   ]
+  },
+  "progress": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "CONTINUE (v)"
+   ]
+  },
+  "progressive": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "GRADUALLY (adv)"
+   ]
+  },
+  "progressively": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "GRADUALLY (adv)"
+   ]
+  },
+  "prohibit": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)"
+   ]
+  },
+  "prolonged": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "LONG (adj)"
+   ]
+  },
+  "prompt": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "IMMEDIATELY (adv)"
+   ]
+  },
+  "propagation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "INCREASE (v)"
+   ]
+  },
+  "proper": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CORRECT (adj)"
+   ]
+  },
+  "properly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "CORRECTLY (adv)"
+   ]
+  },
+  "proportional": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RELATION (n)",
+    "PROPORTION (n)"
+   ]
+  },
+  "proportionally": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "RELATION (n)"
+   ]
+  },
+  "protect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)",
+    "PROTECTION (n)"
+   ]
+  },
+  "provide": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GIVE (v)",
+    "SUPPLY (v)"
+   ]
+  },
+  "proximity": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "NEAR (prep)"
+   ]
+  },
+  "pump": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)",
+    "MOVE (v)"
+   ]
+  },
+  "puncture": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HOLE (n)"
+   ]
+  },
+  "purge": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "purify": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CLEAN (v)"
+   ]
+  },
+  "qualified": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "APPROVED (adj)"
+   ]
+  },
+  "quarterly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "INTERVAL (n)"
+   ]
+  },
+  "questionable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "quick": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "QUICKLY (adv)"
+   ]
+  },
+  "quit": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GO (v)",
+    "STOP (v)"
+   ]
+  },
+  "quote": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GIVE (v)"
+   ]
+  },
+  "raise": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LIFT (v)",
+    "INCREASE (v)",
+    "RETRACT (v)"
+   ]
+  },
+  "rapid": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FAST (adj)"
+   ]
+  },
+  "rapidly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "QUICKLY (adv)"
+   ]
+  },
+  "reach": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GET (v)",
+    "TOUCH (v)",
+    "BE (v)"
+   ]
+  },
+  "reactivate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ACTIVATE (v)"
+   ]
+  },
+  "reading": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "INDICATION (n)"
+   ]
+  },
+  "readjust": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ADJUST (v)"
+   ]
+  },
+  "ready": {
+   "pos": [
+    "adj",
+    "v"
+   ],
+   "alts": [
+    "PREPARE (v)"
+   ]
+  },
+  "real": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "AGREE (v)"
+   ]
+  },
+  "rear of": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "BEHIND (prep)"
+   ]
+  },
+  "rearmost": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "REAR (n)"
+   ]
+  },
+  "reason": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CAUSE (n)",
+    "BECAUSE OF (prep)"
+   ]
+  },
+  "reassemble": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ASSEMBLE (v)"
+   ]
+  },
+  "rebuild": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ASSEMBLE (v)"
+   ]
+  },
+  "recharge": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CHARGE (v)",
+    "FILL (v)",
+    "PRESSURIZE (v)"
+   ]
+  },
+  "recheck": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MEASURE (v)",
+    "EXAMINE (v)",
+    "CHECK (n)"
+   ]
+  },
+  "reclaim": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REPAIR (v)"
+   ]
+  },
+  "recleat": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)"
+   ]
+  },
+  "reclose": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CLOSE (v)"
+   ]
+  },
+  "recondition": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REPAIR (v)",
+    "OVERHAUL (TN)"
+   ]
+  },
+  "reconstruction": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "REPAIR (n)",
+    "REPAIR (v)"
+   ]
+  },
+  "recover": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "COLLECT (v)"
+   ]
+  },
+  "rectify": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CORRECT (v)"
+   ]
+  },
+  "recur": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OCCUR (v)"
+   ]
+  },
+  "reduce": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "reference": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "REFER (v)"
+   ]
+  },
+  "referenced": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SHOW (v)"
+   ]
+  },
+  "refill": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FILL (v)"
+   ]
+  },
+  "refit": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INSTALL (v)",
+    "REPAIR (v)"
+   ]
+  },
+  "reflect": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REFLECTION (n)"
+   ]
+  },
+  "register": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHOW (v)"
+   ]
+  },
+  "regrease": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLY (v)",
+    "MORE (adj)"
+   ]
+  },
+  "regulate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONTROL (v)",
+    "ADJUST (v)"
+   ]
+  },
+  "regulation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ADJUSTMENT (n)",
+    "CONTROL (n)",
+    "CONTROL (v)"
+   ]
+  },
+  "reinflate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INFLATE (v)"
+   ]
+  },
+  "reinforce": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "reinstall": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INSTALL (v)"
+   ]
+  },
+  "reinstallation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "INSTALLATION (n)"
+   ]
+  },
+  "rejection": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "REJECT (v)"
+   ]
+  },
+  "relate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RELATED (adj)"
+   ]
+  },
+  "relay": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SEND (v)"
+   ]
+  },
+  "relevant": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RELATED (adj)",
+    "THEIR (adj)",
+    "ITS (adj)"
+   ]
+  },
+  "relieve": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RELEASE (v)"
+   ]
+  },
+  "remain": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STAY (v)"
+   ]
+  },
+  "remnant": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "REMAINING (adj)"
+   ]
+  },
+  "removable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "render": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE (v)"
+   ]
+  },
+  "renew": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "NEW (adj)"
+   ]
+  },
+  "renovate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REPAIR (v)",
+    "NEW (adj)"
+   ]
+  },
+  "repack": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)",
+    "FILL (v)"
+   ]
+  },
+  "repaint": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PAINT (v)"
+   ]
+  },
+  "repairable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "REPAIR (v)"
+   ]
+  },
+  "repeat": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "AGAIN (adv)"
+   ]
+  },
+  "repeated": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "repeatedly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": []
+  },
+  "replenish": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FILL (v)",
+    "ADD (v)",
+    "REFUEL (v)"
+   ]
+  },
+  "reposition": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "PUT (v)",
+    "SET (v)"
+   ]
+  },
+  "represent": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHOW (v)"
+   ]
+  },
+  "repressurize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PRESSURIZE (v)"
+   ]
+  },
+  "request": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "TELL (v)",
+    "WRITE (v)"
+   ]
+  },
+  "require": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "NECESSARY (adj)"
+   ]
+  },
+  "reseal": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SEAL (v)"
+   ]
+  },
+  "reset": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SET (v)"
+   ]
+  },
+  "residual": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "REMAINING (adj)"
+   ]
+  },
+  "residue": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "REMAINING (adj)"
+   ]
+  },
+  "respective": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RELATED (adj)",
+    "CORRECT (adj)"
+   ]
+  },
+  "respectively": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "RELATED (adj)"
+   ]
+  },
+  "respond": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RESULT (n)"
+   ]
+  },
+  "rest": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "REMAINING (adj)",
+    "BE (v)",
+    "PUT (v)"
+   ]
+  },
+  "restart": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "START (v)"
+   ]
+  },
+  "restore": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REPAIR (v)",
+    "PUT (v)"
+   ]
+  },
+  "restrain": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HOLD (v)",
+    "STOP (v)",
+    "PREVENT (v)",
+    "LIMIT (n)"
+   ]
+  },
+  "restrict": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)",
+    "PREVENT (v)",
+    "ONLY (adv)",
+    "LIMIT (n)"
+   ]
+  },
+  "resume": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "START (v)",
+    "CONTINUE (v)"
+   ]
+  },
+  "retain": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "KEEP (v)"
+   ]
+  },
+  "retorque": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TORQUE (v)"
+   ]
+  },
+  "retouch": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLY (v)",
+    "PAINT (v)"
+   ]
+  },
+  "retractable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RETRACT (v)"
+   ]
+  },
+  "return": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "GO (v)"
+   ]
+  },
+  "reusable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "USE (v)"
+   ]
+  },
+  "reuse": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "USE (v)"
+   ]
+  },
+  "reveal": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SHOW (v)"
+   ]
+  },
+  "reverse": {
+   "pos": [
+    "adj",
+    "v"
+   ],
+   "alts": [
+    "OPPOSITE (adj)"
+   ]
+  },
+  "review": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "INSPECTION (n)",
+    "EXAMINE (v)"
+   ]
+  },
+  "rewind": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "WIND (v)"
+   ]
+  },
+  "rework": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "rig": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ADJUST (v)"
+   ]
+  },
+  "right-hand": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RIGHT (adj)"
+   ]
+  },
+  "rinse": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FLUSH (v)",
+    "REMOVE (v)",
+    "CLEAN (v)"
+   ]
+  },
+  "ripped": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DAMAGED (adj)"
+   ]
+  },
+  "rise": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "INCREASE (v)"
+   ]
+  },
+  "rope off": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ROPE (TN)"
+   ]
+  },
+  "rotary": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "TURN (v)"
+   ]
+  },
+  "rotate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TURN (v)"
+   ]
+  },
+  "rotation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "TURN (v)"
+   ]
+  },
+  "rotational": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "TURN (v)"
+   ]
+  },
+  "roughen": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ROUGH (adj)"
+   ]
+  },
+  "roughness": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ROUGH (adj)"
+   ]
+  },
+  "round": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CIRCULAR (adj)"
+   ]
+  },
+  "route": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "ROUTING (n)",
+    "PUT (v)"
+   ]
+  },
+  "routine": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "USUAL (adj)"
+   ]
+  },
+  "run": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OPERATE (v)"
+   ]
+  },
+  "running": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FLUSH (v)"
+   ]
+  },
+  "safety-clip": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LOCK (v)",
+    "SAFETY (v)"
+   ]
+  },
+  "safety-wire": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LOCK (v)",
+    "SAFETY (v)"
+   ]
+  },
+  "saturate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SOAK (v)"
+   ]
+  },
+  "save": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "KEEP (v)"
+   ]
+  },
+  "scored": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SCORE (TN)"
+   ]
+  },
+  "scrap": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DISCARD (v)"
+   ]
+  },
+  "scrape": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "scratched": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SCRATCH (TN)"
+   ]
+  },
+  "screw": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TURN (v)",
+    "ATTACH (v)"
+   ]
+  },
+  "scrub": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CLEAN (v)"
+   ]
+  },
+  "search": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "EXAMINE (v)"
+   ]
+  },
+  "seat": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INSTALL (v)",
+    "AGAINST (prep)"
+   ]
+  },
+  "secure": {
+   "pos": [
+    "adj",
+    "v"
+   ],
+   "alts": [
+    "TIGHT (adj)",
+    "SAFE (adj)",
+    "CORRECTLY (adv)",
+    "ATTACH (v)",
+    "SAFETY (v)"
+   ]
+  },
+  "securely": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "CORRECTLY (adv)",
+    "SAFELY (adv)",
+    "TIGHT (adj)"
+   ]
+  },
+  "security": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CORRECTLY (adv)"
+   ]
+  },
+  "seek": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GET (v)"
+   ]
+  },
+  "seepage": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "LEAKAGE (n)"
+   ]
+  },
+  "seized": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CATCH (v)",
+    "MOVE (v)",
+    "TURN (v)"
+   ]
+  },
+  "separable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DISASSEMBLE (v)",
+    "DISCONNECT (v)"
+   ]
+  },
+  "separate": {
+   "pos": [
+    "adj",
+    "v"
+   ],
+   "alts": [
+    "ISOLATED (adj)",
+    "DIFFERENT (adj)",
+    "DISCONNECT (v)",
+    "DIVIDE (v)"
+   ]
+  },
+  "separately": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "INDEPENDENTLY (adv)"
+   ]
+  },
+  "serious": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "IMPORTANT (adj)",
+    "DANGEROUS (adj)"
+   ]
+  },
+  "serrated": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SERRATION (n)"
+   ]
+  },
+  "serve": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "service": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SERVICING (n)"
+   ]
+  },
+  "serviceability": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "SERVICEABLE (adj)"
+   ]
+  },
+  "setting": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "ADJUSTMENT (n)",
+    "POSITION (n)",
+    "SET (v)"
+   ]
+  },
+  "settle": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "COLLECT (v)",
+    "STABLE (adj)"
+   ]
+  },
+  "sever": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CUT (v)"
+   ]
+  },
+  "several": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SOME (adj)"
+   ]
+  },
+  "severe": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DANGEROUS (adj)"
+   ]
+  },
+  "shall": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MUST (v)"
+   ]
+  },
+  "sharply": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "QUICKLY (adv)",
+    "SUDDENLY (adv)"
+   ]
+  },
+  "shear": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "BREAK (v)",
+    "CUT (v)"
+   ]
+  },
+  "shield": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PREVENT (v)",
+    "PROTECTION (n)"
+   ]
+  },
+  "shift": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)"
+   ]
+  },
+  "shorten": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "should": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MUST (v)",
+    "IF (conj)"
+   ]
+  },
+  "shut down": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STOP (v)"
+   ]
+  },
+  "sideways": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "SIDE (n)"
+   ]
+  },
+  "sight": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "VIEW (n)",
+    "LOOK (v)"
+   ]
+  },
+  "significant": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "IMPORTANT (adj)"
+   ]
+  },
+  "silence": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STOP (v)"
+   ]
+  },
+  "similar": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "EQUIVALENT (adj)"
+   ]
+  },
+  "simultaneous": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "situated": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "INSTALL (v)",
+    "BE (v)"
+   ]
+  },
+  "situation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CONDITION (n)"
+   ]
+  },
+  "size": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DIMENSION (n)"
+   ]
+  },
+  "slack": {
+   "pos": [
+    "adj",
+    "n"
+   ],
+   "alts": [
+    "TENSION (TN)"
+   ]
+  },
+  "slacken": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TENSION (TN)"
+   ]
+  },
+  "slackness": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "TENSION (TN)"
+   ]
+  },
+  "slave": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CONTROL (v)"
+   ]
+  },
+  "slide": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)"
+   ]
+  },
+  "slight": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SMALL (adj)",
+    "LIGHT (adj)"
+   ]
+  },
+  "slightly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "SMALL (adj)"
+   ]
+  },
+  "slip": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "REMOVE (v)"
+   ]
+  },
+  "slow down": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DECREASE (v)"
+   ]
+  },
+  "sluggish": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SLOW (adj)"
+   ]
+  },
+  "smear": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLY (v)"
+   ]
+  },
+  "snag": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CATCH (v)"
+   ]
+  },
+  "snap": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "CLICK (n)",
+    "BREAK (v)"
+   ]
+  },
+  "soapy": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SOAP (TN)"
+   ]
+  },
+  "soften": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "soiled": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DIRTY (adj)"
+   ]
+  },
+  "solidify": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SOLID (adj)"
+   ]
+  },
+  "solve": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SOLUTION (n)"
+   ]
+  },
+  "soon": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "TIME (n)"
+   ]
+  },
+  "spacing": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "DISTANCE (n)"
+   ]
+  },
+  "spanwise": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SPAN (TN)"
+   ]
+  },
+  "sparingly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "QUANTITY (n)"
+   ]
+  },
+  "specific": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "APPROVED (adj)",
+    "SPECIFIED (adj)"
+   ]
+  },
+  "specifically": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "SPECIALLY (adv)"
+   ]
+  },
+  "speck": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PARTICLE (n)"
+   ]
+  },
+  "speech": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "VOICE (n)"
+   ]
+  },
+  "spillage": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CONTAMINATION (n)",
+    "SPILL (v)"
+   ]
+  },
+  "spin": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "splash": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "GET (v)"
+   ]
+  },
+  "splined": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SPLINE (TN)"
+   ]
+  },
+  "split": {
+   "pos": [
+    "adj",
+    "v"
+   ],
+   "alts": [
+    "DAMAGED (adj)",
+    "DIVIDE (v)",
+    "BREAK (v)"
+   ]
+  },
+  "spot": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "MARK (n)",
+    "STAIN (TN)",
+    "FIND (v)"
+   ]
+  },
+  "spread": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLY (v)"
+   ]
+  },
+  "spring": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)"
+   ]
+  },
+  "spurious": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "UNWANTED (adj)"
+   ]
+  },
+  "stability": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "STABLE (adj)"
+   ]
+  },
+  "stabilization": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "STABLE (adj)"
+   ]
+  },
+  "stabilize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STABLE (adj)"
+   ]
+  },
+  "stage": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "STEP (n)"
+   ]
+  },
+  "stained": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DIRTY (adj)",
+    "STAIN (TN)"
+   ]
+  },
+  "stamp": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)",
+    "IDENTIFY (v)"
+   ]
+  },
+  "stand": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STAY (v)"
+   ]
+  },
+  "starboard": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "RIGHT (adj)"
+   ]
+  },
+  "state": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "CONDITION (n)",
+    "TELL (v)"
+   ]
+  },
+  "station": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "stationary": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "STABLE (adj)",
+    "STOP (v)"
+   ]
+  },
+  "steadily": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "CONTINUOUSLY (adv)"
+   ]
+  },
+  "steady": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "STABLE (adj)"
+   ]
+  },
+  "stick": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)",
+    "FREELY (adv)",
+    "CATCH (v)"
+   ]
+  },
+  "sticky": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "TACKY (adj)"
+   ]
+  },
+  "stiff": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MOVE (v)"
+   ]
+  },
+  "still": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "STAY (v)",
+    "CONTINUE (v)"
+   ]
+  },
+  "stimulate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INCREASE (v)"
+   ]
+  },
+  "stir": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MIX (v)"
+   ]
+  },
+  "store": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "KEEP (v)",
+    "CONTAIN (v)",
+    "STORAGE (TN)"
+   ]
+  },
+  "straighten": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STRAIGHT (adj)"
+   ]
+  },
+  "strap": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)"
+   ]
+  },
+  "stress": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FORCE (TN)"
+   ]
+  },
+  "strictly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "FULLY (adv)"
+   ]
+  },
+  "strike": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HIT (v)"
+   ]
+  },
+  "striped": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "STRIPE (n)"
+   ]
+  },
+  "stroke": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "TRAVEL (n)"
+   ]
+  },
+  "submerge": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "submit": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SEND (v)",
+    "NEXT (adj)",
+    "THEN (adv)"
+   ]
+  },
+  "subsequent to": {
+   "pos": [
+    "conj"
+   ],
+   "alts": [
+    "AFTER (conj)"
+   ]
+  },
+  "substance": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "MATERIAL (n)"
+   ]
+  },
+  "substitute": {
+   "pos": [
+    "adj",
+    "n",
+    "v"
+   ],
+   "alts": [
+    "EQUIVALENT (adj)",
+    "ALTERNATIVE (adj)",
+    "ALTERNATIVE (n)",
+    "REPLACE (v)"
+   ]
+  },
+  "successful": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CORRECT (adj)",
+    "SATISFACTORY (adj)"
+   ]
+  },
+  "suck": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "suitable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "APPLICABLE (adj)",
+    "CORRECT (adj)"
+   ]
+  },
+  "suitably": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "SUFFICIENTLY (adv)"
+   ]
+  },
+  "surplus": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "UNWANTED (adj)"
+   ]
+  },
+  "surrounding": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ADJACENT (adj)",
+    "AROUND (prep)"
+   ]
+  },
+  "survey": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "EXAMINE (v)",
+    "INSPECTION (n)"
+   ]
+  },
+  "suspect": {
+   "pos": [
+    "adj",
+    "v"
+   ],
+   "alts": [
+    "THINK (v)"
+   ]
+  },
+  "suspend": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "HANG (v)",
+    "STOP (v)"
+   ]
+  },
+  "swap": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "INTERCHANGE (v)"
+   ]
+  },
+  "sweep": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SCAN (TN)"
+   ]
+  },
+  "swing": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MOVE (v)",
+    "CALIBRATE (v)"
+   ]
+  },
+  "switch": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SET (v)"
+   ]
+  },
+  "switch off": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SET (v)",
+    "STOP (v)",
+    "DE-ENERGIZE (v)"
+   ]
+  },
+  "switch on": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SET (v)",
+    "START (v)",
+    "ENERGIZE (v)"
+   ]
+  },
+  "synchronize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ADJUST (v)"
+   ]
+  },
+  "take": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)",
+    "READ (v)",
+    "GET (v)",
+    "NECESSARY (adj)"
+   ]
+  },
+  "take care": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)",
+    "OBEY (v)",
+    "DO NOT (v)",
+    "CAREFUL (adj)"
+   ]
+  },
+  "talk": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SPEAK (v)"
+   ]
+  },
+  "taut": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "TENSION (TN)"
+   ]
+  },
+  "tear": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DAMAGE (n)"
+   ]
+  },
+  "technique": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "METHOD (n)"
+   ]
+  },
+  "terminate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "STOP (v)"
+   ]
+  },
+  "therefore": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "THUS (adv)"
+   ]
+  },
+  "thorough": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FULL (adj)"
+   ]
+  },
+  "thoroughly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "FULLY (adv)"
+   ]
+  },
+  "thread": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)",
+    "TURN (v)"
+   ]
+  },
+  "threaded": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "THREAD (TN)"
+   ]
+  },
+  "throughout": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "DURING (prep)"
+   ]
+  },
+  "tie": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)"
+   ]
+  },
+  "till": {
+   "pos": [
+    "conj"
+   ],
+   "alts": [
+    "UNTIL (conj)"
+   ]
+  },
+  "tip": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "POINT (n)",
+    "TILT (v)"
+   ]
+  },
+  "top off": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "FILL (v)",
+    "ADD (v)"
+   ]
+  },
+  "toward": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "TO (prep)",
+    "DIRECTION (n)"
+   ]
+  },
+  "toxic": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "POISONOUS (adj)"
+   ]
+  },
+  "trace": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "SIGN (n)",
+    "FIND (v)"
+   ]
+  },
+  "track": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MONITOR (v)"
+   ]
+  },
+  "trained": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "APPROVED (adj)"
+   ]
+  },
+  "transfer": {
+   "pos": [
+    "n",
+    "v"
+   ],
+   "alts": [
+    "MOVEMENT (n)",
+    "SUPPLY (n)",
+    "MOVE (v)",
+    "INSTALL (v)"
+   ]
+  },
+  "transition": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CHANGE (n)"
+   ]
+  },
+  "transport": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SEND (v)"
+   ]
+  },
+  "trapped": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CAUGHT (adj)"
+   ]
+  },
+  "treat": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "APPLY (v)",
+    "TOUCH (v)"
+   ]
+  },
+  "trigger": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CAUSE (v)",
+    "START (v)"
+   ]
+  },
+  "trim": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CUT (v)"
+   ]
+  },
+  "trip": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "OPEN (v)",
+    "RELEASE (v)"
+   ]
+  },
+  "troubleshoot": {
+   "pos": [
+    "v"
+   ],
+   "alts": []
+  },
+  "true": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CORRECT (adj)",
+    "AGREE (v)"
+   ]
+  },
+  "tuck": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)"
+   ]
+  },
+  "turn off": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SET (v)",
+    "STOP (v)",
+    "DE-ENERGIZE (v)"
+   ]
+  },
+  "turn on": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "SET (v)",
+    "START (v)",
+    "ENERGIZE (v)"
+   ]
+  },
+  "turn over": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TURN (v)"
+   ]
+  },
+  "twice": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "TWO (TN)"
+   ]
+  },
+  "unable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CANNOT (v)"
+   ]
+  },
+  "unauthorized": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "uncap": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "unclip": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "uncoil": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "UNWIND (v)"
+   ]
+  },
+  "uncontaminated": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CLEAN (adj)",
+    "CONTAMINATION (n)"
+   ]
+  },
+  "uncouple": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DISCONNECT (v)"
+   ]
+  },
+  "uncovered": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "COVER (TN)"
+   ]
+  },
+  "undamaged": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "under": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "BELOW (prep)",
+    "IN (prep)"
+   ]
+  },
+  "underneath": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "BELOW (prep)"
+   ]
+  },
+  "underside": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "BOTTOM (n)"
+   ]
+  },
+  "undertake": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DO (v)",
+    "START (v)"
+   ]
+  },
+  "undo": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LOOSEN (v)"
+   ]
+  },
+  "undue": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "UNWANTED (adj)"
+   ]
+  },
+  "uneven": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "EQUAL (adj)",
+    "ROUGH (adj)"
+   ]
+  },
+  "uniform": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CONSTANT (adj)",
+    "EQUAL (adj)"
+   ]
+  },
+  "uniformly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "EQUALLY (adv)"
+   ]
+  },
+  "unintentional": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "ACCIDENTAL (adj)"
+   ]
+  },
+  "unintentionally": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "ACCIDENTALLY (adv)"
+   ]
+  },
+  "unlatch": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RELEASE (v)",
+    "OPEN (v)"
+   ]
+  },
+  "unload": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RELEASE (v)",
+    "LOAD (TN)"
+   ]
+  },
+  "unnecessary": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "unobstructed": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CLOGGED (adj)",
+    "CLEAR (adj)"
+   ]
+  },
+  "unpack": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "unpainted": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "BARE (adj)"
+   ]
+  },
+  "unplug": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "DISCONNECT (v)",
+    "PLUG (TN)"
+   ]
+  },
+  "unprotected": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "PROTECTION (n)"
+   ]
+  },
+  "unreel": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "UNWIND (v)"
+   ]
+  },
+  "unrestricted": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FREE (adj)"
+   ]
+  },
+  "unsafe": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DANGEROUS (adj)"
+   ]
+  },
+  "unscrew": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LOOSEN (v)",
+    "TURN (v)",
+    "REMOVE (v)"
+   ]
+  },
+  "unstable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "unused": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "NEW (adj)"
+   ]
+  },
+  "upon": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "ON (prep)",
+    "WHEN (conj)"
+   ]
+  },
+  "upper": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MAXIMUM (adj)",
+    "TOP (adj)"
+   ]
+  },
+  "uppermost": {
+   "pos": [
+    "adj",
+    "adv"
+   ],
+   "alts": [
+    "UP (adv)"
+   ]
+  },
+  "up to": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "UNTIL (prep)",
+    "THRU (prep)",
+    "MAXIMUM (n)"
+   ]
+  },
+  "upward": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "UP (adv)"
+   ]
+  },
+  "urgently": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "IMMEDIATELY (adv)"
+   ]
+  },
+  "usage": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "USE (v)"
+   ]
+  },
+  "utilization": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "USE (v)"
+   ]
+  },
+  "utilize": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "USE (v)"
+   ]
+  },
+  "valid": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CORRECT (adj)",
+    "APPLICABLE (adj)"
+   ]
+  },
+  "validity": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "CORRECT (adj)",
+    "APPLICABLE (adj)"
+   ]
+  },
+  "variable": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "CHANGE (v)"
+   ]
+  },
+  "various": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "DIFFERENT (adj)"
+   ]
+  },
+  "vary": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CHANGE (v)"
+   ]
+  },
+  "vent": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RELEASE (v)",
+    "FLOW (v)",
+    "OPEN (adj)"
+   ]
+  },
+  "ventilate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "AIRFLOW (n)"
+   ]
+  },
+  "ventilation": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "AIRFLOW (n)"
+   ]
+  },
+  "verify": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MAKE SURE (v)"
+   ]
+  },
+  "via": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "THROUGH (prep)"
+   ]
+  },
+  "vibrate": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "VIBRATION (n)"
+   ]
+  },
+  "vicinity": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "NEAR (prep)",
+    "ADJACENT (adj)"
+   ]
+  },
+  "vigorous": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FORCE (TN)"
+   ]
+  },
+  "vigorously": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "FORCE (TN)"
+   ]
+  },
+  "visible": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SEE (v)",
+    "VIEW (n)"
+   ]
+  },
+  "vital": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "MANDATORY (adj)"
+   ]
+  },
+  "volatile": {
+   "pos": [
+    "adj"
+   ],
+   "alts": []
+  },
+  "warn": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "TELL (v)",
+    "WARNING (TN)"
+   ]
+  },
+  "wash": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CLEAN (v)"
+   ]
+  },
+  "watch": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "MONITOR (v)",
+    "LOOK (v)"
+   ]
+  },
+  "watertight": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "SEAL (v)"
+   ]
+  },
+  "way": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "PROCEDURE (n)"
+   ]
+  },
+  "weakness": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "WEAK (adj)"
+   ]
+  },
+  "weep": {
+   "pos": [
+    "n"
+   ],
+   "alts": [
+    "LEAKAGE (n)"
+   ]
+  },
+  "well": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "CORRECTLY (adv)",
+    "GOOD (adj)",
+    "FULLY (adv)"
+   ]
+  },
+  "whenever": {
+   "pos": [
+    "conj"
+   ],
+   "alts": [
+    "WHEN (conj)"
+   ]
+  },
+  "whether": {
+   "pos": [
+    "conj"
+   ],
+   "alts": [
+    "IF (conj)"
+   ]
+  },
+  "whichever": {
+   "pos": [
+    "adj",
+    "pron"
+   ],
+   "alts": [
+    "THAT (pron)"
+   ]
+  },
+  "whilst": {
+   "pos": [
+    "conj"
+   ],
+   "alts": [
+    "WHILE (conj)"
+   ]
+  },
+  "whoever": {
+   "pos": [
+    "pron"
+   ],
+   "alts": [
+    "WHO (pron)"
+   ]
+  },
+  "whole": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "FULL (adj)",
+    "ALL (adj)"
+   ]
+  },
+  "wholly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "FULLY (adv)"
+   ]
+  },
+  "whose": {
+   "pos": [
+    "pron"
+   ],
+   "alts": []
+  },
+  "windy": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "WIND (TN)"
+   ]
+  },
+  "wipe": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CLEAN (v)"
+   ]
+  },
+  "wire": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "ATTACH (v)"
+   ]
+  },
+  "wire-lock": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "LOCK (v)",
+    "SAFETY (v)"
+   ]
+  },
+  "withdraw": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "REMOVE (v)"
+   ]
+  },
+  "within": {
+   "pos": [
+    "prep"
+   ],
+   "alts": [
+    "IN (prep)"
+   ]
+  },
+  "withstand": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "RESISTANT (adj)"
+   ]
+  },
+  "would": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "CAN (v)"
+   ]
+  },
+  "wrap": {
+   "pos": [
+    "v"
+   ],
+   "alts": [
+    "PUT (v)",
+    "WIND (v)"
+   ]
+  },
+  "wrong": {
+   "pos": [
+    "adj"
+   ],
+   "alts": [
+    "INCORRECT (adj)"
+   ]
+  },
+  "wrongly": {
+   "pos": [
+    "adv"
+   ],
+   "alts": [
+    "INCORRECTLY (adv)"
+   ]
+  },
+  "yet": {
+   "pos": [
+    "conj",
+    "adv"
+   ],
+   "alts": [
+    "BUT (conj)"
+   ]
+  },
+  "yourself": {
+   "pos": [
+    "pron"
+   ],
+   "alts": [
+    "YOU (pron)"
+   ]
+  }
+ }
+}

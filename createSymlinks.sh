@@ -104,6 +104,8 @@ mkdir -p $HOME/.claude
 ln -s $HOME/.dotfiles/claude/settings.json $HOME/.claude/settings.json
 ln -s $HOME/.dotfiles/claude/statusline-command.sh $HOME/.claude/statusline-command.sh
 ln -s $HOME/.dotfiles/claude/CLAUDE.md $HOME/.claude/CLAUDE.md
+ln -s $HOME/.dotfiles/claude/hooks $HOME/.claude/hooks
+ln -s $HOME/.dotfiles/claude/skills $HOME/.claude/skills
 
 # agents
 ln -s $HOME/.dotfiles/claude/CLAUDE.md $HOME/.config/AGENTS.md

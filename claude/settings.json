@@ -7,12 +7,13 @@
   },
   "attribution": {
     "commit": "",
-    "pr": ""
+    "pr": "",
+    "sessionUrl": false
   },
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "Opus",
+  "model": "fable",
   "hooks": {
     "Notification": [
       {
@@ -21,6 +22,41 @@
           {
             "type": "command",
             "command": "printf '\\a' > /dev/tty"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Style: apply the ste-writing skill (STE-flavored mode) to all prose you write this turn: chat replies, docs, PR text, commit messages. Short sentences, active voice, plain verbs, no semicolons, no em dashes, no contractions. A Stop hook lints your final message and blocks above 3 violations per 100 words.'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.claude/hooks/ste-lint-hook.py\"",
+            "timeout": 30,
+            "statusMessage": "STE lint on final message"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.claude/hooks/ste-lint-hook.py\"",
+            "timeout": 30,
+            "statusMessage": "STE lint on written file"
           }
         ]
       }
@@ -37,7 +73,7 @@
     "playwright@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "autoCompactWindow": 400000,
   "fastMode": true,
   "tui": "default",
