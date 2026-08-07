@@ -53,14 +53,10 @@ alias web='ssh web01 -p 799'
 # =======
 
 alias c='clear'
+alias cl='claude --dangerously-skip-permissions'
 alias v='gvim'
 alias ls='ls --color=auto'
 alias tf='terraform'
-
-function getip()
-{
-    wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
-}
 
 function grephistory() # search history
 {
