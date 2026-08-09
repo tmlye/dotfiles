@@ -23,7 +23,7 @@
         "pulseaudio",
         "network",
         "battery",
-        "custom/keyboard-layout",
+        "sway/language",
         "tray",
         "clock"
     ],
@@ -71,9 +71,8 @@
       "tooltip-format": "{:%e %B %Y %H:%M}"
     },
 
-    "custom/keyboard-layout": {
-      "exec": "$HOME/.config/waybar/keyboard-layout.sh '1:1:AT_Translated_Set_2_keyboard'",
-      "format": " {}", // Icon: keyboard
+    "sway/language": {
+      "format": " {shortDescription}", // Icon: keyboard
       "tooltip": false
     },
 
