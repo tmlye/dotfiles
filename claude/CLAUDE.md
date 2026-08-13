@@ -25,7 +25,7 @@ Rules:
 
 # Linear tickets
 
-If the user did not provide a ticket number, ask them whether they want to provide one or whether you should create a ticket. Create tickets in the infra team by default.
+If the user did not provide a ticket number, ask them whether they want to provide one or whether you should create a ticket. Create tickets in the ETP team by default.
 Apply the "Writing and Communication" guidelines to Linear tickets.
 
 # Code comments
