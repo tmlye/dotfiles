@@ -30,4 +30,9 @@ size = 17.33
 keys = [
   { key = "-", with = "control", action = "none" },
   { key = "space", with = "control | shift", action = "ToggleViMode" },
+  # CreateWindow ignores cwd; Run() starts in the foreground process cwd
+  { key = "n", with = "control | shift", action = "Run(rio)" },
 ]
+
+[navigation]
+hide-if-single = true
