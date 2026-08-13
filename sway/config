@@ -10,7 +10,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term rio
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -29,7 +29,7 @@ output * bg $HOME/.wallpaper/current.jpg fill
 output DP-1 scale 2
 output DP-2 scale 2
 output DP-3 scale 2
-output DP-5 scale 2.2
+output DP-5 scale 2
 output DP-7 scale 2
 
 #
@@ -120,7 +120,7 @@ seat seat0 hide_cursor 5000
     bindsym $mod+F11 exec swaylock -f -c 1e1810
 
     # Toggle laptop screen
-    bindsym $mod+m output $laptop toggle
+    bindsym --release $mod+m output $laptop toggle
 
     # Exit sway (logs you out of your Wayland session)
     #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
