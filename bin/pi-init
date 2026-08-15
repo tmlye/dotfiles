@@ -1,0 +1,6 @@
+#!/bin/bash
+# Link the shared pi-flows agents and flows into the current project.
+mkdir -p .pi
+ln -sfn "$HOME/.dotfiles/agents/pi/flows" .pi/flows
+echo "Linked .pi/flows -> ~/.dotfiles/agents/pi/flows"
+echo "Start pi, accept the project trust prompt, then run: /build <task>"

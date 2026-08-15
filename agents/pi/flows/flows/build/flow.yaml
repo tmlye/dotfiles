@@ -1,0 +1,67 @@
+name: build
+description: Plan, implement in parallel slices, review with a fix loop
+task_required: true
+task_prompt: "What should we build?"
+max_concurrent: 4
+
+steps:
+  - id: research
+    type: agent
+    agent: researcher
+    task: Investigate the codebase parts relevant to ${{task}}
+
+  - id: plan
+    type: agent
+    agent: planner
+    blockedBy: [research]
+    inputs:
+      context: "${{result.research.summary}}"
+    task: Write the implementation plan for ${{task}}
+
+  - id: impl-a
+    type: agent
+    agent: implementer
+    blockedBy: [plan]
+    inputs:
+      plan: "${{result.plan.summary}}"
+      slice: "Slice A"
+    task: Implement Slice A of the plan
+
+  - id: impl-b
+    type: agent
+    agent: implementer
+    blockedBy: [plan]
+    inputs:
+      plan: "${{result.plan.summary}}"
+      slice: "Slice B"
+    task: Implement Slice B of the plan
+
+  - id: fix
+    type: agent
+    agent: implementer
+    blockedBy: [impl-a, impl-b]
+    inputs:
+      plan: "${{result.plan.summary}}"
+      slice: "Reviewer feedback: ${{result.review.summary}}"
+    task: Apply the reviewer's required fixes. On the first pass the feedback is empty, then change nothing and finish at once.
+
+  - id: review
+    type: agent-decision
+    agent: reviewer
+    blockedBy: [fix]
+    inputs:
+      plan: "${{result.plan.summary}}"
+    task: >
+      Review the implementation of ${{task}} against the plan
+      (attempt ${{loop.review.iteration}}/${{loop.review.max}}).
+    branches:
+      rework: fix
+      done: summary
+    max_iterations: 3
+
+  - id: summary
+    type: agent
+    agent: researcher
+    task: >
+      Summarize the changes now present in the working tree for ${{task}}.
+      Note open risks from the review verdict: ${{result.review.summary}}
