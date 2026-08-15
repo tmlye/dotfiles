@@ -5,7 +5,7 @@ Stop: lints Claude's final message. Blocks and demands a rewrite when the
 score (violations per 100 words, em dashes included) exceeds THRESHOLD.
 PostToolUse (Write|Edit): lints markdown files and reports back as context.
 
-Linter lives in ~/.claude/skills/ste-writing/ste-lint.py.
+Linter lives in the sibling skills dir: ../skills/ste-writing/ste-lint.py.
 """
 import importlib.util
 import json
@@ -14,7 +14,10 @@ import sys
 
 THRESHOLD = 3.0
 MIN_WORDS = 60
-LINTER_PATH = os.path.expanduser("~/.claude/skills/ste-writing/ste-lint.py")
+LINTER_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
+    "skills", "ste-writing", "ste-lint.py",
+)
 PROSE_EXTENSIONS = (".md", ".mdx", ".txt", ".rst")
 
 
@@ -81,7 +84,7 @@ def handle_stop(data, linter):
         f"{s:.1f} violations per 100 words (limit {THRESHOLD}). "
         f"Counts: {summarize(report)}. "
         "Rewrite the message with the ste-writing skill "
-        "(~/.claude/skills/ste-writing/SKILL.md, STE-flavored mode): "
+        "(STE-flavored mode): "
         "short sentences, active voice, plain verbs, no semicolons, "
         "no em dashes, no contractions, no banned words. "
         "Reply with only the rewritten message."
@@ -111,7 +114,7 @@ def handle_post_tool_use(data, linter):
         f"STE lint: {os.path.basename(path)} scores {s:.1f} violations "
         f"per 100 words (limit {THRESHOLD}). Counts: {summarize(report)}. "
         "If you wrote this prose, revise it with the ste-writing skill "
-        "(~/.claude/skills/ste-writing/SKILL.md) before you finish."
+        "before you finish."
     )
     print(json.dumps({
         "hookSpecificOutput": {

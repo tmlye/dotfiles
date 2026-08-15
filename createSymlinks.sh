@@ -103,12 +103,22 @@ ln -s $HOME/.dotfiles/zed/keymap.json $HOME/.config/zed/keymap.json
 mkdir -p $HOME/.claude
 ln -s $HOME/.dotfiles/claude/settings.json $HOME/.claude/settings.json
 ln -s $HOME/.dotfiles/claude/statusline-command.sh $HOME/.claude/statusline-command.sh
-ln -s $HOME/.dotfiles/claude/CLAUDE.md $HOME/.claude/CLAUDE.md
-ln -s $HOME/.dotfiles/claude/hooks $HOME/.claude/hooks
-ln -s $HOME/.dotfiles/claude/skills $HOME/.claude/skills
+ln -s $HOME/.dotfiles/agents/AGENTS.md $HOME/.claude/CLAUDE.md
+ln -s $HOME/.dotfiles/agents/hooks $HOME/.claude/hooks
+ln -s $HOME/.dotfiles/agents/skills $HOME/.claude/skills
 
-# agents
-ln -s $HOME/.dotfiles/claude/CLAUDE.md $HOME/.config/AGENTS.md
+# shared agent config (agentskills.io standard: codex and pi read ~/.agents/skills)
+mkdir -p $HOME/.agents
+ln -s $HOME/.dotfiles/agents/skills $HOME/.agents/skills
+ln -s $HOME/.dotfiles/agents/AGENTS.md $HOME/.config/AGENTS.md
+
+# codex
+mkdir -p $HOME/.codex
+ln -s $HOME/.dotfiles/agents/AGENTS.md $HOME/.codex/AGENTS.md
+
+# pi coding agent
+mkdir -p $HOME/.pi/agent
+ln -s $HOME/.dotfiles/agents/AGENTS.md $HOME/.pi/agent/AGENTS.md
 
 # don't use Desktop, use desktop
 ln -s $HOME/.dotfiles/various/user-dirs.dirs $HOME/.config/user-dirs.dirs
