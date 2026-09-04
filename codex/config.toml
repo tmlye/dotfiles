@@ -1,7 +1,7 @@
 model = "gpt-6-astra"
 model_auto_compact_token_limit = 400000
 approvals_reviewer = "user"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "xhigh"
 service_tier = "default"
 [projects."/home/tml/code/lovable/lovable2"]
 trust_level = "trusted"
@@ -30,5 +30,51 @@ fast_default_opt_out = true
 "gpt-5.6-sol" = 3
 
 [mcp_servers.chrome-devtools]
+enabled = false
 command = "npx"
 args = ["-y", "chrome-devtools-mcp@latest", "--no-usage-statistics", "--browserUrl=http://127.0.0.1:9222"]
+
+[mcp_servers.linear]
+url = "https://mcp.linear.app/mcp"
+enabled = false
+
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"
+enabled = false
+
+[mcp_servers.who-is-everyone]
+url = "https://who-is-everyone.lovable.app/api/public/mcp"
+enabled = false
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@latest"]
+enabled = false
+
+[mcp_servers.sentry]
+url = "https://mcp.sentry.dev/mcp"
+enabled = false
+
+[mcp_servers.stripe]
+command = "bin/stripe-mcp"
+enabled = false
+
+[mcp_servers.lovable-shipped]
+url = "https://mojcpvzpyrzxkdboelbi.supabase.co/functions/v1/mcp"
+enabled = false
+
+[mcp_servers.lovable-kit]
+command = "bin/kit"
+enabled = true
+
+[mcp_servers.incident-io]
+url = "https://mcp.incident.io/mcp"
+enabled = false
+
+[mcp_servers.reliability]
+url = "https://zuwqprucennmkztkhxdz.supabase.co/functions/v1/mcp"
+enabled = false
+
+[mcp_servers.meticulous]
+url = "https://app.meticulous.ai/api/mcp"
+enabled = false
