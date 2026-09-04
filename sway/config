@@ -58,9 +58,16 @@ input type:keyboard {
     xkb_options caps:escape,grp:rctrl_rshift_toggle,compose:ralt
 }
 
+# Bluetooth
 input "5426:131:Razer_Razer_Basilisk_X_HyperSpeed" {
     accel_profile flat
-    pointer_accel 0
+    pointer_accel -0.4
+}
+
+# Wireless dongle (reports a different product id)
+input "5426:130:Basilisk_X_HyperSpeed_Mouse" {
+    accel_profile flat
+    pointer_accel -0.4
 }
 
 # Dongle
