@@ -114,6 +114,10 @@ ln -s $HOME/.dotfiles/agents/AGENTS.md $HOME/.config/AGENTS.md
 
 # codex
 mkdir -p $HOME/.codex
+if [ ! -L "$HOME/.codex/config.toml" ] && [ -e "$HOME/.codex/config.toml" ]; then
+  mv --backup=numbered "$HOME/.codex/config.toml" "$HOME/.codex/config.toml.backup"
+fi
+ln -sfn "$HOME/.dotfiles/codex/config.toml" "$HOME/.codex/config.toml"
 ln -s $HOME/.dotfiles/agents/AGENTS.md $HOME/.codex/AGENTS.md
 
 # pi coding agent
