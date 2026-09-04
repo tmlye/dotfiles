@@ -3,7 +3,7 @@
 # Create .config directory if needed
 mkdir -p $HOME/.config
 
-declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/user-dirs.dirs .config/waybar .config/nvim .config/imv/config .config/archey4/config.json .config/cliphist/config .config/rio/config.toml)
+declare -a links=(.gitconfig .zlogin .zshrc .vim .vimrc .config/zathura/zathurarc .config/htop/htoprc .config/gtk-3.0 .config/ranger .tmux.conf .config/user-dirs.dirs .config/waybar .config/nvim .config/imv/config .config/archey4/config.json .config/cliphist/config .config/rio/config.toml .codex/config.toml)
 
 # If files already exist create backups
 for i in ${links[*]}
@@ -114,10 +114,7 @@ ln -s $HOME/.dotfiles/agents/AGENTS.md $HOME/.config/AGENTS.md
 
 # codex
 mkdir -p $HOME/.codex
-if [ ! -L "$HOME/.codex/config.toml" ] && [ -e "$HOME/.codex/config.toml" ]; then
-  mv --backup=numbered "$HOME/.codex/config.toml" "$HOME/.codex/config.toml.backup"
-fi
-ln -sfn "$HOME/.dotfiles/codex/config.toml" "$HOME/.codex/config.toml"
+ln -s $HOME/.dotfiles/codex/config.toml $HOME/.codex/config.toml
 ln -s $HOME/.dotfiles/agents/AGENTS.md $HOME/.codex/AGENTS.md
 
 # pi coding agent
