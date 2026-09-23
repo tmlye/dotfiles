@@ -3,19 +3,11 @@ model_auto_compact_token_limit = 400000
 approvals_reviewer = "user"
 model_reasoning_effort = "xhigh"
 service_tier = "default"
-[projects."/home/tml/code/lovable/lovable2"]
-trust_level = "trusted"
 
 [projects."/home/tml/code/lovable/lovable"]
 trust_level = "trusted"
 
-[projects."/home/tml/code/lovable/lovable4"]
-trust_level = "trusted"
-
 [projects."/home/tml/.dotfiles"]
-trust_level = "trusted"
-
-[projects."/home/tml/code/lovable/lovable3"]
 trust_level = "trusted"
 
 [notice]
@@ -25,12 +17,17 @@ fast_default_opt_out = true
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
 
+[tui]
+animations = false
+screen_reader_detection_done = true
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 3
+gpt-6-astra = 4
 
 [mcp_servers.chrome-devtools]
-enabled = false
+enabled = true
 command = "npx"
 args = ["-y", "chrome-devtools-mcp@latest", "--no-usage-statistics", "--browserUrl=http://127.0.0.1:9222"]
 
