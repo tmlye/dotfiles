@@ -1,7 +1,9 @@
 # General
 
-Create a git worktree from fresh main if you need to make edits. Never create branches without a worktree.
-Put all worktrees in .agents/worktrees/
+- Create a git worktree from fresh main if you need to make edits. Never create branches without a worktree. Put worktrees in .agents/worktrees/ unless a project AGENTS.md names another location.
+- When making technical decisions, do not give any weight to development cost.
+  Instead, prefer quality, simplicity, robustness, scalability and long term maintainability.
+- Prefer integration tests over unit tests
 
 # Writing and Communication
 
@@ -23,11 +25,6 @@ Rules:
 - It's fine to hedge honestly ("we're not sure this holds under load") instead of confident filler.
 - Don't summarize what you just said. End sections when the content ends.
 
-# Linear tickets
-
-If the user did not provide a ticket number, ask them whether they want to provide one or whether you should create a ticket. Create tickets in the ETP team by default.
-Apply the "Writing and Communication" guidelines to Linear tickets.
-
 # Code comments
 
 Before each commit, review all added comments and remove most of them.
@@ -37,5 +34,4 @@ Shorten the ones that are left. Aim to keep only 5% of commented lines.
 
 Before pushing to an existing pull request, always check if it is already merged or not.
 When talking about pull requests to the user, always provide the link to a PR instead of just the number.
-Make sure to include the Linear ticket number in the title of the PR.
 Apply the "Writing and Communication" guidelines to PR descriptions.

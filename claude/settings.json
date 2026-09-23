@@ -15,7 +15,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "fable",
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -74,10 +74,19 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "playwright@claude-plugins-official": true
   },
+  "pluginConfigs": {
+    "agents-md@builtin": {
+      "options": { "instructionFiles": "claude-md-and-agents-md" }
+    }
+  },
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
   "autoCompactWindow": 400000,
-  "fastMode": true,
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",

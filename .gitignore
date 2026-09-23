@@ -6,3 +6,7 @@ ranger/bookmarks
 ranger/tagged
 vim/vim/view
 .agents
+
+# claude.ai skills that Claude Code syncs down
+agents/skills/synced/
+agents/skills/.trash/

@@ -1,6 +1,7 @@
 # Config (override before sourcing, or export in your rc file):
 #   WT_DIR          where worktrees live; blank = sibling
 #                   dirs next to the main worktree          (default: blank)
+#   git config wt.dir   per-repo override of WT_DIR
 
 : "${WT_DIR:=.agents/worktrees}"
 : "${WT_BASE_BRANCH:=origin/main}"
@@ -19,16 +20,17 @@ _wt_main() {
   printf '%s' "$main"
 }
 
-# Directory that holds worktrees. A relative WT_DIR is anchored at the main
-# worktree, not the cwd.
+# Directory that holds worktrees. git config `wt.dir` (per repo) beats WT_DIR.
+# A relative dir is anchored at the main worktree, not the cwd.
 _wt_parent() {
-  local main; main=$(_wt_main) || return 1
-  if [ -z "$WT_DIR" ]; then
+  local main dir; main=$(_wt_main) || return 1
+  dir=$(git config --type=path --get wt.dir 2>/dev/null) || dir="$WT_DIR"
+  if [ -z "$dir" ]; then
     printf '%s' "$(dirname "$main")"
   else
-    case "$WT_DIR" in
-      /*) printf '%s' "${WT_DIR%/}" ;;
-      *)  printf '%s/%s' "$main" "${WT_DIR%/}" ;;
+    case "$dir" in
+      /*) printf '%s' "${dir%/}" ;;
+      *)  printf '%s/%s' "$main" "${dir%/}" ;;
     esac
   fi
 }
