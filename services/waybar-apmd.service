@@ -1,0 +1,36 @@
+[Unit]
+Description=Count key presses and clicks for the waybar APM module
+
+[Service]
+ExecStart=/usr/local/bin/waybar-apmd
+Restart=on-failure
+DynamicUser=yes
+SupplementaryGroups=input
+RuntimeDirectory=waybar-apm
+RuntimeDirectoryMode=0755
+DevicePolicy=closed
+DeviceAllow=char-input r
+ProtectHome=yes
+PrivateNetwork=yes
+IPAddressDeny=any
+RestrictAddressFamilies=none
+CapabilityBoundingSet=
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+ProtectHostname=yes
+ProtectProc=invisible
+ProcSubset=pid
+RestrictNamespaces=yes
+RestrictRealtime=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@privileged @resources
+UMask=0022
+
+[Install]
+WantedBy=multi-user.target

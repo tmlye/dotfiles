@@ -19,6 +19,7 @@
     "modules-center": [
     ],
     "modules-right": [
+        "custom/apm",
         "custom/weather",
         "pulseaudio",
         "network",
@@ -43,6 +44,13 @@
         "exec-if": "ping wttr.in -c1",
         "signal": 8,
         "on-click": "pkill -SIGRTMIN+8 waybar"
+    },
+
+    "custom/apm": {
+        "format": "{} APM",
+        "interval": 1,
+        "exec": "cat /run/waybar-apm/apm",
+        "tooltip": false
     },
 
     "battery": {

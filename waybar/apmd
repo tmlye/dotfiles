@@ -1,0 +1,113 @@
+#!/usr/bin/python3
+# Counts key presses and mouse clicks in the last 60 s and writes the count
+# to $RUNTIME_DIRECTORY/apm. Stores timestamps only, never key codes.
+
+import collections
+import fcntl
+import os
+import selectors
+import struct
+import time
+
+import evdev
+from evdev import ecodes as e
+
+WINDOW = 60
+OUT = os.path.join(os.environ.get("RUNTIME_DIRECTORY", "/run/waybar-apm"), "apm")
+
+EVIOCSMASK = 0x40104593  # _IOW('E', 0x93, struct input_mask)
+# Kernel drops these, so mouse motion does not wake us.
+MASKED_TYPES = (e.EV_REL, e.EV_ABS, e.EV_MSC)
+
+
+def now():
+    # Counts suspend time, so old presses expire after resume.
+    return time.clock_gettime(time.CLOCK_BOOTTIME)
+
+
+def is_action(code):
+    return 0 < code < 0x100 or e.BTN_LEFT <= code <= e.BTN_TASK
+
+
+def is_wanted(dev):
+    keys = dev.capabilities().get(e.EV_KEY, [])
+    return e.KEY_A in keys or e.BTN_LEFT in keys
+
+
+class Apmd:
+    def __init__(self):
+        self.sel = selectors.DefaultSelector()
+        self.seen = set()
+        self.dir_mtime = None
+        self.presses = collections.deque()
+        self.written = None
+
+    def scan(self):
+        mtime = os.stat("/dev/input").st_mtime_ns
+        if mtime == self.dir_mtime:
+            return
+        self.dir_mtime = mtime
+        present = set()
+        for path in evdev.list_devices(writable=False):
+            try:
+                key = (path, os.stat(path).st_ino)
+            except FileNotFoundError:
+                continue
+            present.add(key)
+            if key not in self.seen:
+                self.open(path)
+        self.seen = present
+
+    def open(self, path):
+        try:
+            dev = evdev.InputDevice(path)
+            if not is_wanted(dev):
+                dev.close()
+                return
+            for t in MASKED_TYPES:
+                fcntl.ioctl(dev.fd, EVIOCSMASK, struct.pack("IIQ", t, 0, 0))
+        except OSError:
+            return
+        self.sel.register(dev.fd, selectors.EVENT_READ, dev)
+
+    def drop(self, dev):
+        self.sel.unregister(dev.fd)
+        dev.close()
+
+    def read(self, dev):
+        try:
+            for ev in dev.read():
+                if ev.type == e.EV_KEY and ev.value == 1 and is_action(ev.code):
+                    self.presses.append(now())
+        except BlockingIOError:
+            pass
+        except OSError:
+            self.drop(dev)
+
+    def write(self):
+        while self.presses and self.presses[0] <= now() - WINDOW:
+            self.presses.popleft()
+        count = len(self.presses)
+        if count == self.written:
+            return
+        tmp = OUT + ".tmp"
+        with open(tmp, "w") as f:
+            f.write(f"{count}\n")
+        os.replace(tmp, OUT)
+        self.written = count
+
+    def run(self):
+        tick = now()
+        while True:
+            for key, _ in self.sel.select(max(0, tick - now())):
+                self.read(key.data)
+            if now() >= tick:
+                self.scan()
+                self.write()
+                tick += 1
+                if tick < now():
+                    tick = now() + 1
+
+
+if __name__ == "__main__":
+    Apmd().run()
