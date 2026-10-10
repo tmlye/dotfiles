@@ -1,11 +1,11 @@
 {
   "env": {
-    "DISABLE_AUTOUPDATER": "1",
     "BASH_DEFAULT_TIMEOUT_MS": "600000",
     "BASH_MAX_TIMEOUT_MS": "900000",
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
     "CLAUDE_CODE_DISABLE_MOUSE_CLICKS": "1",
-    "CLAUDE_CODE_SCROLL_SPEED": "3"
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_SCROLL_SPEED": "3",
+    "DISABLE_AUTOUPDATER": "1"
   },
   "attribution": {
     "commit": "",
@@ -15,7 +15,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "opus",
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -24,28 +24,6 @@
           {
             "type": "command",
             "command": "printf '\\a' > /dev/tty"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo 'Style: apply the ste-writing skill (STE-flavored mode) to all prose you write this turn: chat replies, docs, PR text, commit messages. Short sentences, active voice, plain verbs, no semicolons, no em dashes, no contractions. A Stop hook lints your final message and blocks above 3 violations per 100 words.'"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 \"$HOME/.claude/hooks/ste-lint-hook.py\"",
-            "timeout": 30,
-            "statusMessage": "STE lint on final message"
           }
         ]
       }
@@ -62,6 +40,28 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.claude/hooks/ste-lint-hook.py\"",
+            "timeout": 30,
+            "statusMessage": "STE lint on final message"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Style: apply the ste-writing skill (STE-flavored mode) to all prose you write this turn: chat replies, docs, PR text, commit messages. Short sentences, active voice, plain verbs, no semicolons, no em dashes, no contractions. A Stop hook lints your final message and blocks above 3 violations per 100 words.'"
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
@@ -69,15 +69,10 @@
     "command": "$HOME/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true
-  },
-  "pluginConfigs": {
-    "agents-md@builtin": {
-      "options": { "instructionFiles": "claude-md-and-agents-md" }
-    }
+    "typescript-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
@@ -87,6 +82,13 @@
     }
   },
   "autoCompactWindow": 400000,
+  "pluginConfigs": {
+    "agents-md@builtin": {
+      "options": {
+        "instructionFiles": "claude-md-and-agents-md"
+      }
+    }
+  },
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",

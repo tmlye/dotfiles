@@ -20,6 +20,7 @@ fast_default_opt_out = true
 [tui]
 animations = false
 screen_reader_detection_done = true
+copy_on_select = "never"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4

@@ -35,3 +35,4 @@ Shorten the ones that are left. Aim to keep only 5% of commented lines.
 Before pushing to an existing pull request, always check if it is already merged or not.
 When talking about pull requests to the user, always provide the link to a PR instead of just the number.
 Apply the "Writing and Communication" guidelines to PR descriptions.
+Whenever you create a PR, start a watcher to track the PR state. Automatically judge comments and see if they should be addressed.

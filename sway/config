@@ -31,6 +31,7 @@ output DP-2 scale 2
 output DP-3 scale 2
 output DP-5 scale 2
 output DP-7 scale 2
+output HDMI-A-1 scale 1.5
 
 #
 # Example configuration:
